@@ -1,0 +1,6 @@
+C:\Users\Administrator\source\repos\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll
+C:\Users\Administrator\source\repos\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.pdb
+C:\Users\Administrator\source\repos\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.dll
+C:\Users\Administrator\source\repos\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.pdb
