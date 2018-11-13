@@ -6,3 +6,6 @@ Documents:
 
 Presentations:
   Contains all powerpoint presentations we have currently presented in PROG-1180
+
+Source:
+  Contains all of the project source code
