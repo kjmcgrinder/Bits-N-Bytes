@@ -9,3 +9,12 @@ Presentations:
 
 Source:
   Contains all of the project source code
+
+Source/EmmasEngines:
+  The main project is an ASP.NET Web Form
+  
+Source/EmmasEnginesLibrary:
+  The library used to connect to the dataset
+
+Source/Graphics:
+  Contains all pictures and other miscellanious graphical resources for the project
