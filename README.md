@@ -1,20 +1,27 @@
 # Bits-N-Bytes
-Final Project for RAD Course based on Emma's Small Engines Case.
+<b>Final Project for RAD Course based on Emma's Small Engines Case.</b>
 
-Documents:
-  Contains files detailing the project requirements.
 
-Presentations:
-  Contains all powerpoint presentations we have currently presented in PROG-1180
+<b>Documents:</b>
 
-Source:
-  Contains all of the project source code
+&nbsp;Contains files detailing the project requirements.
 
-Source/EmmasEngines:
-  The main project is an ASP.NET Web Form
+<b>Presentations:</b>
+
+&nbsp;Contains all powerpoint presentations we have currently presented in PROG-1180
+
+<b>Source:</b>
+
+&nbsp;Contains all of the project source code
+
+<b>Source/EmmasEngines:</b>
+
+&nbsp;The main project is an ASP.NET Web Form
   
-Source/EmmasEnginesLibrary:
-  The library used to connect to the dataset
+<b>Source/EmmasEnginesLibrary:</b>
 
-Source/Graphics:
-  Contains all pictures and other miscellanious graphical resources for the project
+&nbsp;The library used to connect to the dataset
+
+<b>Source/Graphics:</b>
+
+&nbsp;Contains all pictures and other miscellanious graphical resources for the project
