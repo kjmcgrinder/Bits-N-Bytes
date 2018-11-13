@@ -25,4 +25,4 @@
 
 <b>Source/Graphics:</b>
 
-&emsp;Contains all pictures and other miscellanious graphical resources for the project
+&emsp;Contains all pictures and other miscellaneous graphical resources for the project
