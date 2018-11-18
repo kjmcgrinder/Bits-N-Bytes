@@ -1,0 +1,39 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+.IndexTitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    border-bottom: 2px solid black;
+}
+.IndexButton {
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #9b9b9b;
+    border-radius: 15px;
+    box-shadow: 0 9px #3a3a3a;
+    margin: 25% auto;
+}
+
+    .IndexButton:hover {
+        background-color: #707070
+    }
+
+    .IndexButton:active {
+        background-color: #3a3a3a;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+.IndexCentering {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align:center;
+    align-content: center;
+}
+
