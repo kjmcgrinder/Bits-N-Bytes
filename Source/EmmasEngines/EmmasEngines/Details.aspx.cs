@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
 
 namespace EmmasEngines
 {
@@ -11,7 +12,8 @@ namespace EmmasEngines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!User.Identity.IsAuthenticated)
+                Response.Redirect("~/Default.aspx");
         }
     }
 }

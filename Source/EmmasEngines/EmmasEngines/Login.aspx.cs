@@ -22,7 +22,12 @@ namespace EmmasEngines
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
             IdentityUser user = manager.Find(txtUsername.Text, txtPassword.Text);
             if (user != null)
+            {
+                var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+                var userIdentity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                authenticationManager.SignIn(userIdentity);
                 Response.Redirect("~/Index.aspx");
+            }                
             else
             {
                 lblResult.Text = "Incorrect username or password";
