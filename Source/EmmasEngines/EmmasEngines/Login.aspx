@@ -18,9 +18,9 @@
                 <asp:Label ID="lblUsername" runat="server" Text="Username: "></asp:Label> 
                 <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox><br />
                 <asp:Label ID="lblPassword" runat="server" Text="Pasword:   "></asp:Label>
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><br />
-                <asp:Button ID="btnLogin" runat="server" Text="Log in" />
-        
+                <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox><br />
+                <asp:Button ID="btnLogin" runat="server" Text="Log in" OnClick="btnLogin_Click" />
+                <asp:Label ID="lblResult" runat="server"></asp:Label>
         </form>
     </div>
 </body>

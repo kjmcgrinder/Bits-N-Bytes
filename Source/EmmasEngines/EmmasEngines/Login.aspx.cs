@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,20 @@ namespace EmmasEngines
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+            IdentityUser user = manager.Find(txtUsername.Text, txtPassword.Text);
+            if (user != null)
+                Response.Redirect("~/Index.aspx");
+            else
+            {
+                lblResult.Text = "Incorrect username or password";
+                lblResult.ForeColor = System.Drawing.Color.Red;
+            }
         }
     }
 }
