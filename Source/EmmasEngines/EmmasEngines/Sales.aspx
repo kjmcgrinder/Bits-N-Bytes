@@ -24,10 +24,10 @@
             width: 421px;
         }
     </style>
-
+<link href="Style/style.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="IndexCentering">
     <form id="form1" runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -70,15 +70,15 @@
                 </div>
             </div>
         </div>
-          <div>
-            <h1>Sales</h1>
+          <div><br /><br />
+            <h1 class="IndexTitle">Sales</h1><br />
             <h2>New Customer?</h2>
-            <asp:Button ID="btnCreate" runat="server" Text="Create Customer" PostBackUrl="~/UpdateCustomer.aspx"/>
+            <asp:Button ID="btnCreate" runat="server" Text="Create Customer" PostBackUrl="~/UpdateCustomer.aspx" CssClass="submitBtn"/>
         </div>
         
         <div>
-            <h2>Search Customer by Phone Number: </h2>
-            <table class="auto-style3">
+            <h2 class="IndexTitle">Search Customer by Phone Number: </h2><br />
+           <%-- <table class="auto-style3">
                 <tr>
                     <td class="auto-style4">Phone Number: </td>
                     <td class="auto-style2">
@@ -93,12 +93,14 @@
                     </td>
                     <td class="auto-style2">&nbsp;</td>                   
                 </tr>
-            </table>
+            </table>--%>
+            <h5 class="subScript">Phone Number:</h5>
+            <asp:TextBox ID="txtPhoneNumber" runat="server" Height="22px" Width="156px" CssClass="inputBox" OnTextChanged="txtPhoneNumber_TextChanged"></asp:TextBox><br /><br />
             <asp:ListBox ID="ListBox1" runat="server" Height="134px" Width="373px"></asp:ListBox> 
-        </div>
+        </div><br />
         <div>
-            <asp:Button ID="btnPurhchase" runat="server" Text="Purchase" PostBackUrl="~/Purchase.aspx"/>
-            <asp:Button ID="btnService" runat="server" Text="Service" PostBackUrl="~/Services.aspx" />
+            <asp:Button ID="btnPurhchase" runat="server" Text="Purchase" PostBackUrl="~/Purchase.aspx" CssClass="submitBtn"/>
+            <asp:Button ID="btnService" runat="server" Text="Service" PostBackUrl="~/Services.aspx" CssClass="submitBtn" />
         </div>
     </form>
 </body>
