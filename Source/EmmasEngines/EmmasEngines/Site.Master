@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="EmmasEngines.SiteMaster" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="EmmasEngines.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -55,8 +55,7 @@
                         <li><a runat="server" href="~/Repairs">Repairs</a></li>
                         <li><a runat="server" href="~/Sales">Sales</a></li>
                         <li><a runat="server" href="~/Services">Services</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/Login">Logout</a></li>
                     </ul>
                 </div>
             </div>
