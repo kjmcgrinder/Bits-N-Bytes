@@ -17,12 +17,10 @@
                 <h2 class="subScript">
                     Provide Login Information
                 </h2>
-                <asp:Label ID="lblUsername" runat="server" Text="Username: "></asp:Label><br />
-                <asp:TextBox ID="txtUsername" runat="server" CssClass="inputBox" Height="34px" Width="270px"></asp:TextBox><br />
-                <asp:Label ID="lblPassword" runat="server" Text="Password:   "></asp:Label><br />
-                <asp:TextBox ID="txtPassword" runat="server" CssClass="inputBox" Height="34px" Width="270px" TextMode="Password"></asp:TextBox><br />
-                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Register.aspx">Register Here</asp:HyperLink>
-                <br />
+                <asp:Label ID="lblUsername" runat="server" Text="Username: " ></asp:Label><br />
+                <asp:TextBox ID="txtUsername" runat="server" CssClass="inputBox" Height="34px" Width="270px" value="kang"></asp:TextBox><br />
+                <asp:Label ID="lblPassword" runat="server" Text="Password:   " ></asp:Label><br />
+                <asp:TextBox ID="txtPassword" runat="server" CssClass="inputBox" Height="34px" Width="270px" TextMode="Password" value="password"></asp:TextBox><br />
                 <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" CssClass="submitBtn" Height="48px" Width="144px" /><br />
                 <asp:Label ID="lblResult" runat="server"></asp:Label>
         </form>
