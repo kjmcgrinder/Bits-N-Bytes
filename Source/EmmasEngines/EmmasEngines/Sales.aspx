@@ -15,6 +15,16 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
+    <style type="text/css">
+        .auto-style2 {
+            width: 40%;
+            height: 83px;
+        }
+        .auto-style3 {
+            width: 421px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -62,27 +72,23 @@
                 </div>
             </div>
         </div>
-        <div>
+          <div>
             <h1>Sales</h1>
+            <h2>New Customer?</h2>
+            <asp:Button ID="btnCreate" runat="server" Text="Create Customer" PostBackUrl="~/UpdateCustomer.aspx"/>
         </div>
         
         <div>
-            <h2>Search Customer by last name: </h2>
+            <h2>Search Customer by Phone Number: </h2>
             <table class="auto-style3">
                 <tr>
-                    <td class="auto-style4">First Name: </td>
+                    <td class="auto-style4">Phone Number: </td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtPhoneNumber" runat="server" Height="22px" Width="156px"></asp:TextBox>
                     </td>
                     
                 </tr>
-                <tr>
-                    <td class="auto-style4">Last Name:</td>
-                    <td class="auto-style2">
-                        <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
-                    </td>
-                    
-                </tr>
+
                 <tr>
                     <td class="auto-style4">
                         <asp:Button ID="btnSearch" runat="server" Text="Search" />
@@ -92,15 +98,11 @@
             </table>
             <asp:ListBox ID="ListBox1" runat="server" Height="134px" Width="373px"></asp:ListBox> 
         </div>
-        <div>        
-        <asp:Button ID="btnCreateCustomer" runat="server" Text="Create" />
-        <asp:Button ID="btnUpdateCustomer" runat="server" Text="Update" />
-        <asp:Button ID="brnDeleteCustomer" runat="server" Text="Delete" />
-        </div>
         <div>
-            <h2>Customer's Details</h2>
-            <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px"></asp:DetailsView>
+            <asp:Button ID="btnPurhchase" runat="server" Text="Purchase" PostBackUrl="~/Purchase.aspx"/>
+            <asp:Button ID="btnService" runat="server" Text="Service" PostBackUrl="~/Services.aspx" />
         </div>
     </form>
 </body>
+   
 </html>

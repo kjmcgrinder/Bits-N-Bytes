@@ -168,6 +168,9 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="App_Data\Emmas.mdf" />
+    <Content Include="App_Data\Emmas_log.ldf">
+      <DependentUpon>Emmas.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Users.mdf" />
     <Content Include="App_Data\Users_log.ldf">
       <DependentUpon>Users.mdf</DependentUpon>

@@ -12,7 +12,7 @@
         <div class="IndexCentering">
         <div>
             <asp:Image ID="Image1" runat="server" />
-            <h1 class ="IndexTitle">Emma’s Small Engines</h1>
+            <h1 class ="IndexTitle">Emma&#39;s Small Engines</h1>
         </div>
         <div>
             <asp:LinkButton ID="LinkButton1" runat="server" CssClass="IndexButton" PostBackUrl="~/Login.aspx">Login Here</asp:LinkButton>
