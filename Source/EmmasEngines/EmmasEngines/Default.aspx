@@ -3,7 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>Welcome!</h1>
+        
+        <h1>Welcome User!</h1>
         <p class="lead">This is the central hub for Emma's Small Engines</p>
     </div>
 
