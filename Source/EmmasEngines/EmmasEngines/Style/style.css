@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 .IndexTitle {
     font-family: 'Roboto', sans-serif;
     font-size: 32px;
@@ -36,4 +36,37 @@
     text-align:center;
     align-content: center;
 }
+.IndexBackground {
+    background-image: url('../images/macro-1452987_1920.jpg');
+}
+.inputBox {
+    padding: 12px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.submitBtn {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    background-color: green;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+.submitBtn:hover {
+        background-color: darkgreen;
+    }
+
+.subScript {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
 
