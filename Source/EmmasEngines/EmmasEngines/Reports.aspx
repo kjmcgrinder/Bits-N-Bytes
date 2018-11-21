@@ -19,14 +19,6 @@
 
 <body>
     <header>
-        <nav id="nav">
-            <ul>
-                <li><a href="home.aspx">Home</a></li>
-                <li><a href="login.aspx">Login</a></li>
-                <li><a href="services.aspx">Services</a></li>
-                <li><a href="reports.aspx">Reports</a></li>
-            </ul>
-        </nav>
 
         <h1>Reports</h1>
     </header>
