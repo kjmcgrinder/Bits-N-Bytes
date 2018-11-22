@@ -54,7 +54,7 @@
                 Check all of your inventory here.
             </p>
             <p>--%>
-                <a class="btn btn-default" href="Inventory.aspx">Get Started &raquo;</a>
-            </p>
+                <%--<a class="btn btn-default" href="Inventory.aspx">Get Started &raquo;</a>--%>
+           <%-- </p>--%>
         </div>
 </asp:Content>
