@@ -14,18 +14,18 @@
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #9b9b9b;
+    background-color: forestgreen;
     border-radius: 15px;
     box-shadow: 0 9px #3a3a3a;
     margin: 25% auto;
 }
 
     .IndexButton:hover {
-        background-color: #707070
+        background-color: green
     }
 
     .IndexButton:active {
-        background-color: #3a3a3a;
+        background-color: darkgreen;
         box-shadow: 0 5px #666;
         transform: translateY(4px);
     }
