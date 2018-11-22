@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %>- My ASP.NET Application</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -63,8 +63,7 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/Sales">Sales</a></li>
                         <li><a runat="server" href="~/Services">Services</a></li>
-                        <%--<li><a runat="server" href="~/Orders">Orders</a></li>
-                        <li><a runat="server" href="~/Repairs">Repairs</a></li>--%>
+                            <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                         <li><a runat="server" href="~/Login">Logout</a></li>
                     </ul>
                 </div>
@@ -78,24 +77,11 @@
         
         <div>
             <h2 class="IndexTitle">Search Customer by Phone Number: </h2><br />
-           <%-- <table class="auto-style3">
-                <tr>
-                    <td class="auto-style4">Phone Number: </td>
-                    <td class="auto-style2">
-                        <asp:TextBox ID="txtPhoneNumber" runat="server" Height="22px" Width="156px"></asp:TextBox>
-                    </td>
-                    
-                </tr>
-
-                <tr>
-                    <td class="auto-style4">
-                        <asp:Button ID="btnSearch" runat="server" Text="Search" />
-                    </td>
-                    <td class="auto-style2">&nbsp;</td>                   
-                </tr>
-            </table>--%>
-            <h5 class="subScript">Phone Number:</h5>
-            <asp:TextBox ID="txtPhoneNumber" runat="server" Height="22px" Width="156px" CssClass="inputBox" OnTextChanged="txtPhoneNumber_TextChanged"></asp:TextBox><br /><br />
+            <%--Framework Scripts--%>
+            <h5 class="subScript">Phone Number:<br />
+            <asp:TextBox ID="txtPhoneNumber" runat="server" Width="168px" CssClass="inputBox" TextMode="Phone"></asp:TextBox>
+            </h5>
+            
             <asp:ListBox ID="ListBox1" runat="server" Height="202px" Width="530px"></asp:ListBox> 
         </div><br />
         <div>
