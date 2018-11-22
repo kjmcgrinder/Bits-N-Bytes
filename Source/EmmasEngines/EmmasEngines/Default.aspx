@@ -4,7 +4,9 @@
 
     <div class="jumbotron">
         
-        <h1>Welcome User!</h1>
+        <% string name = User.Identity.Name.ToString(); %>
+
+        <h1>Welcome <%{ Response.Write(name.ToString()); } %> </h1>
         <p class="lead">This is the central hub for Emma's Small Engines</p>
     </div>
 
@@ -55,6 +57,4 @@
                 <a class="btn btn-default" href="Inventory.aspx">Get Started &raquo;</a>
             </p>
         </div>
-    </div>
-
 </asp:Content>
