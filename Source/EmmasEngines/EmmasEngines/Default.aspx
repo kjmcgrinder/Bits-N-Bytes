@@ -39,7 +39,7 @@
             </p>
         </div>
                 <div class="col-md-4">
-            <h2>Users</h2>
+            <%--<h2>Users</h2>
             <p>
                 Control all of your users here.
             </p>
@@ -53,7 +53,7 @@
             <p>
                 Check all of your inventory here.
             </p>
-            <p>
+            <p>--%>
                 <a class="btn btn-default" href="Inventory.aspx">Get Started &raquo;</a>
             </p>
         </div>
