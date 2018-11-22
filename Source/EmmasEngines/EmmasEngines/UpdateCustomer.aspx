@@ -59,13 +59,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Emma's Small Engines</a>
+                    <a class="navbar-brand" runat="server" href="~/">Services</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/Sales">Sales</a></li>
                         <li><a runat="server" href="~/Services">Services</a></li>
-                            <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                        <li><a runat="server" href="~/Users">Users</a></li>
+                        <li><a runat="server" href="~/Inventory">Inventory</a></li>
+                        <%--<li><a runat="server" href="~/Orders">Orders</a></li>
+                        <li><a runat="server" href="~/Repairs">Repairs</a></li>--%>
                         <li><a runat="server" href="~/Login">Logout</a></li>
                     </ul>
                 </div>

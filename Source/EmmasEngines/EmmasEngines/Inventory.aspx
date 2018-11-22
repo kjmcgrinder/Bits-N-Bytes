@@ -53,6 +53,17 @@
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">Emma's Small Engines</a>
                 </div>
+                                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/Sales">Sales</a></li>
+                        <li><a runat="server" href="~/Services">Services</a></li>
+                        <li><a runat="server" href="~/Users">Users</a></li>
+                        <li><a runat="server" href="~/Inventory">Inventory</a></li>
+                        <%--<li><a runat="server" href="~/Orders">Orders</a></li>
+                        <li><a runat="server" href="~/Repairs">Repairs</a></li>--%>
+                        <li><a runat="server" href="~/Login">Logout</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         </form>

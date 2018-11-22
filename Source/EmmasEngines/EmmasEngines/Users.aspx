@@ -54,6 +54,8 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/Sales">Sales</a></li>
                         <li><a runat="server" href="~/Services">Services</a></li>
+                        <li><a runat="server" href="~/Users">Users</a></li>
+                        <li><a runat="server" href="~/Inventory">Inventory</a></li>
                         <%--<li><a runat="server" href="~/Orders">Orders</a></li>
                         <li><a runat="server" href="~/Repairs">Repairs</a></li>--%>
                         <li><a runat="server" href="~/Login">Logout</a></li>
@@ -63,8 +65,8 @@
         </div>
     <div class="IndexCentering">
     <section>
-        <a href="Repairs.aspx"><h2>Employees</h2></a>
-        <a href="Reports.aspx"><h2>Customers</h2></a>
+        <a href="Employees.aspx"><h2>Employees</h2></a>
+        <a href="SearchCustomer.aspx"><h2>Search Customers</h2></a>
     </section>
 
     <section>

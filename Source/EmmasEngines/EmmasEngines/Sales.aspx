@@ -63,7 +63,10 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/Sales">Sales</a></li>
                         <li><a runat="server" href="~/Services">Services</a></li>
-                            <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                        <li><a runat="server" href="~/Users">Users</a></li>
+                        <li><a runat="server" href="~/Inventory">Inventory</a></li>
+                        <%--<li><a runat="server" href="~/Orders">Orders</a></li>
+                        <li><a runat="server" href="~/Repairs">Repairs</a></li>--%>
                         <li><a runat="server" href="~/Login">Logout</a></li>
                     </ul>
                 </div>
