@@ -19,7 +19,7 @@
 
 <body>
     <header>
-        <h1>Repairs</h1>
+        <h1>Order Form</h1>
     </header>
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -49,28 +49,42 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Services</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Sales">Sales</a></li>
-                        <li><a runat="server" href="~/Services">Services</a></li>
-                        <%--<li><a runat="server" href="~/Orders">Orders</a></li>
-                        <li><a runat="server" href="~/Repairs">Repairs</a></li>--%>
-                        <li><a runat="server" href="~/Login">Logout</a></li>
-                    </ul>
+                    </button>S
                 </div>
             </div>
-        </div>
+            <</div>
         </form>
     <section>
-        <h2>Repairs</h2>
+        <p>
+            <asp:Label ID="lblPart" runat="server" Text="Part:"></asp:Label> <%--Part--%>
+            <asp:TextBox ID="txtPart" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            <asp:Label ID="lblStatus" runat="server" Text="Status:"></asp:Label> <%--Status--%>
+            <asp:TextBox ID="txtStatus" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            <asp:Label ID="lblQuantity" runat="server" Text="Quantity:"></asp:Label> <%--Quantity--%>
+            <asp:TextBox ID="txtQuantity" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            <asp:Label ID="lblProduct" runat="server" Text="Product:"></asp:Label> <%--Product #--%>
+            <asp:TextBox ID="txtProduct" runat="server"></asp:TextBox>
+        </p>
     </section>
 
     <section>
-        <h3>Details/Delete Navigation   </h3>
+        <asp:Label ID="lblOrderNumber" runat="server" Text="Order Number:"></asp:Label> <%--Order Number--%>
+        <asp:TextBox ID="txtOrderNumber" runat="server"></asp:TextBox>
+        <asp:FormView ID="FormView1" runat="server"></asp:FormView> 
+        <br />
+        <br />
     </section>
+
+        <section>
+            <asp:Button ID="btnConfirm" runat="server" Text="Confirm" />
+            <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+        </section>
 
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
