@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Repairs.aspx.cs" Inherits="EmmasEngines.Repairs" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Repairs.aspx.cs" Inherits="EmmasEngines.Repairs" %>
 
 <!DOCTYPE html>
 
@@ -54,13 +54,11 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/Orders">Orders</a></li>
-                        <li><a runat="server" href="~/Repairs">Repairs</a></li>
                         <li><a runat="server" href="~/Sales">Sales</a></li>
                         <li><a runat="server" href="~/Services">Services</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <%--<li><a runat="server" href="~/Orders">Orders</a></li>
+                        <li><a runat="server" href="~/Repairs">Repairs</a></li>--%>
+                        <li><a runat="server" href="~/Login">Logout</a></li>
                     </ul>
                 </div>
             </div>
