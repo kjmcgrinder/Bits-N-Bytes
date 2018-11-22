@@ -7,6 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
+<link href="Style/style.css" rel="stylesheet" />
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -47,7 +48,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Services</a>
+                    <a class="navbar-brand" runat="server" href="~/">Emma's Small Engines</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -60,14 +61,15 @@
                 </div>
             </div>
         </div>
+    <div class="IndexCentering">
     <section>
-        <h2><a href="repairs.aspx">Repairs</a></h2>
-        <h2>Reports</h2>
+        <a href="Repairs.aspx"><h2>Repairs</h2></a>
+        <a href="Reports.aspx"><h2>Reports</h2></a>
     </section>
 
     <section>
-        <h3>Navigation</h3>
     </section>
+    </div>
         </form>
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
