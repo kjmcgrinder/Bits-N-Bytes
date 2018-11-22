@@ -57,7 +57,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Services</a>
+                    <a class="navbar-brand" runat="server" href="~/">Emma's Small Engines</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -72,7 +72,7 @@
         </div>
           <div><br /><br />
             <h1 class="IndexTitle">Sales</h1><br />
-            <h2>New Customer?</h2>
+            <h2 class="IndexSubTitle">New Customer?</h2>
             <asp:Button ID="btnCreate" runat="server" Text="Create Customer" PostBackUrl="~/UpdateCustomer.aspx" CssClass="submitBtn"/>
         </div>
         
@@ -96,7 +96,7 @@
             </table>--%>
             <h5 class="subScript">Phone Number:</h5>
             <asp:TextBox ID="txtPhoneNumber" runat="server" Height="22px" Width="156px" CssClass="inputBox" OnTextChanged="txtPhoneNumber_TextChanged"></asp:TextBox><br /><br />
-            <asp:ListBox ID="ListBox1" runat="server" Height="134px" Width="373px"></asp:ListBox> 
+            <asp:ListBox ID="ListBox1" runat="server" Height="202px" Width="530px"></asp:ListBox> 
         </div><br />
         <div>
             <asp:Button ID="btnPurhchase" runat="server" Text="Purchase" PostBackUrl="~/Purchase.aspx" CssClass="submitBtn"/>
