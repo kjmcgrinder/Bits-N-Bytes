@@ -54,10 +54,12 @@
                         <li><a runat="server" href="~/Services">Services</a></li>
                         <%--<li><a runat="server" href="~/Orders">Orders</a></li>
                         <li><a runat="server" href="~/Repairs">Repairs</a></li>--%>
-                        <li><a runat="server" href="~/Login">Logout</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" href="~/Login"><asp:Label runat="server" ID="lblLogin"></asp:Label></a></li>
                     </ul>
                 </div>
-            </div>
+            </div>            
         </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

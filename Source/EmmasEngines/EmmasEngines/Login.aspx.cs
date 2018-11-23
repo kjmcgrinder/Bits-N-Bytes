@@ -13,7 +13,8 @@ namespace EmmasEngines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+                Response.Redirect("~/Default");
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
