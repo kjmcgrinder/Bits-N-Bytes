@@ -12,13 +12,16 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
 
 <body class="IndexCentering">
-    <header><br /><br /><br />
+    <header>
+        <br />
+        <br />
+        <br />
         <h1 class="IndexTitle">Order Form</h1>
     </header>
     <form runat="server">
@@ -63,43 +66,51 @@
                     </ul>
                 </div>
             </div>
-            </div>
-        </form>
-    <section class ="IndexCentering">
-        <p>
-            <asp:Label ID="lblPart" runat="server" Text="Part:" CssClass="subScript"></asp:Label> <%--Part--%><br />
-            <asp:TextBox ID="txtPart" runat="server" CssClass="inputBox"></asp:TextBox>
-        </p>
-        <p>
-            <asp:Label ID="lblStatus" runat="server" Text="Status:" CssClass="subScript"></asp:Label> <%--Status--%><br />
-            <asp:TextBox ID="txtStatus" runat="server" CssClass="inputBox"></asp:TextBox>
-        </p>
-        <p>
-            <asp:Label ID="lblQuantity" runat="server" Text="Quantity:" CssClass="subScript"></asp:Label> <%--Quantity--%><br />
-            <asp:TextBox ID="txtQuantity" runat="server" CssClass="inputBox"></asp:TextBox>
-        </p>
-        <p>
-            <asp:Label ID="lblProduct" runat="server" Text="Product:" CssClass="subScript"></asp:Label> <%--Product #--%><br />
-            <asp:TextBox ID="txtProduct" runat="server" CssClass="inputBox"></asp:TextBox>
-        </p>
-    </section>
+        </div>
 
-    <section>
-        <asp:Label ID="lblOrderNumber" runat="server" Text="Order Number:" CssClass="subScript"></asp:Label> <%--Order Number--%><br />
-        <asp:TextBox ID="txtOrderNumber" runat="server" CssClass="inputBox"></asp:TextBox>
-        <asp:FormView ID="FormView1" runat="server"></asp:FormView> 
-        <br />
-        <br />
-    </section>
+        <section class="IndexCentering">
+            <p>
+                <asp:Label ID="lblPart" runat="server" Text="Part:" CssClass="subScript"></asp:Label>
+                <%--Part--%><br />
+                <asp:TextBox ID="txtPart" runat="server" CssClass="inputBox"></asp:TextBox>
+            </p>
+            <p>
+                <asp:Label ID="lblStatus" runat="server" Text="Status:" CssClass="subScript"></asp:Label>
+                <%--Status--%><br />
+                <asp:TextBox ID="txtStatus" runat="server" CssClass="inputBox"></asp:TextBox>
+            </p>
+            <p>
+                <asp:Label ID="lblQuantity" runat="server" Text="Quantity:" CssClass="subScript"></asp:Label>
+                <%--Quantity--%><br />
+                <asp:TextBox ID="txtQuantity" runat="server" CssClass="inputBox"></asp:TextBox>
+            </p>
+            <p>
+                <asp:Label ID="lblProduct" runat="server" Text="Product:" CssClass="subScript"></asp:Label>
+                <%--Product #--%><br />
+                <asp:TextBox ID="txtProduct" runat="server" CssClass="inputBox"></asp:TextBox>
+            </p>
+        </section>
+
+        <section>
+            <asp:Label ID="lblOrderNumber" runat="server" Text="Order Number:" CssClass="subScript"></asp:Label>
+            <%--Order Number--%><br />
+            <asp:TextBox ID="txtOrderNumber" runat="server" CssClass="inputBox"></asp:TextBox>
+            <asp:FormView ID="FormView1" runat="server"></asp:FormView>
+            <br />
+            <br />
+        </section>
 
         <section>
             <asp:Button ID="btnConfirm" runat="server" Text="Confirm" CssClass="IndexButton" />
             <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="IndexButton" />
-        </section><br /><br /><br />
+        </section>
+        <br />
+        <br />
+        <br />
 
-    <footer>
-        <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
-    </footer>
-
+        <footer>
+            <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
+        </footer>
+    </form>
 </body>
 </html>

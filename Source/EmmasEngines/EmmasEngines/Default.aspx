@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        
+
         <% string name = User.Identity.Name.ToString(); %>
 
         <h1>Welcome <%{ Response.Write(name.ToString()); } %> </h1>
@@ -38,7 +38,7 @@
                 <a class="btn btn-default" href="Sales.aspx">Get Started &raquo;</a>
             </p>
         </div>
-                <div class="col-md-4">
+        <div class="col-md-4">
             <%--<h2>Users</h2>
             <p>
                 Control all of your users here.
@@ -54,7 +54,8 @@
                 Check all of your inventory here.
             </p>
             <p>--%>
-                <%--<a class="btn btn-default" href="Inventory.aspx">Get Started &raquo;</a>--%>
-           <%-- </p>--%>
+            <%--<a class="btn btn-default" href="Inventory.aspx">Get Started &raquo;</a>--%>
+            <%-- </p>--%>
         </div>
+    </div>
 </asp:Content>
