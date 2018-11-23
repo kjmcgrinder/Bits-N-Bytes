@@ -14,7 +14,7 @@
         <div class="col-md-4">
             <h2>Orders</h2>
             <p>
-                View all of your orders here.
+                Complete all of your orders here.
             </p>
             <p>
                 <a class="btn btn-default" href="Orders.aspx">Get Started &raquo;</a>
