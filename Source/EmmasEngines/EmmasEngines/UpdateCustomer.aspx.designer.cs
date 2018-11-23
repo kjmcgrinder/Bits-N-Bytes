@@ -76,24 +76,6 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.Button btnCreateCustomer;
         
         /// <summary>
-        /// btnUpdateCustomer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdateCustomer;
-        
-        /// <summary>
-        /// brnDeleteCustomer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button brnDeleteCustomer;
-        
-        /// <summary>
         /// btnPurchaseHistory control.
         /// </summary>
         /// <remarks>

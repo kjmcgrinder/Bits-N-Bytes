@@ -110,8 +110,7 @@
                      </tr>
                  </table>
                  <asp:Button ID="btnCreateCustomer" runat="server" Text="Create" CssClass="submitBtn" />
-                 <asp:Button ID="btnUpdateCustomer" runat="server" Text="Update" CssClass="submitBtn" />
-                 <asp:Button ID="brnDeleteCustomer" runat="server" Text="Delete" CssClass="submitBtn" />
+                 
              </div>
              <div>
                  <asp:Button ID="btnPurchaseHistory" runat="server" Text="Purchase History" CssClass="submitBtn" />
