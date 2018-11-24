@@ -11,8 +11,8 @@
         <div>
             <h1>Welcome Admin:</h1>
             <%--Btns could take the biggest part of the screen as in the ppt--%>
-            <asp:Button ID="btnUser" runat="server" Text="User Management"PostBackUrl="~/Users.aspx" /><%--Look up of users --%>
-            <asp:Button ID="btnReports" runat="server" Text="Weekly Reports" PostBackUrl="~/Services.aspx"/> <%--weekly reports--%>
+            <asp:Button ID="btnUser" runat="server" Text="User Management" PostBackUrl="~/Users.aspx" /><%--Look up of users --%>
+            <asp:Button ID="btnReports" runat="server" Text="Weekly Reports" PostBackUrl="~/Reports.aspx"/> <%--weekly reports--%>
         </div>
     </form>
 </body>
