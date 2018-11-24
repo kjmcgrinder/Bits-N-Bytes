@@ -65,10 +65,27 @@
                 </div>
             </div>
         </div>
-        </form>
     <section>
-        <h2>Being Ready...</h2>
+            <asp:Label ID="lblStatus" runat="server" Text="Status"></asp:Label> <%--In stock or Out Of Stock--%>
+
+            :<br />
+
+            Product&nbsp; Name:
+            <asp:TextBox ID="txtProdName" runat="server" ReadOnly="True"></asp:TextBox>
+
+            <br />
+            <br />
+            Quantity:
+            <input id="txtQuantity" type="number" /><br />
+
+
+            <br />
+
     </section>
+
+
+
+        </form>
 
 
 
