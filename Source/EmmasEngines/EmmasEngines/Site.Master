@@ -57,6 +57,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" href="~/Login"><asp:Label runat="server" ID="lblLogin"></asp:Label></a></li>
+                        <li><asp:LinkButton runat="server" Text="Logout" OnClick="Logout"></asp:LinkButton></li>
                     </ul>
                 </div>
             </div>            

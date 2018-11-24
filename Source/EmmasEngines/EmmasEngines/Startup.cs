@@ -16,9 +16,9 @@ namespace EmmasEngines
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                CookieName = "MovieCookie",
-                LoginPath = new PathString("/LogIn"),
-                LogoutPath = new PathString("/LogIn"),
+                CookieName = "EngineCookie",
+                LoginPath = new PathString("/Login"),
+                LogoutPath = new PathString("/Login"),
                 ExpireTimeSpan = TimeSpan.FromMinutes(5)
             });
         }
