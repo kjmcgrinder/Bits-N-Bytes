@@ -1,34 +1,49 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
-.IndexTitle {
-    font-family: 'Roboto', sans-serif;
-    font-size: 32px;
-    border-bottom: 2px solid black;
+html, body {
+    margin: 0;
 }
+
+.CStyle{
+    align-content:center;
+    width: 100%;
+    height:20%;
+
+}
+.IndexHeader{
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    border-bottom: 2px solid black;
+    background-color: #00BF07;
+    text-align: center;
+    width: 100%;
+    padding: 1%;
+    opacity: 0.8;
+    float: left;
+   
+}
+
 .IndexButton {
-    font-family: 'Open Sans', sans-serif;
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 24px;
-    cursor: pointer;
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    padding: 16px 32px;
     text-align: center;
     text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: forestgreen;
-    border-radius: 15px;
-    box-shadow: 0 9px #3a3a3a;
-    margin: 25% auto;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration:none;
 }
 
     .IndexButton:hover {
-        background-color: green
+        background-color: #4CAF50;
+        color: white;
     }
 
-    .IndexButton:active {
-        background-color: darkgreen;
-        box-shadow: 0 5px #666;
-        transform: translateY(4px);
-    }
 .IndexCentering {
     margin: auto;
     width: 50%;
@@ -37,7 +52,7 @@
     align-content: center;
 }
 .IndexBackground {
-    background-image: url('../images/macro-1452987_1920.jpg');
+    background-color: #007F05;
 }
 .inputBox {
     padding: 12px 20px;
