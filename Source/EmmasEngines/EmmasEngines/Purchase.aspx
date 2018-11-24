@@ -52,6 +52,7 @@
                  </table>
             <asp:Button ID="btnUpdateCustomer" runat="server" Text="Update" CssClass="submitBtn" />
 
+            <%--If there is not a product on the inventory This will redirect us to the ordering page--%>
             <asp:Button ID="btnInvoice" runat="server" Text="Invoice" PostBackUrl="~/Invoice.aspx" />
 
             <h2>Previous Purchases</h2>

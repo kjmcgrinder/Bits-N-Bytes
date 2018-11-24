@@ -13,6 +13,10 @@
             <%--Btns could take the biggest part of the screen as in the ppt--%>
             <asp:Button ID="btnUser" runat="server" Text="User Management" PostBackUrl="~/Users.aspx" /><%--Look up of users --%>
             <asp:Button ID="btnReports" runat="server" Text="Weekly Reports" PostBackUrl="~/Reports.aspx"/> <%--weekly reports--%>
+
+            This Year we have collected:
+
+            <asp:Label ID="lbl" runat="server" Text="Label"></asp:Label>
         </div>
     </form>
 </body>
