@@ -100,6 +100,14 @@
                              <asp:TextBox ID="TextBox7" runat="server" CssClass="inputBox" Width="209px"></asp:TextBox>
                          </td>
                      </tr>
+                     <tr>               
+                         <td class="subScript">Position</td>    
+                         <td>
+                             <%--ddl to select a position from the position table.--%>
+                             <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                         </td>
+                     </tr>
+
                  </table>
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                  <asp:Button ID="btnCreateCustomer" runat="server" Text="Create" CssClass="submitBtn" />

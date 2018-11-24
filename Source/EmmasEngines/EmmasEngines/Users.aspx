@@ -64,11 +64,16 @@
         </div>
     <div class="IndexCentering">
     <section>
-        <a href="Employees.aspx"><h2>Employees</h2></a>
-        <a href="SearchCustomer.aspx"><h2>Search Customers</h2></a>
+        <a href="Employees.aspx"><h2>Create new employee</h2></a>      
     </section>
+      
 
     <section>
+        <h2>Search Employees</h2>
+        <%--Ddl to find employee by department:--%>
+        <asp:DropDownList ID="ddlDeparment" runat="server"></asp:DropDownList>
+        <%--Grid view to see the list of the emplooyees and be able to edit(NEed to add ddl to choose position after the data set is placed)--%>
+        <asp:GridView ID="gvEmployees" runat="server"></asp:GridView>
     </section>
     </div>
         </form>
