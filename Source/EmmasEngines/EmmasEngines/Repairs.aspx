@@ -74,8 +74,8 @@
         <h3>Manufacturer:</h3>
         <asp:DropDownList ID="ddlManufacturer" runat="server"></asp:DropDownList>
         <h3>Warranty?</h3> <asp:CheckBox ID="cbWarranty" runat="server" /> Yes <br />
-        <asp:Button ID="btnSubmit" runat="server" Text="Submit" PostBackUrl="~/RepairsDeparment.aspx" />
-
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" <%--PostBackUrl="~/RepairsDeparment.aspx"--%> />
+        
         
 
     </section>
