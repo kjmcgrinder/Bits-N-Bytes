@@ -49,13 +49,13 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.ListBox ListBox1;
         
         /// <summary>
-        /// btnPurhchase control.
+        /// btnPurchhase control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPurhchase;
+        protected global::System.Web.UI.WebControls.Button btnPurchhase;
         
         /// <summary>
         /// btnService control.
@@ -65,5 +65,14 @@ namespace EmmasEngines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnService;
+        
+        /// <summary>
+        /// btnRepairs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRepairs;
     }
 }

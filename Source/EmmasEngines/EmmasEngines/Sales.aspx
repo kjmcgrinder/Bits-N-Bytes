@@ -88,8 +88,9 @@
            
         </div><br />
         <div>
-            <asp:Button ID="btnPurhchase" runat="server" Text="Purchase" PostBackUrl="~/Purchase.aspx" CssClass="submitBtn"/>
+            <asp:Button ID="btnPurchhase" runat="server" Text="Purchase" PostBackUrl="~/Purchase.aspx" CssClass="submitBtn"/>
             <asp:Button ID="btnService" runat="server" Text="Service" PostBackUrl="~/Services.aspx" CssClass="submitBtn" />
+            <asp:Button ID="btnRepairs" runat="server" Text="Service" PostBackUrl="~/Repairs.aspx" CssClass="submitBtn" />
         </div>
     </form>
 </body>

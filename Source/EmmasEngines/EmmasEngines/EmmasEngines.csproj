@@ -204,6 +204,7 @@
     <Content Include="Inventory.aspx" />
     <Content Include="Invoice.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="OrderDepartment.aspx" />
     <Content Include="Orders.aspx" />
     <Content Include="Purchase.aspx" />
     <Content Include="Register.aspx" />
@@ -323,6 +324,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDepartment.aspx.cs">
+      <DependentUpon>OrderDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderDepartment.aspx.designer.cs">
+      <DependentUpon>OrderDepartment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Orders.aspx.cs">
       <DependentUpon>Orders.aspx</DependentUpon>

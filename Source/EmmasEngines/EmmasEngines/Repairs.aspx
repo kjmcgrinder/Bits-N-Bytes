@@ -64,18 +64,29 @@
                 </div>
             </div>
         </div>
-        </form>
+        
     <section>
-        <h2>Repairs</h2>
-    </section>
+        <h3>Description of the problem:</h3>
+        <textarea id="txtDespcription" cols="20" rows="2"></textarea>
+        <h3>Equiment:</h3> 
+        <asp:TextBox ID="txtEquiment" runat="server"></asp:TextBox> 
+        <%--Name of the manufacturer from the manufacturer table--%>
+        <h3>Manufacturer:</h3>
+        <asp:DropDownList ID="ddlManufacturer" runat="server"></asp:DropDownList>
+        <h3>Warranty?</h3> <asp:CheckBox ID="cbWarranty" runat="server" /> Yes <br />
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" PostBackUrl="~/RepairsDeparment.aspx" />
 
+        
+
+    </section>
+    </form>
     <section>
-        <h3>Details/Delete Navigation   </h3>
+        <%--<h3>Details/Delete Navigation</h3>--%>
     </section>
 
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
     </footer>
-
+    
 </body>
 </html>
