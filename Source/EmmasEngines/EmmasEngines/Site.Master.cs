@@ -19,5 +19,12 @@ namespace EmmasEngines
             else
                 lblLogin.Text = "Login";
         }
+
+        protected void Logout(object sender, EventArgs e)
+        {
+            var AuthenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+            AuthenticationManager.SignOut();
+            Response.Redirect("~/Login.aspx");
+        }
     }
 }
