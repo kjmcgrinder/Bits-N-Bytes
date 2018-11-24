@@ -209,6 +209,7 @@
     <Content Include="Purchase.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Repairs.aspx" />
+    <Content Include="RepairsDeparment.aspx" />
     <Content Include="Reports.aspx" />
     <Content Include="Sales.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -360,6 +361,13 @@
     </Compile>
     <Compile Include="Repairs.aspx.designer.cs">
       <DependentUpon>Repairs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDeparment.aspx.cs">
+      <DependentUpon>RepairsDeparment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepairsDeparment.aspx.designer.cs">
+      <DependentUpon>RepairsDeparment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reports.aspx.cs">
       <DependentUpon>Reports.aspx</DependentUpon>

@@ -69,7 +69,7 @@
       
 
     <section>
-        <h2>Search Employees</h2>
+        <h2>Search Employees by Deparment</h2>
         <%--Ddl to find employee by department:--%>
         <asp:DropDownList ID="ddlDeparment" runat="server"></asp:DropDownList>
         <%--Grid view to see the list of the emplooyees and be able to edit(NEed to add ddl to choose position after the data set is placed)--%>

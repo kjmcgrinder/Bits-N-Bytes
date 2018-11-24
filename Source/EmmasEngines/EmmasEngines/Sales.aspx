@@ -84,13 +84,13 @@
             <asp:TextBox ID="txtPhoneNumber" runat="server" Width="168px" CssClass="inputBox" TextMode="Phone"></asp:TextBox>
             </h5>
             
-            <asp:ListBox ID="ListBox1" runat="server" Height="202px" Width="530px"></asp:ListBox> 
+            <asp:ListBox ID="lbCustomers" runat="server" Height="202px" Width="530px"></asp:ListBox> 
            
         </div><br />
         <div>
             <asp:Button ID="btnPurchhase" runat="server" Text="Purchase" PostBackUrl="~/Purchase.aspx" CssClass="submitBtn"/>
             <asp:Button ID="btnService" runat="server" Text="Service" PostBackUrl="~/Services.aspx" CssClass="submitBtn" />
-            <asp:Button ID="btnRepairs" runat="server" Text="Service" PostBackUrl="~/Repairs.aspx" CssClass="submitBtn" />
+            <asp:Button ID="btnRepairs" runat="server" Text="Repairs" PostBackUrl="~/Repairs.aspx" CssClass="submitBtn" />
         </div>
     </form>
 </body>
