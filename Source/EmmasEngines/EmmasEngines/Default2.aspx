@@ -33,20 +33,20 @@
           <a class="dropdown-item" href="SearchCustomer.aspx">Customer Management</a>
         </div>
       </li> 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Services
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="Repairs.aspx">Repairs</a>
-          <a class="dropdown-item" href="Reports.aspx">Reports</a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="Repairs.aspx">Repairs</a>
       </li> 
         <li class="nav-item">
-        <a class="nav-link" href="Users.aspx">Users</a>
-      </li>
-        <li class="nav-item">
         <a class="nav-link" href="Inventory.aspx">Inventory</a>
+      </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Admin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="Repairs.aspx">User Management</a>
+          <a class="dropdown-item" href="Reports.aspx">Reports</a>
+        </div>
       </li>
     </ul>
         <a class="nav-link" href="Login.aspx">Logout</a>
