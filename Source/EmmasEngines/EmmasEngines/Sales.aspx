@@ -18,7 +18,7 @@
 
 <body class="secondary">
     
-    <!--Nav Bar-->
+        <!--Nav Bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Emma's Small Engines</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,23 +30,29 @@
       <li class="nav-item">
         <a class="nav-link" href="Default2.aspx">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Sales.aspx">Sales</a>
-      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Services
+         Sales
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="Repairs.aspx">Repairs</a>
-          <a class="dropdown-item" href="Reports.aspx">Reports</a>
+          <a class="dropdown-item" href="Sale-Repair.aspx">Sale / Repair</a>
+          <a class="dropdown-item" href="SearchCustomer.aspx">Customer Management</a>
         </div>
       </li> 
-        <li class="nav-item">
-        <a class="nav-link" href="Users.aspx">Users</a>
-      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Repairs.aspx">Repairs</a>
+      </li> 
         <li class="nav-item">
         <a class="nav-link" href="Inventory.aspx">Inventory</a>
+      </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Admin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="Repairs.aspx">User Management</a>
+          <a class="dropdown-item" href="Reports.aspx">Reports</a>
+        </div>
       </li>
     </ul>
         <a class="nav-link" href="Login.aspx">Logout</a>
