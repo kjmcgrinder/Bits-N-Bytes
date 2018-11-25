@@ -195,6 +195,7 @@
     <Content Include="Images\gears-1236578_1920.jpg" />
     <Content Include="Images\macro-1452987_1920%281%29.jpg" />
     <Content Include="Images\motor-768750_1920.jpg" />
+    <Content Include="Repair-Details.aspx" />
     <Content Include="Repairs.aspx" />
     <Content Include="Sale-Repair.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -366,6 +367,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repair-Details.aspx.cs">
+      <DependentUpon>Repair-Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repair-Details.aspx.designer.cs">
+      <DependentUpon>Repair-Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Repairs-Form.aspx.cs">
       <DependentUpon>Repairs-Form.aspx</DependentUpon>
