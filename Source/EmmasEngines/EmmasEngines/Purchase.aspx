@@ -9,16 +9,26 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <h1>Purchase</h1>
+            <h1 class="IndexHeaderA">Purchase</h1>
 
-            <h2 class="IndexSubTitle"> Select Product:  </h2>
-            <asp:DropDownList ID="ddlProduct" runat="server"></asp:DropDownList>
-            quantity: <asp:TextBox ID="txtQuantity" runat="server"></asp:TextBox>
+            <h2 class="subScript"> Select Product:</h2>
+            <h3>Search By Product Name:</h3>
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:Button ID="Button1" runat="server" Text="Search" />
+            <br />
+            <asp:ListBox ID="ListBox1" runat="server" Height="73px" Width="188px"></asp:ListBox>
+            <br />
+            Quantity: <br />
+            <asp:TextBox ID="txtQuantity" runat="server"></asp:TextBox><br />
 
-            <asp:Button ID="btnAdd" runat="server" Text="Add" />
-
-             <h2 class="IndexTitle">Customer Detail's</h2>
-                 <table class="IndexCentering">
+             <h2 class="IndexTitle">Customer:</h2>
+             <h3>Search By Customer Name:</h3>
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:Button ID="Button2" runat="server" Text="Search" />
+            <br />
+            <asp:ListBox ID="ListBox2" runat="server" Height="73px" Width="188px"></asp:ListBox>
+            <br />
+                <%-- <table class="IndexCentering">
                      <tr>
                          <td class="subScript">First Name:</td>
                          <td class="auto-style1">
@@ -49,11 +59,9 @@
                              <asp:TextBox ID="TextBox7" runat="server" CssClass="inputBox" Width="209px"></asp:TextBox>
                          </td>
                      </tr>
-                 </table>
-            <asp:Button ID="btnUpdateCustomer" runat="server" Text="Update" CssClass="submitBtn" />
+                 </table>--%>
 
             <%--If there is not a product on the inventory This will redirect us to the ordering page--%>
-            <asp:Button ID="btnInvoice" runat="server" Text="Invoice" PostBackUrl="~/Invoice.aspx" />
 
             <h2>Previous Purchases</h2>
 
@@ -63,6 +71,7 @@
 
 
         </div>
+        <asp:Button ID="Button3" runat="server" Text="Purchase" />
     </form>
 </body>
 </html>
