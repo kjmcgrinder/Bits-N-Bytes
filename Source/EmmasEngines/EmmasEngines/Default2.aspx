@@ -24,9 +24,15 @@
       <li class="nav-item">
         <a class="nav-link" href="Default2.aspx">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Sales.aspx">Sales</a>
-      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Sales
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="Sale-Repair.aspx">Sale / Repair</a>
+          <a class="dropdown-item" href="SearchCustomer.aspx">Customer Management</a>
+        </div>
+      </li> 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Services

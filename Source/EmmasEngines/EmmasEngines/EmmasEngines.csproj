@@ -198,6 +198,7 @@
     <Content Include="Images\gears-1236578_1920.jpg" />
     <Content Include="Images\macro-1452987_1920%281%29.jpg" />
     <Content Include="Images\motor-768750_1920.jpg" />
+    <Content Include="Sale-Repair.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -268,7 +269,6 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="SearchCustomer.aspx" />
-    <Content Include="Services.aspx" />
     <Content Include="Site.Master" />
     <Content Include="Style\style.css" />
     <Content Include="UpdateCustomer.aspx" />
@@ -411,6 +411,13 @@
     <Compile Include="Reports.aspx.designer.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Sale-Repair.aspx.cs">
+      <DependentUpon>Sale-Repair.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sale-Repair.aspx.designer.cs">
+      <DependentUpon>Sale-Repair.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Sales.aspx.cs">
       <DependentUpon>Sales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -424,13 +431,6 @@
     </Compile>
     <Compile Include="SearchCustomer.aspx.designer.cs">
       <DependentUpon>SearchCustomer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Services.aspx.cs">
-      <DependentUpon>Services.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Services.aspx.designer.cs">
-      <DependentUpon>Services.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
