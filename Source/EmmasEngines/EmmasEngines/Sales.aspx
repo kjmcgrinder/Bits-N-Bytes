@@ -16,7 +16,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="secondary">
     
     <!--Nav Bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -53,8 +53,9 @@
   </div>
 </nav>
     <!--Form-->
-    <form id="form1" runat="server" class="secondary">
-        <div><br /><br />
+    <div>
+    <form id="form1" runat="server">
+        <div "><br /><br />
             <h1 class="IndexTitle">Sales</h1><br />
             <h2 class="IndexSubTitle">New Customer?</h2><br />
             <asp:Button ID="btnCC" runat="server" Text="Create Customer" /><br /><br />
@@ -82,6 +83,7 @@
             <asp:Button ID="btnRepairs" runat="server" Text="Repairs" PostBackUrl="~/Repairs.aspx" CssClass="submitBtn" />--%>
         </div>
     </form>
+        </div>
 </body>
    
 </html>
