@@ -16,7 +16,7 @@
     
     <form id="form1" runat="server">
      
-        <div class="IndexHeader">
+        <div class="IndexHeaderB">
             <h1>Emma&#39;s Small Engines</h1>
         </div>
         <h2 class="subScriptIndex, IndexCentering">The <span class="badge badge-secondary">New</span> Central Hub for Emma's Small Engines</h2>

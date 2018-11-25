@@ -10,7 +10,7 @@
 <body>
     <div class="IndexCentering">
     <div>
-            <h1 class="IndexTitle">Login</h1>
+            <h1 class="IndexHeaderA">Login</h1>
     </div>
     <div>
         <form id="frmLogin" runat="server">      
