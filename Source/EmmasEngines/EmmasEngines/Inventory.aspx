@@ -62,7 +62,7 @@
         <a class="nav-link" href="Login.aspx">Logout</a>
   </div>
 </nav>
-    <form>
+    <form runat="server">
     <section>
             <asp:Label ID="lblStatus" runat="server" Text="Status"></asp:Label> <%--In stock or Out Of Stock--%>
 
@@ -80,13 +80,7 @@
             <br />
 
     </section>
-
-
-
         </form>
-
-
-
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
     </footer>
