@@ -9,6 +9,9 @@ html, body {
     height:20%;
 
 }
+.secondary {
+    background-color: #e9ecef;
+}
 .logout{
     float: right;
 }

@@ -22,57 +22,57 @@ namespace EmmasEngines {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnCreate control.
+        /// btnCC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreate;
+        protected global::System.Web.UI.WebControls.Button btnCC;
         
         /// <summary>
-        /// txtPhoneNumber control.
+        /// txtPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
+        protected global::System.Web.UI.WebControls.TextBox txtPhone;
         
         /// <summary>
-        /// lbCustomers control.
+        /// lbResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lbCustomers;
+        protected global::System.Web.UI.WebControls.ListBox lbResults;
         
         /// <summary>
-        /// btnPurchhase control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPurchhase;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// btnService control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnService;
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// btnRepairs control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRepairs;
+        protected global::System.Web.UI.WebControls.Button Button3;
     }
 }
