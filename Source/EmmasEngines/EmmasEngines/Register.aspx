@@ -9,7 +9,7 @@
 </head>
 <body class="IndexCentering">
     <form id="form1" runat="server">
-        <h1 class="IndexTitle">Create an Account</h1><br />
+        <h1 class="IndexHeaderA">Create an Account</h1><br /><br /><br /><br />
         <div class="subScript">
             <asp:Label ID ="lblUserName" runat="server">User Name</asp:Label><br />
             <asp:TextBox ID="txtUserName" runat="server" CssClass="inputBox" Height="34px" Width="270px"></asp:TextBox>
