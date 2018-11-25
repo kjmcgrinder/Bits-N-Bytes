@@ -53,8 +53,13 @@
         <a class="nav-link" href="Login.aspx">Logout</a>
   </div>
 </nav>
-
-    <h1>Sale / Repair</h1><br />
+    <form class="secondary">
+        <!--Jumbotron-->
+    <div class="jumbotron">
+  <h1 class="display-4">Sales and Repairs</h1>
+  <p class="lead">Please select the service you are providing</p>
+  <hr class="my-4"/>
+</div>
     
      <div class="row">
   <div class="col-sm-6">
@@ -70,11 +75,17 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Repair</h5>
-        <p class="card-text">Customer Repair</p>
+        <p class="card-text">Customer Repairs</p>
         <a href="Repairs.aspx" class="btn btn-primary">Get Started</a>
       </div>
     </div>
   </div>
 </div>
+        <footer>
+        <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
+    </footer>
+    </form>
+    <!--Footer-->
+    
 </body>
 </html>
