@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
 </head>
-<body class="IndexBackground">
+<body>
 <link href="Style/style.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -19,6 +19,7 @@
         <div class="IndexHeader">
             <h1>Emma&#39;s Small Engines</h1>
         </div>
+        <h2 class="subScriptIndex, IndexCentering">The <span class="badge badge-secondary">New</span> Central Hub for Emma's Small Engines</h2>
 <%--<div class="CStyle">
  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -35,7 +36,7 @@
 </div>
 </div>--%>
 
-        <div>
+        <div class ="IndexCentering">
             <asp:LinkButton ID="LinkButton1" runat="server" CssClass="IndexButton" PostBackUrl="~/Login.aspx">Login Here</asp:LinkButton>
         </div>
     </form>

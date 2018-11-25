@@ -9,19 +9,20 @@ html, body {
     height:20%;
 
 }
-.IndexHeader{
+.IndexHeader {
     font-family: 'Roboto', sans-serif;
     font-size: 100%;
     border-bottom: 2px solid black;
-    background-color: #00BF07;
+    background-color: #004002;
     text-align: center;
     width: 100%;
     padding: 1%;
-    opacity: 0.8;
     float: left;
-   
 }
-
+.subScriptIndex {
+    font-family: 'Open Sans', sans-serif;
+    padding: 50%;
+}
 .IndexButton {
     background-color: white; /* Green */
     border: none;
@@ -51,9 +52,7 @@ html, body {
     text-align:center;
     align-content: center;
 }
-.IndexBackground {
-    background-color: #007F05;
-}
+
 .inputBox {
     padding: 12px 20px;
     margin: 10px 0;
