@@ -9,6 +9,12 @@ html, body {
     height:20%;
 
 }
+.logout{
+    float: right;
+}
+.padding{
+    margin: 0, auto;
+}
 .IndexHeaderA {
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
