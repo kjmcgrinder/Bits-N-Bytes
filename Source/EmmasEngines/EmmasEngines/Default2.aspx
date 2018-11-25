@@ -12,6 +12,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <body>
+    <!--Nav Bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Emma's Small Engines</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,36 +22,31 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="Default2.aspx">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sales</a>
+        <a class="nav-link" href="Sales.aspx">Sales</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Services
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Repairs</a>
-          <a class="dropdown-item" href="#">Reports</a>
+          <a class="dropdown-item" href="Repairs.aspx">Repairs</a>
+          <a class="dropdown-item" href="Reports.aspx">Reports</a>
         </div>
       </li> 
         <li class="nav-item">
-        <a class="nav-link" href="#">Users</a>
+        <a class="nav-link" href="Users.aspx">Users</a>
       </li>
         <li class="nav-item">
-        <a class="nav-link" href="#">Inventory</a>
+        <a class="nav-link" href="Inventory.aspx">Inventory</a>
       </li>
     </ul>
         <a class="nav-link" href="Login.aspx">Logout</a>
-      
-       
-    <form class="form-inline my-2 my-lg-0">
-      <%--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--%>
-    </form>
   </div>
 </nav>
+    <!--Jumbotron-->
     <div class="jumbotron">
         <% string name = User.Identity.Name.ToString(); %>
   <h1 class="display-4">Welcome <%{ Response.Write(name.ToString()); } %></h1>
@@ -58,6 +54,7 @@
   <hr class="my-4"/>
 </div>
 
+    <!--Cards-->
     <div class="row">
   <div class="col-sm-6">
     <div class="card">
@@ -78,7 +75,7 @@
     </div>
   </div>
 </div>
-
+    <!--Footer-->
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
     </footer>
