@@ -10,7 +10,7 @@
 namespace EmmasEngines {
     
     
-    public partial class UpdateCustomer {
+    public partial class CreateCustomer {
         
         /// <summary>
         /// Button1 control.

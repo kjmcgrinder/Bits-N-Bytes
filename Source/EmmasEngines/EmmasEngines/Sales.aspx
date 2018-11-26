@@ -66,7 +66,7 @@
             <h1 class="IndexHeaderA">Customer Management</h1><br />
         <div class="IndexCentering">
             <h2 class="IndexSubTitle">New Customer?</h2><br />
-            <asp:Button ID="btnCC" runat="server" Text="Create Customer" CssClass="IndexButton" PostBackUrl="~/UpdateCustomer.aspx" /><br /><br />
+            <asp:Button ID="btnCC" runat="server" Text="Create Customer" CssClass="IndexButton" PostBackUrl="~/CreateCustomer.aspx" /><br /><br />
            <%-- <asp:Button ID="btnCreate" runat="server" Text="Create Customer" PostBackUrl="~/UpdateCustomer.aspx" CssClass="submitBtn"/>
         </div>--%>
             </div>
