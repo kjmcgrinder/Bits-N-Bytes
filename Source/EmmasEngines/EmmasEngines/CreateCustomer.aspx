@@ -10,7 +10,9 @@
    
     <link href="Style/stylePurchase.css" rel="stylesheet" />
     <link href="Style/style.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <link href="Style/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
@@ -55,38 +57,52 @@
         <a class="nav-link" href="Login.aspx">Logout</a>
   </div>
 </nav>
-    <form>
-        <div class="IndexCentering, secondary">
-         <div class="row">
-          <div class="col-50">
-            <h3>Billing Address</h3>
-            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
-            <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com">
+    <!-- Form -->
+    <form runat="server" class="IndexCentering">
+        <div class="row">
+  <div class="col-75">
+    <div class="container">
+      
+
+        <div class="row">
+          <div class="col-50"><br />
+            <h3 class="IndexHeaderA">Create Customer</h3><br /><br /><br />
+            <label for="fname"><i class="fa fa-user"></i> First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John">
+
+            <label for="lname"><i class="fa fa-user"></i> Last Name</label><br />
+            <input type="text" id="lname" name="firstname" placeholder="Doe"><br />
+
+            <label for="email"><i class="fa fa-envelope"></i> Email</label><br />
+            <input type="text" id="email" name="email" placeholder="john@example.com"><br />
+
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-            <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York">
+
+            <label for="city" class="IndexCentering"><i class="fa fa-address-card-o"></i> City</label>
+            <input type="text" id="City" name="city" placeholder="New York">
 
             <div class="row">
               <div class="col-50">
-                <label for="state">State</label>
+                <label for="state">State</label><br />
                 <input type="text" id="state" name="state" placeholder="NY">
               </div>
               <div class="col-50">
-                <label for="zip">Zip</label>
+                <label for="zip">Zip</label><br />
                 <input type="text" id="zip" name="zip" placeholder="10001">
+                  
               </div>
+                <div class="IndexCentering">
+                <asp:Button ID="Button1" runat="server" CssClass="IndexButton" Text="Enter" Width="316px" />
+                </div>
             </div>
           </div>
 
-          </div>
-    
+
         </div>
-        <div class="IndexCentering">
-            <asp:Button ID="Button1" runat="server" Text="Button" CssClass="IndexButton" />
-        </div>
+        &nbsp;</div>
+  </div>
+
     </form>
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
