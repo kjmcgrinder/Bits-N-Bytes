@@ -24,7 +24,7 @@
                     <asp:TextBox ID="txtPassword" runat="server" CssClass="inputBox" Height="34px" Width="270px" TextMode="Password" placeholder="Password"></asp:TextBox><br />
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Register.aspx">Register Here</asp:HyperLink>
                     <br />
-                    <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" CssClass="submitBtn" Height="48px" Width="144px" /><br />
+                    <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" CssClass="IndexButton" Height="55px" Width="144px" /><br />
                     <asp:Label ID="lblResult" runat="server"></asp:Label>
                 </div>
         </form>
