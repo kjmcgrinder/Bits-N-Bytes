@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Purchase</title>
 </head>
 <link href="Style/stylePurchase.css" rel="stylesheet" />
 <link href="Style/style.css" rel="stylesheet" />
