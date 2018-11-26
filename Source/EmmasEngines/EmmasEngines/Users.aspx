@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+<head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <form>
+    <form runat="server" id="Form1">
         <!--Nav Bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Emma's Small Engines</a>
