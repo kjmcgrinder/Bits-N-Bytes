@@ -66,7 +66,7 @@
             <h1 class="IndexHeaderA">Customer Management</h1><br />
         <div class="IndexCentering">
             <h2 class="IndexSubTitle">New Customer?</h2><br />
-            <asp:Button ID="btnCC" runat="server" Text="Create Customer" CssClass="IndexButton" /><br /><br />
+            <asp:Button ID="btnCC" runat="server" Text="Create Customer" CssClass="IndexButton" PostBackUrl="~/CreateCustomer.aspx" /><br /><br />
            <%-- <asp:Button ID="btnCreate" runat="server" Text="Create Customer" PostBackUrl="~/UpdateCustomer.aspx" CssClass="submitBtn"/>
         </div>--%>
             </div>
@@ -75,7 +75,7 @@
             <h3 class="IndexTitle">Search Customer by Phone Number: </h3><br />
             <h5 class="subScript">Phone Number:<br />
             <%--<asp:TextBox ID="txtPhoneNumber" runat="server" Width="168px" CssClass="inputBox" TextMode="Phone"></asp:TextBox>--%>
-                <asp:TextBox ID="txtPhone" runat="server" CssClass="IndexSubmit"></asp:TextBox>
+                <asp:TextBox ID="txtPhone" runat="server" CssClass="inputBox"></asp:TextBox>
                 <asp:Button ID="Button4" runat="server" CssClass="IndexButton" Text="Search" />
             </h5>
             
@@ -84,7 +84,7 @@
         </div>
         <div class="IndexCentering">
             <asp:ListBox ID="lbResults" runat="server" Width="431px"></asp:ListBox><br />
-            <asp:Button ID="Button5" runat="server" Text="Details" />
+            <asp:Button ID="Button5" runat="server" CssClass="IndexButton" Text="Details" />
             <br />
         </div>
         <div>

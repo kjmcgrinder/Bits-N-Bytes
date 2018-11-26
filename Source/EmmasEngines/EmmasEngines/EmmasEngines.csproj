@@ -174,10 +174,6 @@
     <Content Include="App_Data\Emmas_log.ldf">
       <DependentUpon>Emmas.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\Users.mdf" />
-    <Content Include="App_Data\Users_log.ldf">
-      <DependentUpon>Users.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -185,6 +181,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CreateCustomer.aspx" />
     <Content Include="Default2.aspx" />
     <Content Include="Details.aspx" />
     <Content Include="Employees.aspx" />
@@ -271,7 +268,7 @@
     <Content Include="SearchCustomer.aspx" />
     <Content Include="Site.Master" />
     <Content Include="Style\style.css" />
-    <Content Include="UpdateCustomer.aspx" />
+    <Content Include="Style\stylePurchase.css" />
     <Content Include="Users.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -288,6 +285,13 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CreateCustomer.aspx.cs">
+      <DependentUpon>CreateCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateCustomer.aspx.designer.cs">
+      <DependentUpon>CreateCustomer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default2.aspx.cs">
       <DependentUpon>Default2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -440,13 +444,6 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="UpdateCustomer.aspx.cs">
-      <DependentUpon>UpdateCustomer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UpdateCustomer.aspx.designer.cs">
-      <DependentUpon>UpdateCustomer.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
