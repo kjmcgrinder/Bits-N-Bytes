@@ -68,7 +68,7 @@
       <div class="card-body">
         <h5 class="card-title">Sales</h5>
         <p class="card-text">Make Purchases and Manage Customers.</p>
-        <a href="#" class="btn btn-primary">Get Started</a>
+        <a href="Sale-Repair.aspx" class="btn btn-primary">Get Started</a>
       </div>
     </div>
   </div>
@@ -77,7 +77,7 @@
       <div class="card-body">
         <h5 class="card-title">Repairs</h5>
         <p class="card-text">Manage Repairs Here .</p>
-        <a href="#" class="btn btn-primary">Get Started</a>
+        <a href="Repairs.aspx" class="btn btn-primary">Get Started</a>
       </div>
     </div>
   </div>

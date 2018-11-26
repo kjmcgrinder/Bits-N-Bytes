@@ -67,8 +67,8 @@
         <div class="row">
           <div class="col-50"><br />
             <h3 class="IndexHeaderA">Create Customer</h3><br /><br /><br />
-            <label for="fname"><i class="fa fa-user"></i> First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John">
+            <label for="fname"><i class="fa fa-user"></i> First Name</label><br />
+            <input type="text" id="fname" name="firstname" placeholder="John"><br />
 
             <label for="lname"><i class="fa fa-user"></i> Last Name</label><br />
             <input type="text" id="lname" name="firstname" placeholder="Doe"><br />
@@ -76,11 +76,11 @@
             <label for="email"><i class="fa fa-envelope"></i> Email</label><br />
             <input type="text" id="email" name="email" placeholder="john@example.com"><br />
 
-            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label><br />
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street"><br />
 
-            <label for="city" class="IndexCentering"><i class="fa fa-address-card-o"></i> City</label>
-            <input type="text" id="City" name="city" placeholder="New York">
+            <label for="city" class="IndexCentering"><i class="fa fa-address-card-o"></i> Phone</label><br />
+            <input type="text" id="City" name="city" placeholder="New York"><br />
 
             <div class="row">
               <div class="col-50">

@@ -66,7 +66,7 @@ html, body {
 
 .IndexCentering {
     margin: auto;
-    width: 50%;
+    width: 46%;
     padding: 10px;
     text-align:center;
     align-content: center;
@@ -102,7 +102,7 @@ html, body {
 }
 
 .searchinput[type=text] {
-    width: 130px;
+    width: 212px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
