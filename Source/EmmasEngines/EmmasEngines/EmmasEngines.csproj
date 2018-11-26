@@ -267,6 +267,7 @@
     <Content Include="SearchCustomer.aspx" />
     <Content Include="Site.Master" />
     <Content Include="Style\style.css" />
+    <Content Include="Style\stylePurchase.css" />
     <Content Include="UpdateCustomer.aspx" />
     <Content Include="Users.aspx" />
     <Content Include="ViewSwitcher.ascx" />
