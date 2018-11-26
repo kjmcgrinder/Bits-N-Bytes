@@ -5,7 +5,7 @@
 
 <b>Documents:</b>
 
-&emsp;Contains files detailing the project requirements.
+&emsp;Contains files detailing the project requirements. When working on this project, cross completed tasks off of the TODO List located here.
 
 <b>Presentations:</b>
 
