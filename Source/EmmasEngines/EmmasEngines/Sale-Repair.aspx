@@ -54,7 +54,7 @@
   </div>
 </nav>
     <!-- Form -->
-    <form class="secondary">
+      <form id="form1" runat="server">
         <!--Jumbotron-->
     <div class="jumbotron">
   <h1 class="display-4">Sales and Repairs</h1>
@@ -77,7 +77,14 @@
       <div class="card-body">
         <h5 class="card-title">Repair</h5>
         <p class="card-text">Customer Repairs</p>
-        <a href="Repairs.aspx" class="btn btn-primary">Get Started</a>
+        <a href="Repairs.aspx" class="btn btn-primary">Get Started</a><br /><br />
+          <asp:Label ID="Label1" runat="server" Text="Completed Repairs"></asp:Label>
+          <asp:GridView ID="GridView1" runat="server" Width="376px">
+          </asp:GridView><br />
+
+          <asp:Label ID="Label2" runat="server" Text="Completed Orders"></asp:Label>
+          <asp:GridView ID="GridView2" runat="server" Width="376px">
+          </asp:GridView>
       </div>
     </div>
   </div>
@@ -85,7 +92,7 @@
         <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
     </footer>
-    </form>
+      </form>
     <!--Footer-->
     
 </body>
