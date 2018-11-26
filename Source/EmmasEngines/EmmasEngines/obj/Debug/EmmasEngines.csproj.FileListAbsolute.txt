@@ -799,7 +799,6 @@ C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngine
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Antlr3.Runtime.dll
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\AspNet.ScriptManager.bootstrap.dll
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\AspNet.ScriptManager.jQuery.dll
-C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EntityFramework.dll
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EntityFramework.SqlServer.dll
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Microsoft.AI.Agent.Intercept.dll

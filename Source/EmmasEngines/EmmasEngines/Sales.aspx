@@ -18,7 +18,6 @@
 
 <body class="secondary">
     
-       <!--Nav Bar-->
     <!--Nav Bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Emma's Small Engines</a>
@@ -59,31 +58,35 @@
         <a class="nav-link" href="Login.aspx">Logout</a>
   </div>
 </nav>
+   
     <!--Form-->
     <div>
     <form id="form1" runat="server">
-        <div "><br /><br />
-            <h1 class="IndexTitle">Sales</h1><br />
+        <div><br /><br />
+            <h1 class="IndexHeaderA">Customer Management</h1><br />
+        <div class="IndexCentering">
             <h2 class="IndexSubTitle">New Customer?</h2><br />
-            <asp:Button ID="btnCC" runat="server" Text="Create Customer" /><br /><br />
+            <asp:Button ID="btnCC" runat="server" Text="Create Customer" CssClass="IndexButton" /><br /><br />
            <%-- <asp:Button ID="btnCreate" runat="server" Text="Create Customer" PostBackUrl="~/UpdateCustomer.aspx" CssClass="submitBtn"/>
         </div>--%>
             </div>
-        <div>
-            <h2 class="IndexTitle">Search Customer by Phone Number: </h2><br />
+            </div>
+        <div class="IndexCentering">
+            <h3 class="IndexTitle">Search Customer by Phone Number: </h3><br />
             <h5 class="subScript">Phone Number:<br />
             <%--<asp:TextBox ID="txtPhoneNumber" runat="server" Width="168px" CssClass="inputBox" TextMode="Phone"></asp:TextBox>--%>
-                <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtPhone" runat="server" CssClass="IndexSubmit"></asp:TextBox>
+                <asp:Button ID="Button4" runat="server" CssClass="IndexButton" Text="Search" />
             </h5>
             
             <%--<asp:ListBox ID="lbCustomers" runat="server" Height="202px" Width="530px"></asp:ListBox>--%> 
            
         </div>
+        <div class="IndexCentering">
             <asp:ListBox ID="lbResults" runat="server" Width="431px"></asp:ListBox><br />
-            <asp:Button ID="Button1" runat="server" Text="Purchase" />
-        <asp:Button ID="Button2" runat="server" Text="Service" />
-        <asp:Button ID="Button3" runat="server" Text="Repairs" />
+            <asp:Button ID="Button5" runat="server" Text="Details" />
             <br />
+        </div>
         <div>
             <%--<asp:Button ID="btnPurchhase" runat="server" Text="Purchase" PostBackUrl="~/Purchase.aspx" CssClass="submitBtn"/>
             <asp:Button ID="btnService" runat="server" Text="Service" PostBackUrl="~/Services.aspx" CssClass="submitBtn" />
