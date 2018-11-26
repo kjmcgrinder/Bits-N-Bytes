@@ -52,6 +52,7 @@
         <a class="nav-link" href="Login.aspx">Logout</a>
   </div>
 </nav>
+    <form class="secondary">
     <!--Jumbotron-->
     <div class="jumbotron">
         <% string name = User.Identity.Name.ToString(); %>
@@ -81,9 +82,11 @@
     </div>
   </div>
 </div>
+ 
     <!--Footer-->
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
     </footer>
+        </form>
 </body>
 </html>

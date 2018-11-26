@@ -59,41 +59,39 @@
   </div>
 </nav>
    
-    <!--Form-->
-    <div>
-    <form id="form1" runat="server">
-        <div><br /><br />
-            <h1 class="IndexHeaderA">Customer Management</h1><br />
-        <div class="IndexCentering">
-            <h2 class="IndexSubTitle">New Customer?</h2><br />
-            <asp:Button ID="btnCC" runat="server" Text="Create Customer" CssClass="IndexButton" PostBackUrl="~/CreateCustomer.aspx" /><br /><br />
-           <%-- <asp:Button ID="btnCreate" runat="server" Text="Create Customer" PostBackUrl="~/UpdateCustomer.aspx" CssClass="submitBtn"/>
-        </div>--%>
-            </div>
-            </div>
-        <div class="IndexCentering">
-            <h3 class="IndexTitle">Search Customer by Phone Number: </h3><br />
-            <h5 class="subScript">Phone Number:<br />
-            <%--<asp:TextBox ID="txtPhoneNumber" runat="server" Width="168px" CssClass="inputBox" TextMode="Phone"></asp:TextBox>--%>
-                <asp:TextBox ID="txtPhone" runat="server" CssClass="inputBox"></asp:TextBox>
-                <asp:Button ID="Button4" runat="server" CssClass="IndexButton" Text="Search" />
-            </h5>
-            
-            <%--<asp:ListBox ID="lbCustomers" runat="server" Height="202px" Width="530px"></asp:ListBox>--%> 
-           
-        </div>
-        <div class="IndexCentering">
-            <asp:ListBox ID="lbResults" runat="server" Width="431px"></asp:ListBox><br />
-            <asp:Button ID="Button5" runat="server" CssClass="IndexButton" Text="Details" />
-            <br />
-        </div>
-        <div>
-            <%--<asp:Button ID="btnPurchhase" runat="server" Text="Purchase" PostBackUrl="~/Purchase.aspx" CssClass="submitBtn"/>
-            <asp:Button ID="btnService" runat="server" Text="Service" PostBackUrl="~/Services.aspx" CssClass="submitBtn" />
-            <asp:Button ID="btnRepairs" runat="server" Text="Repairs" PostBackUrl="~/Repairs.aspx" CssClass="submitBtn" />--%>
-        </div>
+   <!-- Form -->
+    <form class="secondary">
+        <!--Jumbotron-->
+    <div class="jumbotron">
+  <h1 class="display-4">Customer Management</h1>
+  <p class="lead">Please select the action you would like to complete</p>
+  <hr class="my-4"/>
+</div>
+    
+     <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Create Customer</h5>
+        <p class="card-text">Create a new customer here.</p>
+        <a href="Purchase.aspx" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Search Customer</h5>
+        <p class="card-text">Search existing customers</p>
+        <a href="Repairs.aspx" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </div>
+</div>
+        <footer>
+        <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
+    </footer>
     </form>
-        </div>
 </body>
    
 </html>
