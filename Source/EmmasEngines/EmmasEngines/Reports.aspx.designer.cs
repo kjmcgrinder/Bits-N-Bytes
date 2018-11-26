@@ -13,21 +13,30 @@ namespace EmmasEngines {
     public partial class Reports {
         
         /// <summary>
-        /// lblStatus control.
+        /// lblTotalSales control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
+        protected global::System.Web.UI.WebControls.Label lblTotalSales;
         
         /// <summary>
-        /// txtProdName control.
+        /// lblTotalRepairs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProdName;
+        protected global::System.Web.UI.WebControls.Label lblTotalRepairs;
+        
+        /// <summary>
+        /// lblTotalWeek control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalWeek;
     }
 }
