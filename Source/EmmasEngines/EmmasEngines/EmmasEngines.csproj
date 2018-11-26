@@ -265,7 +265,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="SearchCustomer.aspx" />
+    <Content Include="SearchCustomers.aspx" />
     <Content Include="Site.Master" />
     <Content Include="Style\style.css" />
     <Content Include="Style\stylePurchase.css" />
@@ -422,12 +422,12 @@
     <Compile Include="Sales.aspx.designer.cs">
       <DependentUpon>Sales.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SearchCustomer.aspx.cs">
-      <DependentUpon>SearchCustomer.aspx</DependentUpon>
+    <Compile Include="SearchCustomers.aspx.cs">
+      <DependentUpon>SearchCustomers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SearchCustomer.aspx.designer.cs">
-      <DependentUpon>SearchCustomer.aspx</DependentUpon>
+    <Compile Include="SearchCustomers.aspx.designer.cs">
+      <DependentUpon>SearchCustomers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

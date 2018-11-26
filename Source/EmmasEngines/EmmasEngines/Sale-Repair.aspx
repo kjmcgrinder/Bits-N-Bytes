@@ -72,12 +72,13 @@
       </div>
     </div>
   </div>
+
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Repair</h5>
         <p class="card-text">Customer Repairs</p>
-        <a href="Repairs.aspx" class="btn btn-primary">Get Started</a><br /><br />  
+        <a href="Repairs.aspx" class="btn btn-primary">Get Started</a>
       </div>
     </div>
   </div>
