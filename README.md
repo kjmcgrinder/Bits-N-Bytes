@@ -7,7 +7,7 @@
 
 &emsp;Contains files detailing the project requirements. When working on this project, cross completed tasks off of the TODO List located here.
 
-<b>Presentations:</b>
+<b>Documents/Presentations:</b>
 
 &emsp;Contains all powerpoint presentations we have currently presented in PROG-1180
 
