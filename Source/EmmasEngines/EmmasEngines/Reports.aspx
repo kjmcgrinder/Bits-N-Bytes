@@ -7,19 +7,42 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Reports</title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 575px;
+        }
+        .auto-style2 {
+            width: 575px;
+            height: 112px;
+        }
+        .auto-style3 {
+            height: 112px;
+        }
+        .auto-style4 {
+            width: 800px;
+        }
+        .auto-style5 {
+            height: 112px;
+            width: 800px;
+        }
+        .auto-style6 {
+            width: 579px;
+        }
+        .auto-style7 {
+            height: 112px;
+            width: 579px;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1>Reports</h1>
-    </header>
     <link href="Style/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-    <form runat="server">
+    <form runat="server" class="secondary">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -77,36 +100,39 @@
                 <a class="nav-link" href="Login.aspx">Logout</a>
             </div>
         </nav>
-    </form>
-    <section>
-        <h2>Weekly reports</h2>
-    </section>
+    
+    <div class="jumbotron">
+       
+          <h1 class="display-4">Admin</h1>
+          <p class="lead">Weekly Reports</p>
+          <hr class="my-4"/>
+     </div>
 
     <table style="width: 100%;">
         <tr>
-            <td class="auto-style2">Sales</td>
-            <td class="auto-style6">Repairs</td>
+            <td class="auto-style1"><h3 class="lead">Sales</h3></td>
+            <td class="auto-style6"><h3 class="lead">Repairs</h3></td>
 
         </tr>
         <tr>
             <%--TexAreas that will show all the sales during the week( If someone can come up with a better output type pls change--%>
-            <td class="auto-style9">
-                <textarea id="TextArea1" class="auto-style4" name="S1"></textarea></td>
-            <td class="auto-style10">
-                <textarea id="TextArea2" class="auto-style5" name="S2"></textarea></td>
-            <td class="auto-style11"></td>
+            <td class="auto-style2">
+                <textarea id="TextArea1" class="auto-style4" name="S1" draggable="false" style="background-color: #33CCCC; height: 90px; width: 567px;"></textarea></td>
+            <td class="auto-style7">
+                <textarea id="TextArea2" class="auto-style5" name="S2" draggable="false" style="background-color: #33CCCC; height: 90px; width: 567px;"></textarea></td>
+            <td class="auto-style3"></td>
         </tr>
         <tr>
             <%--Labels will be change by the sum of the weekly sales--%>
-            <td class="auto-style3">Sales Total:
-                <asp:Label ID="lblTotalSales" runat="server" Text="Label"></asp:Label></td>
-            <td class="auto-style8">Repairs Total:
-                <asp:Label ID="lblTotalRepairs" runat="server" Text="Label"></asp:Label></td>
-            <td>Total:
-                <asp:Label ID="lblTotalWeek" runat="server" Text="Total"></asp:Label></td>
+            <td class="auto-style1"><h3 class="lead">Sales Total:</h3>
+                <asp:Label ID="lblTotalSales" runat="server" Text=""></asp:Label></td>
+            <td class="auto-style6"><h3 class="lead">Repairs Total:</h3>
+                <asp:Label ID="lblTotalRepairs" runat="server" Text=""></asp:Label></td>
+            <td><h3 class="lead">Total:</h3>
+                <asp:Label ID="lblTotalWeek" runat="server" Text=""></asp:Label></td>
         </tr>
     </table>
-
+    </form>
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
     </footer>

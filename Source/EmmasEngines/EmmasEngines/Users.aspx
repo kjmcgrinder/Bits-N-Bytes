@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <form runat="server">
+    <form runat="server" class="secondary">
         <!--Nav Bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Emma's Small Engines</a>
@@ -57,36 +57,32 @@
   </div>
 </nav>
 
-     <div class="jumbotron">
+    <div class="jumbotron">
        
-          <h1 class="display-4">Welcome Admin<h1>
-          <p class="lead">User Management</p>
-          <hr class="my-4"/>
-     </div>
-
-    
-
+        <h1 class="display-4">Admin</h1>
+        <p class="lead">User Management</p>
         <hr class="my-4"/>
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body"> 
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body"> 
                     <%--Ddl to find employee by department:--%>
                     <h2 class="card-title">Search Employees by Deparment:</h2>
                     <p class="card-text"><asp:DropDownList ID="ddlDeparment" runat="server"></asp:DropDownList></p>
                     <%--<a href="#" class="btn btn-primary">Search</a>--%>
                   </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body">
+             </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
                     <h2 class="card-title">Create Employee:</h2>
                     <a href="Employees.aspx" class="btn btn-primary">Start</a>
-                  </div>
                 </div>
-              </div>
             </div>
+        </div>
+    </div>
               
       
         
@@ -94,7 +90,7 @@
     <div class="IndexCentering">    
         <asp:GridView ID="gvEmployees" runat="server"></asp:GridView>
     </div>
-        </form>
+    </form>
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
     </footer>
