@@ -56,19 +56,43 @@
         <a class="nav-link" href="Login.aspx">Logout</a>
   </div>
 </nav>
-    <div class="IndexCentering">
-    <section>
-        <a href="Employees.aspx"><h2>Create new employee</h2></a>      
-    </section>
-      
 
-    <section>
-        <h2>Search Employees by Deparment</h2>
-        <%--Ddl to find employee by department:--%>
-        <asp:DropDownList ID="ddlDeparment" runat="server"></asp:DropDownList>
+     <div class="jumbotron">
+       
+          <h1 class="display-4">Welcome Admin<h1>
+          <p class="lead">User Management</p>
+          <hr class="my-4"/>
+     </div>
+
+    
+
+        <hr class="my-4"/>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body"> 
+                    <%--Ddl to find employee by department:--%>
+                    <h2 class="card-title">Search Employees by Deparment:</h2>
+                    <p class="card-text"><asp:DropDownList ID="ddlDeparment" runat="server"></asp:DropDownList></p>
+                    <%--<a href="#" class="btn btn-primary">Search</a>--%>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h2 class="card-title">Create Employee:</h2>
+                    <a href="Employees.aspx" class="btn btn-primary">Start</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+              
+      
+        
         <%--Grid view to see the list of the emplooyees and be able to edit(NEed to add ddl to choose position after the data set is placed)--%>
+    <div class="IndexCentering">    
         <asp:GridView ID="gvEmployees" runat="server"></asp:GridView>
-    </section>
     </div>
         </form>
     <footer>
