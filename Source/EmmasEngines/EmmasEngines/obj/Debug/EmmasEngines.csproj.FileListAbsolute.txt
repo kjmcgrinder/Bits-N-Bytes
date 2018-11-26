@@ -827,7 +827,6 @@ C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngine
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\System.Web.Optimization.dll
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\WebGrease.dll
-C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EntityFramework.xml
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EntityFramework.SqlServer.xml
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Microsoft.AspNet.Identity.Core.xml
@@ -847,7 +846,6 @@ C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngine
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Microsoft.AI.Web.xml
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.csprojAssemblyReference.cache
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.dll

@@ -12,15 +12,15 @@
         <h1 class="IndexHeaderA">Create an Account</h1><br /><br /><br /><br />
         <div class="subScript">
             <asp:Label ID ="lblUserName" runat="server">User Name</asp:Label><br />
-            <asp:TextBox ID="txtUserName" runat="server" CssClass="inputBox" Height="34px" Width="270px"></asp:TextBox>
+            <asp:TextBox ID="txtUserName" runat="server" CssClass="inputBox" Height="34px" Width="270px" placeholder="Username"></asp:TextBox>
         </div>
         <div class="subScript">
             <asp:Label ID="lblPassw" runat="server">Password</asp:Label><br />
-            <asp:TextBox ID="txtPasswd" runat="server" TextMode="Password" CssClass="inputBox" Height="34px" Width="270px"></asp:TextBox>
+            <asp:TextBox ID="txtPasswd" runat="server" TextMode="Password" CssClass="inputBox" Height="34px" Width="270px" placeholder="Password"></asp:TextBox>
         </div>
         <div class="subScript">
             <asp:Label ID="lblConfirm" runat="server">Confirm Password</asp:Label><br />
-            <asp:TextBox ID="txtConfirm" runat="server" TextMode="Password" CssClass="inputBox" Height="34px" Width="270px"></asp:TextBox>
+            <asp:TextBox ID="txtConfirm" runat="server" TextMode="Password" CssClass="inputBox" Height="34px" Width="270px" placeholder="Confirm Password"></asp:TextBox>
         </div>
         <div class="subScript">
             <asp:Button ID="btnRegister" Text="Register" runat="server" OnClick="btnRegister_Click" CssClass="submitBtn" Height="48px" Width="144px"/>
