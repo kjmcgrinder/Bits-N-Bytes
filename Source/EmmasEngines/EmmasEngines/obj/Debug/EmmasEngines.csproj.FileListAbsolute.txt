@@ -1289,3 +1289,4 @@ C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngi
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.csproj.CopyComplete
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.dll
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.pdb
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll.config

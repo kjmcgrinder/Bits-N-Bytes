@@ -4,3 +4,12 @@ C:\Users\Administrator\source\repos\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\
 C:\Users\Administrator\source\repos\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\source\repos\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.dll
 C:\Users\Administrator\source\repos\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.pdb
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\Emmas.mdf
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\Emmas_log.ldf
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll.config
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.pdb
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csprojAssemblyReference.cache
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.dll
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.pdb
