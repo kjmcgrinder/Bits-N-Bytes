@@ -6,119 +6,64 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
-
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
-
-    <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <title><%: Page.Title %> - Create Employee</title>
+   
+    <link href="Style/stylePurchase.css" rel="stylesheet" />
     <link href="Style/style.css" rel="stylesheet" />
-    <style type="text/css">
-        .auto-style1 {
-            height: 22px;
-        }
-        </style>
-
+   <link href="Style/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
-            </Scripts>
-        </asp:ScriptManager>
+ <form runat="server" class="IndexCentering">
+    <div class="secondary">    
+        <div class="row">
+  <div class="col-75">
+    <div class="container">
+      
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Emma's Small Engines</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Sales">Sales</a></li>
-                        <li><a runat="server" href="~/Services">Services</a></li>
-                        <li><a runat="server" href="~/Inventory">Inventory</a></li>
-                            <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                        <li><a runat="server" href="~/Login">Logout</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="IndexCentering">
-        <div>
-             <div >
-                 <h2 class="IndexTitle">Create New Employee</h2>
-                 <table class="IndexCentering">
-                     <tr>
-                         <td class="subScript">First Name:</td>
-                         <td class="auto-style1">
-                             <asp:TextBox ID="TextBox1" runat="server" CssClass="inputBox" Width="209px"></asp:TextBox>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td class="subScript">Middle Name</td>
-                         <td class="auto-style1">
-                             <asp:TextBox ID="TextBox2" runat="server" CssClass="inputBox" Width="209px"></asp:TextBox>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td class="subScript">Last Name:</td>
-                         <td>
-                             <asp:TextBox ID="TextBox6" runat="server" CssClass="inputBox" Width="209px"></asp:TextBox>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td class="subScript">Phone Number:</td>
-                         <td>
-                             <asp:TextBox ID="TextBox3" runat="server" CssClass="inputBox" Width="209px"></asp:TextBox>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td class="subScript">Email:</td>
-                         <td>
-                             <asp:TextBox ID="TextBox7" runat="server" CssClass="inputBox" Width="209px"></asp:TextBox>
-                         </td>
-                     </tr>
-                     <tr>               
-                         <td class="subScript">Position</td>    
-                         <td>
-                             <%--ddl to select a position from the position table.--%>
-                             <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
-                         </td>
-                     </tr>
+        <div class="row">
+          <div class="col-50"><br />
+            <h3 class="IndexHeaderA">Create Employee</h3><br /><br /><br />
+            <label for="fname"><i class="fa fa-user"></i> First Name</label><br />
+            <input type="text" id="fname" name="firstname" placeholder="John"><br />
 
-                 </table>
-                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                 <asp:Button ID="btnCreateCustomer" runat="server" Text="Create" CssClass="submitBtn" />
-                 <asp:Button ID="btnUpdateCustomer" runat="server" Text="Update" CssClass="submitBtn" />
-                 <asp:Button ID="brnDeleteCustomer" runat="server" Text="Delete" CssClass="submitBtn" />
-             </div>
+            <label for="lname"><i class="fa fa-user"></i> Last Name</label><br />
+            <input type="text" id="lname" name="firstname" placeholder="Doe"><br />
+
+            <label for="email"><i class="fa fa-envelope"></i> Email</label><br />
+            <input type="text" id="email" name="email" placeholder="john@example.com"><br />
+
+            <label for="adr"><i class="fa fa-user"></i> Username</label><br />
+            <input type="text" id="username" name="username" placeholder="Enter Username"><br />
+
+            <label for="city" class="IndexCentering"><i class="fa fa-address-card-o"></i> Password</label><br />
+            <input type="text" id="password" name="password" placeholder="Enter Password"><br />
+
+            <div class="row">
+              <div class="col-50">
+                <label for="city">Phone</label><br />
+                <input type="text" id="phone" name="phone" placeholder="999-999-9999">
+              </div>
+            </div>  
+              <div class="row-50">
+                <div class="IndexCentering">
+                <asp:Button ID="Button1" runat="server" CssClass="IndexButton" Text="Enter" Width="316px" />
+                </div>
+               </div>
+            
+          </div>
+
+
         </div>
-        </div>
-    </form>
+        &nbsp;</div>
+  </div>           
+</div>
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
     </footer>
+    </form>
 </body>
 </html>

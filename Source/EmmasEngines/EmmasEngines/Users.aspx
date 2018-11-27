@@ -72,7 +72,7 @@
                 <div class="card-body"> 
                     <%--Ddl to find employee by department:--%>
                     <h2 class="card-title">Search Employees by Deparment:</h2>
-                    <p class="card-text"><asp:DropDownList ID="ddlDeparment" runat="server"></asp:DropDownList></p>
+                    <p class="card-text"><asp:DropDownList ID="ddlDeparment" runat="server" name="search" placeholder="Search.." class="searchinput"></asp:DropDownList></p>
                     <%--<a href="#" class="btn btn-primary">Search</a>--%>
                   </div>
              </div>

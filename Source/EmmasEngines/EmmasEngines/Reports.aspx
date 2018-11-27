@@ -61,6 +61,9 @@
           <h1 class="display-4">Admin</h1>
           <p class="lead">Weekly Reports</p>
           <hr class="my-4"/>
+        <p class="lead">We Have Collected: 
+        <asp:Label ID="Label1" runat="server" Text="1337$"></asp:Label> 
+          &nbsp;so far! Congratulations</p>
      </div>
 
     <table style="width: 100%;">
@@ -79,12 +82,13 @@
         </tr>
         <tr>
             <%--Labels will be change by the sum of the weekly sales--%>
-            <td class="auto-style1"><h3 class="lead">Sales Total:</h3>
-                <asp:Label ID="lblTotalSales" runat="server" Text=""></asp:Label></td>
-            <td class="auto-style6"><h3 class="lead">Repairs Total:</h3>
-                <asp:Label ID="lblTotalRepairs" runat="server" Text=""></asp:Label></td>
-            <td><h3 class="lead">Total:</h3>
-                <asp:Label ID="lblTotalWeek" runat="server" Text=""></asp:Label></td>
+            <td class="auto-style1"><h3 class="lead">Sales Total:
+                <asp:Label ID="lblTotalSales" runat="server" Text=" "></asp:Label></h3>
+                </td>
+            <td class="auto-style1"><h3 class="lead">Repairs Total:<asp:Label ID="lblTotalRepairs" runat="server" Text=" "></asp:Label></h3>
+                </td>
+            <td><h3 class="lead">Total: <asp:Label ID="lblTotalWeek" runat="server" Text=" "></asp:Label></h3>
+                </td>
         </tr>
     </table>
     </form>
