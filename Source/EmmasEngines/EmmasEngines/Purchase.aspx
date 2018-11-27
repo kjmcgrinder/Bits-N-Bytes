@@ -53,26 +53,36 @@
     </ul>
         <a class="nav-link" href="Login.aspx">Logout</a>
   </div>
-</nav><br />
+</nav>
 
       <form id="form1" runat="server" class ="secondary">
 
           <div class="col-50">
-            <h3 class="IndexHeaderA">Purchase</h3>
+            <h3 class="IndexHeaderA">Purchase</h3><br />
             <label for="fname">Service</label><br />
-            <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="246px"></asp:DropDownList><br />
+            <asp:DropDownList ID="DropDownList1" runat="server" Height="35px" Width="246px">
+                <asp:ListItem>Select a service</asp:ListItem>
+                <asp:ListItem>Repair</asp:ListItem>
+                <asp:ListItem>Sale</asp:ListItem>
+              </asp:DropDownList><br /><br />
               
             <label for="cname">Customer</label>&nbsp;<br />
             <input type="text" name="search" placeholder="Search.." class="searchinput"/><br />
-             <asp:ListBox ID="ListBox2" runat="server" Width="394px"></asp:ListBox><br /><br />
+             <asp:ListBox ID="ListBox2" runat="server" Width="394px"></asp:ListBox><br />
+              <asp:Label ID="Label1" runat="server" Text="Customer Chosen"></asp:Label>
+              <br />
 
             <label for="cname">Products</label><br />
             <input type="text" name="search" placeholder="Search.." class="searchinput"/><br />
-            <asp:DropDownList ID="DropDownList3" runat="server" Height="21px" Width="248px"></asp:DropDownList><br /><br />
+              <asp:ListBox ID="ListBox3" runat="server" Width="238px"></asp:ListBox><br />
+              <asp:Label ID="Label2" runat="server" Text="Items Selected"></asp:Label>
+              <br /><br />
 
               <label for="cname">Parts</label>&nbsp;<br />
             <input type="text" name="search" placeholder="Search.." class="searchinput" /><br />
-              <asp:ListBox ID="ListBox1" runat="server" Width="399px"></asp:ListBox><br /><br />
+              <asp:ListBox ID="ListBox1" runat="server" Width="399px"></asp:ListBox><br />
+              <asp:Label ID="Label3" runat="server" Text="Parts Selected"></asp:Label><br />
+              <br />
 
             <label for="cname">Repair Description</label>&nbsp;<br />
             <asp:TextBox ID="TextBox1" runat="server" Height="107px" Width="367px"></asp:TextBox><br /><br />
