@@ -57,6 +57,7 @@
 </nav>
     <!-- Form -->
     <form runat="server" class="IndexCentering">
+    <div class="secondary">    
         <div class="row">
   <div class="col-75">
     <div class="container">
@@ -100,10 +101,11 @@
         </div>
         &nbsp;</div>
   </div>
-
-    </form>
-    <footer>
+            <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
     </footer>
+</div>
+    </form>
+    
 </body>
 </html>
