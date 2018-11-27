@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 html, body {
     margin: 0;
+
 }
 
 .CStyle{
@@ -105,6 +106,17 @@ html, body {
     width: 212px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
+}
+
+footer {
+    margin-top: 0.3em;
+    padding: 0.3em;
+    text-align: center;
+    width: 100%;
+    background: #ffffff;
+    color: #444444;
+    font-size: 1em;
+    font-style: italic;
 }
 
     /* When the input field gets focus, change its width to 100% */

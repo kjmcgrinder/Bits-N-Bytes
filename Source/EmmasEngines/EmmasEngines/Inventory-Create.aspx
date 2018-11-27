@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inventory.aspx.cs" Inherits="EmmasEngines.Inventory" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inventory-Create.aspx.cs" Inherits="EmmasEngines.Inventory" %>
 
 <!DOCTYPE html>
 
@@ -53,38 +53,10 @@
     </nav>
 
     <form runat="server" class="secondary">
-        <h3 class="IndexHeaderA">Inventory</h3>
+        <h3 class="IndexHeaderA">Create Inventory</h3>
         <section>
-            Product&nbsp; Name:
-            <asp:DropDownList ID="ddlProductInven" runat="server" Height="18px" Width="132px">
-            </asp:DropDownList>
-            <br />
-            <br />
-            Product Infomation<br />
-            <asp:ListBox ID="lstProductInven" runat="server" Height="136px" Width="243px"></asp:ListBox>
-            <br />
-            <br />
-            Inventory<asp:DetailsView ID="dvInventory" runat="server" Height="50px" Width="125px">
-            </asp:DetailsView>
-            <br />
 
-            <%--            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-body">
-                        <a href="Inventory-Create.aspx" class="btn btn-primary">Create Inventory</a>
-                    </div>
-                </div>
-            </div>--%>
 
-            <div class="col-sm-3">
-                <h5 class="card-title">Create Inventory</h5>
-                <p class="card-text">Create a new inventory here.</p>
-                <div class="card">
-                    <div class="card-body">
-                        <a href="Inventory-Create.aspx" class="btn btn-primary">Get Started</a>
-                    </div>
-                </div>
-            </div>
         </section>
     </form>
 
