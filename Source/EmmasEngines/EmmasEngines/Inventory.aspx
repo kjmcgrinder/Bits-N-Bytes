@@ -55,16 +55,20 @@
     <form runat="server" class="secondary">
         <h3 class="IndexHeaderA">Inventory</h3>
         <section>
+            <br />
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server"></asp:ObjectDataSource>
             Product&nbsp; Name:
             <asp:DropDownList ID="ddlProductInven" runat="server" Height="18px" Width="132px">
             </asp:DropDownList>
             <br />
             <br />
+            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server"></asp:ObjectDataSource>
             Product Infomation<br />
             <asp:ListBox ID="lstProductInven" runat="server" Height="136px" Width="243px"></asp:ListBox>
             <br />
             <br />
-            Inventory<asp:DetailsView ID="dvInventory" runat="server" Height="50px" Width="125px">
+            I<asp:ObjectDataSource ID="ObjectDataSource3" runat="server"></asp:ObjectDataSource>
+            nventory<asp:DetailsView ID="dvInventory" runat="server" Height="50px" Width="125px">
             </asp:DetailsView>
             <br />
 
@@ -86,6 +90,8 @@
                 </div>
             </div>
         </section>
+
+
     </form>
 
     <footer>

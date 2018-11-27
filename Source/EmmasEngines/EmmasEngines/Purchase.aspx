@@ -84,7 +84,7 @@
             <label for="cname">Repair Description</label>&nbsp;<br />
             <asp:TextBox ID="TextBox1" runat="server" Height="107px" Width="367px"></asp:TextBox><br /><br />
 
-            <label for="cname">Warrenty</label>&nbsp;<br />
+            <label for="cname">Warranty</label>&nbsp;<br />
               <asp:RadioButtonList ID="RadioButtonList1" runat="server" Width="394px">
                   <asp:ListItem Value="1">Yes</asp:ListItem>
                   <asp:ListItem Value="2">No</asp:ListItem>
