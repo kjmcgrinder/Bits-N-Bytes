@@ -14,9 +14,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body> 
-    <form runat="server" class="secondary">       
-        <!--Nav Bar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+           
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Emma's Small Engines</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -36,9 +35,7 @@
           <a class="dropdown-item" href="Sales.aspx">Customer Management</a>
         </div>
       </li> 
-      <li class="nav-item">
-        <a class="nav-link" href="Repairs.aspx">Repairs</a>
-      </li> 
+       
         <li class="nav-item">
         <a class="nav-link" href="Inventory.aspx">Inventory</a>
       </li>
@@ -55,7 +52,7 @@
         <a class="nav-link" href="Login.aspx">Logout</a>
   </div>
 </nav>
-    
+<form runat="server" class="secondary">    
     <div class="jumbotron">
        
           <h1 class="display-4">Admin</h1>
@@ -65,7 +62,7 @@
         <asp:Label ID="Label1" runat="server" Text="1337$"></asp:Label> 
           &nbsp;so far! Congratulations</p>
      </div>
-
+    <div class="container">
     <table style="width: 100%;">
         <tr>
             <td class="auto-style1"><h3 class="lead">Sales</h3></td>
@@ -91,6 +88,8 @@
                 </td>
         </tr>
     </table>
+
+    </div>
     </form>
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
