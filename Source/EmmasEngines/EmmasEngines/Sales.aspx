@@ -72,7 +72,7 @@
       <div class="card-body">
         <h5 class="card-title">Create Customer</h5>
         <p class="card-text">Create a new customer here.</p>
-        <a href="Purchase.aspx" class="btn btn-primary">Get Started</a>
+        <a href="CreateCustomer.aspx" class="btn btn-primary">Get Started</a>
       </div>
     </div>
   </div>
