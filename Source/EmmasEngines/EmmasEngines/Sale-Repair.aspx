@@ -34,9 +34,6 @@
           <a class="dropdown-item" href="Sales.aspx">Customer Management</a>
         </div>
       </li> 
-      <li class="nav-item">
-        <a class="nav-link" href="Repairs.aspx">Repairs</a>
-      </li> 
         <li class="nav-item">
         <a class="nav-link" href="Inventory.aspx">Inventory</a>
       </li>
@@ -76,7 +73,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Repair</h5>
+        <h5 class="card-title">Repairs</h5>
         <p class="card-text">Customer Repairs</p>
         <a href="Repairs.aspx" class="btn btn-primary">Get Started</a>
       </div>

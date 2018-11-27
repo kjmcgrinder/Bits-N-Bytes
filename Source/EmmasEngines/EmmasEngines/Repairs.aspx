@@ -32,10 +32,7 @@
           <a class="dropdown-item" href="Sale-Repair.aspx">Sale / Repair</a>
           <a class="dropdown-item" href="Sales.aspx">Customer Management</a>
         </div>
-      </li> 
-      <li class="nav-item">
-        <a class="nav-link" href="Repairs.aspx">Repairs</a>
-      </li> 
+      </li>  
         <li class="nav-item">
         <a class="nav-link" href="Inventory.aspx">Inventory</a>
       </li>

@@ -39,9 +39,7 @@
           <a class="dropdown-item" href="Sales.aspx">Customer Management</a>
         </div>
       </li> 
-      <li class="nav-item">
-        <a class="nav-link" href="Repairs.aspx">Repairs</a>
-      </li> 
+       
         <li class="nav-item">
         <a class="nav-link" href="Inventory.aspx">Inventory</a>
       </li>
