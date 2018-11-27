@@ -143,7 +143,6 @@ E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\VBCSCompiler.exe.con
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Antlr3.Runtime.dll
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\AspNet.ScriptManager.bootstrap.dll
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\AspNet.ScriptManager.jQuery.dll
-E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Microsoft.AI.Agent.Intercept.dll
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Microsoft.AI.DependencyCollector.dll
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -162,7 +161,6 @@ E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Newtonsoft.Json.dll
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\System.Diagnostics.DiagnosticSource.dll
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\System.Web.Optimization.dll
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\WebGrease.dll
-E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\System.Web.Optimization.xml
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Newtonsoft.Json.xml
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Antlr3.Runtime.pdb

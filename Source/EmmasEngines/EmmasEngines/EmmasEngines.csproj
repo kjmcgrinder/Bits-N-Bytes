@@ -169,7 +169,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin.aspx" />
     <Content Include="App_Data\Emmas.mdf" />
     <Content Include="App_Data\Emmas_log.ldf">
       <DependentUpon>Emmas.mdf</DependentUpon>
@@ -193,6 +192,7 @@
     <Content Include="Images\gears-1236578_1920.jpg" />
     <Content Include="Images\macro-1452987_1920%281%29.jpg" />
     <Content Include="Images\motor-768750_1920.jpg" />
+    <Content Include="Notes.txt" />
     <Content Include="Repair-Details.aspx" />
     <Content Include="Repairs.aspx" />
     <Content Include="Sale-Repair.aspx" />
@@ -276,13 +276,6 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="CreateCustomer.aspx.cs">

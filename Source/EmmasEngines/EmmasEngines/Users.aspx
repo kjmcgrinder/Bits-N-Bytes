@@ -48,7 +48,7 @@
           Admin
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="Repairs.aspx">User Management</a>
+          <a class="dropdown-item" href="Users.aspx">User Management</a>
           <a class="dropdown-item" href="Reports.aspx">Reports</a>
         </div>
       </li>
@@ -62,6 +62,9 @@
         <h1 class="display-4">Admin</h1>
         <p class="lead">User Management</p>
         <hr class="my-4"/>
+        <p class="lead">We Have Collected: 
+        <asp:Label ID="Label1" runat="server" Text="1337$"></asp:Label> 
+          &nbsp;so far! Congratulations</p>
     </div>
     <div class="row">
         <div class="col-sm-6">
