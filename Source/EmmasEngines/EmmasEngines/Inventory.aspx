@@ -7,6 +7,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Inventory</title>
+    <style type="text/css">
+        .auto-style1 {
+            margin-right: 0px;
+        }
+    </style>
 </head>
 
 <link href="Style/style.css" rel="stylesheet" />
@@ -55,21 +60,82 @@
     <form runat="server" class="secondary">
         <h3 class="IndexHeaderA">Inventory</h3>
         <section>
-            <br />
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server"></asp:ObjectDataSource>
-            Product&nbsp; Name:
-            <asp:DropDownList ID="ddlProductInven" runat="server" Height="18px" Width="132px">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [id], [prodBrand], [prodName] FROM [product] ORDER BY [prodBrand]"></asp:SqlDataSource>
+            Brand&nbsp; Name:
+            <asp:DropDownList ID="ddlProductInven" runat="server" Height="44px" Width="176px" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="prodName" DataValueField="id" EnableViewState="False">
             </asp:DropDownList>
             <br />
             <br />
-            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server"></asp:ObjectDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [prodName], [prodDescription], [prodBrand], [id] FROM [product] WHERE ([id] = @id) ORDER BY [prodBrand], [prodName]">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="ddlProductInven" Name="id" PropertyName="SelectedValue" Type="Int32" />
+                </SelectParameters>
+            </asp:SqlDataSource>
             Product Infomation<br />
-            <asp:ListBox ID="lstProductInven" runat="server" Height="136px" Width="243px"></asp:ListBox>
+            <asp:ListBox ID="lstProductInven" runat="server" Height="136px" Width="243px" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="prodName" DataValueField="id" EnableViewState="False">
+                <asp:ListItem Selected="True"></asp:ListItem>
+            </asp:ListBox>
+            <br />
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource2" EnableViewState="False">
+                <Columns>
+                    <asp:BoundField DataField="prodBrand" HeaderText="Brand" SortExpression="prodBrand" />
+                    <asp:BoundField DataField="prodName" HeaderText="Name" SortExpression="prodName" />
+                    <asp:BoundField DataField="prodDescription" HeaderText="Description" SortExpression="prodDescription" />
+                </Columns>
+            </asp:GridView>
             <br />
             <br />
-            I<asp:ObjectDataSource ID="ObjectDataSource3" runat="server"></asp:ObjectDataSource>
-            nventory<asp:DetailsView ID="dvInventory" runat="server" Height="50px" Width="125px">
-            </asp:DetailsView>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [invSize], [invQuantity], [id], [invMeasure], [invPrice], [productID] FROM [inventory] WHERE ([productID] = @productID) ORDER BY [id], [invPrice]">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="lstProductInven" Name="productID" PropertyName="SelectedValue" Type="Int32" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            Inventory<%--<asp:DetailsView ID="dvInventory" runat="server" Height="50px" Width="199px" AutoGenerateRows="False" CellPadding="4" CssClass="auto-style1" DataKeyNames="id" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" OnPageIndexChanging="dvInventory_PageIndexChanging">
+                <AlternatingRowStyle BackColor="White" />
+                <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
+                <EditRowStyle BackColor="#2461BF" />
+                <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
+                <Fields>
+                    <asp:BoundField DataField="invSize" HeaderText="Size" ReadOnly="True" SortExpression="invSize" />
+                    <asp:BoundField DataField="invQuantity" HeaderText="Quantity" SortExpression="invQuantity" />
+                    <asp:BoundField DataField="invMeasure" HeaderText="Measure" ReadOnly="True" SortExpression="invMeasure" />
+                    <asp:BoundField DataField="invPrice" HeaderText="Price" SortExpression="invPrice" />
+                    <asp:CommandField ShowEditButton="True" />
+                </Fields>
+                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EFF3FB" />
+            </asp:DetailsView>--%>
+            <br />
+            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" EnableViewState="False">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:BoundField DataField="invSize" HeaderText="Size" ReadOnly="True" SortExpression="invSize" />
+                    <asp:BoundField DataField="invQuantity" HeaderText="Quantity" SortExpression="invQuantity" />
+                    <asp:BoundField DataField="invMeasure" HeaderText="Measure" ReadOnly="True" SortExpression="invMeasure" />
+                    <asp:BoundField DataField="invPrice" HeaderText="Price" SortExpression="invPrice" />
+                    <asp:TemplateField ShowHeader="False">
+                        <EditItemTemplate>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
+                            &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+                <EditRowStyle BackColor="#2461BF" />
+                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EFF3FB" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+            </asp:GridView>
             <br />
 
             <%--            <div class="col-sm-3">
