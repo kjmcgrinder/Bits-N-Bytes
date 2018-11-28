@@ -8,7 +8,7 @@
     <link href="Style/style.css" rel="stylesheet" />
 </head>
 <body class="IndexCentering">
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" class="secondary">
         <h1 class="IndexHeaderA">Create an Account</h1><br /><br /><br /><br />
         <div class="subScript">
             <asp:Label ID ="lblUserName" runat="server">User Name</asp:Label><br />
@@ -23,7 +23,7 @@
             <asp:TextBox ID="txtConfirm" runat="server" TextMode="Password" CssClass="inputBox" Height="34px" Width="270px" placeholder="Confirm Password"></asp:TextBox>
         </div>
         <div class="subScript">
-            <asp:Button ID="btnRegister" Text="Register" runat="server" OnClick="btnRegister_Click" CssClass="submitBtn" Height="48px" Width="144px"/>
+            <asp:Button ID="btnRegister" Text="Register" runat="server" OnClick="btnRegister_Click" CssClass="IndexButton" Height="48px" Width="144px"/>
         </div>
         <div class="subScript">
             <asp:Label ID="lblResult" runat="server"></asp:Label>

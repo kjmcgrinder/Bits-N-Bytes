@@ -61,6 +61,7 @@
         &nbsp;</div>
   </div>           
 </div>
+        </div>
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
     </footer>

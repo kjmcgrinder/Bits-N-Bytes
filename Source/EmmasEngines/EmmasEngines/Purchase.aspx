@@ -74,7 +74,7 @@
             <div class="col-sm">
               <label for="cname">Customer</label>&nbsp;<br />
             <input type="text" name="search" placeholder="Search.." class="searchinput"/><br />
-             <asp:ListBox ID="ListBox2" runat="server" Width="394px" DataSourceID="dsCustomer" DataTextField="Full" DataValueField="id"></asp:ListBox><br />
+             <asp:ListBox ID="ListBox2" runat="server" Width="394px"></asp:ListBox><br />
               <asp:Label ID="Label1" runat="server" Text="Customer Chosen" Visible="false"></asp:Label><br />
               <br />
             </div>
@@ -82,7 +82,7 @@
             <div class="col-sm">
             <label for="cname">Products</label><br />
             <input type="text" name="search" placeholder="Search.." class="searchinput"/><br />
-              <asp:ListBox ID="ListBox3" runat="server" Width="395px" DataSourceID="SaleItem" DataTextField="namePRICE" DataValueField="productID"></asp:ListBox><br />
+              <asp:ListBox ID="ListBox3" runat="server" Width="395px"></asp:ListBox><br />
               <asp:Label ID="Label2" runat="server" Text="Items Selected" Visible="false"></asp:Label>
               
             </div>
@@ -90,7 +90,7 @@
 
               <label for="cname">Parts</label>&nbsp;<br />
             <input type="text" name="search" placeholder="Search.." class="searchinput" /><br />
-              <asp:ListBox ID="ListBox1" runat="server" Width="399px" DataSourceID="dsProduct" DataTextField="prodName" DataValueField="id"></asp:ListBox><br />
+              <asp:ListBox ID="ListBox1" runat="server" Width="399px"></asp:ListBox><br />
               <asp:Label ID="Label3" runat="server" Text="Parts Selected" Visible="false"></asp:Label><br />
               
     </div>
@@ -121,8 +121,5 @@
           </div>
           
     </form>  
-    <asp:SqlDataSource ID="dsCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT id, custFirst + ' ,' + custLast AS 'Full' FROM customer"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="dsProduct" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT [id], [prodName] FROM [product]"></asp:SqlDataSource>
-    <asp:SqlDataSource ID="SaleItem" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT inventory.productID, product.prodName + ' ' + '$' + CONVERT(VARCHAR, inventory.invPrice )AS namePRICE FROM inventory JOIN product ON inventory.productID = product.id"></asp:SqlDataSource>
-</body>
+    </body>
 </html>
