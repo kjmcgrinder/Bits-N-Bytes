@@ -7,18 +7,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Inventory</title>
-    <style type="text/css">
-        .auto-style1 {
-            margin-right: 0px;
-        }
-    </style>
-</head>
-
-<link href="Style/style.css" rel="stylesheet" />
+    <link href="Style/style.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    </head>
+
 
 <body>
     <!--Nav Bar-->
@@ -61,36 +57,38 @@
         <h3 class="IndexHeaderA">Inventory</h3>
         <section>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [id], [prodBrand], [prodName] FROM [product] ORDER BY [prodBrand]"></asp:SqlDataSource>
-            Brand&nbsp; Name:
+            <p>Brand&nbsp; Name:
             <asp:DropDownList ID="ddlProductInven" runat="server" Height="44px" Width="176px" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="prodName" DataValueField="id" EnableViewState="False">
             </asp:DropDownList>
-            <br />
-            <br />
+                </p>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [prodName], [prodDescription], [prodBrand], [id] FROM [product] WHERE ([id] = @id) ORDER BY [prodBrand], [prodName]">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="ddlProductInven" Name="id" PropertyName="SelectedValue" Type="Int32" />
                 </SelectParameters>
             </asp:SqlDataSource>
+            <p>
             Product Infomation<br />
             <asp:ListBox ID="lstProductInven" runat="server" Height="136px" Width="243px" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="prodName" DataValueField="id" EnableViewState="False">
                 <asp:ListItem Selected="True"></asp:ListItem>
             </asp:ListBox>
-            <br />
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource2" EnableViewState="False">
+                </p>
+            <p>
+            <asp:GridView ID="gvProduct" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource2" EnableViewState="False">
                 <Columns>
                     <asp:BoundField DataField="prodBrand" HeaderText="Brand" SortExpression="prodBrand" />
                     <asp:BoundField DataField="prodName" HeaderText="Name" SortExpression="prodName" />
                     <asp:BoundField DataField="prodDescription" HeaderText="Description" SortExpression="prodDescription" />
                 </Columns>
             </asp:GridView>
-            <br />
-            <br />
+                </p>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [invSize], [invQuantity], [id], [invMeasure], [invPrice], [productID] FROM [inventory] WHERE ([productID] = @productID) ORDER BY [id], [invPrice]">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="lstProductInven" Name="productID" PropertyName="SelectedValue" Type="Int32" />
                 </SelectParameters>
             </asp:SqlDataSource>
-            Inventory<%--<asp:DetailsView ID="dvInventory" runat="server" Height="50px" Width="199px" AutoGenerateRows="False" CellPadding="4" CssClass="auto-style1" DataKeyNames="id" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" OnPageIndexChanging="dvInventory_PageIndexChanging">
+            Inventory
+            
+            <%--<asp:DetailsView ID="dvInventory" runat="server" Height="50px" Width="199px" AutoGenerateRows="False" CellPadding="4" CssClass="auto-style1" DataKeyNames="id" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" OnPageIndexChanging="dvInventory_PageIndexChanging">
                 <AlternatingRowStyle BackColor="White" />
                 <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
                 <EditRowStyle BackColor="#2461BF" />
@@ -107,8 +105,9 @@
                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                 <RowStyle BackColor="#EFF3FB" />
             </asp:DetailsView>--%>
+
             <br />
-            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" EnableViewState="False">
+            <asp:GridView ID="gvInven" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" EnableViewState="False">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="invSize" HeaderText="Size" ReadOnly="True" SortExpression="invSize" />
@@ -136,7 +135,6 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
-            <br />
 
             <%--            <div class="col-sm-3">
                 <div class="card">
@@ -147,11 +145,11 @@
             </div>--%>
 
             <div class="col-sm-3">
-                <h5 class="card-title">Create Inventory</h5>
-                <p class="card-text">Create a new inventory here.</p>
+                <h5 class="card-title">Order Product</h5>
+                <p class="card-text">Place an order here.</p>
                 <div class="card">
                     <div class="card-body">
-                        <a href="Inventory-Create.aspx" class="btn btn-primary">Get Started</a>
+                        <a href="Orders.aspx" class="btn btn-primary">Get Started</a>
                     </div>
                 </div>
             </div>
