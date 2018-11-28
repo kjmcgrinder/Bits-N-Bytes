@@ -54,21 +54,26 @@
         <div>
             <h3 class ="IndexHeaderA">Repairs</h3>
         </div>
-        <asp:GridView ID="repairGridview" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="RepairDataSource" CssClass="table" HorizontalAlign="Left">
-            <Columns>
-                <asp:BoundField DataField="Received" HeaderText="Received" SortExpression="Received" />
-                <asp:BoundField DataField="Completed" HeaderText="Completed" SortExpression="Completed" />
-                <asp:BoundField DataField="Issue" HeaderText="Issue" SortExpression="Issue" />
-                <asp:CheckBoxField DataField="Has Warranty" HeaderText="Has Warranty" SortExpression="Has Warranty" />
-                <asp:BoundField DataField="Equipment Model" HeaderText="Equipment Model" SortExpression="Equipment Model" />
-                <asp:BoundField DataField="Customer" HeaderText="Customer" ReadOnly="True" SortExpression="Customer" />
-                <asp:BoundField DataField="Customer Phone" HeaderText="Customer Phone" SortExpression="Customer Phone" />
-                <asp:BoundField DataField="Customer Email" HeaderText="Customer Email" SortExpression="Customer Email" />
-                <asp:BoundField DataField="Employee" HeaderText="Employee" ReadOnly="True" SortExpression="Employee" />
-                <asp:BoundField DataField="Equipment Serial Num" HeaderText="Equipment Serial Num" SortExpression="Equipment Serial Num" />
-                <asp:HyperLinkField NavigateUrl="Repair-Details.aspx" Text="Details" />
-            </Columns>
-        </asp:GridView>
+        <div id="repair-table" style="margin-right: 20px; margin-left: 20px;">
+            <asp:GridView ID="repairGridview" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="RepairDataSource" CssClass="table" HorizontalAlign="Left" BorderStyle="None" GridLines="None">
+                <AlternatingRowStyle BackColor="#CBD2DA" />
+                <Columns>
+                    <asp:BoundField DataField="Received" HeaderText="Received" SortExpression="Received" />
+                    <asp:BoundField DataField="Completed" HeaderText="Completed" SortExpression="Completed" />
+                    <asp:BoundField DataField="Issue" HeaderText="Issue" SortExpression="Issue" />
+                    <asp:CheckBoxField DataField="Has Warranty" HeaderText="Has Warranty" SortExpression="Has Warranty" />
+                    <asp:BoundField DataField="Equipment Model" HeaderText="Equipment Model" SortExpression="Equipment Model" />
+                    <asp:BoundField DataField="Customer" HeaderText="Customer" ReadOnly="True" SortExpression="Customer" />
+                    <asp:BoundField DataField="Customer Phone" HeaderText="Customer Phone" SortExpression="Customer Phone" />
+                    <asp:BoundField DataField="Customer Email" HeaderText="Customer Email" SortExpression="Customer Email" />
+                    <asp:BoundField DataField="Employee" HeaderText="Employee" ReadOnly="True" SortExpression="Employee" />
+                    <asp:BoundField DataField="Equipment Serial Num" HeaderText="Equipment Serial Num" SortExpression="Equipment Serial Num" />
+                    <asp:HyperLinkField NavigateUrl="Repair-Details.aspx" Text="Details" />
+                </Columns>
+                <HeaderStyle BackColor="#79A6D2" BorderColor="#E9ECEF" BorderStyle="Outset" BorderWidth="5px" Font-Bold="True" Font-Size="Medium" ForeColor="White" />
+                <RowStyle BackColor="#E9ECEF" Font-Size="Small" />
+            </asp:GridView>
+        </div>
         <asp:SqlDataSource ID="RepairDataSource" runat="server" ConflictDetection="CompareAllValues" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Emmas.mdf;Integrated Security=True" DeleteCommand="DELETE FROM [service_order] WHERE [id] = @original_id AND (([serordDateIn] = @original_serordDateIn) OR ([serordDateIn] IS NULL AND @original_serordDateIn IS NULL)) AND (([serordDateOut] = @original_serordDateOut) OR ([serordDateOut] IS NULL AND @original_serordDateOut IS NULL)) AND (([serordIssue] = @original_serordIssue) OR ([serordIssue] IS NULL AND @original_serordIssue IS NULL)) AND (([serordWarranty] = @original_serordWarranty) OR ([serordWarranty] IS NULL AND @original_serordWarranty IS NULL)) AND [receiptID] = @original_receiptID AND [serviceID] = @original_serviceID AND [equipID] = @original_equipID AND [empID] = @original_empID" InsertCommand="INSERT INTO [service_order] ([serordDateIn], [serordDateOut], [serordIssue], [serordWarranty], [receiptID], [serviceID], [equipID], [empID]) VALUES (@serordDateIn, @serordDateOut, @serordIssue, @serordWarranty, @receiptID, @serviceID, @equipID, @empID)" OldValuesParameterFormatString="original_{0}" ProviderName="System.Data.SqlClient" SelectCommand="SELECT service_order.serordDateIn AS 'Received', service_order.serordDateOut AS 'Completed', service_order.serordIssue AS 'Issue', service_order.serordWarranty AS 'Has Warranty', equipment.equModel AS 'Equipment Model', customer.custFirst + ' ' + customer.custLast AS 'Customer', customer.custPhone AS 'Customer Phone', customer.custEmail AS 'Customer Email', employee.empFirst + ' ' + employee.empLast AS 'Employee', equipment.equSerial AS 'Equipment Serial Num' FROM service_order INNER JOIN employee ON service_order.empID = employee.id INNER JOIN equipment ON service_order.equipID = equipment.id INNER JOIN customer ON equipment.custID = customer.id" UpdateCommand="UPDATE [service_order] SET [serordDateIn] = @serordDateIn, [serordDateOut] = @serordDateOut, [serordIssue] = @serordIssue, [serordWarranty] = @serordWarranty, [receiptID] = @receiptID, [serviceID] = @serviceID, [equipID] = @equipID, [empID] = @empID WHERE [id] = @original_id AND (([serordDateIn] = @original_serordDateIn) OR ([serordDateIn] IS NULL AND @original_serordDateIn IS NULL)) AND (([serordDateOut] = @original_serordDateOut) OR ([serordDateOut] IS NULL AND @original_serordDateOut IS NULL)) AND (([serordIssue] = @original_serordIssue) OR ([serordIssue] IS NULL AND @original_serordIssue IS NULL)) AND (([serordWarranty] = @original_serordWarranty) OR ([serordWarranty] IS NULL AND @original_serordWarranty IS NULL)) AND [receiptID] = @original_receiptID AND [serviceID] = @original_serviceID AND [equipID] = @original_equipID AND [empID] = @original_empID">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
