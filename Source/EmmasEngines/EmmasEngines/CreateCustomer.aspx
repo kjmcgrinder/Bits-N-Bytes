@@ -56,8 +56,9 @@
   </div>
 </nav>
     <!-- Form -->
+    <div class="secondary">
     <form runat="server" class="IndexCentering">
-    <div class="secondary">    
+     
         <div class="row">
   <div class="col-75">
     <div class="container">
@@ -106,6 +107,6 @@
     </footer>
 </div>
     </form>
-    
+    </div>
 </body>
 </html>
