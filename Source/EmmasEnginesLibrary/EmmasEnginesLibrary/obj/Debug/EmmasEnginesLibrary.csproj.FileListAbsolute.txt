@@ -20,3 +20,4 @@ G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrar
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll.config
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.pdb
+G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csprojAssemblyReference.cache
