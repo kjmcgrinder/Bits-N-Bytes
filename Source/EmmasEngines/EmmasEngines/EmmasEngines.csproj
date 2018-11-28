@@ -195,6 +195,7 @@
     <Content Include="Images\motor-768750_1920.jpg" />
     <Content Include="Inventory-Create.aspx" />
     <Content Include="Notes.txt" />
+    <Content Include="Order-Details.aspx" />
     <Content Include="Repair-Details.aspx" />
     <Content Include="Repairs.aspx" />
     <Content Include="Sale-Repair.aspx" />
@@ -352,6 +353,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order-Details.aspx.cs">
+      <DependentUpon>Order-Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order-Details.aspx.designer.cs">
+      <DependentUpon>Order-Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="OrderDepartment.aspx.cs">
       <DependentUpon>OrderDepartment.aspx</DependentUpon>
