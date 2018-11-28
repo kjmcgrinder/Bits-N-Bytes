@@ -15,5 +15,10 @@ namespace EmmasEngines
             if (!User.Identity.IsAuthenticated)
                 Response.Redirect("~/Login.aspx");
         }
+
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }

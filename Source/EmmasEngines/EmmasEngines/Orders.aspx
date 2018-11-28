@@ -55,29 +55,61 @@
     <form runat="server" class="secondary">
         <h3 class="IndexHeaderA">Order Form</h3>
         <section class="IndexCentering">
-            <p>
-                <asp:Label ID="lblPart" runat="server" Text="Part:" CssClass="subScript"></asp:Label>
-                <%--Part--%><br />
-                <asp:TextBox ID="txtPart" runat="server" CssClass="inputBox"></asp:TextBox>
-            </p>
-            <p>
-                <asp:Label ID="lblStatus" runat="server" Text="Status:" CssClass="subScript"></asp:Label>
-                <%--Status--%><br />
-                <asp:TextBox ID="txtStatus" runat="server" CssClass="inputBox"></asp:TextBox>
-            </p>
-            <p>
-                <asp:Label ID="lblQuantity" runat="server" Text="Quantity:" CssClass="subScript"></asp:Label>
-                <%--Quantity--%><br />
-                <asp:TextBox ID="txtQuantity" runat="server" CssClass="inputBox"></asp:TextBox>
-            </p>
-            <p>
-                <asp:Label ID="lblProduct" runat="server" Text="Product:" CssClass="subScript"></asp:Label>
-                <%--Product #--%><br />
-                <asp:TextBox ID="txtProduct" runat="server" CssClass="inputBox"></asp:TextBox>
-            </p>
+
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT DISTINCT [prodName] FROM [product] ORDER BY [prodName]"></asp:SqlDataSource>
+
+            <asp:Label ID="lblPart" runat="server" Text="Product Name:" CssClass="subScript"></asp:Label>
+            <%--Part--%><br />
+            <asp:DropDownList ID="ddlProductName" runat="server" Height="40px" Width="134px" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="prodName" DataValueField="prodName">
+            </asp:DropDownList>
+
+            <br />
+            <br />
+            Brand Name:<br />
+            <asp:ListBox ID="lstBrandName" runat="server" AutoPostBack="True" Height="111px" Width="176px" DataSourceID="SqlDataSource2" DataTextField="prodBrand" DataValueField="id"></asp:ListBox>
+
+            <br />
+            <br />
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [id], [prodDescription], [prodName], [prodBrand] FROM [product] WHERE ([prodName] = @prodName) ORDER BY [prodBrand], [prodName]">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="ddlProductName" Name="prodName" PropertyName="SelectedValue" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            Product Information:<%--                <asp:ListBox ID="lstProduct" runat="server" AutoPostBack="True" Height="34px" Width="210px" DataSourceID="SqlDataSource2" DataTextField="prodBrand" DataValueField="id"></asp:ListBox>--%><asp:GridView ID="gvProduct" runat="server" align="center" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource2" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:BoundField DataField="prodName" HeaderText="Name" SortExpression="prodName" />
+                    <asp:BoundField DataField="prodBrand" HeaderText="Brand" SortExpression="prodBrand" />
+                    <asp:BoundField DataField="prodDescription" HeaderText="Description" SortExpression="prodDescription" />
+                </Columns>
+                <EditRowStyle BackColor="#2461BF" />
+                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EFF3FB" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+            </asp:GridView>
+
+            <br />
+
+            <asp:Label ID="lblStatus" runat="server" Text="Status:" CssClass="subScript"></asp:Label>
+            <%--Status--%><br />
+            Low In Stock
+                <br />
+            <br />
+            <asp:Label ID="lblQuantity" runat="server" Text="Quantity:" CssClass="subScript"></asp:Label>
+            <%--Quantity--%><br />
+            <asp:TextBox ID="txtQuantity" runat="server" CssClass="inputBox" type="number" min="1" max="99" placeholder="1 ~ 99" required="true"></asp:TextBox>
+
+            <br />
+
         </section>
 
-<%--        <section>
+        <%--        <section>
             <asp:Label ID="lblOrderNumber" runat="server" Text="Order Number:" CssClass="subScript"></asp:Label>
             <asp:TextBox ID="txtOrderNumber" runat="server" CssClass="inputBox"></asp:TextBox>
             <asp:FormView ID="FormView1" runat="server"></asp:FormView>
@@ -88,10 +120,12 @@
         <section class="IndexCentering">
             <asp:Button ID="btnConfirm" runat="server" Text="Confirm" CssClass="IndexButton" />
             <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="IndexButton" />
+            <br />
+            <br />
+            <a href="javascript: history.go(-1)">Go Back</a>
         </section>
         <br />
-        <br />
-        <br />
+
 
         <footer>
             <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
