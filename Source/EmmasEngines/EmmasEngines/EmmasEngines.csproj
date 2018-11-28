@@ -195,6 +195,7 @@
     <Content Include="Images\motor-768750_1920.jpg" />
     <Content Include="Inventory-Create.aspx" />
     <Content Include="Notes.txt" />
+    <Content Include="Order-Details.aspx" />
     <Content Include="Repair-Details.aspx" />
     <Content Include="Repairs.aspx" />
     <Content Include="Sale-Repair.aspx" />
@@ -223,11 +224,14 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Index.aspx" />
     <Content Include="Inventory.aspx" />
+    <Content Include="Invoice.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="OrderDepartment.aspx" />
     <Content Include="Orders.aspx" />
     <Content Include="Purchase.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Repairs-Form.aspx" />
+    <Content Include="RepairsDeparment.aspx" />
     <Content Include="Reports.aspx" />
     <Content Include="Sales.aspx" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -336,12 +340,33 @@
     <Compile Include="Inventory.aspx.designer.cs">
       <DependentUpon>Inventory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Invoice.aspx.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice.aspx.designer.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order-Details.aspx.cs">
+      <DependentUpon>Order-Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order-Details.aspx.designer.cs">
+      <DependentUpon>Order-Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDepartment.aspx.cs">
+      <DependentUpon>OrderDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderDepartment.aspx.designer.cs">
+      <DependentUpon>OrderDepartment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Orders.aspx.cs">
       <DependentUpon>Orders.aspx</DependentUpon>
@@ -385,6 +410,13 @@
     </Compile>
     <Compile Include="Repairs.aspx.designer.cs">
       <DependentUpon>Repairs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDeparment.aspx.cs">
+      <DependentUpon>RepairsDeparment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepairsDeparment.aspx.designer.cs">
+      <DependentUpon>RepairsDeparment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reports.aspx.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
