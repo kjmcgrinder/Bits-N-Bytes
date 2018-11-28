@@ -66,19 +66,19 @@
             <label for="cname">Customer</label>&nbsp;<br />
             <input type="text" name="search" placeholder="Search.." class="searchinput"/><br />
              <asp:ListBox ID="ListBox2" runat="server" Width="394px"></asp:ListBox><br />
-              <asp:Label ID="Label1" runat="server" Text="Customer Chosen"></asp:Label>
+              <asp:Label ID="Label1" runat="server" Text="Customer Chosen" Visible="false"></asp:Label><br />
               <br />
 
             <label for="cname">Products</label><br />
             <input type="text" name="search" placeholder="Search.." class="searchinput"/><br />
               <asp:ListBox ID="ListBox3" runat="server" Width="238px"></asp:ListBox><br />
-              <asp:Label ID="Label2" runat="server" Text="Items Selected"></asp:Label>
+              <asp:Label ID="Label2" runat="server" Text="Items Selected" Visible="false"></asp:Label>
               <br /><br />
 
               <label for="cname">Parts</label>&nbsp;<br />
             <input type="text" name="search" placeholder="Search.." class="searchinput" /><br />
               <asp:ListBox ID="ListBox1" runat="server" Width="399px"></asp:ListBox><br />
-              <asp:Label ID="Label3" runat="server" Text="Parts Selected"></asp:Label><br />
+              <asp:Label ID="Label3" runat="server" Text="Parts Selected" Visible="false"></asp:Label><br />
               <br />
 
             <label for="cname">Repair Description</label>&nbsp;<br />
