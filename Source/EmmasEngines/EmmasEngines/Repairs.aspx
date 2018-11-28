@@ -54,7 +54,7 @@
         <div>
             <h3 class ="IndexHeaderA">Repairs</h3>
         </div>
-        <asp:GridView ID="repairGridview" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="RepairDataSource" CssClass="table">
+        <asp:GridView ID="repairGridview" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="RepairDataSource" CssClass="table" HorizontalAlign="Left">
             <Columns>
                 <asp:BoundField DataField="Received" HeaderText="Received" SortExpression="Received" />
                 <asp:BoundField DataField="Completed" HeaderText="Completed" SortExpression="Completed" />

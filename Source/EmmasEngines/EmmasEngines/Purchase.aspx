@@ -110,7 +110,7 @@
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="Warrenty">Warrenty:</label>
+        <label for="Warranty">Warranty:</label><%--changed from "warrenty"--%>
       </div>
       <div class="col-75">
         <asp:RadioButtonList ID="RadioButtonList1" runat="server" Width="394px">
