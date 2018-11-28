@@ -1709,3 +1709,8 @@ C:\Users\Administrator\Desktop\Github\Bits-N-Bytes\Source\EmmasEngines\EmmasEngi
 C:\Users\Administrator\Desktop\Github\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.csproj.CopyComplete
 C:\Users\Administrator\Desktop\Github\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.dll
 C:\Users\Administrator\Desktop\Github\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.pdb
+C:\Users\Administrator\Documents\GitHub\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Emmas.mdf
+C:\Users\Administrator\Documents\GitHub\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Emmas_log.ldf
+C:\Users\Administrator\Documents\GitHub\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
+C:\Users\Administrator\Documents\GitHub\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
+C:\Users\Administrator\Documents\GitHub\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll.config
