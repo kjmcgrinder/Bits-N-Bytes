@@ -1548,7 +1548,6 @@ C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\V
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Antlr3.Runtime.dll
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\AspNet.ScriptManager.bootstrap.dll
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\AspNet.ScriptManager.jQuery.dll
-C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EntityFramework.dll
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EntityFramework.SqlServer.dll
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Microsoft.AI.Agent.Intercept.dll
@@ -1577,7 +1576,6 @@ C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Owin.dll
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\System.Diagnostics.DiagnosticSource.dll
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\System.Web.Optimization.dll
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\WebGrease.dll
-C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EntityFramework.xml
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EntityFramework.SqlServer.xml
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Microsoft.AspNet.Identity.Core.xml
