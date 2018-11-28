@@ -117,10 +117,12 @@
               </div>
               </div>
           </div>      
-              <asp:SqlDataSource ID="dsCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT id, custFirst + ' ,' + custLast AS 'Full' FROM customer"></asp:SqlDataSource>
-        &nbsp;<asp:SqlDataSource ID="dsProduct" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT [id], [prodName] FROM [product]"></asp:SqlDataSource>
+              
           </div>
-          <asp:SqlDataSource ID="SaleItem" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT inventory.productID, product.prodName + ' ' + '$' + CONVERT(VARCHAR, inventory.invPrice )AS namePRICE FROM inventory JOIN product ON inventory.productID = product.id"></asp:SqlDataSource>
-    </form>           
+          
+    </form>  
+    <asp:SqlDataSource ID="dsCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT id, custFirst + ' ,' + custLast AS 'Full' FROM customer"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="dsProduct" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT [id], [prodName] FROM [product]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SaleItem" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT inventory.productID, product.prodName + ' ' + '$' + CONVERT(VARCHAR, inventory.invPrice )AS namePRICE FROM inventory JOIN product ON inventory.productID = product.id"></asp:SqlDataSource>
 </body>
 </html>
