@@ -56,7 +56,7 @@
         <h3 class="IndexHeaderA">Order Form</h3>
         <section class="IndexCentering">
 
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT DISTINCT [prodName] FROM [product] ORDER BY [prodName]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [prodName] FROM [product] ORDER BY [prodName]"></asp:SqlDataSource>
 
             <asp:Label ID="lblPart" runat="server" Text="Product Name:" CssClass="subScript"></asp:Label>
             <%--Part--%><br />
@@ -122,7 +122,7 @@
             <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="IndexButton" />
             <br />
             <br />
-            <a href="javascript: history.go(-1)">Go Back</a>
+            <a href="Inventory.aspx">Go Back</a>
         </section>
         <br />
 
