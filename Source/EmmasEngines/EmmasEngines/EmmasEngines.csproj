@@ -181,6 +181,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CreateCustomer.aspx" />
+    <Content Include="customer-details.aspx" />
     <Content Include="Default2.aspx" />
     <Content Include="Details.aspx" />
     <Content Include="Employees.aspx" />
@@ -285,6 +286,13 @@
     </Compile>
     <Compile Include="CreateCustomer.aspx.designer.cs">
       <DependentUpon>CreateCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer-details.aspx.cs">
+      <DependentUpon>customer-details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer-details.aspx.designer.cs">
+      <DependentUpon>customer-details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default2.aspx.cs">
       <DependentUpon>Default2.aspx</DependentUpon>
