@@ -4,15 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Login</title>
     <link href="Style/style.css" rel="stylesheet" />
+    
 </head>
-<body>
+<body class="secondary">
     <div class="IndexCentering">
     <div>
             <h1 class="IndexHeaderA">Login</h1>
     </div>
     <div>
+        
         <form id="frmLogin" runat="server">      
                 <h2 class="subScript">
                     Provide Login Information
@@ -28,7 +30,7 @@
                     <asp:Label ID="lblResult" runat="server"></asp:Label>
                 </div>
         </form>
-        </div>
+            </div>
     </div>
 </body>
 </html>
