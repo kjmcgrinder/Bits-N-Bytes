@@ -56,50 +56,73 @@
 
           <div class="col-50">
             <h3 class="IndexHeaderA">Purchase</h3><br />
-            <label for="fname">Service</label><br />
-            <asp:DropDownList ID="DropDownList1" runat="server" Height="35px" Width="246px">
-                <asp:ListItem>Select a service</asp:ListItem>
-                <asp:ListItem>Repair</asp:ListItem>
-                <asp:ListItem>Sale</asp:ListItem>
-              </asp:DropDownList><br /><br />
-              
-            <label for="cname">Customer</label>&nbsp;<br />
-            <input type="text" name="search" placeholder="Search.." class="searchinput"/><br />
-             <asp:ListBox ID="ListBox2" runat="server" Width="394px"></asp:ListBox><br />
-              <asp:Label ID="Label1" runat="server" Text="Customer Chosen"></asp:Label>
-              <br />
+            
 
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <asp:Label ID="Sale" runat="server" CssClass="btn btn-secondary active">
+                  <asp:RadioButton ID="rdoSale" runat="server" /> Sale
+                  </asp:Label>
+
+                  <asp:Label ID="Repair" runat="server" CssClass="btn btn-secondary active">
+                      <asp:RadioButton ID="rdoRepair" runat="server" /> Repair
+                  </asp:Label>
+              </div><br /><br />
+              
+            <div class="container">
+            <div class="row">
+
+            <div class="col-sm">
+              <label for="cname">Customer</label>&nbsp;<br />
+            <input type="text" name="search" placeholder="Search.." class="searchinput"/><br />
+             <asp:ListBox ID="ListBox2" runat="server" Width="394px" DataSourceID="dsCustomer" DataTextField="Full" DataValueField="id"></asp:ListBox><br />
+              <asp:Label ID="Label1" runat="server" Text="Customer Chosen" Visible="false"></asp:Label><br />
+              <br />
+            </div>
+
+            <div class="col-sm">
             <label for="cname">Products</label><br />
             <input type="text" name="search" placeholder="Search.." class="searchinput"/><br />
-              <asp:ListBox ID="ListBox3" runat="server" Width="238px"></asp:ListBox><br />
-              <asp:Label ID="Label2" runat="server" Text="Items Selected"></asp:Label>
-              <br /><br />
+              <asp:ListBox ID="ListBox3" runat="server" Width="395px" DataSourceID="SaleItem" DataTextField="namePRICE" DataValueField="productID"></asp:ListBox><br />
+              <asp:Label ID="Label2" runat="server" Text="Items Selected" Visible="false"></asp:Label>
+              
+            </div>
+<div class="col-sm">
 
               <label for="cname">Parts</label>&nbsp;<br />
             <input type="text" name="search" placeholder="Search.." class="searchinput" /><br />
-              <asp:ListBox ID="ListBox1" runat="server" Width="399px"></asp:ListBox><br />
-              <asp:Label ID="Label3" runat="server" Text="Parts Selected"></asp:Label><br />
-              <br />
+              <asp:ListBox ID="ListBox1" runat="server" Width="399px" DataSourceID="dsProduct" DataTextField="prodName" DataValueField="id"></asp:ListBox><br />
+              <asp:Label ID="Label3" runat="server" Text="Parts Selected" Visible="false"></asp:Label><br />
+              
+    </div>
 
+    <div class="col-sm">
             <label for="cname">Repair Description</label>&nbsp;<br />
-            <asp:TextBox ID="TextBox1" runat="server" Height="107px" Width="367px"></asp:TextBox><br /><br />
+            <asp:TextBox ID="txtRD" runat="server" Height="107px" Width="367px"></asp:TextBox><br /><br />
+        </div>
 
+    <div class="col-sm">
             <label for="cname">Warranty</label>&nbsp;<br />
               <asp:RadioButtonList ID="RadioButtonList1" runat="server" Width="394px">
                   <asp:ListItem Value="1">Yes</asp:ListItem>
                   <asp:ListItem Value="2">No</asp:ListItem>
               </asp:RadioButtonList>
-&nbsp;<div class="row">
+        </div>
+&nbsp;<div class="col-sm">
               <div class="col-50">
                 <label for="cvv">Total:</label><br />
                 <input type="text" id="cvv" name="cvv" placeholder="Total" readonly="true"/><br />
-                  <asp:Button ID="Button1" runat="server" Text="Finish" CssClass="IndexButton" Width="404px" />
+                  <asp:Button ID="Button1" runat="server" Text="Finish" CssClass="IndexButton" Width="393px" />
+                  
+                  </div>
               </div>
-            </div>
+              </div>
+          </div>      
+              
           </div>
-        &nbsp;</form>
-
-            <%--If there is not a product on the inventory This will redirect us to the ordering page--%>
-
+          
+    </form>  
+    <asp:SqlDataSource ID="dsCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT id, custFirst + ' ,' + custLast AS 'Full' FROM customer"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="dsProduct" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT [id], [prodName] FROM [product]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SaleItem" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT inventory.productID, product.prodName + ' ' + '$' + CONVERT(VARCHAR, inventory.invPrice )AS namePRICE FROM inventory JOIN product ON inventory.productID = product.id"></asp:SqlDataSource>
 </body>
 </html>
