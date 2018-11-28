@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Purchase</title>
 </head>
+<link href="Style/Form-Style.css" rel="stylesheet" />
 <link href="Style/stylePurchase.css" rel="stylesheet" />
 <link href="Style/style.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
@@ -52,10 +53,11 @@
   </div>
 </nav>
 
-      <form id="form1" runat="server" class ="secondary">
 
-          <div class="col-50">
-            <h3 class="IndexHeaderA">Purchase</h3><br />
+    <div class ="secondary">
+    <div class="container">
+  <form runat="server">
+      <h3 class="IndexHeaderA">Purchase</h3><br />
             
 
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -67,59 +69,73 @@
                       <asp:RadioButton ID="rdoRepair" runat="server" /> Repair
                   </asp:Label>
               </div><br /><br />
-              
-            <div class="container">
-            <div class="row">
 
-            <div class="col-sm">
-              <label for="cname">Customer</label>&nbsp;<br />
-            <input type="text" name="search" placeholder="Search.." class="searchinput"/><br />
-             <asp:ListBox ID="ListBox2" runat="server" Width="394px"></asp:ListBox><br />
-              <asp:Label ID="Label1" runat="server" Text="Customer Chosen" Visible="false"></asp:Label><br />
-              <br />
-            </div>
 
-            <div class="col-sm">
-            <label for="cname">Products</label><br />
-            <input type="text" name="search" placeholder="Search.." class="searchinput"/><br />
-              <asp:ListBox ID="ListBox3" runat="server" Width="395px"></asp:ListBox><br />
-              <asp:Label ID="Label2" runat="server" Text="Items Selected" Visible="false"></asp:Label>
-              
-            </div>
-<div class="col-sm">
 
-              <label for="cname">Parts</label>&nbsp;<br />
-            <input type="text" name="search" placeholder="Search.." class="searchinput" /><br />
-              <asp:ListBox ID="ListBox1" runat="server" Width="399px"></asp:ListBox><br />
-              <asp:Label ID="Label3" runat="server" Text="Parts Selected" Visible="false"></asp:Label><br />
-              
+    <div class="row">
+      <div class="col-25">
+         <label for="searchC">Customer:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="searchC" placeholder="Search.." class="searchinput"/><br />
+             <asp:ListBox ID="ListBox2" runat="server" Width="394px"></asp:ListBox><br /><br />
+      </div>
     </div>
-
-    <div class="col-sm">
-            <label for="cname">Repair Description</label>&nbsp;<br />
-            <asp:TextBox ID="txtRD" runat="server" Height="107px" Width="367px"></asp:TextBox><br /><br />
-        </div>
-
-    <div class="col-sm">
-            <label for="cname">Warranty</label>&nbsp;<br />
-              <asp:RadioButtonList ID="RadioButtonList1" runat="server" Width="394px">
+    <div class="row">
+      <div class="col-25">
+        <label for="searchP">Products:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="searchP" placeholder="Search.." class="searchinput"/><br />
+              <asp:ListBox ID="ListBox3" runat="server" Width="395px"></asp:ListBox><br /><br />
+      </div>
+    </div>
+      <br />
+    <div class="row">
+      <div class="col-25">
+        <label for="searchPt">Parts:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="searchPT" placeholder="Search.." class="searchinput" /><br />
+              <asp:ListBox ID="ListBox1" runat="server" Width="399px"></asp:ListBox><br /><br />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="RD">Repair Description:</label>
+      </div>
+      <div class="col-75">
+        <asp:TextBox ID="RD" runat="server" Height="107px" Width="367px"></asp:TextBox><br /><br />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="Warrenty">Warrenty:</label>
+      </div>
+      <div class="col-75">
+        <asp:RadioButtonList ID="RadioButtonList1" runat="server" Width="394px">
                   <asp:ListItem Value="1">Yes</asp:ListItem>
                   <asp:ListItem Value="2">No</asp:ListItem>
-              </asp:RadioButtonList>
-        </div>
-&nbsp;<div class="col-sm">
-              <div class="col-50">
-                <label for="cvv">Total:</label><br />
-                <input type="text" id="cvv" name="cvv" placeholder="Total" readonly="true"/><br />
-                  <asp:Button ID="Button1" runat="server" Text="Finish" CssClass="IndexButton" Width="393px" />
-                  
-                  </div>
-              </div>
-              </div>
-          </div>      
-              
-          </div>
-          
-    </form>  
+              </asp:RadioButtonList><br /><br />
+      </div>
+      </div>
+
+      <div class="row">
+      <div class="col-25">
+        <label for="Total">Total:</label>
+      </div>
+      <div class="col-75">
+          <input type="text" id="cvv" name="cvv" placeholder="Total" readonly="true" disabled="disabled"/><br /><br />
+      </div>
+    </div>
+
+      <div class="row">
+      <div class="col-25">
+          <asp:Button ID="submit" runat="server" Text="Submit" CssClass="IndexButton" />
+      </div>
+      </div>
+  </form>
+</div>
+</div>
     </body>
 </html>
