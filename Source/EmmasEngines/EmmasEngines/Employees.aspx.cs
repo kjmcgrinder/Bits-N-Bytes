@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EmmasEnginesLibrary.AdoObjects;
 
 namespace EmmasEngines
 {
@@ -12,7 +13,13 @@ namespace EmmasEngines
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!User.Identity.IsAuthenticated)
-                Response.Redirect("~/Login.aspx");
+                Response.Redirect("~/Login.aspx");            
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            var Employee = new Employee(fname.Text, lname.Text, 0);
+            Employee.Update();
         }
     }
 }

@@ -28,29 +28,32 @@
           <div class="col-50"><br />
             <h3 class="IndexHeaderA">Create Employee</h3><br /><br /><br />
             <label for="fname"><i class="fa fa-user"></i> First Name</label><br />
-            <input type="text" id="fname" name="firstname" placeholder="John"><br />
+            <asp:Textbox runat="server" ID="fname" placeholder="John"></asp:Textbox><br />
 
             <label for="lname"><i class="fa fa-user"></i> Last Name</label><br />
-            <input type="text" id="lname" name="firstname" placeholder="Doe"><br />
+            <asp:Textbox runat="server" ID="lname" placeholder="Doe"></asp:Textbox><br />
 
             <label for="email"><i class="fa fa-envelope"></i> Email</label><br />
-            <input type="text" id="email" name="email" placeholder="john@example.com"><br />
+            <asp:Textbox runat="server" ID="email" placeholder="john@example.com"></asp:Textbox><br />
 
-            <label for="adr"><i class="fa fa-user"></i> Username</label><br />
-            <input type="text" id="username" name="username" placeholder="Enter Username"><br />
+            <label for="username"><i class="fa fa-user"></i> Username</label><br />
+            <asp:Textbox runat="server" ID="username" placeholder="Enter Username"></asp:Textbox><br />
 
-            <label for="city" class="IndexCentering"><i class="fa fa-address-card-o"></i> Password</label><br />
-            <input type="text" id="password" name="password" placeholder="Enter Password"><br />
+            <label for="password" class="IndexCentering"><i class="fa fa-address-card-o"></i> Password</label><br />
+            <asp:Textbox runat="server" id="password" placeholder="Enter Password" TextMode="Password"></asp:Textbox><br />
+
+            <label for="confirmPassword" class="IndexCentering"><i class="fa fa-address-card-o"></i>Confirm Password</label><br />
+            <asp:Textbox runat="server" id="confirmPassword" placeholder="Confirm Password" TextMode="Password"></asp:Textbox><br />
 
             <div class="row">
               <div class="col-50">
-                <label for="city">Phone</label><br />
+                <label for="phone">Phone</label><br />
                 <input type="text" id="phone" name="phone" placeholder="999-999-9999">
               </div>
             </div>  
               <div class="row-50">
                 <div class="IndexCentering">
-                <asp:Button ID="Button1" runat="server" CssClass="IndexButton" Text="Enter" Width="316px" />
+                <asp:Button ID="btnSubmit" runat="server" CssClass="IndexButton" Text="Enter" Width="316px" OnClick="btnSubmit_Click" />
                 </div>
                </div>
             

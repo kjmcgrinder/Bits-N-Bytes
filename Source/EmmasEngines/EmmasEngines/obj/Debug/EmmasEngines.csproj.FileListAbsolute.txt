@@ -1223,7 +1223,6 @@ C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngi
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\Antlr3.Runtime.dll
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\AspNet.ScriptManager.bootstrap.dll
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\AspNet.ScriptManager.jQuery.dll
-C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EntityFramework.dll
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EntityFramework.SqlServer.dll
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\Microsoft.AI.Agent.Intercept.dll
@@ -1252,7 +1251,6 @@ C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngi
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\System.Diagnostics.DiagnosticSource.dll
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\System.Web.Optimization.dll
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\WebGrease.dll
-C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EntityFramework.xml
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EntityFramework.SqlServer.xml
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\Microsoft.AspNet.Identity.Core.xml
@@ -1277,7 +1275,6 @@ C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngi
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.csproj.CopyComplete
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.dll
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.pdb
-C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll.config
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.csprojAssemblyReference.cache
 E:\Bits N' Bytes\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\ApplicationInsights.config
 E:\Bits N' Bytes\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEngines.dll.config
