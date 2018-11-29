@@ -57,7 +57,8 @@
 <!-- Form -->
     <form runat="server" class="secondary">
         <h3 class="IndexHeaderA">Inventory</h3>
-
+        <button type="button" class="btn btn-primary btn-sm">Order Stock</button>
+        <button type="button" class="btn btn-secondary btn-sm">View Orders</button><br /><br />
             <b>Product Name:</b>
                
             <br />
@@ -67,9 +68,7 @@
         
         
         <b><asp:Label ID="Label1" runat="server" Text="Products Instock:"></asp:Label></b><br />
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Orders.aspx">Order Stock</asp:HyperLink>
-       
-        
+             
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id,Expr1" DataSourceID="SqlDataSource4" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
             <AlternatingRowStyle BackColor="White" />
             <Columns>

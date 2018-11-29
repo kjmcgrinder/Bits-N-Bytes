@@ -13,102 +13,57 @@ namespace EmmasEngines {
     public partial class Orders {
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// ListBox2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.ListBox ListBox2;
         
         /// <summary>
-        /// lblPart control.
+        /// ListBox3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPart;
+        protected global::System.Web.UI.WebControls.ListBox ListBox3;
         
         /// <summary>
-        /// ddlProductName control.
+        /// ListBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProductName;
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
         
         /// <summary>
-        /// lstBrandName control.
+        /// RD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstBrandName;
+        protected global::System.Web.UI.WebControls.TextBox RD;
         
         /// <summary>
-        /// SqlDataSource2 control.
+        /// RadioButtonList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
         
         /// <summary>
-        /// gvProduct control.
+        /// submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvProduct;
-        
-        /// <summary>
-        /// lblStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
-        
-        /// <summary>
-        /// lblQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuantity;
-        
-        /// <summary>
-        /// txtQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQuantity;
-        
-        /// <summary>
-        /// btnConfirm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirm;
-        
-        /// <summary>
-        /// btnCancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.Button submit;
     }
 }
