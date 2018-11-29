@@ -56,7 +56,7 @@
         <h3 class="IndexHeaderA">Order Form</h3>
         <section class="IndexCentering">
 
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [prodName] FROM [product] ORDER BY [prodName]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT DISTINCT [prodName] FROM [product] ORDER BY [prodName]"></asp:SqlDataSource>
 
             <asp:Label ID="lblPart" runat="server" Text="Product Name:" CssClass="subScript"></asp:Label>
             <%--Part--%><br />
@@ -70,7 +70,7 @@
 
             <br />
             <br />
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [id], [prodDescription], [prodName], [prodBrand] FROM [product] WHERE ([prodName] = @prodName) ORDER BY [prodBrand], [prodName]">
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT [id], [prodDescription], [prodName], [prodBrand] FROM [product] WHERE ([prodName] = @prodName) ORDER BY [prodBrand], [prodName]">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="ddlProductName" Name="prodName" PropertyName="SelectedValue" Type="String" />
                 </SelectParameters>

@@ -62,7 +62,7 @@
     <form runat="server" class="secondary">
         <h3 class="IndexHeaderA">Inventory</h3>
         <section class="IndexCentering">
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [prodName] FROM [product] ORDER BY [prodName]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT DISTINCT [prodName] FROM [product] ORDER BY [prodName]"></asp:SqlDataSource>
             Product&nbsp; Name:
                 &nbsp;<br />
             <asp:DropDownList ID="ddlProductInven" runat="server" Height="44px" Width="176px" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="prodName" DataValueField="prodName" EnableViewState="False">
@@ -73,7 +73,7 @@
             Brand Name:
             <br />
             <asp:ListBox ID="lstProduct" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="prodBrand" DataValueField="id" Height="86px" Width="167px" CssClass="auto-style1"></asp:ListBox>
-            &nbsp;<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [id], [prodBrand], [prodName], [prodDescription] FROM [product] WHERE ([prodName] = @prodName)">
+            &nbsp;<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT [id], [prodBrand], [prodName], [prodDescription] FROM [product] WHERE ([prodName] = @prodName)">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="ddlProductInven" Name="prodName" PropertyName="SelectedValue" Type="String" />
                 </SelectParameters>
@@ -89,7 +89,7 @@
                     <asp:BoundField DataField="prodDescription" HeaderText="Description" SortExpression="prodDescription" />
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [invSize], [invQuantity], [id], [invMeasure], [invPrice], [productID] FROM [inventory] WHERE ([productID] = @productID) ORDER BY [invQuantity], [invPrice]">
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT [invSize], [invQuantity], [id], [invMeasure], [invPrice], [productID] FROM [inventory] WHERE ([productID] = @productID) ORDER BY [invQuantity], [invPrice]">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="lstProduct" Name="productID" PropertyName="SelectedValue" Type="Int32" />
                 </SelectParameters>

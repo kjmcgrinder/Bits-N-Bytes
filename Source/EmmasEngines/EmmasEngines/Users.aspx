@@ -72,7 +72,7 @@
                     <%--Ddl to find employee by department:--%>
                     <h2 class="card-title">Search Employees by Deparment:</h2>
                     <p class="card-text"><asp:DropDownList ID="ddlDeparment" runat="server" name="search" placeholder="Search.." class="searchinput" DataSourceID="SqlDataSource2" DataTextField="posName" DataValueField="posName"></asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [posName] FROM [position]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT [posName] FROM [position]"></asp:SqlDataSource>
                     </p>
                     <%--<a href="#" class="btn btn-primary">Search</a>--%>
                   </div>
@@ -95,7 +95,7 @@
         
         <%--Grid view to see the list of the emplooyees and be able to edit(NEed to add ddl to choose position after the data set is placed)--%>
     <div class="IndexCentering">    
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [employee] WHERE [id] = @id" InsertCommand="INSERT INTO [employee] ([empFirst], [empLast], [posID]) VALUES (@empFirst, @empLast, @posID)" SelectCommand="SELECT [empFirst], [empLast], [posID], [id] FROM [employee] ORDER BY [empLast], [empFirst]" UpdateCommand="UPDATE [employee] SET [empFirst] = @empFirst, [empLast] = @empLast, [posID] = @posID WHERE [id] = @id">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" DeleteCommand="DELETE FROM [employee] WHERE [id] = @id" InsertCommand="INSERT INTO [employee] ([empFirst], [empLast], [posID]) VALUES (@empFirst, @empLast, @posID)" SelectCommand="SELECT [empFirst], [empLast], [posID], [id] FROM [employee] ORDER BY [empLast], [empFirst]" UpdateCommand="UPDATE [employee] SET [empFirst] = @empFirst, [empLast] = @empLast, [posID] = @posID WHERE [id] = @id">
             <DeleteParameters>
                 <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>
