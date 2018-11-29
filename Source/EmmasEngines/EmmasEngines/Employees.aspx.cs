@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EmmasEnginesLibrary.AdoObjects;
+using EmmasEnginesLibrary;
 
 namespace EmmasEngines
 {
@@ -19,7 +20,7 @@ namespace EmmasEngines
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             var Employee = new Employee(fname.Text, lname.Text, 0);
-            Employee.Update();
+            Employee.Update();            
         }
     }
 }

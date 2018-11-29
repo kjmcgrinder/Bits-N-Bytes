@@ -9,8 +9,7 @@ namespace EmmasEnginesLibrary.AdoObjects
     public abstract class Model
     {
         public int ID { get; private set; }
-        public byte[] RowVersion { get; set; }
-        protected static string UpdateProcedure { get; set; }
+        public byte[] RowVersion { get; set; }        
         protected Dictionary<string, object> Parameters { get; set; }
 
         public Model()
@@ -20,6 +19,36 @@ namespace EmmasEnginesLibrary.AdoObjects
         }
 
         protected abstract void LoadParameters();
+
+        protected abstract string GetUpdateProcedure();
+
+        protected abstract string GetDeleteProcedure();
+
+        public bool Delete()
+        {
+            if(Data.Cmd != null)
+            {
+                bool Success;
+                Data.Cmd.CommandText = GetDeleteProcedure();
+                Data.Cmd.Parameters.AddWithValue("RowVersion", RowVersion);
+                Data.Cmd.Parameters.AddWithValue("id", ID);
+                try
+                {
+                    Success = Data.Cmd.ExecuteNonQuery() > 0;
+                }
+                catch
+                {
+                    Success = false;
+                }
+                finally
+                {
+                    Data.Cleanup();
+                }
+                return Success;
+            }
+            else
+                return false;
+        }
 
         public virtual bool Update()
         {
@@ -32,7 +61,7 @@ namespace EmmasEnginesLibrary.AdoObjects
             bool Success = false;
             if (Data.Cmd != null)
             {
-                Data.Cmd.CommandText = UpdateProcedure;
+                Data.Cmd.CommandText = GetUpdateProcedure();
                 foreach (string Name in Parameters.Keys)
                     Data.Cmd.Parameters.AddWithValue(Name, Parameters[Name]);
                 try

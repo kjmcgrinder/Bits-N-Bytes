@@ -10,12 +10,7 @@ namespace EmmasEnginesLibrary.AdoObjects
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int PosID { get; set; }
-
-        static Employee()
-        {
-            UpdateProcedure = "sp_UdateEmployee";
-        }
+        public int PosID { get; set; }        
 
         public Employee(string firstName, string lastName, int posID) : base()
         {
@@ -26,9 +21,19 @@ namespace EmmasEnginesLibrary.AdoObjects
 
         protected override void LoadParameters()       
         {
-            Parameters.Add("FirstName", FirstName);
-            Parameters.Add("LastName", LastName);
-            Parameters.Add("PosID", PosID);           
+            Parameters.Add("empFirst", FirstName);
+            Parameters.Add("empLast", LastName);
+            Parameters.Add("posID", PosID);           
+        }
+
+        protected override string GetUpdateProcedure()
+        {
+            return "sp_UdateEmployee";
+        }
+
+        protected override string GetDeleteProcedure()
+        {
+            return "sp_DeleteEmployee";
         }
     }
 }

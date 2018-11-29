@@ -15,12 +15,7 @@ namespace EmmasEnginesLibrary.AdoObjects
         public string City { get; set; }
         public string Postal { get; set; }
         public string Email { get; set; }
-
-        static Customer()
-        {
-            UpdateProcedure = "sp_UpdateCustomer";
-        }
-
+        
         public Customer(string firstName, string lastName, string phone, string address, string city, string postal, string email) : base()
         {
             FirstName = firstName;
@@ -31,16 +26,24 @@ namespace EmmasEnginesLibrary.AdoObjects
             Postal = postal;
             Email = email;
         }
-
+        protected override string GetUpdateProcedure()
+        {
+            return "sp_UpdateCustomer";
+        }
         protected override void LoadParameters()
         {
-            Parameters.Add("FirstName", FirstName);
-            Parameters.Add("LastName", LastName);
-            Parameters.Add("Phone", Phone);
-            Parameters.Add("Address", Address);
-            Parameters.Add("City", City);
-            Parameters.Add("Postal", Postal);
-            Parameters.Add("Email", Email);
+            Parameters.Add("custFirst", FirstName);
+            Parameters.Add("custLast", LastName);
+            Parameters.Add("custPhone", Phone);
+            Parameters.Add("custAddress", Address);
+            Parameters.Add("custCity", City);
+            Parameters.Add("custPostal", Postal);
+            Parameters.Add("custEmail", Email);
+        }
+
+        protected override string GetDeleteProcedure()
+        {
+            return "sp_DeleteCustomer";
         }
     }
 }

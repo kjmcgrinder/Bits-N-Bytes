@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Create Employee</title>
+    <title><%: Page.Title %>- Create Employee</title>
    
     <link href="Style/stylePurchase.css" rel="stylesheet" />
     <link href="Style/style.css" rel="stylesheet" />
@@ -35,6 +35,9 @@
 
             <label for="email"><i class="fa fa-envelope"></i> Email</label><br />
             <asp:Textbox runat="server" ID="email" placeholder="john@example.com"></asp:Textbox><br />
+
+            <label for="Position"><i class="fa fa-envelope"></i>Position</label><br />
+              <asp:DropDownList runat="server" ID="Position" DataSourceID="ObjectDataSource1" DataTextField="posName" DataValueField="id"></asp:DropDownList><br />
 
             <label for="username"><i class="fa fa-user"></i> Username</label><br />
             <asp:Textbox runat="server" ID="username" placeholder="Enter Username"></asp:Textbox><br />
@@ -68,6 +71,7 @@
     <footer>
         <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
     </footer>
+     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.EmployeeDataSetTableAdapters.positionTableAdapter"></asp:ObjectDataSource>
     </form>
 </body>
 </html>
