@@ -57,8 +57,8 @@
 <!-- Form -->
     <form runat="server" class="secondary">
         <h3 class="IndexHeaderA">Inventory</h3>
-        <button type="button" class="btn btn-primary btn-sm">Order Stock</button>
-        <button type="button" class="btn btn-secondary btn-sm">View Orders</button><br /><br />
+        <asp:Button ID="Button1" runat="server" Text="Order Stock" CssClass="btn btn-primary btn-sm" PostBackUrl="~/Order-Form.aspx" />
+        <asp:Button ID="Button2" runat="server" Text="View Orders" CssClass="btn btn-secondary btn-sm" OnClick="Button2_Click" PostBackUrl="~/Orders.aspx" /><br /><br />
             <b>Product Name:</b>
                
             <br />

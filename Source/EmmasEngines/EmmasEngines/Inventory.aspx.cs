@@ -14,5 +14,10 @@ namespace EmmasEngines
             if (!User.Identity.IsAuthenticated)
                 Response.Redirect("~/Login.aspx");
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
