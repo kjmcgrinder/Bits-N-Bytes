@@ -24,12 +24,11 @@ namespace EmmasEnginesLibrary.AdoObjects
             PosID = posID;
         }
 
-        public override bool Update()
+        protected override void LoadParameters()       
         {
             Parameters.Add("FirstName", FirstName);
             Parameters.Add("LastName", LastName);
-            Parameters.Add("PosID", PosID);
-            return base.Update();
+            Parameters.Add("PosID", PosID);           
         }
     }
 }

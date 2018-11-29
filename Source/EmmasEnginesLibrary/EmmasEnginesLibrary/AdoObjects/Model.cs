@@ -19,8 +19,11 @@ namespace EmmasEnginesLibrary.AdoObjects
             ID = -1;
         }
 
+        protected abstract void LoadParameters();
+
         public virtual bool Update()
         {
+            LoadParameters();
             if (RowVersion != null)
                 Parameters.Add("RowVersion", RowVersion);
             else
