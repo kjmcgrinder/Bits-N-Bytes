@@ -63,8 +63,11 @@
             <br />
             <asp:DropDownList ID="ddlProduct" runat="server" Height="25px" Width="180px" AutoPostBack="True" DataSourceID="dbProducts" DataTextField="prodName" DataValueField="prodName" EnableViewState="False" CssClass="dropdown">
                 <asp:ListItem Selected="True" Value="Select a Product">Select a Product</asp:ListItem>
-            </asp:DropDownList><br />
-        <b><asp:Label ID="Label1" runat="server" Text="Products Instock:"></asp:Label></b>
+            </asp:DropDownList><br /><br />
+        
+        
+        <b><asp:Label ID="Label1" runat="server" Text="Products Instock:"></asp:Label></b><br />
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Orders.aspx">Order Stock</asp:HyperLink>
        
         
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id,Expr1" DataSourceID="SqlDataSource4" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
