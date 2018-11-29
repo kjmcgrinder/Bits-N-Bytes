@@ -61,7 +61,7 @@
 
     <form runat="server" class="secondary">
         <h3 class="IndexHeaderA">Inventory</h3>
-        <section class="IndexCentering">
+        <section>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT DISTINCT [prodName] FROM [product] ORDER BY [prodName]"></asp:SqlDataSource>
             Product&nbsp; Name:
                 &nbsp;<br />
@@ -80,6 +80,8 @@
             </asp:SqlDataSource>
             <br />
             <br />
+            </section>
+        <section class="IndexCentering">
             Product Information<%--            <asp:ListBox ID="lstProductInven" runat="server" Height="29px" Width="204px" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="prodName" DataValueField="id" EnableViewState="False">
                 <asp:ListItem Selected="True"></asp:ListItem>
             </asp:ListBox>--%><asp:GridView ID="gvProduct" runat="server" align="center" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource2" EnableViewState="False">
