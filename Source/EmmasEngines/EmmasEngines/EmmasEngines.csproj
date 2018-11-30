@@ -178,7 +178,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="CreateCustomer.aspx" />
     <Content Include="customer-details.aspx" />
-    <Content Include="Default2.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Details.aspx" />
     <Content Include="Employees.aspx" />
     <Content Include="favicon.ico" />
@@ -291,12 +291,12 @@
     <Compile Include="customer-details.aspx.designer.cs">
       <DependentUpon>customer-details.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default2.aspx.cs">
-      <DependentUpon>Default2.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default2.aspx.designer.cs">
-      <DependentUpon>Default2.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Details.aspx.cs">
       <DependentUpon>Details.aspx</DependentUpon>

@@ -10,6 +10,6 @@
 namespace EmmasEngines {
     
     
-    public partial class Default2 {
+    public partial class Default {
     }
 }
