@@ -26,6 +26,8 @@ namespace EmmasEngines
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Position.Font.Name = fname.Font.Name;
+            password.Font.Size = fname.Font.Size;
             if (!User.Identity.IsAuthenticated)
                 Response.Redirect("~/Login.aspx");
             MaxID.Value = dsEmployee.employee.Max(i => i["id"]).ToString();
