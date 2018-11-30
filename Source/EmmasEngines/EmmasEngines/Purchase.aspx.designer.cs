@@ -13,40 +13,22 @@ namespace EmmasEngines {
     public partial class Purchase {
         
         /// <summary>
-        /// Sale control.
+        /// btnSale control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Sale;
+        protected global::System.Web.UI.WebControls.Button btnSale;
         
         /// <summary>
-        /// rdoSale control.
+        /// btnRepair control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoSale;
-        
-        /// <summary>
-        /// Repair control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Repair;
-        
-        /// <summary>
-        /// rdoRepair control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoRepair;
+        protected global::System.Web.UI.WebControls.Button btnRepair;
         
         /// <summary>
         /// ListBox2 control.
@@ -58,6 +40,24 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.ListBox ListBox2;
         
         /// <summary>
+        /// dsCustomer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource dsCustomer;
+        
+        /// <summary>
+        /// pnlPurchase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlPurchase;
+        
+        /// <summary>
         /// ListBox3 control.
         /// </summary>
         /// <remarks>
@@ -67,6 +67,15 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.ListBox ListBox3;
         
         /// <summary>
+        /// pnlRepair control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlRepair;
+        
+        /// <summary>
         /// ListBox1 control.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace EmmasEngines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        
+        /// <summary>
+        /// dsParts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource dsParts;
         
         /// <summary>
         /// RD control.

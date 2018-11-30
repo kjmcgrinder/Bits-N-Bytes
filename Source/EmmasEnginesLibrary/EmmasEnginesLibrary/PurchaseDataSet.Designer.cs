@@ -314,9 +314,9 @@ namespace EmmasEnginesLibrary {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class productDataTable : global::System.Data.TypedTableBase<productRow> {
             
-            private global::System.Data.DataColumn columnprodName;
-            
             private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnprodBrName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -353,17 +353,17 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn prodNameColumn {
+            public global::System.Data.DataColumn idColumn {
                 get {
-                    return this.columnprodName;
+                    return this.columnid;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
+            public global::System.Data.DataColumn prodBrNameColumn {
                 get {
-                    return this.columnid;
+                    return this.columnprodBrName;
                 }
             }
             
@@ -404,11 +404,11 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public productRow AddproductRow(string prodName) {
+            public productRow AddproductRow(string prodBrName) {
                 productRow rowproductRow = ((productRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        prodName,
-                        null};
+                        null,
+                        prodBrName};
                 rowproductRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowproductRow);
                 return rowproductRow;
@@ -438,26 +438,27 @@ namespace EmmasEnginesLibrary {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnprodName = base.Columns["prodName"];
                 this.columnid = base.Columns["id"];
+                this.columnprodBrName = base.Columns["prodBrName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnprodName = new global::System.Data.DataColumn("prodName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprodName);
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
+                this.columnprodBrName = new global::System.Data.DataColumn("prodBrName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprodBrName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
-                this.columnprodName.MaxLength = 50;
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
+                this.columnprodBrName.ReadOnly = true;
+                this.columnprodBrName.MaxLength = 102;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -878,22 +879,6 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string prodName {
-                get {
-                    try {
-                        return ((string)(this[this.tableproduct.prodNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'prodName\' in table \'product\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableproduct.prodNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int id {
                 get {
                     return ((int)(this[this.tableproduct.idColumn]));
@@ -905,14 +890,30 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsprodNameNull() {
-                return this.IsNull(this.tableproduct.prodNameColumn);
+            public string prodBrName {
+                get {
+                    try {
+                        return ((string)(this[this.tableproduct.prodBrNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'prodBrName\' in table \'product\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableproduct.prodBrNameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetprodNameNull() {
-                this[this.tableproduct.prodNameColumn] = global::System.Convert.DBNull;
+            public bool IsprodBrNameNull() {
+                return this.IsNull(this.tableproduct.prodBrNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetprodBrNameNull() {
+                this[this.tableproduct.prodBrNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1163,8 +1164,8 @@ namespace EmmasEnginesLibrary.PurchaseDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "product";
-            tableMapping.ColumnMappings.Add("prodName", "prodName");
             tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("prodBrName", "prodBrName");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1181,21 +1182,20 @@ namespace EmmasEnginesLibrary.PurchaseDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        prodName, id\r\nFROM            product";
+            this._commandCollection[0].CommandText = "SELECT        prodBrand +\': \' + prodName AS prodBrName, id\r\nFROM            produ" +
+                "ct";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PurchaseDataSet.productDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual PurchaseDataSet.productDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
+            PurchaseDataSet.productDataTable dataTable = new PurchaseDataSet.productDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
@@ -1339,21 +1339,19 @@ namespace EmmasEnginesLibrary.PurchaseDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        id, custFirst + \' \' + custLast AS custFullName\r\nFROM            cus" +
-                "tomer";
+                "tomer\r\nORDER BY custFullName";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PurchaseDataSet.customerDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual PurchaseDataSet.customerDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
+            PurchaseDataSet.customerDataTable dataTable = new PurchaseDataSet.customerDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
