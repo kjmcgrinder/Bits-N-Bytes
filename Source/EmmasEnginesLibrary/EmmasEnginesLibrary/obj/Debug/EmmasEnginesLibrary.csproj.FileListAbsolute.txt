@@ -48,3 +48,12 @@ C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesL
 C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.dll
 C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.pdb
+C:\Users\Kanghyun\Desktop\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\Emmas.mdf
+C:\Users\Kanghyun\Desktop\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\Emmas_log.ldf
+C:\Users\Kanghyun\Desktop\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll.config
+C:\Users\Kanghyun\Desktop\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll
+C:\Users\Kanghyun\Desktop\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.pdb
+C:\Users\Kanghyun\Desktop\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csprojAssemblyReference.cache
+C:\Users\Kanghyun\Desktop\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Kanghyun\Desktop\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.dll
+C:\Users\Kanghyun\Desktop\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.pdb

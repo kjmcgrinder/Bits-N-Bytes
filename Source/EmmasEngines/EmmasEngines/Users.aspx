@@ -94,27 +94,27 @@
       
         
         <%--Grid view to see the list of the emplooyees and be able to edit(NEed to add ddl to choose position after the data set is placed)--%>
-    <div class="IndexCentering">    
+    <div style="margin-right: 20px; margin-left: 20px;">    
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT [id], [empFirst], [empLast] FROM [employee]">
         </asp:SqlDataSource>
-        <asp:GridView ID="gvEmployees" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="gvEmployees_SelectedIndexChanged">
-            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <asp:GridView ID="gvEmployees" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="gvEmployees_SelectedIndexChanged" Width="100%">
+            <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField SelectText="Update" ShowSelectButton="True" />
                 <asp:BoundField DataField="empFirst" HeaderText="First Name" SortExpression="empFirst" />
                 <asp:BoundField DataField="empLast" HeaderText="Last Name" SortExpression="empLast" />
                 <asp:BoundField DataField="id" HeaderText="id" SortExpression="empLast" Visible="false"/>                
             </Columns>
-            <EditRowStyle BackColor="#999999" />
-            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-            <SortedAscendingCellStyle BackColor="#E9E7E2" />
-            <SortedAscendingHeaderStyle BackColor="#506C8C" />
-            <SortedDescendingCellStyle BackColor="#FFFDF8" />
-            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+            <EditRowStyle BackColor="#2461BF" />
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+            <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
     </div>
     </form>
