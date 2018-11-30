@@ -45,7 +45,6 @@ C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesL
 C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll.config
 C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll
 C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.pdb
-C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csprojAssemblyReference.cache
 C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.dll
 C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.pdb
