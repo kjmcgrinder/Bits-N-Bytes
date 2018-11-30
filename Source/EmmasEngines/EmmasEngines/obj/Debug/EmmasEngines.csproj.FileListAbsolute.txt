@@ -1724,3 +1724,8 @@ G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Emmas_lo
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll.config
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\Emmas.mdf
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\Emmas_log.ldf
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll.config

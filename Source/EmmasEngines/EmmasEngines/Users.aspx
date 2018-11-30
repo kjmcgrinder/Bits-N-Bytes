@@ -95,28 +95,15 @@
         
         <%--Grid view to see the list of the emplooyees and be able to edit(NEed to add ddl to choose position after the data set is placed)--%>
     <div class="IndexCentering">    
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" DeleteCommand="DELETE FROM [employee] WHERE [id] = @id" InsertCommand="INSERT INTO [employee] ([empFirst], [empLast], [posID]) VALUES (@empFirst, @empLast, @posID)" SelectCommand="SELECT [empFirst], [empLast], [posID], [id] FROM [employee] ORDER BY [empLast], [empFirst]" UpdateCommand="UPDATE [employee] SET [empFirst] = @empFirst, [empLast] = @empLast, [posID] = @posID WHERE [id] = @id">
-            <DeleteParameters>
-                <asp:Parameter Name="id" Type="Int32" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="empFirst" Type="String" />
-                <asp:Parameter Name="empLast" Type="String" />
-                <asp:Parameter Name="posID" Type="Int32" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="empFirst" Type="String" />
-                <asp:Parameter Name="empLast" Type="String" />
-                <asp:Parameter Name="posID" Type="Int32" />
-                <asp:Parameter Name="id" Type="Int32" />
-            </UpdateParameters>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT [id], [empFirst], [empLast] FROM [employee]">
         </asp:SqlDataSource>
-        <asp:GridView ID="gvEmployees" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="gvEmployees" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="gvEmployees_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:CommandField SelectText="Update" ShowSelectButton="True" />
                 <asp:BoundField DataField="empFirst" HeaderText="First Name" SortExpression="empFirst" />
                 <asp:BoundField DataField="empLast" HeaderText="Last Name" SortExpression="empLast" />
+                <asp:BoundField DataField="id" HeaderText="id" SortExpression="empLast" Visible="false"/>                
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

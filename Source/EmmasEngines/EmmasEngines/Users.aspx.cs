@@ -14,5 +14,10 @@ namespace EmmasEngines
             if (!User.Identity.IsAuthenticated)
                 Response.Redirect("~/Login.aspx");
         }
+
+        protected void gvEmployees_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Employees.aspx?id=" + gvEmployees.SelectedValue);            
+        }
     }
 }
