@@ -68,35 +68,29 @@
           <div class="col-50"><br />
             <h3 class="IndexHeaderA">Create Customer</h3><br /><br /><br />
             <label for="fname"><i class="fa fa-user"></i> First Name</label><br />
-            <input type="text" id="fname" name="firstname" placeholder="John"><br />
+            <asp:TextBox ID="fname" runat="server" placeholder="John"></asp:TextBox><br />
 
             <label for="lname"><i class="fa fa-user"></i> Last Name</label><br />
-            <input type="text" id="lname" name="firstname" placeholder="Doe"><br />
+            <asp:TextBox ID="lname" runat="server" placeholder="Doe"></asp:TextBox><br />
 
             <label for="email"><i class="fa fa-envelope"></i> Email</label><br />
-            <input type="text" id="email" name="email" placeholder="john@example.com"><br />
+            <asp:TextBox ID="email" runat="server" placeholder="john@example.com"></asp:TextBox><br />
 
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label><br />
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street"><br />
+            <asp:TextBox ID="adr" placeholder="542 W. 15th Street" runat="server"></asp:TextBox><br />
 
             <label for="city" class="IndexCentering"><i class="fa fa-address-card-o"></i> Phone</label><br />
-            <input type="text" id="City" name="city" placeholder="New York"><br />
-
-            <div class="row">
+            <asp:TextBox ID="City" runat="server" placeholder="New York"></asp:TextBox><br />
+              
               <div class="col-50">
-                <label for="state">State</label><br />
-                <input type="text" id="state" name="state" placeholder="NY">
-              </div>
-              <div class="col-50">
-                <label for="zip">Zip</label><br />
-                <input type="text" id="zip" name="zip" placeholder="10001">
+                <label for="zip">Postal Code</label><br />
+                <asp:TextBox ID="zip" runat="server" placeholder="10001"></asp:TextBox>
                   
               </div>
                 <div class="IndexCentering">
-                <asp:Button ID="Button1" runat="server" CssClass="IndexButton" Text="Enter" Width="316px" />
+                <asp:Button ID="Button1" runat="server" CssClass="IndexButton" Text="Enter" Width="316px" OnClick="Button1_Click" />
                 </div>
-            </div>
-          </div>
+            </div>          
 
 
         </div>
