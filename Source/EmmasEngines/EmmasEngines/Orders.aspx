@@ -54,7 +54,7 @@
 
     <form runat="server" class="secondary">
         <h3 class="IndexHeaderA">Order Form</h3>
-        <section class="IndexCentering">
+        <section>
 
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT DISTINCT [prodName] FROM [product] ORDER BY [prodName]"></asp:SqlDataSource>
 
@@ -75,6 +75,9 @@
                     <asp:ControlParameter ControlID="ddlProductName" Name="prodName" PropertyName="SelectedValue" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
+            </section>
+
+        <section class="IndexCentering">
             Product Information:<%--                <asp:ListBox ID="lstProduct" runat="server" AutoPostBack="True" Height="34px" Width="210px" DataSourceID="SqlDataSource2" DataTextField="prodBrand" DataValueField="id"></asp:ListBox>--%><asp:GridView ID="gvProduct" runat="server" align="center" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource2" CellPadding="4" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>

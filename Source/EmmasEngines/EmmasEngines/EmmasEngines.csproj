@@ -192,6 +192,7 @@
     <Content Include="Inventory-Create.aspx" />
     <Content Include="Notes.txt" />
     <Content Include="Order-Details.aspx" />
+    <Content Include="Order-Form.aspx" />
     <Content Include="Repair-Details.aspx" />
     <Content Include="Repairs.aspx" />
     <Content Include="Sale-Repair.aspx" />
@@ -347,6 +348,13 @@
     </Compile>
     <Compile Include="Order-Details.aspx.designer.cs">
       <DependentUpon>Order-Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order-Form.aspx.cs">
+      <DependentUpon>Order-Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order-Form.aspx.designer.cs">
+      <DependentUpon>Order-Form.aspx</DependentUpon>
     </Compile>
     <Compile Include="Orders.aspx.cs">
       <DependentUpon>Orders.aspx</DependentUpon>

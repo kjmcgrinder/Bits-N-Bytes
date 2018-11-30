@@ -13,66 +13,66 @@ namespace EmmasEngines {
     public partial class Inventory {
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// ddlProductInven control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProductInven;
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// lstProduct control.
+        /// ddlProduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstProduct;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProduct;
         
         /// <summary>
-        /// SqlDataSource2 control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// gvProduct control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvProduct;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// SqlDataSource3 control.
+        /// dbProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
+        protected global::System.Web.UI.WebControls.SqlDataSource dbProducts;
         
         /// <summary>
-        /// gvInven control.
+        /// SqlDataSource4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvInven;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource4;
     }
 }

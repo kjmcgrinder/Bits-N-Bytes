@@ -8,7 +8,8 @@
     <link href="Style/style.css" rel="stylesheet" />
 </head>
 <body class="IndexCentering">
-    <form id="form1" runat="server" class="secondary">
+    <div class="secondary">
+    <form id="form1" runat="server">
         <h1 class="IndexHeaderA">Create an Account</h1><br /><br /><br /><br />
         <div class="subScript">
             <asp:Label ID ="lblUserName" runat="server">User Name</asp:Label><br />
@@ -29,5 +30,6 @@
             <asp:Label ID="lblResult" runat="server"></asp:Label>
         </div>
     </form>
+        </div>
 </body>
 </html>
