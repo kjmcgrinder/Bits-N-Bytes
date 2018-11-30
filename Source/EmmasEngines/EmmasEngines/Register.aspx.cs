@@ -29,7 +29,7 @@ namespace EmmasEngines
                 var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
                 var userIdentity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                 authenticationManager.SignIn(userIdentity);
-                Response.Redirect("~/Default2.aspx");
+                Response.Redirect("~/Default.aspx");
             }
             else
             {
