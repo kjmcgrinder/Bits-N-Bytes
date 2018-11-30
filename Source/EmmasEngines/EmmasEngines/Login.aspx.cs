@@ -14,7 +14,7 @@ namespace EmmasEngines
         protected void Page_Load(object sender, EventArgs e)
         {
             //if (User.Identity.IsAuthenticated)
-            //    Response.Redirect("~/Default2");
+            //    Response.Redirect("~/Default");
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace EmmasEngines
                 var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
                 var userIdentity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                 authenticationManager.SignIn(userIdentity);                
-                Response.Redirect("~/Default2.aspx");
+                Response.Redirect("~/Default.aspx");
             }                
             else
             {
