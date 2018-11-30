@@ -190,6 +190,7 @@
     <Content Include="Images\macro-1452987_1920%281%29.jpg" />
     <Content Include="Images\motor-768750_1920.jpg" />
     <Content Include="Inventory-Create.aspx" />
+    <Content Include="Invoice.aspx" />
     <Content Include="Notes.txt" />
     <Content Include="Order-Details.aspx" />
     <Content Include="Order-Form.aspx" />
@@ -334,6 +335,13 @@
     </Compile>
     <Compile Include="Inventory.aspx.designer.cs">
       <DependentUpon>Inventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice.aspx.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice.aspx.designer.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
