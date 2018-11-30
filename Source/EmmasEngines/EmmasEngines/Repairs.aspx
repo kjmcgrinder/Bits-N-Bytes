@@ -117,7 +117,7 @@
             </UpdateParameters>
         </asp:SqlDataSource>
         <p>
-            <asp:Button ID="Button1" runat="server" Text="New Repair" CssClass="btn" PostBackUrl="~/Repairs-Form.aspx" />
+            <asp:Button ID="Button1" runat="server" Text="New Repair" CssClass="btn" PostBackUrl="~/Purchase.aspx" />
         </p>
         <p>
             &nbsp;</p>
