@@ -17,7 +17,7 @@ namespace EmmasEngines
         {
             EmmasEnginesLibrary.PurchaseDataSetTableAdapters.receiptTableAdapter daReceipt = new EmmasEnginesLibrary.PurchaseDataSetTableAdapters.receiptTableAdapter();
             daReceipt.Fill(dsReceipt.receipt);
-        }
+        }        
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -11,7 +11,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
 
 namespace EmmasEngines
-{
+{    
     public partial class Employees : System.Web.UI.Page
     {
         static EmployeeDataSet dsEmployee;
@@ -26,10 +26,10 @@ namespace EmmasEngines
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Position.Font.Name = fname.Font.Name;
-            password.Font.Size = fname.Font.Size;
             if (!User.Identity.IsAuthenticated)
                 Response.Redirect("~/Login.aspx");
+            else if (!User.IsInRole("Manager"))
+                Response.Redirect("~/Default.aspx");
             MaxID.Value = dsEmployee.employee.Max(i => i["id"]).ToString();
             if (Request.QueryString["id"] != null)
             {
