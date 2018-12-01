@@ -11,6 +11,13 @@ namespace EmmasEngines
     public partial class Purchase : System.Web.UI.Page
     {
         PageMode Mode;
+        static PurchaseDataSet dsReceipt = new PurchaseDataSet();
+
+        static Purchase()
+        {
+            EmmasEnginesLibrary.PurchaseDataSetTableAdapters.receiptTableAdapter daReceipt = new EmmasEnginesLibrary.PurchaseDataSetTableAdapters.receiptTableAdapter();
+            daReceipt.Fill(dsReceipt.receipt);
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {

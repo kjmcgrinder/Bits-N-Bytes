@@ -50,26 +50,18 @@
             <a class="nav-link" href="Login.aspx">Logout</a>
         </div>
     </nav>
-
-
     <div class="secondary">
         <div class="container">
             <form runat="server">
                 <h3 class="IndexHeaderA">Purchase</h3>
                 <br />
-
-
                 <div class="btn-group btn-group-toggle">                    
                     <asp:Button ID="btnSale" runat="server" Text="Sale" OnClick="rdoSale_CheckedChanged"/>
                     <asp:Button ID="btnRepair" runat="server" Text="Repair" OnClick="rdoRepair_CheckedChanged"/>                    
                 </div>
                 <br />
                 <br />
-
-
-
                 <div class="row">
-
                     <div class="col-25">
                         <label for="searchC">Customer:</label>
                     </div>
@@ -130,14 +122,13 @@
                 </asp:Panel>
                 <div class="row">
                     <div class="col-25">
-                        <label for="Total">Total: <label for="Total">Total:</label>
+                        <label for="Total">Total:</label>
                     </div>
                     <div class="col-75">
                         <input type="text" id="cvv" name="cvv" placeholder="Total" readonly="true" disabled="disabled" /><br />
                         <br />
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-25">
                         <asp:Button ID="submit" runat="server" Text="Submit" CssClass="IndexButton" />

@@ -9,11 +9,12 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="productTableAdapter" GeneratorDataComponentClassName="productTableAdapter" Name="product" UserDataComponentName="productTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="EmmasConnectionString (Settings)" DbObjectName="dbo.product" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+              <DbSource ConnectionRef="EmmasConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        prodBrand +': ' + prodName AS prodBrName, id
-FROM            product</CommandText>
+                    <CommandText>SELECT        product.prodBrand + ': ' + product.prodName AS prodBrName, product.id, inventory.invQuantity, inventory.invPrice
+FROM            product INNER JOIN
+                         inventory ON product.id = inventory.productID</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -22,6 +23,8 @@ FROM            product</CommandText>
             <Mappings>
               <Mapping SourceColumn="id" DataSetColumn="id" />
               <Mapping SourceColumn="prodBrName" DataSetColumn="prodBrName" />
+              <Mapping SourceColumn="invQuantity" DataSetColumn="invQuantity" />
+              <Mapping SourceColumn="invPrice" DataSetColumn="invPrice" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -44,6 +47,37 @@ ORDER BY custFullName</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="receiptTableAdapter" GeneratorDataComponentClassName="receiptTableAdapter" Name="receipt" UserDataComponentName="receiptTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        receipt.id, receipt.ordNumber, receipt.ordDate, receipt.ordPaid, receipt.paymentID, receipt.custID, receipt.empID, order_line.orlPrice, order_line.orlQuantity, order_line.orlOrderReq, order_line.orlNote, order_line.inventoryID, 
+                         order_line.receiptID
+FROM            receipt INNER JOIN
+                         order_line ON receipt.id = order_line.receiptID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="ordNumber" DataSetColumn="ordNumber" />
+              <Mapping SourceColumn="ordDate" DataSetColumn="ordDate" />
+              <Mapping SourceColumn="ordPaid" DataSetColumn="ordPaid" />
+              <Mapping SourceColumn="paymentID" DataSetColumn="paymentID" />
+              <Mapping SourceColumn="custID" DataSetColumn="custID" />
+              <Mapping SourceColumn="empID" DataSetColumn="empID" />
+              <Mapping SourceColumn="orlPrice" DataSetColumn="orlPrice" />
+              <Mapping SourceColumn="orlQuantity" DataSetColumn="orlQuantity" />
+              <Mapping SourceColumn="orlOrderReq" DataSetColumn="orlOrderReq" />
+              <Mapping SourceColumn="orlNote" DataSetColumn="orlNote" />
+              <Mapping SourceColumn="inventoryID" DataSetColumn="inventoryID" />
+              <Mapping SourceColumn="receiptID" DataSetColumn="receiptID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -52,7 +86,7 @@ ORDER BY custFullName</CommandText>
   <xs:element name="PurchaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PurchaseDataSet" msprop:Generator_UserDSName="PurchaseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="product" msprop:Generator_TableClassName="productDataTable" msprop:Generator_TableVarName="tableproduct" msprop:Generator_RowChangedName="productRowChanged" msprop:Generator_TablePropName="product" msprop:Generator_RowDeletingName="productRowDeleting" msprop:Generator_RowChangingName="productRowChanging" msprop:Generator_RowEvHandlerName="productRowChangeEventHandler" msprop:Generator_RowDeletedName="productRowDeleted" msprop:Generator_RowClassName="productRow" msprop:Generator_UserTableName="product" msprop:Generator_RowEvArgName="productRowChangeEvent">
+        <xs:element name="product" msprop:Generator_TableClassName="productDataTable" msprop:Generator_TableVarName="tableproduct" msprop:Generator_TablePropName="product" msprop:Generator_RowDeletingName="productRowDeleting" msprop:Generator_RowChangingName="productRowChanging" msprop:Generator_RowEvHandlerName="productRowChangeEventHandler" msprop:Generator_RowDeletedName="productRowDeleted" msprop:Generator_UserTableName="product" msprop:Generator_RowChangedName="productRowChanged" msprop:Generator_RowEvArgName="productRowChangeEvent" msprop:Generator_RowClassName="productRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -63,10 +97,12 @@ ORDER BY custFullName</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="invQuantity" msprop:Generator_ColumnVarNameInTable="columninvQuantity" msprop:Generator_ColumnPropNameInRow="invQuantity" msprop:Generator_ColumnPropNameInTable="invQuantityColumn" msprop:Generator_UserColumnName="invQuantity" type="xs:int" minOccurs="0" />
+              <xs:element name="invPrice" msprop:Generator_ColumnVarNameInTable="columninvPrice" msprop:Generator_ColumnPropNameInRow="invPrice" msprop:Generator_ColumnPropNameInTable="invPriceColumn" msprop:Generator_UserColumnName="invPrice" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="customer" msprop:Generator_TableClassName="customerDataTable" msprop:Generator_TableVarName="tablecustomer" msprop:Generator_RowChangedName="customerRowChanged" msprop:Generator_TablePropName="customer" msprop:Generator_RowDeletingName="customerRowDeleting" msprop:Generator_RowChangingName="customerRowChanging" msprop:Generator_RowEvHandlerName="customerRowChangeEventHandler" msprop:Generator_RowDeletedName="customerRowDeleted" msprop:Generator_RowClassName="customerRow" msprop:Generator_UserTableName="customer" msprop:Generator_RowEvArgName="customerRowChangeEvent">
+        <xs:element name="customer" msprop:Generator_TableClassName="customerDataTable" msprop:Generator_TableVarName="tablecustomer" msprop:Generator_TablePropName="customer" msprop:Generator_RowDeletingName="customerRowDeleting" msprop:Generator_RowChangingName="customerRowChanging" msprop:Generator_RowEvHandlerName="customerRowChangeEventHandler" msprop:Generator_RowDeletedName="customerRowDeleted" msprop:Generator_UserTableName="customer" msprop:Generator_RowChangedName="customerRowChanged" msprop:Generator_RowEvArgName="customerRowChangeEvent" msprop:Generator_RowClassName="customerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -80,6 +116,37 @@ ORDER BY custFullName</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="receipt" msprop:Generator_TableClassName="receiptDataTable" msprop:Generator_TableVarName="tablereceipt" msprop:Generator_TablePropName="receipt" msprop:Generator_RowDeletingName="receiptRowDeleting" msprop:Generator_RowChangingName="receiptRowChanging" msprop:Generator_RowEvHandlerName="receiptRowChangeEventHandler" msprop:Generator_RowDeletedName="receiptRowDeleted" msprop:Generator_UserTableName="receipt" msprop:Generator_RowChangedName="receiptRowChanged" msprop:Generator_RowEvArgName="receiptRowChangeEvent" msprop:Generator_RowClassName="receiptRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="ordNumber" msprop:Generator_ColumnVarNameInTable="columnordNumber" msprop:Generator_ColumnPropNameInRow="ordNumber" msprop:Generator_ColumnPropNameInTable="ordNumberColumn" msprop:Generator_UserColumnName="ordNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ordDate" msprop:Generator_ColumnVarNameInTable="columnordDate" msprop:Generator_ColumnPropNameInRow="ordDate" msprop:Generator_ColumnPropNameInTable="ordDateColumn" msprop:Generator_UserColumnName="ordDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ordPaid" msprop:Generator_ColumnVarNameInTable="columnordPaid" msprop:Generator_ColumnPropNameInRow="ordPaid" msprop:Generator_ColumnPropNameInTable="ordPaidColumn" msprop:Generator_UserColumnName="ordPaid" type="xs:boolean" minOccurs="0" />
+              <xs:element name="paymentID" msprop:Generator_ColumnVarNameInTable="columnpaymentID" msprop:Generator_ColumnPropNameInRow="paymentID" msprop:Generator_ColumnPropNameInTable="paymentIDColumn" msprop:Generator_UserColumnName="paymentID" type="xs:int" />
+              <xs:element name="custID" msprop:Generator_ColumnVarNameInTable="columncustID" msprop:Generator_ColumnPropNameInRow="custID" msprop:Generator_ColumnPropNameInTable="custIDColumn" msprop:Generator_UserColumnName="custID" type="xs:int" />
+              <xs:element name="empID" msprop:Generator_ColumnVarNameInTable="columnempID" msprop:Generator_ColumnPropNameInRow="empID" msprop:Generator_ColumnPropNameInTable="empIDColumn" msprop:Generator_UserColumnName="empID" type="xs:int" />
+              <xs:element name="orlPrice" msprop:Generator_ColumnVarNameInTable="columnorlPrice" msprop:Generator_ColumnPropNameInRow="orlPrice" msprop:Generator_ColumnPropNameInTable="orlPriceColumn" msprop:Generator_UserColumnName="orlPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="orlQuantity" msprop:Generator_ColumnVarNameInTable="columnorlQuantity" msprop:Generator_ColumnPropNameInRow="orlQuantity" msprop:Generator_ColumnPropNameInTable="orlQuantityColumn" msprop:Generator_UserColumnName="orlQuantity" type="xs:int" minOccurs="0" />
+              <xs:element name="orlOrderReq" msprop:Generator_ColumnVarNameInTable="columnorlOrderReq" msprop:Generator_ColumnPropNameInRow="orlOrderReq" msprop:Generator_ColumnPropNameInTable="orlOrderReqColumn" msprop:Generator_UserColumnName="orlOrderReq" type="xs:boolean" minOccurs="0" />
+              <xs:element name="orlNote" msprop:Generator_ColumnVarNameInTable="columnorlNote" msprop:Generator_ColumnPropNameInRow="orlNote" msprop:Generator_ColumnPropNameInTable="orlNoteColumn" msprop:Generator_UserColumnName="orlNote" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="inventoryID" msprop:Generator_ColumnVarNameInTable="columninventoryID" msprop:Generator_ColumnPropNameInRow="inventoryID" msprop:Generator_ColumnPropNameInTable="inventoryIDColumn" msprop:Generator_UserColumnName="inventoryID" type="xs:int" />
+              <xs:element name="receiptID" msprop:Generator_ColumnVarNameInTable="columnreceiptID" msprop:Generator_ColumnPropNameInRow="receiptID" msprop:Generator_ColumnPropNameInTable="receiptIDColumn" msprop:Generator_UserColumnName="receiptID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -88,6 +155,10 @@ ORDER BY custFullName</CommandText>
     </xs:unique>
     <xs:unique name="customer_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:customer" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="receipt_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:receipt" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>
