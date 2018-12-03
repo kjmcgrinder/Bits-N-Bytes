@@ -42,9 +42,9 @@ namespace EmmasEngines
                 if (user == null)
                 {
                     user = new IdentityUser(userName);
-                    userManager.Create(user, "password");
-                    r["loginId"] = user.Id;
+                    userManager.Create(user, "password");                    
                 }
+                r["loginId"] = user.Id;
                 if (user.Roles.Count == 0)
                     userManager.AddToRole(user.Id, position);
             }
@@ -54,8 +54,8 @@ namespace EmmasEngines
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (User.Identity.IsAuthenticated)
-            //    Response.Redirect("~/Default");
+            if (User.Identity.IsAuthenticated)
+                Response.Redirect("~/Default");
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
