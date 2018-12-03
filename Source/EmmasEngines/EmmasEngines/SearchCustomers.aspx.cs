@@ -13,5 +13,10 @@ namespace EmmasEngines
         {
             
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CreateCustomer.aspx?selectedId=" + GridView1.SelectedValue);
+        }
     }
 }

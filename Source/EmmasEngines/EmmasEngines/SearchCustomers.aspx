@@ -53,12 +53,24 @@
         <h3 class="IndexHeaderA">Customers</h3>
 
         <div style="margin-right: 20px; margin-left: 20px;">
-            <input type="text" name="search" placeholder="Search.." class="searchinput" /><br />
+            <asp:TextBox ID="txtName" placeholder="Name" CssClass="searchinput" runat="server" /><br />
+            <asp:TextBox ID="txtPhone" placeholder="Phone #" CssClass="searchinput" runat="server" /><br />
             <asp:Button ID="Button1" runat="server" Text="Enter" CssClass="IndexButton" Height="57px" Width="113px" />
 
-            <asp:GridView ID="GridView1" runat="server" AllowSorting="True" GridLines="Horizontal" Width="1832px" AutoGenerateColumns="False">
+            <asp:GridView ID="GridView1" runat="server" AllowSorting="True" GridLines="Horizontal" Width="1832px" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="dsCustomers" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                <Columns>
+                    <asp:CommandField SelectText="Update" ShowSelectButton="True" />
+                    <asp:BoundField DataField="custFullName" HeaderText="Name" ReadOnly="True" SortExpression="custFullName" />
+                    <asp:BoundField DataField="custPhone" HeaderText="Phone Number" SortExpression="custPhone" />
+                </Columns>
             </asp:GridView>
         </div>
+        <asp:ObjectDataSource ID="dsCustomers" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataBy" TypeName="EmmasEnginesLibrary.CustomerDataSetTableAdapters.customerTableAdapter">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="txtName" Name="Param1" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="txtPhone" DefaultValue="0" Name="Param2" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
     </form>
 </body>
 </html>

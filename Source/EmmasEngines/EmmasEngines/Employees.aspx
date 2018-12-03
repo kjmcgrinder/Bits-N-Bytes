@@ -51,7 +51,7 @@
                                 <asp:TextBox runat="server" ID="lname" placeholder="Doe"></asp:TextBox><br />
 
                                 <label for="Position"><i class="fa fa-envelope"></i>Position</label><br />
-                                <asp:DropDownList runat="server" ID="Position" DataSourceID="ObjectDataSource1" DataTextField="posName" DataValueField="id"></asp:DropDownList><br />
+                                <asp:DropDownList runat="server" ID="Position" DataSourceID="ObjectDataSource1" DataTextField="posName" DataValueField="id" AppendDataBoundItems="true"><asp:ListItem Text="Please select a position" Value="-1"></asp:ListItem><asp:ListItem Text="Inactive" Value="0"></asp:ListItem></asp:DropDownList><br />
 
                                 <label for="username"><i class="fa fa-user"></i>Username</label><br />
                                 <asp:TextBox runat="server" ID="username" ReadOnly="true" placeholder="jdoe3"></asp:TextBox><br />

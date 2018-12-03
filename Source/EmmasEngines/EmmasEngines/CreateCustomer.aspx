@@ -75,7 +75,7 @@
 
         <div class="row">
           <div class="col-50"><br />
-            <h3 class="IndexHeaderA">Create Customer</h3><br /><br /><br />
+            <h3 class="IndexHeaderA"><asp:Label ID="lblHeader" runat="server">Create Customer</asp:Label></h3><br /><br /><br />
             <label for="fname"><i class="fa fa-user"></i> First Name</label><br />
             <asp:TextBox ID="fname" runat="server" placeholder="John"></asp:TextBox><br />
 
@@ -88,12 +88,17 @@
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label><br />
             <asp:TextBox ID="adr" placeholder="542 W. 15th Street" runat="server"></asp:TextBox><br />
 
-            <label for="city" class="IndexCentering"><i class="fa fa-address-card-o"></i> Phone</label><br />
+            <label for="city" class="IndexCentering"><i class="fa fa-address-card-o"></i> City</label><br />
             <asp:TextBox ID="City" runat="server" placeholder="New York"></asp:TextBox><br />
               
               <div class="col-50">
                 <label for="zip">Postal Code</label><br />
-                <asp:TextBox ID="zip" runat="server" placeholder="10001"></asp:TextBox>
+                <asp:TextBox ID="zip" runat="server" placeholder="A1A 1A1"></asp:TextBox>
+                  
+              </div>
+              <div class="col-50">
+                <label for="Phone">Phone</label><br />
+                <asp:TextBox ID="Phone" runat="server" placeholder="123-456-7890"></asp:TextBox>
                   
               </div>
                 <div class="IndexCentering">
