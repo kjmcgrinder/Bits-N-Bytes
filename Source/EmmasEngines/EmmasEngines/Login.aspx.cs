@@ -24,7 +24,8 @@ namespace EmmasEngines
             positionTableAdapter daPositions = new positionTableAdapter();
             employeeTableAdapter daEmployees = new employeeTableAdapter();
             DataTable posTable = daPositions.GetData();
-            DataTable empTable = daEmployees.GetData();
+            EmmasEnginesLibrary.EmployeeDataSet dsEmployee = new EmmasEnginesLibrary.EmployeeDataSet();
+            daEmployees.Fill(dsEmployee.employee);
             foreach (DataRow r in posTable.Rows)
             {
                 bool exists = roleManager.RoleExists(r["posName"].ToString());
@@ -33,7 +34,7 @@ namespace EmmasEngines
             }
             string userName;
             string position;
-            foreach (DataRow r in empTable.Rows)
+            foreach (DataRow r in dsEmployee.employee.Rows)
             {
                 userName = r["empFirst"].ToString().ToLower()[0] + r["empLast"].ToString().ToLower() + r["id"].ToString();
                 position = posTable.Select("id = " + r["posID"].ToString())[0]["posName"].ToString();
@@ -42,10 +43,13 @@ namespace EmmasEngines
                 {
                     user = new IdentityUser(userName);
                     userManager.Create(user, "password");
+                    r["loginId"] = user.Id;
                 }
                 if (user.Roles.Count == 0)
                     userManager.AddToRole(user.Id, position);
             }
+            daEmployees.Update(dsEmployee.employee);
+            dsEmployee.AcceptChanges();
         }
 
         protected void Page_Load(object sender, EventArgs e)
