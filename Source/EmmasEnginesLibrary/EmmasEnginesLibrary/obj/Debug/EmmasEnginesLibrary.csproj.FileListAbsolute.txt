@@ -65,3 +65,12 @@ C:\Users\Administrator\Desktop\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEngi
 C:\Users\Administrator\Desktop\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.dll
 C:\Users\Administrator\Desktop\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.pdb
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csprojAssemblyReference.cache
+C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\Emmas.mdf
+C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\Emmas_log.ldf
+C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll.config
+C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll
+C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.pdb
+C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csprojAssemblyReference.cache
+C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.dll
+C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.pdb

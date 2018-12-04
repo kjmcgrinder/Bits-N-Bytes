@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Repairs</h5>
                     <p class="card-text">Customer Repairs</p>
-                    <a href="Purchase.aspx?mode=repair" class="btn btn-primary">Get Started</a>
+                    <a href="Repairs.aspx" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </div>
