@@ -177,7 +177,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CreateCustomer.aspx" />
-    <Content Include="customer-details.aspx" />
+    <Content Include="customerDetails.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Details.aspx" />
     <Content Include="Employees.aspx" />
@@ -189,14 +189,14 @@
     <Content Include="Images\gears-1236578_1920.jpg" />
     <Content Include="Images\macro-1452987_1920%281%29.jpg" />
     <Content Include="Images\motor-768750_1920.jpg" />
-    <Content Include="Inventory-Create.aspx" />
+    <Content Include="InventoryCreate.aspx" />
     <Content Include="Invoice.aspx" />
     <Content Include="Notes.txt" />
-    <Content Include="Order-Details.aspx" />
-    <Content Include="Order-Form.aspx" />
-    <Content Include="Repair-Details.aspx" />
+    <Content Include="OrderDetails.aspx" />
+    <Content Include="OrderForm.aspx" />
+    <Content Include="RepairDetails.aspx" />
     <Content Include="Repairs.aspx" />
-    <Content Include="Sale-Repair.aspx" />
+    <Content Include="SaleRepair.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -220,13 +220,12 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Index.aspx" />
     <Content Include="Inventory.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Orders.aspx" />
     <Content Include="Purchase.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="Repairs-Form.aspx" />
+    <Content Include="RepairsForm.aspx" />
     <Content Include="Reports.aspx" />
     <Content Include="Sales.aspx" />
     <Content Include="Scripts\GenerateUsername.js" />
@@ -285,12 +284,12 @@
     <Compile Include="CreateCustomer.aspx.designer.cs">
       <DependentUpon>CreateCustomer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="customer-details.aspx.cs">
-      <DependentUpon>customer-details.aspx</DependentUpon>
+    <Compile Include="customerDetails.aspx.cs">
+      <DependentUpon>customerDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="customer-details.aspx.designer.cs">
-      <DependentUpon>customer-details.aspx</DependentUpon>
+    <Compile Include="customerDetails.aspx.designer.cs">
+      <DependentUpon>customerDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -316,19 +315,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="InventoryCreate.aspx.cs">
+      <DependentUpon>InventoryCreate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Inventory-Create.aspx.cs">
-      <DependentUpon>Inventory-Create.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Inventory-Create.aspx.designer.cs">
-      <DependentUpon>Inventory-Create.aspx</DependentUpon>
+    <Compile Include="InventoryCreate.aspx.designer.cs">
+      <DependentUpon>InventoryCreate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inventory.aspx.cs">
       <DependentUpon>Inventory.aspx</DependentUpon>
@@ -351,19 +343,19 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Order-Details.aspx.cs">
-      <DependentUpon>Order-Details.aspx</DependentUpon>
+    <Compile Include="OrderDetails.aspx.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Order-Details.aspx.designer.cs">
-      <DependentUpon>Order-Details.aspx</DependentUpon>
+    <Compile Include="OrderDetails.aspx.designer.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Order-Form.aspx.cs">
-      <DependentUpon>Order-Form.aspx</DependentUpon>
+    <Compile Include="OrderForm.aspx.cs">
+      <DependentUpon>OrderForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Order-Form.aspx.designer.cs">
-      <DependentUpon>Order-Form.aspx</DependentUpon>
+    <Compile Include="OrderForm.aspx.designer.cs">
+      <DependentUpon>OrderForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Orders.aspx.cs">
       <DependentUpon>Orders.aspx</DependentUpon>
@@ -387,19 +379,19 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Repair-Details.aspx.cs">
-      <DependentUpon>Repair-Details.aspx</DependentUpon>
+    <Compile Include="RepairDetails.aspx.cs">
+      <DependentUpon>RepairDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Repair-Details.aspx.designer.cs">
-      <DependentUpon>Repair-Details.aspx</DependentUpon>
+    <Compile Include="RepairDetails.aspx.designer.cs">
+      <DependentUpon>RepairDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Repairs-Form.aspx.cs">
-      <DependentUpon>Repairs-Form.aspx</DependentUpon>
+    <Compile Include="RepairsForm.aspx.cs">
+      <DependentUpon>RepairsForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Repairs-Form.aspx.designer.cs">
-      <DependentUpon>Repairs-Form.aspx</DependentUpon>
+    <Compile Include="RepairsForm.aspx.designer.cs">
+      <DependentUpon>RepairsForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Repairs.aspx.cs">
       <DependentUpon>Repairs.aspx</DependentUpon>
@@ -415,12 +407,12 @@
     <Compile Include="Reports.aspx.designer.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sale-Repair.aspx.cs">
-      <DependentUpon>Sale-Repair.aspx</DependentUpon>
+    <Compile Include="SaleRepair.aspx.cs">
+      <DependentUpon>SaleRepair.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sale-Repair.aspx.designer.cs">
-      <DependentUpon>Sale-Repair.aspx</DependentUpon>
+    <Compile Include="SaleRepair.aspx.designer.cs">
+      <DependentUpon>SaleRepair.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sales.aspx.cs">
       <DependentUpon>Sales.aspx</DependentUpon>

@@ -14,10 +14,10 @@ namespace EmmasEngines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.User.Identity.IsAuthenticated)
-                lblLogin.Text = "Welcome " + Page.User.Identity.Name;
-            else
-                lblLogin.Text = "Login";
+            //if (Page.User.Identity.IsAuthenticated)
+            //    lblLogin.Text = "Welcome " + Page.User.Identity.Name;
+            //else
+            //    lblLogin.Text = "Login";
         }
 
         protected void Logout(object sender, EventArgs e)
