@@ -12,13 +12,8 @@ namespace EmmasEngines
 {
     public partial class SiteMaster : MasterPage
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            //if (Page.User.Identity.IsAuthenticated)
-            //    lblLogin.Text = "Welcome " + Page.User.Identity.Name;
-            //else
-            //    lblLogin.Text = "Login";
-        }
+        public static string[] purchaseStyles = new string[] { "Purchase", "Edit Customer", "Edit Employee" };
+        public static string[] formStyles = new string[] { "Purchase" };        
 
         protected void Logout(object sender, EventArgs e)
         {
