@@ -14,15 +14,16 @@
                             <br />
                             <br />
                             <asp:Label ID="lblError" runat="server" ForeColor="Red" Visible="false"><i class ="fade fa-user">Create failed please try again</i></asp:Label><br />
+                            <asp:ValidationSummary runat="server" ID="vsEmployee" ForeColor="Red" />
                             <br />
 
-                            <label for="fname"><i class="fa fa-user"></i>First Name</label><br />
+                            <label for="fname"><i class="fa fa-user"></i>First Name<asp:RequiredFieldValidator ID="rfvFname" runat="server" ControlToValidate="fname" ErrorMessage="First Name Required" ForeColor="Red">*</asp:RequiredFieldValidator></label><br />
                             <asp:TextBox runat="server" ID="fname" placeholder="John"></asp:TextBox><br />
 
-                            <label for="lname"><i class="fa fa-user"></i>Last Name</label><br />
+                            <label for="lname"><i class="fa fa-user"></i>Last Name<asp:RequiredFieldValidator ID="rfvLname" runat="server" ControlToValidate="lname" ErrorMessage="Last Name Required" ForeColor="Red">*</asp:RequiredFieldValidator></label><br />
                             <asp:TextBox runat="server" ID="lname" placeholder="Doe"></asp:TextBox><br />
 
-                            <label for="Position"><i class="fa fa-envelope"></i>Position</label><br />
+                            <label for="Position"><i class="fa fa-envelope"></i>Position<asp:RangeValidator ID="rvPosition" runat="server" ControlToValidate="Position" MaximumValue="9999" MinimumValue="1" ErrorMessage="Please select a position" ForeColor="Red">*</asp:RangeValidator></label><br />
                             <asp:DropDownList runat="server" ID="Position" DataSourceID="ObjectDataSource1" DataTextField="posName" DataValueField="id" AppendDataBoundItems="true" Style="margin-bottom: 20px; padding: 12px; border: 1px solid #ccc; border-radius: 3px; width: 225px;">
                                 <asp:ListItem Text="Please select a position" Value="-1"></asp:ListItem>
                                 <asp:ListItem Text="Inactive" Value="0"></asp:ListItem>
@@ -31,7 +32,7 @@
                             <label for="username"><i class="fa fa-user"></i>Username</label><br />
                             <asp:TextBox runat="server" ID="username" ReadOnly="true" placeholder="jdoe3"></asp:TextBox><br />
 
-                            <label for="password" class="IndexCentering"><i class="fa fa-address-card-o"></i>Password</label><br />
+                            <label for="password" class="IndexCentering"><i class="fa fa-address-card-o"></i>Password<asp:CompareValidator ID="cvPassword" runat="server" ControlToValidate="password" ControlToCompare="confirmPassword" ErrorMessage="Passwords don't match" ForeColor="Red">*</asp:CompareValidator></label><br />
                             <asp:TextBox runat="server" ID="password" placeholder="Enter Password" TextMode="Password"></asp:TextBox><br />
 
                             <label for="confirmPassword" class="IndexCentering"><i class="fa fa-address-card-o"></i>Confirm Password</label><br />

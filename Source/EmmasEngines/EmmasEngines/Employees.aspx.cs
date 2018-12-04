@@ -36,6 +36,8 @@ namespace EmmasEngines
                 id = Convert.ToInt32(Request.QueryString["id"]);
                 password.Enabled = id == -1;
                 confirmPassword.Enabled = id == -1;
+                cvPassword.Enabled = id == -1;
+                rvPosition.MinimumValue = "0";
                 if (id != -1)
                     lblHeader.Text = "Update an Employee Record";
                 if (IsPostBack)

@@ -22,6 +22,24 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.Label lblHeader;
         
         /// <summary>
+        /// vsCustomer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsCustomer;
+        
+        /// <summary>
+        /// rfvFname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFname;
+        
+        /// <summary>
         /// fname control.
         /// </summary>
         /// <remarks>
@@ -31,6 +49,15 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.TextBox fname;
         
         /// <summary>
+        /// rfvLname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLname;
+        
+        /// <summary>
         /// lname control.
         /// </summary>
         /// <remarks>
@@ -38,6 +65,15 @@ namespace EmmasEngines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lname;
+        
+        /// <summary>
+        /// rxvEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rxvEmail;
         
         /// <summary>
         /// email control.
@@ -67,6 +103,15 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.TextBox City;
         
         /// <summary>
+        /// rxvPostalCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rxvPostalCode;
+        
+        /// <summary>
         /// zip control.
         /// </summary>
         /// <remarks>
@@ -74,6 +119,15 @@ namespace EmmasEngines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox zip;
+        
+        /// <summary>
+        /// rfvPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPhone;
         
         /// <summary>
         /// Phone control.

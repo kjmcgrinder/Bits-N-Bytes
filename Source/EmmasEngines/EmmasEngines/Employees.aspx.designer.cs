@@ -31,6 +31,24 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
+        /// vsEmployee control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsEmployee;
+        
+        /// <summary>
+        /// rfvFname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFname;
+        
+        /// <summary>
         /// fname control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,15 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.TextBox fname;
         
         /// <summary>
+        /// rfvLname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLname;
+        
+        /// <summary>
         /// lname control.
         /// </summary>
         /// <remarks>
@@ -47,6 +74,15 @@ namespace EmmasEngines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lname;
+        
+        /// <summary>
+        /// rvPosition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvPosition;
         
         /// <summary>
         /// Position control.
@@ -65,6 +101,15 @@ namespace EmmasEngines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox username;
+        
+        /// <summary>
+        /// cvPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvPassword;
         
         /// <summary>
         /// password control.
