@@ -13,5 +13,7 @@ namespace EmmasEngines
         {
 
         }
+
+        protected void UpdateMethod() { }//TODO
     }
 }

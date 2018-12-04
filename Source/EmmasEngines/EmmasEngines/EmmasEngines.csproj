@@ -268,7 +268,6 @@
     <Content Include="Style\Form-Style.css" />
     <Content Include="Style\style.css" />
     <Content Include="Style\stylePurchase.css" />
-    <Content Include="TextFile1.txt" />
     <Content Include="Users.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
