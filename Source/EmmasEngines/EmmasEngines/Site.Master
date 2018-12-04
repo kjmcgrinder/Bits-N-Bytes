@@ -4,8 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title><%: Page.Title %></title>    
-    <link href="<%:formStyles.Contains(Page.Title) ? "Style/Form-Style.css" : "" %>" rel="stylesheet" />    
+    <title><%: Page.Title %></title>
+    <link href="<%:formStyles.Contains(Page.Title) ? "Style/Form-Style.css" : "" %>" rel="stylesheet" />
     <link href="<%:purchaseStyles.Contains(Page.Title) ? "Style/stylePurchase.css" : "" %>" rel="stylesheet" />
     <link href="Style/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
@@ -14,50 +14,52 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="Scripts/GenerateUsername.js"></script>
 </head>
-<body>
-    <!--Nav Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Emma's Small Engines</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<body onload="Init()">
+    <form runat="server">
+        <!--Nav Bar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Emma's Small Engines</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="Default.aspx">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sales
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="SaleRepair.aspx">Sale / Repair</a>
-                        <a class="dropdown-item" href="Sales.aspx">Customer Management</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Inventory.aspx">Inventory</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="Users.aspx">User Management</a>
-                        <a class="dropdown-item" href="Reports.aspx">Reports</a>
-                    </div>
-                </li>
-            </ul>
-            <asp:LinkButton runat="server" Text="Logout" OnClick="Logout"></asp:LinkButton>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Default.aspx">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sales
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="SaleRepair.aspx">Sale / Repair</a>
+                            <a class="dropdown-item" href="Sales.aspx">Customer Management</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Inventory.aspx">Inventory</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="Users.aspx">User Management</a>
+                            <a class="dropdown-item" href="Reports.aspx">Reports</a>
+                        </div>
+                    </li>
+                </ul>
+                <asp:LinkButton runat="server" Text="Logout" OnClick="Logout"></asp:LinkButton>
+            </div>
+        </nav>
+        <div>
+            <div class="secondary">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <footer>
+                    <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
+                </footer>
+            </div>
         </div>
-    </nav>
-    <div>
-        <form runat="server" class="secondary">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>            
-            <footer>
-                <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>
-            </footer>
-        </form>
-    </div>
+    </form>
 </body>
 </html>

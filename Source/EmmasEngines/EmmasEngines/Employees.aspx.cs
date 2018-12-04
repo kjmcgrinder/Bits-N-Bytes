@@ -42,7 +42,8 @@ namespace EmmasEngines
                     return;
                 fname.Text = dsEmployee.employee.FindByid(id).empFirst;
                 lname.Text = dsEmployee.employee.FindByid(id).empLast;
-                Position.SelectedValue = dsEmployee.employee.FindByid(id).posID.ToString();
+                if(!dsEmployee.employee.FindByid(id).IsposIDNull())
+                    Position.SelectedValue = dsEmployee.employee.FindByid(id).posID.ToString();
                 UserStore<IdentityUser> store = new UserStore<IdentityUser>();
                 UserManager<IdentityUser> manager = new UserManager<IdentityUser>(store);
                 username.Text = manager.FindById(dsEmployee.employee.FindByid(id).loginId).UserName;
@@ -72,11 +73,17 @@ namespace EmmasEngines
                 EmployeeDataSet.employeeRow r = dsEmployee.employee.FindByid(id);
                 r.empFirst = fname.Text;
                 r.empLast = lname.Text;
-                if(r.posID != Convert.ToInt32(Position.SelectedValue))
+                if(r.IsposIDNull() || r.posID != Convert.ToInt32(Position.SelectedValue))
                 {
-                    manager.RemoveFromRole(r.loginId, Position.Items.FindByValue(r.posID.ToString()).Text);
-                    manager.AddToRole(r.loginId, Position.SelectedItem.Text);
-                    r.posID = Convert.ToInt32(Position.SelectedValue);                                        
+                    if(!r.IsposIDNull())
+                        manager.RemoveFromRole(r.loginId, Position.Items.FindByValue(r.posID.ToString()).Text);
+                    if (Position.SelectedIndex > 1)
+                    {
+                        manager.AddToRole(r.loginId, Position.SelectedItem.Text);
+                        r.posID = Convert.ToInt32(Position.SelectedValue);
+                    }
+                    else
+                        r["posID"] = DBNull.Value;
                 }                
             }
             try

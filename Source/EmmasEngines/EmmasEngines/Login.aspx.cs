@@ -33,11 +33,12 @@ namespace EmmasEngines
                     roleManager.Create(new IdentityRole(r["posName"].ToString()));
             }
             string userName;
-            string position;
+            string position = "";
             foreach (DataRow r in dsEmployee.employee.Rows)
             {
                 userName = r["empFirst"].ToString().ToLower()[0] + r["empLast"].ToString().ToLower() + r["id"].ToString();
-                position = posTable.Select("id = " + r["posID"].ToString())[0]["posName"].ToString();
+                if(r["posID"] != DBNull.Value)
+                    position = posTable.Select("id = " + r["posID"].ToString())[0]["posName"].ToString();
                 IdentityUser user = userManager.Find(userName, "password");
                 if (user == null)
                 {
@@ -45,7 +46,7 @@ namespace EmmasEngines
                     userManager.Create(user, "password");                    
                 }
                 r["loginId"] = user.Id;
-                if (user.Roles.Count == 0)
+                if (user.Roles.Count == 0 && !String.IsNullOrEmpty(position))
                     userManager.AddToRole(user.Id, position);
             }
             daEmployees.Update(dsEmployee.employee);

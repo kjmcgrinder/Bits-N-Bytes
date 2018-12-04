@@ -4,12 +4,12 @@
     <div class="IndexCentering">
         <div class="row">
             <div class="col-75">
-                <div class="container" onload="Init()">
+                <div class="container">
 
                     <div class="row">
                         <div class="col-50">
                             <br />
-                            <asp:Label runat="server" ID="lblHeader"><h3 class="IndexHeaderA">Create an Employee Record</h3></asp:Label>
+                            <h3 class="IndexHeaderA"><asp:Label runat="server" ID="lblHeader">Create an Employee Record</asp:Label></h3>
                             <br />
                             <br />
                             <br />

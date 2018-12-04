@@ -792,7 +792,6 @@ namespace EmmasEnginesLibrary {
                 this.columnid.Unique = true;
                 this.columnempFirst.MaxLength = 30;
                 this.columnempLast.MaxLength = 50;
-                this.columnposID.AllowDBNull = false;
                 this.columnRowVersion.ReadOnly = true;
                 this.columnloginId.MaxLength = 128;
             }
@@ -1036,7 +1035,12 @@ namespace EmmasEnginesLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int posID {
                 get {
-                    return ((int)(this[this.tableemployee.posIDColumn]));
+                    try {
+                        return ((int)(this[this.tableemployee.posIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'posID\' in table \'employee\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableemployee.posIDColumn] = value;
@@ -1097,6 +1101,18 @@ namespace EmmasEnginesLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetempLastNull() {
                 this[this.tableemployee.empLastColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsposIDNull() {
+                return this.IsNull(this.tableemployee.posIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetposIDNull() {
+                this[this.tableemployee.posIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1613,7 +1629,7 @@ SELECT id, empFirst, empLast, posID, RowVersion, loginId FROM employee WHERE (id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string empFirst, string empLast, int posID, string loginId) {
+        public virtual int Insert(string empFirst, string empLast, global::System.Nullable<int> posID, string loginId) {
             if ((empFirst == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1626,7 +1642,12 @@ SELECT id, empFirst, empLast, posID, RowVersion, loginId FROM employee WHERE (id
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(empLast));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(posID));
+            if ((posID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(posID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((loginId == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
@@ -1653,7 +1674,7 @@ SELECT id, empFirst, empLast, posID, RowVersion, loginId FROM employee WHERE (id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string empFirst, string empLast, int posID, string loginId, int Original_id, byte[] Original_RowVersion, int id) {
+        public virtual int Update(string empFirst, string empLast, global::System.Nullable<int> posID, string loginId, int Original_id, byte[] Original_RowVersion, int id) {
             if ((empFirst == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1666,7 +1687,12 @@ SELECT id, empFirst, empLast, posID, RowVersion, loginId FROM employee WHERE (id
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(empLast));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(posID));
+            if ((posID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(posID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((loginId == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
@@ -1701,7 +1727,7 @@ SELECT id, empFirst, empLast, posID, RowVersion, loginId FROM employee WHERE (id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string empFirst, string empLast, int posID, string loginId, int Original_id, byte[] Original_RowVersion) {
+        public virtual int Update(string empFirst, string empLast, global::System.Nullable<int> posID, string loginId, int Original_id, byte[] Original_RowVersion) {
             return this.Update(empFirst, empLast, posID, loginId, Original_id, Original_RowVersion, Original_id);
         }
     }
