@@ -23,7 +23,6 @@ namespace EmmasEngines
                 Response.Redirect("~/Default.aspx");
             if (!IsPostBack)
             {
-                
             }
         }
     }

@@ -13,6 +13,11 @@ namespace EmmasEngines
         {
             if(!User.IsInRole("Technician") && !User.IsInRole("Manager"))
                 Response.Redirect("~/Default.aspx");
+
+            if (!IsPostBack)
+            {
+                string repairID = Request.QueryString["repairID"];
+            }
         }
 
         protected void UpdateMethod() { }//TODO
