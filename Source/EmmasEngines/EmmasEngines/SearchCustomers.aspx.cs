@@ -11,7 +11,8 @@ namespace EmmasEngines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if(!User.IsInRole("Sales") && !User.IsInRole("Manager"))
+                Response.Redirect("~/Default.aspx");
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

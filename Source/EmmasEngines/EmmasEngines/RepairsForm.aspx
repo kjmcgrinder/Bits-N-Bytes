@@ -26,7 +26,7 @@
     <%--<asp:TextBox ID="txtEquiment" runat="server"></asp:TextBox> --%>
 
     <h5>Manufacturer:</h5>
-    <asp:TextBox ID="TextBox2" runat="server" CssClass="inputBox" OnTextChanged="TextBox2_TextChanged" Height="16px" Width="144px"></asp:TextBox>
+    <asp:TextBox ID="TextBox2" runat="server" CssClass="inputBox" Height="16px" Width="144px"></asp:TextBox>
     <%--<asp:DropDownList ID="ddlManufacturer" runat="server"></asp:DropDownList>--%>
     <h5>Warranty?</h5>
     <input type="checkbox" name="yes/no" value="Yes">Yes     

@@ -21,5 +21,11 @@ namespace EmmasEngines
             AuthenticationManager.SignOut();
             Response.Redirect("~/Login.aspx");
         }
+
+        protected void MainContent_Load(object sender, EventArgs e)
+        {
+            if (!Page.User.Identity.IsAuthenticated)
+                Response.Redirect("~/Login.aspx");
+        }
     }
 }

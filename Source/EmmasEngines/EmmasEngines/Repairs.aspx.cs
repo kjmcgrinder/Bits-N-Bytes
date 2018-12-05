@@ -14,13 +14,13 @@ namespace EmmasEngines
 
         static Repairs1()
         {
+
         }
+
         protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!User.Identity.IsAuthenticated)
-            {
-                Response.Redirect("~/Login.aspx");
-            }
+        {            
+            if(!User.IsInRole("Technician") && !User.IsInRole("Sales") && !User.IsInRole("Manager"))
+                Response.Redirect("~/Default.aspx");
             if (!IsPostBack)
             {
                 

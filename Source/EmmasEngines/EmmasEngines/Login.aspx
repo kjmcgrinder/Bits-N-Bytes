@@ -27,7 +27,7 @@
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Register.aspx">Register Here</asp:HyperLink>
                     <br />
                     <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" CssClass="IndexButton" Height="55px" Width="144px" /><br />
-                    <asp:Label ID="lblResult" runat="server"></asp:Label>
+                    <asp:Label ID="lblResult" runat="server" ForeColor="Red"></asp:Label>
                 </div>
         </form>
             </div>

@@ -26,9 +26,7 @@ namespace EmmasEngines
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!User.Identity.IsAuthenticated)
-                Response.Redirect("~/Login.aspx");
-            else if (!User.IsInRole("Manager"))
+            if (!User.IsInRole("Manager"))
                 Response.Redirect("~/Default.aspx");
             MaxID.Value = dsEmployee.employee.Max(i => i["id"]).ToString();
             if (Request.QueryString["id"] != null)
@@ -73,19 +71,26 @@ namespace EmmasEngines
             else
             {
                 EmployeeDataSet.employeeRow r = dsEmployee.employee.FindByid(id);
+                IdentityUser user = manager.FindById(r.loginId);
                 r.empFirst = fname.Text;
-                r.empLast = lname.Text;
+                r.empLast = lname.Text;                
                 if(r.IsposIDNull() || r.posID != Convert.ToInt32(Position.SelectedValue))
                 {
-                    if(!r.IsposIDNull())
+                    if(!r.IsposIDNull())                        
                         manager.RemoveFromRole(r.loginId, Position.Items.FindByValue(r.posID.ToString()).Text);
                     if (Position.SelectedIndex > 1)
-                    {
+                    {                        
                         manager.AddToRole(r.loginId, Position.SelectedItem.Text);
+                        manager.SetLockoutEnabled(r.loginId, true);
+                        manager.SetLockoutEndDate(r.loginId, DateTimeOffset.UtcNow);
                         r.posID = Convert.ToInt32(Position.SelectedValue);
                     }
                     else
+                    {
+                        manager.SetLockoutEnabled(r.loginId, true);
+                        manager.SetLockoutEndDate(r.loginId, DateTimeOffset.MaxValue);                        
                         r["posID"] = DBNull.Value;
+                    }
                 }                
             }
             try

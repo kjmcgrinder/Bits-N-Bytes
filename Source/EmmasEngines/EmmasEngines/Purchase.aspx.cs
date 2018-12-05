@@ -21,9 +21,9 @@ namespace EmmasEngines
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!User.Identity.IsAuthenticated)
-                Response.Redirect("~/Login.aspx");
-            if(!IsPostBack)
+            if(!User.IsInRole("Sales") && !User.IsInRole("Manager"))
+                Response.Redirect("~/Default.aspx");
+            if (!IsPostBack)
             {
                 if (Request.QueryString["mode"] == "sale")
                     Mode = PageMode.Sale;

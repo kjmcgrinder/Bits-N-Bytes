@@ -11,7 +11,8 @@ namespace EmmasEngines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!User.IsInRole("Technician") && !User.IsInRole("Manager"))
+                Response.Redirect("~/Default.aspx");
         }
     }
 }

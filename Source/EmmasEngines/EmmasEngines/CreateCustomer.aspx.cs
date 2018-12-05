@@ -22,6 +22,8 @@ namespace EmmasEngines
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!User.IsInRole("Manager") && !User.IsInRole("Sales"))
+                Response.Redirect("~/Default.aspx");
             if (Request.QueryString["selectedId"] != null)
             {
                 id = Convert.ToInt32(Request.QueryString["selectedId"]);

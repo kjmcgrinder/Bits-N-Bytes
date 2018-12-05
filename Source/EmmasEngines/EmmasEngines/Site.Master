@@ -53,7 +53,7 @@
         </nav>
         <div>
             <div class="secondary">
-                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" OnLoad="MainContent_Load">
                 </asp:ContentPlaceHolder>
                 <footer>
                     <small>Copyright &copy; 2018 Bits N' Bytes. All rights reserved.</small>

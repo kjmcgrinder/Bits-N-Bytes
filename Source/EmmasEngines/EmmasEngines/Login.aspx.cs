@@ -44,10 +44,10 @@ namespace EmmasEngines
                 {
                     user = new IdentityUser(userName);
                     userManager.Create(user, "password");                    
-                }
-                r["loginId"] = user.Id;
+                }                
+                r["loginId"] = userManager.Find(userName, "password").Id;                
                 if (user.Roles.Count == 0 && !String.IsNullOrEmpty(position))
-                    userManager.AddToRole(user.Id, position);
+                    userManager.AddToRole(user.Id, position);                
             }
             daEmployees.Update(dsEmployee.employee);
             dsEmployee.AcceptChanges();
@@ -64,18 +64,17 @@ namespace EmmasEngines
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
             IdentityUser user = manager.Find(txtUsername.Text, txtPassword.Text);
-            if (user != null)
+            if (user != null && user.LockoutEndDateUtc > DateTime.UtcNow)
+                lblResult.Text = "Access denied";
+            else if (user != null)
             {
                 var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
                 var userIdentity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                 authenticationManager.SignIn(userIdentity);                
                 Response.Redirect("~/Default.aspx");
             }                
-            else
-            {
-                lblResult.Text = "Incorrect username or password";
-                lblResult.ForeColor = System.Drawing.Color.Red;
-            }
+            else            
+                lblResult.Text = "Incorrect username or password";            
         }
     }
 }
