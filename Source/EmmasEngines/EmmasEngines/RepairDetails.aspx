@@ -5,18 +5,17 @@
         <h3 class="IndexHeaderA">Details</h3>
     </div>
     <div class="IndexCentering">
-        <asp:DetailsView ID="DetailsView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="164px" Width="928px">
-            <AlternatingRowStyle BackColor="White" />
-            <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
-            <EditRowStyle BackColor="#2461BF" />
-            <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
-            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#EFF3FB" />
-        </asp:DetailsView>
+        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" AutoGenerateEditButton="True" DataSourceID="SqlDataSource1" UpdateMethod="UpdateMethod">
+            <Columns>
+                <asp:BoundField DataField="serordDateIn" HeaderText="serordDateIn" SortExpression="serordDateIn" />
+                <asp:BoundField DataField="serordDateOut" HeaderText="serordDateOut" SortExpression="serordDateOut" />
+                <asp:BoundField DataField="serordIssue" HeaderText="serordIssue" SortExpression="serordIssue" />
+                <asp:BoundField DataField="empID" HeaderText="empID" SortExpression="empID" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=&quot;C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\Emmas.mdf&quot;;Integrated Security=True;Connect Timeout=30" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [serordDateIn], [serordDateOut], [serordIssue], [empID] FROM [service_order]"></asp:SqlDataSource>
     </div>
     <div class="IndexCentering">
-        <asp:Button ID="Button1" runat="server" CssClass="IndexButton" Text="Start" Height="60px" Width="139px" />
+        <asp:Button ID="Button1" runat="server" CssClass="IndexButton" Text="Start" Height="60px" Width="139px"/>
     </div>
 </asp:Content>

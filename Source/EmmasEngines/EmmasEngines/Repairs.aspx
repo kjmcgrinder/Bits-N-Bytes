@@ -18,7 +18,7 @@
                 <asp:BoundField DataField="Customer Email" HeaderText="Customer Email" SortExpression="Customer Email" />
                 <asp:BoundField DataField="Employee" HeaderText="Employee" ReadOnly="True" SortExpression="Employee" />
                 <asp:BoundField DataField="Equipment Serial Num" HeaderText="Equipment Serial Num" SortExpression="Equipment Serial Num" />
-                <asp:HyperLinkField NavigateUrl="Repair-Details.aspx" Text="Details" />
+                <asp:HyperLinkField NavigateUrl="RepairDetails.aspx" Text="Details" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -75,7 +75,7 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <p>
-        <asp:Button ID="Button1" runat="server" Text="New Repair" CssClass="btn" PostBackUrl="~/Purchase.aspx" />
+        <asp:Button ID="Button1" runat="server" Text="New Repair" CssClass="btn"  PostBackUrl="~/Purchase.aspx?mode=repair" />
     </p>
     <p>
         &nbsp;

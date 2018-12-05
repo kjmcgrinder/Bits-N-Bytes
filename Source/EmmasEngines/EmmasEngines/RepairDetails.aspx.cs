@@ -14,5 +14,7 @@ namespace EmmasEngines
             if(!User.IsInRole("Technician") && !User.IsInRole("Manager"))
                 Response.Redirect("~/Default.aspx");
         }
+
+        protected void UpdateMethod() { }//TODO
     }
 }
