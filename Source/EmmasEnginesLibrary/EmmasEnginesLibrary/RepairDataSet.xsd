@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection ConnectionStringObject="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Documents\GitHub\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\App_Data\Emmas.mdf;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="Emmas.mdf" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="EmmasConnectionString1Repairs" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="EmmasConnectionString1Repairs (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.EmmasEnginesLibrary.Properties.Settings.GlobalReference.Default.EmmasConnectionString1Repairs" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="customerTableAdapter" GeneratorDataComponentClassName="customerTableAdapter" Name="customer" UserDataComponentName="customerTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Emmas.mdf" DbObjectName="dbo.customer" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="EmmasConnectionString1Repairs (Settings)" DbObjectName="dbo.customer" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[customer] ([custFirst], [custLast], [custPhone], [custEmail]) VALUES (@custFirst, @custLast, @custPhone, @custEmail)</CommandText>
@@ -39,7 +39,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="employeeTableAdapter" GeneratorDataComponentClassName="employeeTableAdapter" Name="employee" UserDataComponentName="employeeTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Emmas.mdf" DbObjectName="dbo.employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="EmmasConnectionString1Repairs (Settings)" DbObjectName="dbo.employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT empFirst, empLast FROM dbo.employee</CommandText>
@@ -56,7 +56,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="equipmentTableAdapter" GeneratorDataComponentClassName="equipmentTableAdapter" Name="equipment" UserDataComponentName="equipmentTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Emmas.mdf" DbObjectName="dbo.equipment" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="EmmasConnectionString1Repairs (Settings)" DbObjectName="dbo.equipment" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT equModel, equSerial FROM dbo.equipment</CommandText>
@@ -71,22 +71,219 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="service_orderTableAdapter" GeneratorDataComponentClassName="service_orderTableAdapter" Name="service_order" UserDataComponentName="service_orderTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="serviceTableAdapter" GeneratorDataComponentClassName="serviceTableAdapter" Name="service" UserDataComponentName="serviceTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Emmas.mdf" DbObjectName="dbo.service_order" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
+              <DbSource ConnectionRef="EmmasConnectionString1Repairs (Settings)" DbObjectName="dbo.service" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT serordDateIn, serordDateOut, serordIssue, serordWarranty FROM dbo.service_order</CommandText>
+                    <CommandText>DELETE FROM [service] WHERE (([id] = @Original_id) AND ((@IsNull_serName = 1 AND [serName] IS NULL) OR ([serName] = @Original_serName)) AND ((@IsNull_serDescription = 1 AND [serDescription] IS NULL) OR ([serDescription] = @Original_serDescription)) AND ((@IsNull_serPrice = 1 AND [serPrice] IS NULL) OR ([serPrice] = @Original_serPrice)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_serName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serDescription" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serDescription" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_serDescription" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serDescription" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serPrice" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serPrice" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_serPrice" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="serPrice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [service] ([serName], [serDescription], [serPrice]) VALUES (@serName, @serDescription, @serPrice);
+SELECT id, serName, serDescription, serPrice FROM service WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@serName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@serDescription" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serDescription" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@serPrice" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="serPrice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        service.*
+FROM            service</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [service] SET [serName] = @serName, [serDescription] = @serDescription, [serPrice] = @serPrice WHERE (([id] = @Original_id) AND ((@IsNull_serName = 1 AND [serName] IS NULL) OR ([serName] = @Original_serName)) AND ((@IsNull_serDescription = 1 AND [serDescription] IS NULL) OR ([serDescription] = @Original_serDescription)) AND ((@IsNull_serPrice = 1 AND [serPrice] IS NULL) OR ([serPrice] = @Original_serPrice)));
+SELECT id, serName, serDescription, serPrice FROM service WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@serName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@serDescription" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serDescription" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@serPrice" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="serPrice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_serName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serDescription" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serDescription" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_serDescription" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serDescription" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serPrice" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serPrice" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_serPrice" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="serPrice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="[C:\USERS\ADMINISTRATOR\DOCUMENTS\GITHUB\BITS-N-BYTES\SOURCE\EMMASENGINES\EMMASENGINES\APP_DATA\EMMAS.MDF].dbo.service" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="serName" DataSetColumn="serName" />
+              <Mapping SourceColumn="serDescription" DataSetColumn="serDescription" />
+              <Mapping SourceColumn="serPrice" DataSetColumn="serPrice" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="service_orderTableAdapter" GeneratorDataComponentClassName="service_orderTableAdapter" Name="service_order" UserDataComponentName="service_orderTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasConnectionString1Repairs (Settings)" DbObjectName="dbo.service_order" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [service_order] WHERE (([id] = @Original_id) AND ((@IsNull_serordDateIn = 1 AND [serordDateIn] IS NULL) OR ([serordDateIn] = @Original_serordDateIn)) AND ((@IsNull_serordDateOut = 1 AND [serordDateOut] IS NULL) OR ([serordDateOut] = @Original_serordDateOut)) AND ((@IsNull_serordIssue = 1 AND [serordIssue] IS NULL) OR ([serordIssue] = @Original_serordIssue)) AND ((@IsNull_serordWarranty = 1 AND [serordWarranty] IS NULL) OR ([serordWarranty] = @Original_serordWarranty)) AND ([receiptID] = @Original_receiptID) AND ([serviceID] = @Original_serviceID) AND ([equipID] = @Original_equipID) AND ([empID] = @Original_empID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serordDateIn" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serordDateIn" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_serordDateIn" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="serordDateIn" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serordDateOut" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serordDateOut" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_serordDateOut" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="serordDateOut" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serordIssue" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serordIssue" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_serordIssue" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serordIssue" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serordWarranty" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serordWarranty" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_serordWarranty" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="serordWarranty" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_receiptID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="receiptID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_serviceID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serviceID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_equipID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="equipID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_empID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="empID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [service_order] ([serordDateIn], [serordDateOut], [serordIssue], [serordWarranty], [receiptID], [serviceID], [equipID], [empID]) VALUES (@serordDateIn, @serordDateOut, @serordIssue, @serordWarranty, @receiptID, @serviceID, @equipID, @empID);
+SELECT id, serordDateIn, serordDateOut, serordIssue, serordWarranty, receiptID, serviceID, equipID, empID FROM service_order WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@serordDateIn" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="serordDateIn" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@serordDateOut" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="serordDateOut" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@serordIssue" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serordIssue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@serordWarranty" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="serordWarranty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@receiptID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="receiptID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@serviceID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serviceID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@equipID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="equipID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@empID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="empID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        service_order.*
+FROM            service_order</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [service_order] SET [serordDateIn] = @serordDateIn, [serordDateOut] = @serordDateOut, [serordIssue] = @serordIssue, [serordWarranty] = @serordWarranty, [receiptID] = @receiptID, [serviceID] = @serviceID, [equipID] = @equipID, [empID] = @empID WHERE (([id] = @Original_id) AND ((@IsNull_serordDateIn = 1 AND [serordDateIn] IS NULL) OR ([serordDateIn] = @Original_serordDateIn)) AND ((@IsNull_serordDateOut = 1 AND [serordDateOut] IS NULL) OR ([serordDateOut] = @Original_serordDateOut)) AND ((@IsNull_serordIssue = 1 AND [serordIssue] IS NULL) OR ([serordIssue] = @Original_serordIssue)) AND ((@IsNull_serordWarranty = 1 AND [serordWarranty] IS NULL) OR ([serordWarranty] = @Original_serordWarranty)) AND ([receiptID] = @Original_receiptID) AND ([serviceID] = @Original_serviceID) AND ([equipID] = @Original_equipID) AND ([empID] = @Original_empID));
+SELECT id, serordDateIn, serordDateOut, serordIssue, serordWarranty, receiptID, serviceID, equipID, empID FROM service_order WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@serordDateIn" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="serordDateIn" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@serordDateOut" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="serordDateOut" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@serordIssue" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serordIssue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@serordWarranty" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="serordWarranty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@receiptID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="receiptID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@serviceID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serviceID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@equipID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="equipID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@empID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="empID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serordDateIn" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serordDateIn" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_serordDateIn" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="serordDateIn" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serordDateOut" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serordDateOut" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_serordDateOut" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="serordDateOut" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serordIssue" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serordIssue" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_serordIssue" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serordIssue" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serordWarranty" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serordWarranty" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_serordWarranty" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="serordWarranty" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_receiptID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="receiptID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_serviceID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serviceID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_equipID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="equipID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_empID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="empID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="[C:\USERS\ADMINISTRATOR\DOCUMENTS\GITHUB\BITS-N-BYTES\SOURCE\EMMASENGINES\EMMASENGINES\APP_DATA\EMMAS.MDF].dbo.service_order" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
               <Mapping SourceColumn="serordDateIn" DataSetColumn="serordDateIn" />
               <Mapping SourceColumn="serordDateOut" DataSetColumn="serordDateOut" />
               <Mapping SourceColumn="serordIssue" DataSetColumn="serordIssue" />
               <Mapping SourceColumn="serordWarranty" DataSetColumn="serordWarranty" />
+              <Mapping SourceColumn="receiptID" DataSetColumn="receiptID" />
+              <Mapping SourceColumn="serviceID" DataSetColumn="serviceID" />
+              <Mapping SourceColumn="equipID" DataSetColumn="equipID" />
+              <Mapping SourceColumn="empID" DataSetColumn="empID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="repair_progressTableAdapter" GeneratorDataComponentClassName="repair_progressTableAdapter" Name="repair_progress" UserDataComponentName="repair_progressTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasConnectionString1Repairs (Settings)" DbObjectName="dbo.repair_progress" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [repair_progress] WHERE (([employeeID] = @Original_employeeID) AND ([repairID] = @Original_repairID) AND ([startDate] = @Original_startDate) AND ((@IsNull_finishDate = 1 AND [finishDate] IS NULL) OR ([finishDate] = @Original_finishDate)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_employeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="employeeID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_repairID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="repairID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_startDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="startDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_finishDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="finishDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_finishDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="finishDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [repair_progress] ([employeeID], [repairID], [startDate], [finishDate]) VALUES (@employeeID, @repairID, @startDate, @finishDate);
+SELECT employeeID, repairID, startDate, finishDate FROM repair_progress WHERE (employeeID = @employeeID) AND (repairID = @repairID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@employeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="employeeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@repairID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="repairID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@startDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="startDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@finishDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="finishDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        repair_progress.*
+FROM            repair_progress</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [repair_progress] SET [employeeID] = @employeeID, [repairID] = @repairID, [startDate] = @startDate, [finishDate] = @finishDate WHERE (([employeeID] = @Original_employeeID) AND ([repairID] = @Original_repairID) AND ([startDate] = @Original_startDate) AND ((@IsNull_finishDate = 1 AND [finishDate] IS NULL) OR ([finishDate] = @Original_finishDate)));
+SELECT employeeID, repairID, startDate, finishDate FROM repair_progress WHERE (employeeID = @employeeID) AND (repairID = @repairID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@employeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="employeeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@repairID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="repairID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@startDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="startDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@finishDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="finishDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_employeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="employeeID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_repairID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="repairID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_startDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="startDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_finishDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="finishDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_finishDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="finishDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="employeeID" DataSetColumn="employeeID" />
+              <Mapping SourceColumn="repairID" DataSetColumn="repairID" />
+              <Mapping SourceColumn="startDate" DataSetColumn="startDate" />
+              <Mapping SourceColumn="finishDate" DataSetColumn="finishDate" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -98,7 +295,7 @@
   <xs:element name="RepairDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="RepairDataSet" msprop:Generator_UserDSName="RepairDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="customer" msprop:Generator_TableClassName="customerDataTable" msprop:Generator_TableVarName="tablecustomer" msprop:Generator_TablePropName="customer" msprop:Generator_RowDeletingName="customerRowDeleting" msprop:Generator_RowChangingName="customerRowChanging" msprop:Generator_RowEvHandlerName="customerRowChangeEventHandler" msprop:Generator_RowDeletedName="customerRowDeleted" msprop:Generator_UserTableName="customer" msprop:Generator_RowChangedName="customerRowChanged" msprop:Generator_RowEvArgName="customerRowChangeEvent" msprop:Generator_RowClassName="customerRow">
+        <xs:element name="customer" msprop:Generator_TableClassName="customerDataTable" msprop:Generator_TableVarName="tablecustomer" msprop:Generator_RowChangedName="customerRowChanged" msprop:Generator_TablePropName="customer" msprop:Generator_RowDeletingName="customerRowDeleting" msprop:Generator_RowChangingName="customerRowChanging" msprop:Generator_RowEvHandlerName="customerRowChangeEventHandler" msprop:Generator_RowDeletedName="customerRowDeleted" msprop:Generator_RowClassName="customerRow" msprop:Generator_UserTableName="customer" msprop:Generator_RowEvArgName="customerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="custFirst" msprop:Generator_ColumnVarNameInTable="columncustFirst" msprop:Generator_ColumnPropNameInRow="custFirst" msprop:Generator_ColumnPropNameInTable="custFirstColumn" msprop:Generator_UserColumnName="custFirst" minOccurs="0">
@@ -132,7 +329,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="employee" msprop:Generator_TableClassName="employeeDataTable" msprop:Generator_TableVarName="tableemployee" msprop:Generator_TablePropName="employee" msprop:Generator_RowDeletingName="employeeRowDeleting" msprop:Generator_RowChangingName="employeeRowChanging" msprop:Generator_RowEvHandlerName="employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeRowDeleted" msprop:Generator_UserTableName="employee" msprop:Generator_RowChangedName="employeeRowChanged" msprop:Generator_RowEvArgName="employeeRowChangeEvent" msprop:Generator_RowClassName="employeeRow">
+        <xs:element name="employee" msprop:Generator_TableClassName="employeeDataTable" msprop:Generator_TableVarName="tableemployee" msprop:Generator_RowChangedName="employeeRowChanged" msprop:Generator_TablePropName="employee" msprop:Generator_RowDeletingName="employeeRowDeleting" msprop:Generator_RowChangingName="employeeRowChanging" msprop:Generator_RowEvHandlerName="employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeRowDeleted" msprop:Generator_RowClassName="employeeRow" msprop:Generator_UserTableName="employee" msprop:Generator_RowEvArgName="employeeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="empFirst" msprop:Generator_ColumnVarNameInTable="columnempFirst" msprop:Generator_ColumnPropNameInRow="empFirst" msprop:Generator_ColumnPropNameInTable="empFirstColumn" msprop:Generator_UserColumnName="empFirst" minOccurs="0">
@@ -152,7 +349,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="equipment" msprop:Generator_TableClassName="equipmentDataTable" msprop:Generator_TableVarName="tableequipment" msprop:Generator_TablePropName="equipment" msprop:Generator_RowDeletingName="equipmentRowDeleting" msprop:Generator_RowChangingName="equipmentRowChanging" msprop:Generator_RowEvHandlerName="equipmentRowChangeEventHandler" msprop:Generator_RowDeletedName="equipmentRowDeleted" msprop:Generator_UserTableName="equipment" msprop:Generator_RowChangedName="equipmentRowChanged" msprop:Generator_RowEvArgName="equipmentRowChangeEvent" msprop:Generator_RowClassName="equipmentRow">
+        <xs:element name="equipment" msprop:Generator_TableClassName="equipmentDataTable" msprop:Generator_TableVarName="tableequipment" msprop:Generator_RowChangedName="equipmentRowChanged" msprop:Generator_TablePropName="equipment" msprop:Generator_RowDeletingName="equipmentRowDeleting" msprop:Generator_RowChangingName="equipmentRowChanging" msprop:Generator_RowEvHandlerName="equipmentRowChangeEventHandler" msprop:Generator_RowDeletedName="equipmentRowDeleted" msprop:Generator_RowClassName="equipmentRow" msprop:Generator_UserTableName="equipment" msprop:Generator_RowEvArgName="equipmentRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="equModel" msprop:Generator_ColumnVarNameInTable="columnequModel" msprop:Generator_ColumnPropNameInRow="equModel" msprop:Generator_ColumnPropNameInTable="equModelColumn" msprop:Generator_UserColumnName="equModel" minOccurs="0">
@@ -172,9 +369,32 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="service" msprop:Generator_TableClassName="serviceDataTable" msprop:Generator_TableVarName="tableservice" msprop:Generator_TablePropName="service" msprop:Generator_RowDeletingName="serviceRowDeleting" msprop:Generator_RowChangingName="serviceRowChanging" msprop:Generator_RowEvHandlerName="serviceRowChangeEventHandler" msprop:Generator_RowDeletedName="serviceRowDeleted" msprop:Generator_UserTableName="service" msprop:Generator_RowChangedName="serviceRowChanged" msprop:Generator_RowEvArgName="serviceRowChangeEvent" msprop:Generator_RowClassName="serviceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="serName" msprop:Generator_ColumnVarNameInTable="columnserName" msprop:Generator_ColumnPropNameInRow="serName" msprop:Generator_ColumnPropNameInTable="serNameColumn" msprop:Generator_UserColumnName="serName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="serDescription" msprop:Generator_ColumnVarNameInTable="columnserDescription" msprop:Generator_ColumnPropNameInRow="serDescription" msprop:Generator_ColumnPropNameInTable="serDescriptionColumn" msprop:Generator_UserColumnName="serDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="serPrice" msprop:Generator_ColumnVarNameInTable="columnserPrice" msprop:Generator_ColumnPropNameInRow="serPrice" msprop:Generator_ColumnPropNameInTable="serPriceColumn" msprop:Generator_UserColumnName="serPrice" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="service_order" msprop:Generator_TableClassName="service_orderDataTable" msprop:Generator_TableVarName="tableservice_order" msprop:Generator_TablePropName="service_order" msprop:Generator_RowDeletingName="service_orderRowDeleting" msprop:Generator_RowChangingName="service_orderRowChanging" msprop:Generator_RowEvHandlerName="service_orderRowChangeEventHandler" msprop:Generator_RowDeletedName="service_orderRowDeleted" msprop:Generator_UserTableName="service_order" msprop:Generator_RowChangedName="service_orderRowChanged" msprop:Generator_RowEvArgName="service_orderRowChangeEvent" msprop:Generator_RowClassName="service_orderRow">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="serordDateIn" msprop:Generator_ColumnVarNameInTable="columnserordDateIn" msprop:Generator_ColumnPropNameInRow="serordDateIn" msprop:Generator_ColumnPropNameInTable="serordDateInColumn" msprop:Generator_UserColumnName="serordDateIn" type="xs:dateTime" minOccurs="0" />
               <xs:element name="serordDateOut" msprop:Generator_ColumnVarNameInTable="columnserordDateOut" msprop:Generator_ColumnPropNameInRow="serordDateOut" msprop:Generator_ColumnPropNameInTable="serordDateOutColumn" msprop:Generator_UserColumnName="serordDateOut" type="xs:dateTime" minOccurs="0" />
               <xs:element name="serordIssue" msprop:Generator_ColumnVarNameInTable="columnserordIssue" msprop:Generator_ColumnPropNameInRow="serordIssue" msprop:Generator_ColumnPropNameInTable="serordIssueColumn" msprop:Generator_UserColumnName="serordIssue" minOccurs="0">
@@ -185,10 +405,43 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="serordWarranty" msprop:Generator_ColumnVarNameInTable="columnserordWarranty" msprop:Generator_ColumnPropNameInRow="serordWarranty" msprop:Generator_ColumnPropNameInTable="serordWarrantyColumn" msprop:Generator_UserColumnName="serordWarranty" type="xs:boolean" minOccurs="0" />
+              <xs:element name="receiptID" msprop:Generator_ColumnVarNameInTable="columnreceiptID" msprop:Generator_ColumnPropNameInRow="receiptID" msprop:Generator_ColumnPropNameInTable="receiptIDColumn" msprop:Generator_UserColumnName="receiptID" type="xs:int" />
+              <xs:element name="serviceID" msprop:Generator_ColumnVarNameInTable="columnserviceID" msprop:Generator_ColumnPropNameInRow="serviceID" msprop:Generator_ColumnPropNameInTable="serviceIDColumn" msprop:Generator_UserColumnName="serviceID" type="xs:int" />
+              <xs:element name="equipID" msprop:Generator_ColumnVarNameInTable="columnequipID" msprop:Generator_ColumnPropNameInRow="equipID" msprop:Generator_ColumnPropNameInTable="equipIDColumn" msprop:Generator_UserColumnName="equipID" type="xs:int" />
+              <xs:element name="empID" msprop:Generator_ColumnVarNameInTable="columnempID" msprop:Generator_ColumnPropNameInRow="empID" msprop:Generator_ColumnPropNameInTable="empIDColumn" msprop:Generator_UserColumnName="empID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="repair_progress" msprop:Generator_TableClassName="repair_progressDataTable" msprop:Generator_TableVarName="tablerepair_progress" msprop:Generator_TablePropName="repair_progress" msprop:Generator_RowDeletingName="repair_progressRowDeleting" msprop:Generator_RowChangingName="repair_progressRowChanging" msprop:Generator_RowEvHandlerName="repair_progressRowChangeEventHandler" msprop:Generator_RowDeletedName="repair_progressRowDeleted" msprop:Generator_UserTableName="repair_progress" msprop:Generator_RowChangedName="repair_progressRowChanged" msprop:Generator_RowEvArgName="repair_progressRowChangeEvent" msprop:Generator_RowClassName="repair_progressRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="employeeID" msprop:Generator_ColumnVarNameInTable="columnemployeeID" msprop:Generator_ColumnPropNameInRow="employeeID" msprop:Generator_ColumnPropNameInTable="employeeIDColumn" msprop:Generator_UserColumnName="employeeID" type="xs:int" />
+              <xs:element name="repairID" msprop:Generator_ColumnVarNameInTable="columnrepairID" msprop:Generator_ColumnPropNameInRow="repairID" msprop:Generator_ColumnPropNameInTable="repairIDColumn" msprop:Generator_UserColumnName="repairID" type="xs:int" />
+              <xs:element name="startDate" msprop:Generator_ColumnVarNameInTable="columnstartDate" msprop:Generator_ColumnPropNameInRow="startDate" msprop:Generator_ColumnPropNameInTable="startDateColumn" msprop:Generator_UserColumnName="startDate" type="xs:dateTime" />
+              <xs:element name="finishDate" msprop:Generator_ColumnVarNameInTable="columnfinishDate" msprop:Generator_ColumnPropNameInRow="finishDate" msprop:Generator_ColumnPropNameInTable="finishDateColumn" msprop:Generator_UserColumnName="finishDate" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:service" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="service_order_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:service_order" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="repair_progress_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:repair_progress" />
+      <xs:field xpath="mstns:employeeID" />
+      <xs:field xpath="mstns:repairID" />
+    </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="serord_fk_serviceID" msdata:parent="service" msdata:child="service_order" msdata:parentkey="id" msdata:childkey="serviceID" msprop:Generator_UserChildTable="service_order" msprop:Generator_ChildPropName="Getservice_orderRows" msprop:Generator_UserRelationName="serord_fk_serviceID" msprop:Generator_ParentPropName="serviceRow" msprop:Generator_RelationVarName="relationserord_fk_serviceID" msprop:Generator_UserParentTable="service" />
+      <msdata:Relationship name="repairProgress_repairKey" msdata:parent="service_order" msdata:child="repair_progress" msdata:parentkey="id" msdata:childkey="repairID" msprop:Generator_UserChildTable="repair_progress" msprop:Generator_ChildPropName="Getrepair_progressRows" msprop:Generator_UserRelationName="repairProgress_repairKey" msprop:Generator_ParentPropName="service_orderRow" msprop:Generator_RelationVarName="relationrepairProgress_repairKey" msprop:Generator_UserParentTable="service_order" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

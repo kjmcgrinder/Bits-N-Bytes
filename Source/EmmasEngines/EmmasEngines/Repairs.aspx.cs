@@ -27,11 +27,14 @@ namespace EmmasEngines
         }
 
         /* Deletes a service from the database */
-        protected void DeleteMethod()//TODO
+        protected void DeleteMethod(int rowID)//TODO
         {
+            /* connect to the dataset */
+            EmmasEnginesLibrary.RepairDataSetTableAdapters.service_orderTableAdapter service_Order = new EmmasEnginesLibrary.RepairDataSetTableAdapters.service_orderTableAdapter();
             /* get the ID of the row to be removed */
             /* generate a sql command to delete where ID=ID */
             /* send sql command to the database */
+            /* refresh page */
         }
     }
 }

@@ -23,10 +23,13 @@ namespace EmmasEngines
         /* Add the time when an employee finishes working on a repair */
         protected void UpdateMethod()//TODO
         {
+            /* connect to the dataset */
+            EmmasEnginesLibrary.RepairDataSetTableAdapters.repair_progressTableAdapter repair_progress = new EmmasEnginesLibrary.RepairDataSetTableAdapters.repair_progressTableAdapter();
             /* Get ID of repair_details table */
             /* get current date and time */
             /* make a sql command to update finish time where ID=ID */
             /* send sql command to database */
+            /* refresh page */
         }
     }
 }
