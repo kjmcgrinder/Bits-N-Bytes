@@ -1,6 +1,6 @@
 # Bits-N-Bytes
 <b>Final Project for RAD Course based on Emma's Small Engines Case.</b>
-<br>
+<br><br>
 <b>The design for all pages must be done by December 12.</b>
 <br>
 <b>The entire project must be done by December 14.</b>
