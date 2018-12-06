@@ -25,5 +25,14 @@ namespace EmmasEngines
             {
             }
         }
+
+        /* Deletes a service from the database */
+        protected void DeleteMethod()//TODO
+        {
+            /* get the ID of the row to be removed */
+            /* generate a sql command to delete where ID=ID */
+            /* send sql command to the database */
+        }
     }
 }
+ 

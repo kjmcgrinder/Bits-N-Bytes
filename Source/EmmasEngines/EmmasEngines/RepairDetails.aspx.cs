@@ -20,6 +20,16 @@ namespace EmmasEngines
             }
         }
 
-        protected void UpdateMethod() { }//TODO
+        /* Add the time when an employee finishes working on a repair */
+        protected void UpdateMethod()//TODO
+        {
+            /* Get ID of repair_details table */
+            /* get current date and time */
+            /* make a sql command to update finish time where ID=ID */
+            /* send sql command to database */
+        }
     }
 }
+ 
+ 
+ 
