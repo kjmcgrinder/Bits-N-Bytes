@@ -24,7 +24,7 @@
   
 <b>Source/EmmasEnginesLibrary:</b>
 
-&emsp;The library used to connect to the dataset
+&emsp;The library used to connect to the datasets
 
 <b>Source/Graphics:</b>
 
