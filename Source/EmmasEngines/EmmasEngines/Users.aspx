@@ -12,20 +12,18 @@
         </p>
     </div>
     <div class="row">
-        <div class="col-sm-6">
+        <%--<div class="col-sm-6">
             <div class="card">
-                <div class="card-body">
-                    <%--Ddl to find employee by department:--%>
+                <div class="card-body">                    
                     <h2 class="card-title">Search Employees by Deparment:</h2>
                     <p class="card-text">
                         <asp:DropDownList ID="ddlDeparment" runat="server" name="search" placeholder="Search.." class="searchinput" DataSourceID="SqlDataSource2" DataTextField="posName" DataValueField="posName"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT [posName] FROM [position]"></asp:SqlDataSource>
-                    </p>
-                    <%--<a href="#" class="btn btn-primary">Search</a>--%>
+                    </p>                    
                 </div>
             </div>
-        </div>
-        <div class="col-sm-6">
+        </div>--%>
+        <div class="col-sm-12" style="margin-right: 20px; margin-left: 20px;">
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title">Create Employee:</h2>
