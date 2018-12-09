@@ -189,7 +189,6 @@
     <Content Include="Images\gears-1236578_1920.jpg" />
     <Content Include="Images\macro-1452987_1920%281%29.jpg" />
     <Content Include="Images\motor-768750_1920.jpg" />
-    <Content Include="InventoryCreate.aspx" />
     <Content Include="Invoice.aspx" />
     <Content Include="Notes.txt" />
     <Content Include="OrderDetails.aspx" />
@@ -314,13 +313,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="InventoryCreate.aspx.cs">
-      <DependentUpon>InventoryCreate.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="InventoryCreate.aspx.designer.cs">
-      <DependentUpon>InventoryCreate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inventory.aspx.cs">
       <DependentUpon>Inventory.aspx</DependentUpon>
