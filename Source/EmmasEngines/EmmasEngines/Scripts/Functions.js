@@ -14,6 +14,34 @@ function SearchCustomer() {
             selectBox.selectedIndex = i;
             break;
         }
-
     }
+}
+
+function Init() {
+    var selectBox = document.getElementById("MainContent_lbxSelectProduct")
+    for (opt of selectBox.options) {
+        opt.ondblclick = selectBox.onchange;
+    }
+    selectBox.onchange = null;
+    if (document.getElementById("MainContent_gvSelectedProductsSales") != null) {
+        inputs = document.getElementsByTagName("input");
+        for (inpt of inputs) {
+            if (inpt.type == "number" && inpt.id.includes("gvSelectedProductsSales")) 
+                inpt.onchange = CalculateTotal;                            
+        }
+    }
+    document.getElementById("MainContent_txtTotal").onfocus = function () { this.blur(); }
+}
+
+function CalculateTotal() {
+    var txtTotal = document.getElementById("MainContent_txtTotal");
+    var rows = this.parentElement.parentElement.getElementsByTagName("td");
+    var cost = this.value * rows[3].innerHTML;
+    if (this.value > rows[4].value)
+        cost *= 1.01;
+    if (txtTotal.value.length == 0)
+        txtTotal.value = cost;
+    else
+        txtTotal.value = parseFloat(txtTotal.value) + cost;
+    theForm[this.id] = this.value;
 }

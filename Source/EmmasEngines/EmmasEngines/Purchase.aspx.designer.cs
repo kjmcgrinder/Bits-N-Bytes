@@ -58,22 +58,22 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.Panel pnlPurchase;
         
         /// <summary>
-        /// ListBox3 control.
+        /// lbxSelectProduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox3;
+        protected global::System.Web.UI.WebControls.ListBox lbxSelectProduct;
         
         /// <summary>
-        /// GridView1 control.
+        /// gvSelectedProductsSales control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView gvSelectedProductsSales;
         
         /// <summary>
         /// pnlRepair control.
@@ -128,6 +128,15 @@ namespace EmmasEngines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        
+        /// <summary>
+        /// txtTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTotal;
         
         /// <summary>
         /// submit control.

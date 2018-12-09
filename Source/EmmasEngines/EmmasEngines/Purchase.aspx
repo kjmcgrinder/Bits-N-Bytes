@@ -28,17 +28,12 @@
             </div>
             <div class="col-75">
                 <input type="text" id="searchP" placeholder="Search.." class="searchinput" /><br />
-                <asp:ListBox ID="ListBox3" runat="server" Width="395px" DataSourceID="dsParts" DataTextField="prodBrName" DataValueField="id"></asp:ListBox><br />
-                <asp:GridView ID="GridView1" runat="server" Width="392px">
+                <asp:ListBox ID="lbxSelectProduct" runat="server" Width="395px" DataSourceID="dsParts" DataTextField="prodBrName" DataValueField="id" AutoPostBack="True" OnSelectedIndexChanged="lbxSelectProduct_SelectedIndexChanged"></asp:ListBox><br />
+                <asp:GridView ID="gvSelectedProductsSales" runat="server" Width="392px">
                     <Columns>
-                        <asp:TemplateField HeaderText="Items Selected">
-                            <ItemTemplate>
-                                <asp:Label ID="lblItemSelected" runat="server" Text="Label"></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Qty">
                             <ItemTemplate>
-                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox1" runat="server" TextMode="Number" min="0" step="1" max="9999"></asp:TextBox>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -101,7 +96,7 @@
             <label for="Total">Total:</label>
         </div>
         <div class="col-75">
-            <input type="text" id="cvv" name="cvv" placeholder="Total" readonly="true" disabled="disabled" /><br />
+            <asp:TextBox ID="txtTotal" runat="server" placeholder="Total" EnableViewState="true"></asp:TextBox>            
             <br />
         </div>
     </div>
