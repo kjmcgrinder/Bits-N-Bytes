@@ -37,10 +37,10 @@
                             <div class="col-50">
                                 <label for="Phone">Phone<asp:RequiredFieldValidator runat="server" ID="rfvPhone" ControlToValidate="Phone" ErrorMessage="Phone Number Required" ForeColor="Red">*</asp:RequiredFieldValidator></label><br />
                                 <asp:TextBox ID="Phone" runat="server" placeholder="123-456-7890"></asp:TextBox>
-
                             </div>
-                            <div class="IndexCentering">
-                                <asp:Button ID="Button1" runat="server" CssClass="IndexButton" Text="Enter" Width="316px" OnClick="Button1_Click" />
+
+                            <div class="IndexCentering" style="width: 67%">
+                                <asp:Button ID="Button1" runat="server" CssClass="IndexButton" Text="Enter" Width="236px" OnClick="Button1_Click" />
                             </div>
                         </div>
 

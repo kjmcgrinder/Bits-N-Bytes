@@ -39,8 +39,8 @@
                             <asp:TextBox runat="server" ID="confirmPassword" placeholder="Confirm Password" TextMode="Password"></asp:TextBox><br />
                             <asp:HiddenField runat="server" ID="MaxID" />
                             <div class="row-50">
-                                <div class="IndexCentering">
-                                    <asp:Button ID="btnSubmit" runat="server" CssClass="IndexButton" Text="Enter" Width="316px" OnClick="btnSubmit_Click" />
+                                <div class="IndexCentering" style="width: 47%"> 
+                                    <asp:Button ID="btnSubmit" runat="server" CssClass="IndexButton" Text="Enter" Width="167px" OnClick="btnSubmit_Click" />
                                 </div>
                             </div>
                         </div>
