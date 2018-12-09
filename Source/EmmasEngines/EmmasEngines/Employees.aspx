@@ -18,10 +18,10 @@
                             <br />
 
                             <label for="fname"><i class="fa fa-user"></i>First Name<asp:RequiredFieldValidator ID="rfvFname" runat="server" ControlToValidate="fname" ErrorMessage="First Name Required" ForeColor="Red">*</asp:RequiredFieldValidator></label><br />
-                            <asp:TextBox runat="server" ID="fname" placeholder="John"></asp:TextBox><br />
+                            <asp:TextBox runat="server" ID="fname" placeholder="John" onfocusout="GenerateUsername()"></asp:TextBox><br />
 
                             <label for="lname"><i class="fa fa-user"></i>Last Name<asp:RequiredFieldValidator ID="rfvLname" runat="server" ControlToValidate="lname" ErrorMessage="Last Name Required" ForeColor="Red">*</asp:RequiredFieldValidator></label><br />
-                            <asp:TextBox runat="server" ID="lname" placeholder="Doe"></asp:TextBox><br />
+                            <asp:TextBox runat="server" ID="lname" placeholder="Doe" onfocusout="GenerateUsername()"></asp:TextBox><br />
 
                             <label for="Position"><i class="fa fa-envelope"></i>Position<asp:RangeValidator ID="rvPosition" runat="server" ControlToValidate="Position" MaximumValue="9999" MinimumValue="1" ErrorMessage="Please select a position" ForeColor="Red">*</asp:RangeValidator></label><br />
                             <asp:DropDownList runat="server" ID="Position" DataSourceID="ObjectDataSource1" DataTextField="posName" DataValueField="id" AppendDataBoundItems="true" Style="margin-bottom: 20px; padding: 12px; border: 1px solid #ccc; border-radius: 3px; width: 225px;">

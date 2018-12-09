@@ -2566,7 +2566,7 @@ namespace EmmasEnginesLibrary.PurchaseDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        id, custFirst + \' \' + custLast AS custFullName\r\nFROM            cus" +
-                "tomer\r\nORDER BY custFullName";
+                "tomer\r\nORDER BY custLast, custFirst";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

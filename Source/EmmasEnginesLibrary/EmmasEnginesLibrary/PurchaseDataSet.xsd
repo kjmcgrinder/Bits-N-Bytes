@@ -35,7 +35,7 @@ FROM            product INNER JOIN
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        id, custFirst + ' ' + custLast AS custFullName
 FROM            customer
-ORDER BY custFullName</CommandText>
+ORDER BY custLast, custFirst</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>

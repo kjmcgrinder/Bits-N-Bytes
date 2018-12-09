@@ -14,7 +14,7 @@
             <label for="searchC">Customer:</label>
         </div>
         <div class="col-75">
-            <input type="text" id="searchC" placeholder="Search.." class="searchinput" /><br />
+            <input type="text" id="searchC" placeholder="Search.." class="searchinput" onkeyup="SearchCustomer()" /><br />
             <asp:ListBox ID="ListBox2" runat="server" Width="394px" DataSourceID="dsCustomer" DataTextField="custFullName" DataValueField="id"></asp:ListBox>
             <br />
             <asp:ObjectDataSource ID="dsCustomer" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.PurchaseDataSetTableAdapters.customerTableAdapter"></asp:ObjectDataSource>
@@ -28,7 +28,7 @@
             </div>
             <div class="col-75">
                 <input type="text" id="searchP" placeholder="Search.." class="searchinput" /><br />
-                <asp:ListBox ID="ListBox3" runat="server" Width="395px"></asp:ListBox><br />
+                <asp:ListBox ID="ListBox3" runat="server" Width="395px" DataSourceID="dsParts" DataTextField="prodBrName" DataValueField="id"></asp:ListBox><br />
                 <asp:GridView ID="GridView1" runat="server" Width="392px">
                     <Columns>
                         <asp:TemplateField HeaderText="Items Selected">
