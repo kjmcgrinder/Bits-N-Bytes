@@ -45,7 +45,8 @@ namespace EmmasEngines
                     user = new IdentityUser(userName);
                     userManager.Create(user, "password");                    
                 }                
-                r["loginId"] = userManager.Find(userName, "password").Id;                
+                r["loginId"] = userManager.Find(userName, "password").Id;
+                r["empLogin"] = userName;
                 if (user.Roles.Count == 0 && !String.IsNullOrEmpty(position))
                     userManager.AddToRole(user.Id, position);                
             }

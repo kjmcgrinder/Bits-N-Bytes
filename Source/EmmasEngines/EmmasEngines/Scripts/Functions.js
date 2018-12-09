@@ -6,9 +6,9 @@
     }
 }
 
-function SearchCustomer() {
-    var name = document.getElementById("searchC").value;
-    var selectBox = document.getElementById("MainContent_ListBox2");    
+function SearchListBox(txtId, lbxId) {
+    var name = document.getElementById(txtId).value;
+    var selectBox = document.getElementById(lbxId);    
     for (var i = 0; i < selectBox.options.length; i++) {
         if (selectBox.options[i].text.toLowerCase().includes(name.toLowerCase())) {
             selectBox.selectedIndex = i;
@@ -18,16 +18,21 @@ function SearchCustomer() {
 }
 
 function Init() {
+    document.getElementById("searchC").onkeyup = function () { SearchListBox(this.id, "MainContent_ListBox2") };
+    document.getElementById("searchP").onkeyup = function () { SearchListBox(this.id, "MainContent_lbxSelectProduct") };
     var selectBox = document.getElementById("MainContent_lbxSelectProduct")
     for (opt of selectBox.options) {
         opt.ondblclick = selectBox.onchange;
     }
+
     selectBox.onchange = null;
     if (document.getElementById("MainContent_gvSelectedProductsSales") != null) {
         inputs = document.getElementsByTagName("input");
         for (inpt of inputs) {
-            if (inpt.type == "number" && inpt.id.includes("gvSelectedProductsSales")) 
-                inpt.onchange = CalculateTotal;                            
+            if (inpt.type == "number" && inpt.id.includes("gvSelectedProductsSales")) {
+                inpt.onchange = CalculateTotal;
+                inpt.title = 0;
+            }
         }
     }
     document.getElementById("MainContent_txtTotal").onfocus = function () { this.blur(); }
@@ -36,7 +41,10 @@ function Init() {
 function CalculateTotal() {
     var txtTotal = document.getElementById("MainContent_txtTotal");
     var rows = this.parentElement.parentElement.getElementsByTagName("td");
-    var cost = this.value * rows[3].innerHTML;
+    if (this.value < 0)
+        this.value = 0;
+    var cost = (this.value - parseInt(this.title)) * rows[3].innerHTML;
+    this.title = this.value;
     if (this.value > rows[4].value)
         cost *= 1.01;
     if (txtTotal.value.length == 0)

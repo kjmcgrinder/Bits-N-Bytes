@@ -14,7 +14,7 @@
             <label for="searchC">Customer:</label>
         </div>
         <div class="col-75">
-            <input type="text" id="searchC" placeholder="Search.." class="searchinput" onkeyup="SearchCustomer()" /><br />
+            <input type="text" id="searchC" placeholder="Search.." class="searchinput" /><br />
             <asp:ListBox ID="ListBox2" runat="server" Width="394px" DataSourceID="dsCustomer" DataTextField="custFullName" DataValueField="id"></asp:ListBox>
             <br />
             <asp:ObjectDataSource ID="dsCustomer" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.PurchaseDataSetTableAdapters.customerTableAdapter"></asp:ObjectDataSource>
@@ -33,7 +33,7 @@
                     <Columns>
                         <asp:TemplateField HeaderText="Qty">
                             <ItemTemplate>
-                                <asp:TextBox ID="TextBox1" runat="server" TextMode="Number" min="0" step="1" max="9999"></asp:TextBox>
+                                <asp:TextBox ID="TextBox1" runat="server" TextMode="Number" min="0" step="1" max="9999"></asp:TextBox><asp:RangeValidator runat="server" ID="rvQty" ControlToValidate="TextBox1" MaximumValue="9999" MinimumValue="0"></asp:RangeValidator>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -102,7 +102,7 @@
     </div>
     <div class="row">
         <div class="col-25">
-            <asp:Button ID="submit" runat="server" Text="Submit" CssClass="IndexButton" />
+            <asp:Button ID="submit" runat="server" Text="Submit" CssClass="IndexButton" OnClick="submit_Click"/>
         </div>
     </div>
 </asp:Content>

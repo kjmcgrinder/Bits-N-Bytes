@@ -27,6 +27,8 @@ namespace EmmasEngines
             
             receiptTableAdapter daReceipt = new receiptTableAdapter();
             daReceipt.Fill(dsReceipt.receipt);
+            employeeTableAdapter daEmployee = new employeeTableAdapter();
+            daEmployee.Fill(dsReceipt.employee);
             productTableAdapter daProducts = new productTableAdapter();
             productTable = daProducts.GetData();
         }        
@@ -94,6 +96,28 @@ namespace EmmasEngines
             gvSelectedProductsSales.DataBind();            
             for (int i = 0; i < gvSelectedProductsSales.Rows.Count; i++)
                 ((TextBox)gvSelectedProductsSales.Rows[i].Cells[0].FindControl("TextBox1")).Text = Request.Form["ctl00$MainContent$gvSelectedProductsSales$ctl0" + (i + 2).ToString() + "$TextBox1"] ?? "0";
+        }
+
+        protected void submit_Click(object sender, EventArgs e)
+        {
+            if(Mode == PageMode.Sale)
+            {
+                DataRow r = dsReceipt.receipt.NewRow();
+                r["custID"] = ListBox2.SelectedValue;
+                r["empID"] = dsReceipt.employee.Select("empLogin = '" + User.Identity.Name + "'")[0]["id"];
+                r["ordDate"] = DateTime.Now;
+                dsReceipt.receipt.Rows.Add(r);
+                for(int i = 0; i<selectedProducts.Rows.Count; i++)
+                {
+                    DataRow l = dsReceipt.order_line.NewRow();
+                    l["inventoryID"] = selectedProducts.Rows[i]["id"];
+                    l["receiptID"] = r["id"];
+                    l["orlQuantity"] = Request.Form["ctl00$MainContent$gvSelectedProductsSales$ctl0" + (i + 2).ToString() + "$TextBox1"];
+                    l["orlOrderReq"] = Convert.ToInt16(l["orlQuantity"]) > Convert.ToInt32(selectedProducts.Rows[i]["Stock"]);
+                    l["orlPrice"] = Convert.ToBoolean(l["orlOrderReq"])  ? Convert.ToDouble(selectedProducts.Rows[i]["Price"]) * 1.01 : Convert.ToDouble(selectedProducts.Rows[i]["Price"]);
+                    dsReceipt.employee.Rows.Add(l);
+                }
+            }
         }
     }
 

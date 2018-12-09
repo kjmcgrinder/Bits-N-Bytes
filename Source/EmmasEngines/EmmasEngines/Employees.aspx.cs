@@ -64,6 +64,7 @@ namespace EmmasEngines
                 if (result.Succeeded)
                 {
                     row["loginId"] = user.Id;
+                    row["empLogin"] = username.Text;
                     dsEmployee.employee.Rows.Add(row);
                 }
             }

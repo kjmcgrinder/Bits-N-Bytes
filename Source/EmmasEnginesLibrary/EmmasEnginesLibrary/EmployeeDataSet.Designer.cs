@@ -603,6 +603,8 @@ namespace EmmasEnginesLibrary {
             
             private global::System.Data.DataColumn columnloginId;
             
+            private global::System.Data.DataColumn columnempLogin;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public employeeDataTable() {
@@ -686,6 +688,14 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn empLoginColumn {
+                get {
+                    return this.columnempLogin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -721,7 +731,7 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public employeeRow AddemployeeRow(string empFirst, string empLast, int posID, byte[] RowVersion, string loginId) {
+            public employeeRow AddemployeeRow(string empFirst, string empLast, int posID, byte[] RowVersion, string loginId, string empLogin) {
                 employeeRow rowemployeeRow = ((employeeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -729,7 +739,8 @@ namespace EmmasEnginesLibrary {
                         empLast,
                         posID,
                         RowVersion,
-                        loginId};
+                        loginId,
+                        empLogin};
                 rowemployeeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowemployeeRow);
                 return rowemployeeRow;
@@ -765,6 +776,7 @@ namespace EmmasEnginesLibrary {
                 this.columnposID = base.Columns["posID"];
                 this.columnRowVersion = base.Columns["RowVersion"];
                 this.columnloginId = base.Columns["loginId"];
+                this.columnempLogin = base.Columns["empLogin"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -782,6 +794,8 @@ namespace EmmasEnginesLibrary {
                 base.Columns.Add(this.columnRowVersion);
                 this.columnloginId = new global::System.Data.DataColumn("loginId", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnloginId);
+                this.columnempLogin = new global::System.Data.DataColumn("empLogin", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnempLogin);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -794,6 +808,7 @@ namespace EmmasEnginesLibrary {
                 this.columnempLast.MaxLength = 50;
                 this.columnRowVersion.ReadOnly = true;
                 this.columnloginId.MaxLength = 128;
+                this.columnempLogin.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1081,6 +1096,22 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string empLogin {
+                get {
+                    try {
+                        return ((string)(this[this.tableemployee.empLoginColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'empLogin\' in table \'employee\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableemployee.empLoginColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsempFirstNull() {
                 return this.IsNull(this.tableemployee.empFirstColumn);
             }
@@ -1137,6 +1168,18 @@ namespace EmmasEnginesLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetloginIdNull() {
                 this[this.tableemployee.loginIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsempLoginNull() {
+                return this.IsNull(this.tableemployee.empLoginColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetempLoginNull() {
+                this[this.tableemployee.empLoginColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1494,6 +1537,7 @@ namespace EmmasEnginesLibrary.EmployeeDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("posID", "posID");
             tableMapping.ColumnMappings.Add("RowVersion", "RowVersion");
             tableMapping.ColumnMappings.Add("loginId", "loginId");
+            tableMapping.ColumnMappings.Add("empLogin", "empLogin");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -1504,23 +1548,26 @@ namespace EmmasEnginesLibrary.EmployeeDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RowVersion", global::System.Data.SqlDbType.Timestamp, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RowVersion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [employee] ([empFirst], [empLast], [posID], [loginId]) VALUES (@empFi" +
-                "rst, @empLast, @posID, @loginId);\r\nSELECT id, empFirst, empLast, posID, RowVersi" +
-                "on, loginId FROM employee WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [employee] ([empFirst], [empLast], [posID], [loginId], [empLogin]) VA" +
+                "LUES (@empFirst, @empLast, @posID, @loginId, @empLogin);\r\nSELECT id, empFirst, e" +
+                "mpLast, posID, RowVersion, loginId, empLogin FROM employee WHERE (id = SCOPE_IDE" +
+                "NTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@empFirst", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "empFirst", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@empLast", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "empLast", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@posID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "posID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@loginId", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "loginId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@empLogin", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "empLogin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [employee] SET [empFirst] = @empFirst, [empLast] = @empLast, [posID] = @posID, [loginId] = @loginId WHERE (([id] = @Original_id) AND ([RowVersion] = @Original_RowVersion));
-SELECT id, empFirst, empLast, posID, RowVersion, loginId FROM employee WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [employee] SET [empFirst] = @empFirst, [empLast] = @empLast, [posID] = @posID, [loginId] = @loginId, [empLogin] = @empLogin WHERE (([id] = @Original_id) AND ([RowVersion] = @Original_RowVersion));
+SELECT id, empFirst, empLast, posID, RowVersion, loginId, empLogin FROM employee WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@empFirst", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "empFirst", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@empLast", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "empLast", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@posID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "posID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@loginId", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "loginId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@empLogin", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "empLogin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RowVersion", global::System.Data.SqlDbType.Timestamp, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RowVersion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1539,8 +1586,8 @@ SELECT id, empFirst, empLast, posID, RowVersion, loginId FROM employee WHERE (id
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        id, empFirst, empLast, posID, RowVersion, loginId\r\nFROM            " +
-                "employee";
+            this._commandCollection[0].CommandText = "SELECT        id, empFirst, empLast, posID, RowVersion, loginId, empLogin\r\nFROM  " +
+                "          employee";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1629,7 +1676,7 @@ SELECT id, empFirst, empLast, posID, RowVersion, loginId FROM employee WHERE (id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string empFirst, string empLast, global::System.Nullable<int> posID, string loginId) {
+        public virtual int Insert(string empFirst, string empLast, global::System.Nullable<int> posID, string loginId, string empLogin) {
             if ((empFirst == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1654,6 +1701,12 @@ SELECT id, empFirst, empLast, posID, RowVersion, loginId FROM employee WHERE (id
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(loginId));
             }
+            if ((empLogin == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(empLogin));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1674,7 +1727,7 @@ SELECT id, empFirst, empLast, posID, RowVersion, loginId FROM employee WHERE (id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string empFirst, string empLast, global::System.Nullable<int> posID, string loginId, int Original_id, byte[] Original_RowVersion, int id) {
+        public virtual int Update(string empFirst, string empLast, global::System.Nullable<int> posID, string loginId, string empLogin, int Original_id, byte[] Original_RowVersion, int id) {
             if ((empFirst == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1699,14 +1752,20 @@ SELECT id, empFirst, empLast, posID, RowVersion, loginId FROM employee WHERE (id
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(loginId));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
+            if ((empLogin == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(empLogin));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_id));
             if ((Original_RowVersion == null)) {
                 throw new global::System.ArgumentNullException("Original_RowVersion");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((byte[])(Original_RowVersion));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((byte[])(Original_RowVersion));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(id));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1727,8 +1786,8 @@ SELECT id, empFirst, empLast, posID, RowVersion, loginId FROM employee WHERE (id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string empFirst, string empLast, global::System.Nullable<int> posID, string loginId, int Original_id, byte[] Original_RowVersion) {
-            return this.Update(empFirst, empLast, posID, loginId, Original_id, Original_RowVersion, Original_id);
+        public virtual int Update(string empFirst, string empLast, global::System.Nullable<int> posID, string loginId, string empLogin, int Original_id, byte[] Original_RowVersion) {
+            return this.Update(empFirst, empLast, posID, loginId, empLogin, Original_id, Original_RowVersion, Original_id);
         }
     }
     
