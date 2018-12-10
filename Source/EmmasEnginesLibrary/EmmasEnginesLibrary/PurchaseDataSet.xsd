@@ -225,6 +225,24 @@ FROM            employee</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="paymentTableAdapter" GeneratorDataComponentClassName="paymentTableAdapter" Name="payment" UserDataComponentName="paymentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasConnectionString (Settings)" DbObjectName="dbo.payment" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, payType
+FROM            payment</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="payType" DataSetColumn="payType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -233,7 +251,7 @@ FROM            employee</CommandText>
   <xs:element name="PurchaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PurchaseDataSet" msprop:Generator_UserDSName="PurchaseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="product" msprop:Generator_TableClassName="productDataTable" msprop:Generator_TableVarName="tableproduct" msprop:Generator_RowChangedName="productRowChanged" msprop:Generator_TablePropName="product" msprop:Generator_RowDeletingName="productRowDeleting" msprop:Generator_RowChangingName="productRowChanging" msprop:Generator_RowEvHandlerName="productRowChangeEventHandler" msprop:Generator_RowDeletedName="productRowDeleted" msprop:Generator_RowClassName="productRow" msprop:Generator_UserTableName="product" msprop:Generator_RowEvArgName="productRowChangeEvent">
+        <xs:element name="product" msprop:Generator_TableClassName="productDataTable" msprop:Generator_TableVarName="tableproduct" msprop:Generator_TablePropName="product" msprop:Generator_RowDeletingName="productRowDeleting" msprop:Generator_RowChangingName="productRowChanging" msprop:Generator_RowEvHandlerName="productRowChangeEventHandler" msprop:Generator_RowDeletedName="productRowDeleted" msprop:Generator_UserTableName="product" msprop:Generator_RowChangedName="productRowChanged" msprop:Generator_RowEvArgName="productRowChangeEvent" msprop:Generator_RowClassName="productRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -249,7 +267,7 @@ FROM            employee</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="customer" msprop:Generator_TableClassName="customerDataTable" msprop:Generator_TableVarName="tablecustomer" msprop:Generator_RowChangedName="customerRowChanged" msprop:Generator_TablePropName="customer" msprop:Generator_RowDeletingName="customerRowDeleting" msprop:Generator_RowChangingName="customerRowChanging" msprop:Generator_RowEvHandlerName="customerRowChangeEventHandler" msprop:Generator_RowDeletedName="customerRowDeleted" msprop:Generator_RowClassName="customerRow" msprop:Generator_UserTableName="customer" msprop:Generator_RowEvArgName="customerRowChangeEvent">
+        <xs:element name="customer" msprop:Generator_TableClassName="customerDataTable" msprop:Generator_TableVarName="tablecustomer" msprop:Generator_TablePropName="customer" msprop:Generator_RowDeletingName="customerRowDeleting" msprop:Generator_RowChangingName="customerRowChanging" msprop:Generator_RowEvHandlerName="customerRowChangeEventHandler" msprop:Generator_RowDeletedName="customerRowDeleted" msprop:Generator_UserTableName="customer" msprop:Generator_RowChangedName="customerRowChanged" msprop:Generator_RowEvArgName="customerRowChangeEvent" msprop:Generator_RowClassName="customerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -263,7 +281,7 @@ FROM            employee</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="receipt" msprop:Generator_TableClassName="receiptDataTable" msprop:Generator_TableVarName="tablereceipt" msprop:Generator_TablePropName="receipt" msprop:Generator_RowDeletingName="receiptRowDeleting" msprop:Generator_RowChangingName="receiptRowChanging" msprop:Generator_RowEvHandlerName="receiptRowChangeEventHandler" msprop:Generator_RowDeletedName="receiptRowDeleted" msprop:Generator_UserTableName="receipt" msprop:Generator_RowChangedName="receiptRowChanged" msprop:Generator_RowEvArgName="receiptRowChangeEvent" msprop:Generator_RowClassName="receiptRow">
+        <xs:element name="receipt" msprop:Generator_TableClassName="receiptDataTable" msprop:Generator_TableVarName="tablereceipt" msprop:Generator_RowChangedName="receiptRowChanged" msprop:Generator_TablePropName="receipt" msprop:Generator_RowDeletingName="receiptRowDeleting" msprop:Generator_RowChangingName="receiptRowChanging" msprop:Generator_RowEvHandlerName="receiptRowChangeEventHandler" msprop:Generator_RowDeletedName="receiptRowDeleted" msprop:Generator_RowClassName="receiptRow" msprop:Generator_UserTableName="receipt" msprop:Generator_RowEvArgName="receiptRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -282,7 +300,7 @@ FROM            employee</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="order_line" msprop:Generator_TableClassName="order_lineDataTable" msprop:Generator_TableVarName="tableorder_line" msprop:Generator_TablePropName="order_line" msprop:Generator_RowDeletingName="order_lineRowDeleting" msprop:Generator_RowChangingName="order_lineRowChanging" msprop:Generator_RowEvHandlerName="order_lineRowChangeEventHandler" msprop:Generator_RowDeletedName="order_lineRowDeleted" msprop:Generator_UserTableName="order_line" msprop:Generator_RowChangedName="order_lineRowChanged" msprop:Generator_RowEvArgName="order_lineRowChangeEvent" msprop:Generator_RowClassName="order_lineRow">
+        <xs:element name="order_line" msprop:Generator_TableClassName="order_lineDataTable" msprop:Generator_TableVarName="tableorder_line" msprop:Generator_RowChangedName="order_lineRowChanged" msprop:Generator_TablePropName="order_line" msprop:Generator_RowDeletingName="order_lineRowDeleting" msprop:Generator_RowChangingName="order_lineRowChanging" msprop:Generator_RowEvHandlerName="order_lineRowChangeEventHandler" msprop:Generator_RowDeletedName="order_lineRowDeleted" msprop:Generator_RowClassName="order_lineRow" msprop:Generator_UserTableName="order_line" msprop:Generator_RowEvArgName="order_lineRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="receiptID" msprop:Generator_ColumnVarNameInTable="columnreceiptID" msprop:Generator_ColumnPropNameInRow="receiptID" msprop:Generator_ColumnPropNameInTable="receiptIDColumn" msprop:Generator_UserColumnName="receiptID" type="xs:int" />
@@ -301,7 +319,7 @@ FROM            employee</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="employee" msprop:Generator_TableClassName="employeeDataTable" msprop:Generator_TableVarName="tableemployee" msprop:Generator_TablePropName="employee" msprop:Generator_RowDeletingName="employeeRowDeleting" msprop:Generator_RowChangingName="employeeRowChanging" msprop:Generator_RowEvHandlerName="employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeRowDeleted" msprop:Generator_UserTableName="employee" msprop:Generator_RowChangedName="employeeRowChanged" msprop:Generator_RowEvArgName="employeeRowChangeEvent" msprop:Generator_RowClassName="employeeRow">
+        <xs:element name="employee" msprop:Generator_TableClassName="employeeDataTable" msprop:Generator_TableVarName="tableemployee" msprop:Generator_RowChangedName="employeeRowChanged" msprop:Generator_TablePropName="employee" msprop:Generator_RowDeletingName="employeeRowDeleting" msprop:Generator_RowChangingName="employeeRowChanging" msprop:Generator_RowEvHandlerName="employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeRowDeleted" msprop:Generator_RowClassName="employeeRow" msprop:Generator_UserTableName="employee" msprop:Generator_RowEvArgName="employeeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -309,6 +327,20 @@ FROM            employee</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="payment" msprop:Generator_TableClassName="paymentDataTable" msprop:Generator_TableVarName="tablepayment" msprop:Generator_TablePropName="payment" msprop:Generator_RowDeletingName="paymentRowDeleting" msprop:Generator_RowChangingName="paymentRowChanging" msprop:Generator_RowEvHandlerName="paymentRowChangeEventHandler" msprop:Generator_RowDeletedName="paymentRowDeleted" msprop:Generator_UserTableName="payment" msprop:Generator_RowChangedName="paymentRowChanged" msprop:Generator_RowEvArgName="paymentRowChangeEvent" msprop:Generator_RowClassName="paymentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="payType" msprop:Generator_ColumnVarNameInTable="columnpayType" msprop:Generator_ColumnPropNameInRow="payType" msprop:Generator_ColumnPropNameInTable="payTypeColumn" msprop:Generator_UserColumnName="payType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -335,6 +367,10 @@ FROM            employee</CommandText>
     </xs:unique>
     <xs:unique name="employee_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:employee" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="payment_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:payment" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>
