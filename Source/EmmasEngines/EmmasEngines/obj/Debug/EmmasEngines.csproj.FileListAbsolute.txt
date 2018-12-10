@@ -2068,3 +2068,8 @@ C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEngines\Emmas
 C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.dll
 C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.pdb
 C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\AspNet.ScriptManager.bootstrap.dll
+E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Emmas.mdf
+E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Emmas_log.ldf
+E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
+E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
+E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll.config

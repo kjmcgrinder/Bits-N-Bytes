@@ -29,7 +29,8 @@
             <div class="col-75">
                 <input type="text" id="searchP" placeholder="Search.." class="searchinput" /><br />
                 <asp:ListBox ID="lbxSelectProduct" runat="server" Width="395px" DataSourceID="dsParts" DataTextField="prodBrName" DataValueField="id" AutoPostBack="True" OnSelectedIndexChanged="lbxSelectProduct_SelectedIndexChanged"></asp:ListBox><br />
-                <asp:GridView ID="gvSelectedProductsSales" runat="server" Width="392px">
+                <asp:GridView ID="gvSelectedProductsSales" runat="server" Width="392px" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:TemplateField HeaderText="Qty">
                             <ItemTemplate>
@@ -37,6 +38,16 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
+                    <EditRowStyle BackColor="#2461BF" />
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
                 <br />
             </div>
@@ -52,7 +63,8 @@
                 <input type="text" id="searchPT" placeholder="Search.." class="searchinput" /><br />
                 <asp:ListBox ID="ListBox1" runat="server" Width="399px" DataSourceID="dsParts" DataTextField="prodBrName" DataValueField="id"></asp:ListBox>
                 <br />
-                <asp:GridView ID="GridView2" runat="server" Width="392px">
+                <asp:GridView ID="GridView2" runat="server" Width="392px" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:TemplateField HeaderText="Items Selected">
                             <ItemTemplate>
@@ -65,6 +77,16 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
+                    <EditRowStyle BackColor="#2461BF" />
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
                 <asp:ObjectDataSource ID="dsParts" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.PurchaseDataSetTableAdapters.productTableAdapter"></asp:ObjectDataSource>
                 <br />

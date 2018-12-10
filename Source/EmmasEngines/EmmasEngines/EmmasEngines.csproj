@@ -178,6 +178,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="CreateCustomer.aspx" />
     <Content Include="customerDetails.aspx" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="Dashboard_Customers.aspx" />
+    <Content Include="Dashboard_Employees.aspx" />
+    <Content Include="Dashboard_Orders.aspx" />
+    <Content Include="Dashboard_Sales.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Details.aspx" />
     <Content Include="Employees.aspx" />
@@ -288,6 +293,41 @@
     </Compile>
     <Compile Include="customerDetails.aspx.designer.cs">
       <DependentUpon>customerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard_Customers.aspx.cs">
+      <DependentUpon>Dashboard_Customers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard_Customers.aspx.designer.cs">
+      <DependentUpon>Dashboard_Customers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard_Employees.aspx.cs">
+      <DependentUpon>Dashboard_Employees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard_Employees.aspx.designer.cs">
+      <DependentUpon>Dashboard_Employees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard_Orders.aspx.cs">
+      <DependentUpon>Dashboard_Orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard_Orders.aspx.designer.cs">
+      <DependentUpon>Dashboard_Orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard_Sales.aspx.cs">
+      <DependentUpon>Dashboard_Sales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard_Sales.aspx.designer.cs">
+      <DependentUpon>Dashboard_Sales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

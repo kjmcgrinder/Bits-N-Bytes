@@ -80,7 +80,7 @@ namespace EmmasEngines
             if(selectedProducts == null)
             {
                 selectedProducts = new DataTable();
-                selectedProducts.Columns.Add(new DataColumn("id", typeof(int)));                
+                selectedProducts.Columns.Add(new DataColumn("id", typeof(int)));
                 selectedProducts.Columns.Add(new DataColumn("Product Name", typeof(string)));
                 selectedProducts.Columns.Add(new DataColumn("Price", typeof(float)));
                 selectedProducts.Columns.Add(new DataColumn("Stock", typeof(int)));
