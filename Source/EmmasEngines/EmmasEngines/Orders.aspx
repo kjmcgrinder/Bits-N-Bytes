@@ -6,6 +6,11 @@
     <br />
     <br />
     <div style="margin-right: 20px; margin-left: 20px;">
+        <asp:TextBox ID="txtBrand" placeholder="Product Brand" CssClass="searchinput" runat="server" /><br />
+        <asp:TextBox ID="txtName" placeholder="Product Name" CssClass="searchinput" runat="server" /><br />
+        <asp:TextBox ID="txtNumber" placeholder="Order Number" CssClass="searchinput" runat="server" /><br />
+        <asp:Button ID="btnEnter" runat="server" Text="Search" CssClass="IndexButton" Height="57px" Width="113px" />
+
         <h4 class="IndexCentering">Order Requests</h4>
 
         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="order_line_id,inventory_id,product_id" DataSourceID="SqlDataSource1" Width="100%" AllowPaging="True" PageSize="15" AllowSorting="True">
@@ -68,7 +73,7 @@
                 <asp:BoundField DataField="invSize" HeaderText="Size" SortExpression="invSize" />
                 <asp:BoundField DataField="invMeasure" HeaderText="Measure" SortExpression="invMeasure" />
                 <asp:BoundField DataField="invPrice" HeaderText="Price" SortExpression="invPrice" DataFormatString="{0:c}" />
-                <asp:CheckBoxField DataField="pordPaid" HeaderText="pordPaid" SortExpression="pordPaid" />
+                <asp:CheckBoxField DataField="pordPaid" HeaderText="Paid" SortExpression="pordPaid" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
