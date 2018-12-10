@@ -2,11 +2,11 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="IndexCentering">
-        <div class="row">
-            <div class="col-75">
+        <%--<div class="row">
+            <div class="col-75">--%>
                 <div class="container">
-                    <div class="row">
-                        <div class="col-50">
+                    <%--<div class="row">
+                        <div class="col-50">--%>
                             <br />
                             <h3 class="IndexHeaderA">
                                 <asp:Label ID="lblHeader" runat="server">Order Form</asp:Label>
@@ -41,10 +41,10 @@
                         </div>
                     </div>
                     &nbsp;
-                </div>
+               <%-- </div>
             </div>
         </div>
-    </div>
+    </div>--%>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT DISTINCT [prodName] FROM [product] ORDER BY [prodName]"></asp:SqlDataSource>
     <br />
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT DISTINCT [prodBrand], [prodName] FROM [product] WHERE ([prodName] = @prodName) ORDER BY [prodBrand]">
