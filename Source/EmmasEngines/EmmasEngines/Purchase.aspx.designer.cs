@@ -76,6 +76,24 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.GridView gvSelectedProductsSales;
         
         /// <summary>
+        /// ddlPayment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlPayment;
+        
+        /// <summary>
+        /// dsPayment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource dsPayment;
+        
+        /// <summary>
         /// pnlRepair control.
         /// </summary>
         /// <remarks>

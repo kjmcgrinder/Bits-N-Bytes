@@ -50,8 +50,18 @@
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
                 <br />
+            </div>            
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="ddlPayment">Payment method:</label>
+                </div>
+            <div class="col-75">
+                <asp:DropDownList ID="ddlPayment" runat="server" DataSourceID="dsPayment" DataTextField="payType" DataValueField="id"></asp:DropDownList>
+                <asp:ObjectDataSource ID="dsPayment" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.PurchaseDataSetTableAdapters.paymentTableAdapter"></asp:ObjectDataSource>
             </div>
         </div>
+
     </asp:Panel>
     <br />
     <asp:Panel ID="pnlRepair" runat="server">

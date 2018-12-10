@@ -23,14 +23,15 @@ namespace EmmasEngines
         }        
 
         static Purchase()
-        {
-            
+        {            
             receiptTableAdapter daReceipt = new receiptTableAdapter();
             daReceipt.Fill(dsReceipt.receipt);
             employeeTableAdapter daEmployee = new employeeTableAdapter();
             daEmployee.Fill(dsReceipt.employee);
             productTableAdapter daProducts = new productTableAdapter();
             productTable = daProducts.GetData();
+            order_lineTableAdapter daLine = new order_lineTableAdapter();
+            daLine.Fill(dsReceipt.order_line);
         }        
 
         protected void Page_Load(object sender, EventArgs e)
@@ -106,18 +107,25 @@ namespace EmmasEngines
                 r["custID"] = ListBox2.SelectedValue;
                 r["empID"] = dsReceipt.employee.Select("empLogin = '" + User.Identity.Name + "'")[0]["id"];
                 r["ordDate"] = DateTime.Now;
+                r["paymentID"] = ddlPayment.SelectedValue;
                 dsReceipt.receipt.Rows.Add(r);
+                receiptTableAdapter daReceipt = new receiptTableAdapter();
+                daReceipt.Update(dsReceipt.receipt);
                 for(int i = 0; i<selectedProducts.Rows.Count; i++)
                 {
                     DataRow l = dsReceipt.order_line.NewRow();
                     l["inventoryID"] = selectedProducts.Rows[i]["id"];
-                    l["receiptID"] = r["id"];
+                    l["receiptID"] = r["id"];                    
                     l["orlQuantity"] = Request.Form["ctl00$MainContent$gvSelectedProductsSales$ctl0" + (i + 2).ToString() + "$TextBox1"];
                     l["orlOrderReq"] = Convert.ToInt16(l["orlQuantity"]) > Convert.ToInt32(selectedProducts.Rows[i]["Stock"]);
                     l["orlPrice"] = Convert.ToBoolean(l["orlOrderReq"])  ? Convert.ToDouble(selectedProducts.Rows[i]["Price"]) * 1.01 : Convert.ToDouble(selectedProducts.Rows[i]["Price"]);
-                    dsReceipt.employee.Rows.Add(l);
+                    dsReceipt.order_line.Rows.Add(l);
                 }
+                order_lineTableAdapter daLine = new order_lineTableAdapter();
+                daLine.Update(dsReceipt.order_line);
+                dsReceipt.AcceptChanges();                
             }
+            Response.Redirect("~/Default");
         }
     }
 
