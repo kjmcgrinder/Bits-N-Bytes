@@ -13,6 +13,7 @@
                             </h3>
                             <br />
                             <br />
+                    <div class="container subScript">
                             <asp:Label ID="lblError" runat="server" ForeColor="Red" Visible="false"><i class ="fade fa-user">Order failed please fix the errors and try again</i></asp:Label><br />
                             <asp:ValidationSummary runat="server" ID="vsOrderForm" ForeColor="Red" />
                             <br />
@@ -30,13 +31,14 @@
                             <br />
 
                             <label for="lblQuantity">Quantity<asp:RequiredFieldValidator runat="server" ID="rfvSize" ControlToValidate="txtQuantity" ErrorMessage="Quantity is Required" ForeColor="Red">*</asp:RequiredFieldValidator></label><br />
-                            <asp:TextBox ID="txtQuantity" type="number" min="1" max="99" runat="server" placeholder="1 ~ 99"></asp:TextBox><br />
+                            <asp:TextBox ID="txtQuantity" type="number" min="1" max="99" runat="server" placeholder="1 ~ 99" Width="225px"></asp:TextBox><br />
 
                             <label for="lblSize"><i class="fa fa-address-card-o"></i>Size</label><br />
-                            <asp:TextBox ID="txtSize" placeholder="6.00 Fl oz" runat="server"></asp:TextBox><br />
+                            <asp:TextBox ID="txtSize" placeholder="6.00 Fl oz" runat="server" Width="225px"></asp:TextBox><br />
                             <br />
+                            </div>
                             <div class="IndexCentering" style="width: 100%">
-                                <asp:Button ID="btnOrder" runat="server" CssClass="IndexButton" Text="Submit Order" Width="250px" />
+                                <asp:Button ID="btnOrder" runat="server" CssClass="IndexButton" Text="Submit Order" Width="225px" />
                             </div>
                         </div>
                     </div>
