@@ -17,7 +17,8 @@ function SearchListBox(txtId, lbxId) {
     }
 }
 
-function Init() {
+function PurchaseInit() {
+    document.getElementById("MainContent_txtTotal").onfocus = function () { this.blur(); }
     document.getElementById("searchC").onkeyup = function () { SearchListBox(this.id, "MainContent_ListBox2") };
     document.getElementById("searchP").onkeyup = function () { SearchListBox(this.id, "MainContent_lbxSelectProduct") };
     var selectBox = document.getElementById("MainContent_lbxSelectProduct")
@@ -34,8 +35,7 @@ function Init() {
                 inpt.title = 0;
             }
         }
-    }
-    document.getElementById("MainContent_txtTotal").onfocus = function () { this.blur(); }
+    }    
 }
 
 function CalculateTotal() {

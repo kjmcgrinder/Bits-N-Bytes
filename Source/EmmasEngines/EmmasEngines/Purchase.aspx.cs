@@ -13,9 +13,15 @@ namespace EmmasEngines
 {
     public partial class Purchase : System.Web.UI.Page
     {
-        PageMode Mode;        
         static PurchaseDataSet dsReceipt = new PurchaseDataSet();
         static PurchaseDataSet.productDataTable productTable;
+
+        PageMode Mode
+        {
+            get { return (PageMode)ViewState["Mode"]; }
+            set { ViewState["Mode"] = value; }
+        }        
+
         DataTable selectedProducts
         {
             get { return (DataTable)ViewState["Products"]; }
@@ -32,6 +38,10 @@ namespace EmmasEngines
             productTable = daProducts.GetData();
             order_lineTableAdapter daLine = new order_lineTableAdapter();
             daLine.Fill(dsReceipt.order_line);
+            service_orderTableAdapter daService = new service_orderTableAdapter();
+            daService.Fill(dsReceipt.service_order);
+            equipmentTableAdapter daEqu = new equipmentTableAdapter();
+            daEqu.Fill(dsReceipt.equipment);
         }        
 
         protected void Page_Load(object sender, EventArgs e)
@@ -101,16 +111,16 @@ namespace EmmasEngines
 
         protected void submit_Click(object sender, EventArgs e)
         {
-            if(Mode == PageMode.Sale)
-            {
-                DataRow r = dsReceipt.receipt.NewRow();
-                r["custID"] = ListBox2.SelectedValue;
-                r["empID"] = dsReceipt.employee.Select("empLogin = '" + User.Identity.Name + "'")[0]["id"];
-                r["ordDate"] = DateTime.Now;
-                r["paymentID"] = ddlPayment.SelectedValue;
-                dsReceipt.receipt.Rows.Add(r);
-                receiptTableAdapter daReceipt = new receiptTableAdapter();
-                daReceipt.Update(dsReceipt.receipt);
+            DataRow r = dsReceipt.receipt.NewRow();
+            r["custID"] = ListBox2.SelectedValue;
+            r["empID"] = dsReceipt.employee.Select("empLogin = '" + User.Identity.Name + "'")[0]["id"];
+            r["ordDate"] = DateTime.Now;
+            r["paymentID"] = ddlPayment.SelectedValue;
+            dsReceipt.receipt.Rows.Add(r);
+            receiptTableAdapter daReceipt = new receiptTableAdapter();
+            daReceipt.Update(dsReceipt.receipt);
+            if (Mode == PageMode.Sale)
+            {                
                 for(int i = 0; i<selectedProducts.Rows.Count; i++)
                 {
                     DataRow l = dsReceipt.order_line.NewRow();
@@ -122,9 +132,29 @@ namespace EmmasEngines
                     dsReceipt.order_line.Rows.Add(l);
                 }
                 order_lineTableAdapter daLine = new order_lineTableAdapter();
-                daLine.Update(dsReceipt.order_line);
-                dsReceipt.AcceptChanges();                
+                daLine.Update(dsReceipt.order_line);                          
             }
+            else if(Mode == PageMode.Repair)
+            {                
+                DataRow eq = dsReceipt.equipment.NewRow();
+                eq["equModel"] = txtModel.Text;
+                eq["equSerial"] = txtSerialNumber.Text;
+                eq["custID"] = r["custID"];
+                eq["equtypeID"] = ddlType.SelectedValue;
+                eq["equManuID"] = ddlManu.SelectedValue;
+                equipmentTableAdapter daEqu = new equipmentTableAdapter();
+                daEqu.Update(dsReceipt.equipment);                
+                DataRow so = dsReceipt.service_order.NewRow();
+                so["serordDateIn"] = DateTime.Now;
+                so["serordIssue"] = RD.Text;
+                so["serordWarranty"] = RadioButtonList1.SelectedValue == "1";
+                so["receiptID"] = r["id"];
+                so["serviceID"] = ddlService.SelectedValue;
+                so["equipID"] = eq["id"];
+                service_orderTableAdapter daService = new service_orderTableAdapter();
+                daService.Update(dsReceipt.service_order);
+            }
+            dsReceipt.AcceptChanges();
             Response.Redirect("~/Default");
         }
     }
