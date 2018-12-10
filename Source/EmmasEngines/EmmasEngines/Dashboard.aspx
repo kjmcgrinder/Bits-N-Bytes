@@ -23,7 +23,8 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Dashboard</h1>
-            <p class="lead">This is a central location to conveniently access the web application.</p>
+            <% string name = User.Identity.Name.ToString(); %>
+            <p class="lead">This is a central location for <%{ Response.Write(name.ToString()); } %> to conveniently access the web application.</p>
         </div>
     </div>
 
