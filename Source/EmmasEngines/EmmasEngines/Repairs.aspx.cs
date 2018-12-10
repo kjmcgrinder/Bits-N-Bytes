@@ -10,12 +10,7 @@ namespace EmmasEngines
 {
     public partial class Repairs1 : System.Web.UI.Page
     {
-        static RepairDataSet dsRepairs = new RepairDataSet();
-
-        static Repairs1()
-        {
-
-        }
+        //static RepairDataSet dsRepairs = new RepairDataSet();
 
         protected void Page_Load(object sender, EventArgs e)
         {            

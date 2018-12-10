@@ -13,13 +13,13 @@ namespace EmmasEngines {
     public partial class Repairs1 {
         
         /// <summary>
-        /// repairGridview control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView repairGridview;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// RepairDataSource control.
