@@ -32,6 +32,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sales
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="Dashboard.aspx">Dashboard</a>
                             <a class="dropdown-item" href="SaleRepair.aspx">Sale / Repair</a>
                             <a class="dropdown-item" href="Sales.aspx">Customer Management</a>
                         </div>
