@@ -12,7 +12,7 @@ namespace EmmasEngines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!User.IsInRole("Manager") && !User.IsInRole("Admin"))
+            if (!User.IsInRole("Manager") && !User.IsInRole("Administration"))
                 Response.Redirect("~/Default");
         }
     }

@@ -28,27 +28,38 @@ namespace EmmasEngines
             daEmployees.Fill(dsEmployee.employee);
             foreach (DataRow r in posTable.Rows)
             {
-                bool exists = roleManager.RoleExists(r["posName"].ToString());
-                if (!exists)
-                    roleManager.Create(new IdentityRole(r["posName"].ToString()));
+                if (!roleManager.RoleExists(r["posName"].ToString()))
+                {
+                    if (!roleManager.Create(new IdentityRole(r["posName"].ToString())).Succeeded)
+                        throw new Exception("Failed to create role " + r["posName"].ToString());
+                }
             }
             string userName;
             string position = "";
             foreach (DataRow r in dsEmployee.employee.Rows)
             {
-                userName = r["empFirst"].ToString().ToLower()[0] + r["empLast"].ToString().ToLower() + r["id"].ToString();
+                userName = r["empLogin"] != DBNull.Value? r["empLogin"].ToString() : r["empFirst"].ToString().ToLower()[0] + r["empLast"].ToString().ToLower() + r["id"].ToString();
                 if(r["posID"] != DBNull.Value)
                     position = posTable.Select("id = " + r["posID"].ToString())[0]["posName"].ToString();
-                IdentityUser user = userManager.Find(userName, "password");
+                IdentityUser user = userManager.FindByName(userName);
                 if (user == null)
                 {
                     user = new IdentityUser(userName);
-                    userManager.Create(user, "password");                    
+                    if (!userManager.Create(user, "password").Succeeded)
+                        throw new Exception("Failed to register user " + userName);
                 }                
-                r["loginId"] = userManager.Find(userName, "password").Id;
+                r["loginId"] = userManager.FindByName(userName).Id;
                 r["empLogin"] = userName;
                 if (user.Roles.Count == 0 && !String.IsNullOrEmpty(position))
-                    userManager.AddToRole(user.Id, position);                
+                    userManager.AddToRole(user.Id, position);
+                if(user.Roles.Count > Convert.ToInt32(!String.IsNullOrEmpty(position)))
+                {
+                    foreach(DataRow pr in posTable.Rows)
+                    {
+                        if (pr["posName"].ToString() != position && userManager.IsInRole(user.Id, pr["posName"].ToString()))
+                            userManager.RemoveFromRole(user.Id, pr["posName"].ToString());
+                    }
+                }
             }
             daEmployees.Update(dsEmployee.employee);
             dsEmployee.AcceptChanges();
