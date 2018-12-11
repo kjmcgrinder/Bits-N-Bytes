@@ -23,7 +23,7 @@
                             <label for="lname"><i class="fa fa-user"></i>Last Name<asp:RequiredFieldValidator ID="rfvLname" runat="server" ControlToValidate="lname" ErrorMessage="Last Name Required" ForeColor="Red">*</asp:RequiredFieldValidator></label><br />
                             <asp:TextBox runat="server" ID="lname" placeholder="Doe" onfocusout="GenerateUsername()"></asp:TextBox><br />
 
-                            <label for="Position"><i class="fa fa-envelope"></i>Position<asp:RangeValidator ID="rvPosition" runat="server" ControlToValidate="Position" MaximumValue="9999" MinimumValue="1" ErrorMessage="Please select a position" ForeColor="Red">*</asp:RangeValidator></label><br />
+                            <label for="Position"><i class="fa fa-envelope"></i>Position<asp:RangeValidator ID="rvPosition" runat="server" ControlToValidate="Position" MaximumValue="9999" MinimumValue="0" ErrorMessage="Please select a position" ForeColor="Red">*</asp:RangeValidator></label><br />
                             <asp:DropDownList runat="server" ID="Position" DataSourceID="ObjectDataSource1" DataTextField="posName" DataValueField="id" AppendDataBoundItems="true" Style="margin-bottom: 20px; padding: 12px; border: 1px solid #ccc; border-radius: 3px; width: 225px;">
                                 <asp:ListItem Text="Please select a position" Value="-1"></asp:ListItem>
                                 <asp:ListItem Text="Inactive" Value="0"></asp:ListItem>

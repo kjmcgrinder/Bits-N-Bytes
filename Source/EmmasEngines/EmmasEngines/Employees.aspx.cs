@@ -78,7 +78,7 @@ namespace EmmasEngines
                 {
                     if(!r.IsposIDNull())                        
                         manager.RemoveFromRole(r.loginId, Position.Items.FindByValue(r.posID.ToString()).Text);
-                    if (Position.SelectedIndex > 1)
+                    if (Position.SelectedIndex >= 0)
                     {                        
                         manager.AddToRole(r.loginId, Position.SelectedItem.Text);
                         manager.SetLockoutEnabled(r.loginId, true);
