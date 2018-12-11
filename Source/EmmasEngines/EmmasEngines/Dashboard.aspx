@@ -12,9 +12,9 @@
         <li class="nav-item">
             <a class="nav-link" href="Dashboard_Employees.aspx">Employees</a>
         </li>
-        <li class="nav-item">
+        <%--<li class="nav-item">
             <a class="nav-link" href="Dashboard_Sales.aspx">Sales</a>
-        </li>
+        </li>--%>
         <li class="nav-item">
             <a class="nav-link" href="Dashboard_Orders.aspx">Orders</a>
         </li>
@@ -48,7 +48,7 @@
         </div>
         <br />
         <div class="progress">
-            <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 20%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Customer 4</div>
+            <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 20%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Customer 5</div>
         </div><br />
 
         <p>

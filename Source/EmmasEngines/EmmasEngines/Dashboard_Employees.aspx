@@ -12,9 +12,9 @@
     <li class="nav-item">
     <a class="nav-link active" href="Dashboard_Employees.aspx">Employees</a>
   </li>
-  <li class="nav-item">
+  <%--<li class="nav-item">
     <a class="nav-link" href="Dashboard_Sales.aspx">Sales</a>
-  </li>
+  </li>--%>
   <li class="nav-item">
     <a class="nav-link" href="Dashboard_Orders.aspx">Orders</a>
   </li>
@@ -24,6 +24,7 @@
     <%--A Quite simplistic Employee Search Form--%>
     <h3 class="IndexHeaderA">Employees</h3>
      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT [id], [empFirst], [empLast] FROM [employee]"></asp:SqlDataSource>
+    
     <asp:GridView ID="GridView1" runat="server" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False" DataKeyNames="id">
         <AlternatingRowStyle BackColor="White" />
         <Columns>

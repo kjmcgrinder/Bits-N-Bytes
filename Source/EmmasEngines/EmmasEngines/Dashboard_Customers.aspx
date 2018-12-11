@@ -12,9 +12,9 @@
     <li class="nav-item">
     <a class="nav-link" href="Dashboard_Employees.aspx">Employees</a>
   </li>
-  <li class="nav-item">
+ <%-- <li class="nav-item">
     <a class="nav-link" href="Dashboard_Sales.aspx">Sales</a>
-  </li>
+  </li>--%>
   <li class="nav-item">
     <a class="nav-link" href="Dashboard_Orders.aspx">Orders</a>
   </li>
