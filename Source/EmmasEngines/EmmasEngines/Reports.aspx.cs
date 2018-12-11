@@ -15,5 +15,11 @@ namespace EmmasEngines
             if (!User.IsInRole("Manager") && !User.IsInRole("Admin"))
                 Response.Redirect("~/Default");
         }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            DateTime parameter = Calendar1.SelectedDate;
+            Label2.Text = parameter.ToShortDateString().ToString();
+        }
     }
 }
