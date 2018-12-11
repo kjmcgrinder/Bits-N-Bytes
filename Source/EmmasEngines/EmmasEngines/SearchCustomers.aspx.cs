@@ -37,5 +37,10 @@ namespace EmmasEngines
         {
             Response.Redirect("~/CreateCustomer.aspx?selectedId=" + GridView1.SelectedValue);
         }
+
+        protected void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

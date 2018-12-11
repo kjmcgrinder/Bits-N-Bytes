@@ -56,4 +56,5 @@
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
     </div>
+    <hr />
 </asp:Content>

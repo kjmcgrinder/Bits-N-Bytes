@@ -157,6 +157,11 @@ namespace EmmasEngines
             dsReceipt.AcceptChanges();
             Response.Redirect("~/Default");
         }
+        
+        protected void gvSelectedProductsSales_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            
+        }
     }
 
     public enum PageMode
