@@ -7,7 +7,7 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="EmmasConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="EmmasConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.EmmasEnginesLibrary.Properties.Settings.GlobalReference.Default.EmmasConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReportsTableAdapter" GeneratorDataComponentClassName="ReportsTableAdapter" Name="Reports" UserDataComponentName="ReportsTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SalesTableAdapter" GeneratorDataComponentClassName="SalesTableAdapter" Name="Sales" UserDataComponentName="SalesTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="EmmasConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
                 <SelectCommand>
@@ -33,6 +33,77 @@ GROUP BY receipt.id, receipt.ordDate, customer.custFirst, customer.custLast, pay
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RepairsTableAdapter" GeneratorDataComponentClassName="RepairsTableAdapter" Name="Repairs" UserDataComponentName="RepairsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        receipt.id, receipt.ordDate, SUM(service.serPrice) AS ordTotal, payment.payType, customer.custFirst + ' ' + customer.custLast AS custName
+FROM            receipt INNER JOIN
+                         service_order ON receipt.id = service_order.receiptID INNER JOIN
+                         service ON service_order.serviceID = service.id INNER JOIN
+                         payment ON receipt.paymentID = payment.id INNER JOIN
+                         customer ON receipt.custID = customer.id
+WHERE        (DATEDIFF(day, receipt.ordDate, GETDATE()) &lt; 7)
+GROUP BY receipt.id, customer.custFirst, customer.custLast, payment.payType, receipt.ordDate</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="ordDate" DataSetColumn="ordDate" />
+              <Mapping SourceColumn="ordTotal" DataSetColumn="ordTotal" />
+              <Mapping SourceColumn="payType" DataSetColumn="payType" />
+              <Mapping SourceColumn="custName" DataSetColumn="custName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="manufacturerTableAdapter" GeneratorDataComponentClassName="manufacturerTableAdapter" Name="manufacturer" UserDataComponentName="manufacturerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasConnectionString (Settings)" DbObjectName="dbo.manufacturer" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        manName, id
+FROM            manufacturer
+ORDER BY manName</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="manName" DataSetColumn="manName" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="WarrantyTableAdapter" GeneratorDataComponentClassName="WarrantyTableAdapter" Name="warranty" UserDataComponentName="WarrantyTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        service_order.serordIssue, service.serDescription, service.serPrice, equipment.equModel
+FROM            service_order INNER JOIN
+                         service ON service_order.serviceID = service.id INNER JOIN
+                         equipment ON service_order.equipID = equipment.id
+WHERE        (service_order.serordWarranty = 1) AND (equipment.equManuID = @Param1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="equManuID" DataSourceName="[C:\USERS\SEBAS\DOCUMENTS\PROG1210\FINAL PROJECT(1)\SOURCE\EMMASENGINESLIBRARY\EMMASENGINESLIBRARY\EMMAS.MDF].dbo.equipment" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="equManuID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="serordIssue" DataSetColumn="serordIssue" />
+              <Mapping SourceColumn="serDescription" DataSetColumn="serDescription" />
+              <Mapping SourceColumn="serPrice" DataSetColumn="serPrice" />
+              <Mapping SourceColumn="equModel" DataSetColumn="equModel" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -41,7 +112,7 @@ GROUP BY receipt.id, receipt.ordDate, customer.custFirst, customer.custLast, pay
   <xs:element name="ReportsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportsDataSet" msprop:Generator_UserDSName="ReportsDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Reports" msprop:Generator_TableClassName="ReportsDataTable" msprop:Generator_TableVarName="tableReports" msprop:Generator_TablePropName="Reports" msprop:Generator_RowDeletingName="ReportsRowDeleting" msprop:Generator_RowChangingName="ReportsRowChanging" msprop:Generator_RowEvHandlerName="ReportsRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportsRowDeleted" msprop:Generator_UserTableName="Reports" msprop:Generator_RowChangedName="ReportsRowChanged" msprop:Generator_RowEvArgName="ReportsRowChangeEvent" msprop:Generator_RowClassName="ReportsRow">
+        <xs:element name="Sales" msprop:Generator_TableClassName="SalesDataTable" msprop:Generator_TableVarName="tableSales" msprop:Generator_RowChangedName="SalesRowChanged" msprop:Generator_TablePropName="Sales" msprop:Generator_RowDeletingName="SalesRowDeleting" msprop:Generator_RowChangingName="SalesRowChanging" msprop:Generator_RowEvHandlerName="SalesRowChangeEventHandler" msprop:Generator_RowDeletedName="SalesRowDeleted" msprop:Generator_RowClassName="SalesRow" msprop:Generator_UserTableName="Sales" msprop:Generator_RowEvArgName="SalesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -64,10 +135,83 @@ GROUP BY receipt.id, receipt.ordDate, customer.custFirst, customer.custLast, pay
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Repairs" msprop:Generator_TableClassName="RepairsDataTable" msprop:Generator_TableVarName="tableRepairs" msprop:Generator_TablePropName="Repairs" msprop:Generator_RowDeletingName="RepairsRowDeleting" msprop:Generator_RowChangingName="RepairsRowChanging" msprop:Generator_RowEvHandlerName="RepairsRowChangeEventHandler" msprop:Generator_RowDeletedName="RepairsRowDeleted" msprop:Generator_UserTableName="Repairs" msprop:Generator_RowChangedName="RepairsRowChanged" msprop:Generator_RowEvArgName="RepairsRowChangeEvent" msprop:Generator_RowClassName="RepairsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="ordDate" msprop:Generator_ColumnVarNameInTable="columnordDate" msprop:Generator_ColumnPropNameInRow="ordDate" msprop:Generator_ColumnPropNameInTable="ordDateColumn" msprop:Generator_UserColumnName="ordDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ordTotal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnordTotal" msprop:Generator_ColumnPropNameInRow="ordTotal" msprop:Generator_ColumnPropNameInTable="ordTotalColumn" msprop:Generator_UserColumnName="ordTotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="payType" msprop:Generator_ColumnVarNameInTable="columnpayType" msprop:Generator_ColumnPropNameInRow="payType" msprop:Generator_ColumnPropNameInTable="payTypeColumn" msprop:Generator_UserColumnName="payType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="custName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncustName" msprop:Generator_ColumnPropNameInRow="custName" msprop:Generator_ColumnPropNameInTable="custNameColumn" msprop:Generator_UserColumnName="custName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="81" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="manufacturer" msprop:Generator_TableClassName="manufacturerDataTable" msprop:Generator_TableVarName="tablemanufacturer" msprop:Generator_TablePropName="manufacturer" msprop:Generator_RowDeletingName="manufacturerRowDeleting" msprop:Generator_RowChangingName="manufacturerRowChanging" msprop:Generator_RowEvHandlerName="manufacturerRowChangeEventHandler" msprop:Generator_RowDeletedName="manufacturerRowDeleted" msprop:Generator_UserTableName="manufacturer" msprop:Generator_RowChangedName="manufacturerRowChanged" msprop:Generator_RowEvArgName="manufacturerRowChangeEvent" msprop:Generator_RowClassName="manufacturerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="manName" msprop:Generator_ColumnVarNameInTable="columnmanName" msprop:Generator_ColumnPropNameInRow="manName" msprop:Generator_ColumnPropNameInTable="manNameColumn" msprop:Generator_UserColumnName="manName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="warranty" msprop:Generator_TableClassName="warrantyDataTable" msprop:Generator_TableVarName="tablewarranty" msprop:Generator_TablePropName="warranty" msprop:Generator_RowDeletingName="warrantyRowDeleting" msprop:Generator_RowChangingName="warrantyRowChanging" msprop:Generator_RowEvHandlerName="warrantyRowChangeEventHandler" msprop:Generator_RowDeletedName="warrantyRowDeleted" msprop:Generator_UserTableName="warranty" msprop:Generator_RowChangedName="warrantyRowChanged" msprop:Generator_RowEvArgName="warrantyRowChangeEvent" msprop:Generator_RowClassName="warrantyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="serordIssue" msprop:Generator_ColumnVarNameInTable="columnserordIssue" msprop:Generator_ColumnPropNameInRow="serordIssue" msprop:Generator_ColumnPropNameInTable="serordIssueColumn" msprop:Generator_UserColumnName="serordIssue" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="serDescription" msprop:Generator_ColumnVarNameInTable="columnserDescription" msprop:Generator_ColumnPropNameInRow="serDescription" msprop:Generator_ColumnPropNameInTable="serDescriptionColumn" msprop:Generator_UserColumnName="serDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="serPrice" msprop:Generator_ColumnVarNameInTable="columnserPrice" msprop:Generator_ColumnPropNameInRow="serPrice" msprop:Generator_ColumnPropNameInTable="serPriceColumn" msprop:Generator_UserColumnName="serPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="equModel" msprop:Generator_ColumnVarNameInTable="columnequModel" msprop:Generator_ColumnPropNameInRow="equModel" msprop:Generator_ColumnPropNameInTable="equModelColumn" msprop:Generator_UserColumnName="equModel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Reports" />
+      <xs:selector xpath=".//mstns:Sales" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="Repairs_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Repairs" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="manufacturer_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:manufacturer" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>
