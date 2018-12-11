@@ -17,6 +17,7 @@ namespace EmmasEngines
             if (!IsPostBack)
             {
                 string repairID = Request.QueryString["repairID"];
+                EmmasEnginesLibrary.RepairDataSetTableAdapters.repair_progressTableAdapter repair_progress = new EmmasEnginesLibrary.RepairDataSetTableAdapters.repair_progressTableAdapter();
             }
         }
 
@@ -31,6 +32,8 @@ namespace EmmasEngines
             /* send sql command to database */
             /* refresh page */
         }
+
+        
     }
 }
  

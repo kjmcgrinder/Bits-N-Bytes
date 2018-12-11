@@ -9,10 +9,28 @@ namespace EmmasEngines
 {
     public partial class SearchCustomers : System.Web.UI.Page
     {
+
+        //format a phone number to look pretty.
+        void PhoneFormat(GridView gridview, int phoneColumn)
+        {
+            /* loop over the gridview */
+            foreach (GridViewRow row in gridview.Rows)
+            {
+                /* get the text */
+                string phoneText = row.Cells[phoneColumn].Text;
+                /* format the text */
+                phoneText = String.Format("{0:(###) ###-####}", Convert.ToInt64(phoneText));
+                /* set the text */
+                row.Cells[phoneColumn].Text = phoneText;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!User.IsInRole("Sales") && !User.IsInRole("Manager"))
                 Response.Redirect("~/Default.aspx");
+
+            PhoneFormat(GridView1, 2);
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
