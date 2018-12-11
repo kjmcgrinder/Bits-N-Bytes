@@ -15,7 +15,6 @@ namespace EmmasEngines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //get the first name of the user for the welcome message
             var roleStore = new RoleStore<IdentityRole>();
             var roleManager = new RoleManager<IdentityRole>(roleStore);
             var userStore = new UserStore<IdentityUser>();

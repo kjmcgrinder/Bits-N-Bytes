@@ -16,24 +16,32 @@ namespace EmmasEngines
 
             if (!IsPostBack)
             {
-                string repairID = Request.QueryString["repairID"];
-                EmmasEnginesLibrary.RepairDataSetTableAdapters.repair_progressTableAdapter repair_progress = new EmmasEnginesLibrary.RepairDataSetTableAdapters.repair_progressTableAdapter();
             }
         }
 
         /* Add the time when an employee finishes working on a repair */
-        protected void UpdateMethod()//TODO
+        protected void UpdateMethod()//TODO: get employeeID
         {
             /* connect to the dataset */
-            EmmasEnginesLibrary.RepairDataSetTableAdapters.repair_progressTableAdapter repair_progress = new EmmasEnginesLibrary.RepairDataSetTableAdapters.repair_progressTableAdapter();
+            SqlDataSource table = SqlDataSource1;
             /* Get ID of repair_details table */
+            string repairID = Request.QueryString["repairID"];
             /* get current date and time */
+            string currentDate = DateTime.Now.ToString("dd-MM-yyyy hh:mm");
+            /* get employeeID */
+            string employeeID = "1";
             /* make a sql command to update finish time where ID=ID */
+            string query = "INSERT INTO repair_progress(employeeID, repairID, startDate) VALUES(" + employeeID.ToString() + ", " + repairID.ToString() + ", '" + currentDate.ToString() + "');";
             /* send sql command to database */
+            table.InsertCommand = query;
+            table.Insert();
             /* refresh page */
         }
 
-        
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            UpdateMethod();
+        }
     }
 }
  
