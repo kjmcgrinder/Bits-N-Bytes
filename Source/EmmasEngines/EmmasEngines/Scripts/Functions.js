@@ -18,24 +18,26 @@ function SearchListBox(txtId, lbxId) {
 }
 
 function PurchaseInit() {
-    document.getElementById("MainContent_txtTotal").onfocus = function () { this.blur(); }
+    document.getElementById("MainContent_txtTotal").onfocus = function () { this.blur(); }    
     document.getElementById("searchC").onkeyup = function () { SearchListBox(this.id, "MainContent_ListBox2") };
-    document.getElementById("searchP").onkeyup = function () { SearchListBox(this.id, "MainContent_lbxSelectProduct") };
-    var selectBox = document.getElementById("MainContent_lbxSelectProduct")
-    for (opt of selectBox.options) {
-        opt.ondblclick = selectBox.onchange;
-    }
+    if (document.getElementById("searchP") != null) {
+        document.getElementById("searchP").onkeyup = function () { SearchListBox(this.id, "MainContent_lbxSelectProduct") };
+        var selectBox = document.getElementById("MainContent_lbxSelectProduct")
+        for (opt of selectBox.options) {
+            opt.ondblclick = selectBox.onchange;
+        }
 
-    selectBox.onchange = null;
-    if (document.getElementById("MainContent_gvSelectedProductsSales") != null) {
-        inputs = document.getElementsByTagName("input");
-        for (inpt of inputs) {
-            if (inpt.type == "number" && inpt.id.includes("gvSelectedProductsSales")) {
-                inpt.onchange = CalculateTotal;
-                inpt.title = 0;
+        selectBox.onchange = null;
+        if (document.getElementById("MainContent_gvSelectedProductsSales") != null) {
+            inputs = document.getElementsByTagName("input");
+            for (inpt of inputs) {
+                if (inpt.type == "number" && inpt.id.includes("gvSelectedProductsSales")) {
+                    inpt.onchange = CalculateTotal;
+                    inpt.title = 0;
+                }
             }
         }
-    }    
+    }
 }
 
 function CalculateTotal() {
