@@ -50,8 +50,8 @@ function CalculateTotal() {
     if (this.value > rows[4].value)
         cost *= 1.01;
     if (txtTotal.value.length == 0)
-        txtTotal.value = cost;
+        txtTotal.value = cost.toFixed(2);
     else
-        txtTotal.value = parseFloat(txtTotal.value) + cost;
+        txtTotal.value = (parseFloat(txtTotal.value) + cost).toFixed(2);
     theForm[this.id] = this.value;
 }
