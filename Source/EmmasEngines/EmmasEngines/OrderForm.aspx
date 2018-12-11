@@ -34,7 +34,7 @@
                             <asp:TextBox ID="txtQuantity" type="number" min="1" max="99" runat="server" placeholder="1 ~ 99" Width="225px"></asp:TextBox><br />
 
                             <label for="lblSize"><i class="fa fa-address-card-o"></i>Size</label><br />
-                            <asp:TextBox ID="txtSize" placeholder="6.00 Fl oz" runat="server" Width="225px"></asp:TextBox><br />
+                            <asp:TextBox ID="txtSize" placeholder="6.00" runat="server" Width="225px"></asp:TextBox><br />
                             <br />
                             </div>
                             <div class="IndexCentering" style="width: 100%">
