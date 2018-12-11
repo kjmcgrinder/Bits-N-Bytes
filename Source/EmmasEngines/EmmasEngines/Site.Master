@@ -14,7 +14,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="Scripts/Functions.js"></script>
 </head>
-<body onload="Init()">
+<body onload="<%:Page.Title.Replace(' ','_') + "Init()" %>">
     <form runat="server">
         <!--Nav Bar-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,30 +28,34 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Default.aspx">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Dashboard.aspx">Dashboard</a>
-                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sales
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <%:!Page.User.IsInRole("Technician") && !Page.User.IsInRole("Sales") && !Page.User.IsInRole("Manager")?"hidden":"" %>>Sales
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="SaleRepair.aspx">Sale / Repair</a>
-                            <a class="dropdown-item" href="Sales.aspx">Customer Management</a>
+                            <a class="dropdown-item" href="Sales.aspx" <%:Page.User.IsInRole("Technician")?"hidden":"" %>>Customer Management</a>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" <%:!Page.User.IsInRole("Ordering") && !Page.User.IsInRole("Manager")?"hidden":"" %>>
                         <a class="nav-link" href="Inventory.aspx">Inventory</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" <%: !Page.User.IsInRole("Admin") && !Page.User.IsInRole("Manager") ? "hidden" : "" %>>
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="Users.aspx">User Management</a>
+                            <a class="dropdown-item" href="Users.aspx" <%:!Page.User.IsInRole("Manager") ? "hidden":"" %>>User Management</a>
                             <a class="dropdown-item" href="Reports.aspx">Reports</a>
                         </div>
                     </li>
                 </ul>
-                <asp:LinkButton runat="server" Text="Logout" OnClick="Logout"></asp:LinkButton>
+                <ul class="nav navbar-nav navbar-right">
+                    <li <%:!Page.User.IsInRole("Manager")? "hidden":""%> >
+                        <a class="nav-link" href="Dashboard.aspx">Dashboard</a>
+                    </li>
+                    <li>
+                        <asp:LinkButton runat="server" Text="Logout" OnClick="Logout" CssClass="nav-link"></asp:LinkButton>
+                    </li>
+                </ul>
             </div>
         </nav>
         <div>
