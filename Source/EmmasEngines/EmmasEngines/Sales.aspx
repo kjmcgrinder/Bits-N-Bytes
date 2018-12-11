@@ -4,7 +4,8 @@
     <div class="jumbotron">
   <h1 class="display-4">Customer Management</h1>
   <p class="lead">Please select the action you would like to complete</p>
-  <hr class="my-4"/>
+  
+<hr class="my-4"/>
 </div>
     
      <div class="row">
@@ -26,5 +27,6 @@
       </div>
     </div>
   </div>
-</div>    
+</div> 
+<hr />
 </asp:content>

@@ -7,8 +7,8 @@
         <table class="auto-style2">
             <tr>
                 <%--unique number assigned randomly--%>
-                <td class="auto-style1">Order number:</td>
-                <td>
+                <td class="auto-style1" style="height: 26px">Order number:</td>
+                <td style="height: 26px">
                     <asp:Label ID="LblOrderNumber" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>

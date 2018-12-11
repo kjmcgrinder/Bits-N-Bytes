@@ -6,12 +6,12 @@
     <br />
     <br />
     <div style="margin-right: 20px; margin-left: 20px;">
-        <asp:TextBox ID="txtBrand" placeholder="Product Brand" CssClass="searchinput" runat="server" /><br />
-        <asp:TextBox ID="txtName" placeholder="Product Name" CssClass="searchinput" runat="server" /><br />
-        <asp:TextBox ID="txtNumber" placeholder="Order Number" CssClass="searchinput" runat="server" /><br />
+        <asp:TextBox ID="txtBrand" placeholder="Product Brand" CssClass="inputBox" runat="server" Height="35px" Width="50%" /><br />
+        <asp:TextBox ID="txtName" placeholder="Product Name" CssClass="inputBox" runat="server" Height="35px" Width="50%" /><br />
+        <asp:TextBox ID="txtNumber" placeholder="Order Number" CssClass="inputBox" runat="server" Height="35px" Width="50%" /><br />
         <asp:Button ID="btnEnter" runat="server" Text="Search" CssClass="IndexButton" Height="57px" Width="113px" />
 
-        <h4 class="IndexCentering">Order Requests</h4>
+        <h4 class="IndexCentering"><b>Order Requests</b></h4>
 
         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="order_line_id,inventory_id,product_id" DataSourceID="SqlDataSource1" Width="100%" AllowPaging="True" PageSize="15" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
@@ -36,7 +36,7 @@
         <br />
 
 
-        <h4 class="IndexCentering">Ordered</h4>
+        <h4 class="IndexCentering"><b>Ordered</b></h4>
 
         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id,id1" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" Width="100%" AllowPaging="True" PageSize="15" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
@@ -61,7 +61,7 @@
         </asp:GridView>
         <br />
 
-        <h4 class="IndexCentering">Previous Orders</h4>
+        <h4 class="IndexCentering"><b>Previous Orders</b></h4>
         <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Expr1,id,Expr2" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" PageSize="15" Width="100%" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>

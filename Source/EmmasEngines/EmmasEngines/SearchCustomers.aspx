@@ -4,8 +4,8 @@
     <h3 class="IndexHeaderA">Customers</h3>
 
         <div style="margin-right: 20px; margin-left: 20px;">
-            <asp:TextBox ID="txtName" placeholder="Name" CssClass="searchinput" runat="server" /><br />
-            <asp:TextBox ID="txtPhone" placeholder="Phone #" CssClass="searchinput" runat="server" /><br />
+            <asp:TextBox ID="txtName" placeholder="Name" CssClass="inputBox" runat="server" Height="35px" Width="30%" /><br />
+            <asp:TextBox ID="txtPhone" placeholder="Phone #" CssClass="inputBox" runat="server" Height="35px" OnTextChanged="txtPhone_TextChanged" Width="30%" /><br />
             <asp:Button ID="Button1" runat="server" Text="Enter" CssClass="IndexButton" Height="57px" Width="113px" />
 
             <asp:GridView ID="GridView1" runat="server" AllowSorting="True" GridLines="None" Width="1832px" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="dsCustomers" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#333333">
