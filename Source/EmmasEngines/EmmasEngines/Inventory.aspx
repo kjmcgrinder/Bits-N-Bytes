@@ -8,13 +8,13 @@
         <br />
         <b>Product Name:</b>
         <br />
-        <asp:DropDownList ID="ddlProduct" runat="server" Height="25px" Width="180px" AutoPostBack="True" DataSourceID="dbProducts" DataTextField="prodName" DataValueField="prodName" EnableViewState="False" CssClass="dropdown">
-            <asp:ListItem Selected="True" Value="Select a Product">Select a Product</asp:ListItem>
+        <asp:DropDownList ID="ddlProduct" AppendDataBoundItems="true" runat="server" Height="25px" AutoPostBack="True" DataSourceID="dbProducts" DataTextField="prodName" DataValueField="prodName" EnableViewState="False" CssClass="dropdown" style="left: 0px; top: 0px; width: 186px;">
+            <asp:ListItem Text="Please select a Product" Value="0"></asp:ListItem>
         </asp:DropDownList><br />
         <br />
         <b>
-            <asp:Label ID="Label1" runat="server" Text="Products In Stock:"></asp:Label></b><br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id,Expr1" DataSourceID="SqlDataSource4" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AllowSorting="True">
+            <asp:Label ID="lblStatus" runat="server" Text="Products In Stock:"></asp:Label></b><br />
+        <asp:GridView ID="gvInven" runat="server" AutoGenerateColumns="False" DataKeyNames="id,Expr1" DataSourceID="SqlDataSource4" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="prodName" HeaderText="Name" SortExpression="prodName" ReadOnly="True" />
