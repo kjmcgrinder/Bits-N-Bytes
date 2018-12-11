@@ -3,8 +3,10 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <!--Jumbotron-->    
         <div class="jumbotron">
-            <% string name = User.Identity.Name.ToString(); %>
-            <h1 class="display-4">Welcome <%{ Response.Write(name.ToString()); } %></h1>
+            <% string name =User.Identity.Name.ToString(); %>
+            <h1 id="welcome" class="display-4">Welcome 
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            </h1>
             <p class="lead">This is the central hub for Emma's Small Engines.</p>
             <hr class="my-4" />
         </div>

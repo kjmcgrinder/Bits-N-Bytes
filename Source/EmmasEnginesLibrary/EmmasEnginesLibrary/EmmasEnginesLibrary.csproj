@@ -80,6 +80,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PurchaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RepairAndProgressDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairAndProgressDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RepairDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,6 +134,17 @@
     </None>
     <None Include="PurchaseDataSet.xss">
       <DependentUpon>PurchaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RepairAndProgressDataSet.xsc">
+      <DependentUpon>RepairAndProgressDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RepairAndProgressDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairAndProgressDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RepairAndProgressDataSet.xss">
+      <DependentUpon>RepairAndProgressDataSet.xsd</DependentUpon>
     </None>
     <None Include="RepairDataSet.xsc">
       <DependentUpon>RepairDataSet.xsd</DependentUpon>
