@@ -102,11 +102,11 @@ html, body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.searchinput[type=text] {
+/*.searchinput[type=text] {
     width: 212px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
-}
+}*/
 
 footer {
     margin-top: 0.3em;
@@ -120,9 +120,9 @@ footer {
 }
 
     /* When the input field gets focus, change its width to 100% */
-.searchinput[type=text]:focus {
+/*.searchinput[type=text]:focus {
         width: 100%;
-    }
+    }*/
 
 
 

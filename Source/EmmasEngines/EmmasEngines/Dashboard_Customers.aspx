@@ -25,8 +25,8 @@
     <h3 class="IndexHeaderA">Customers</h3>
 
         <div style="margin-right: 20px; margin-left: 20px;">
-            <asp:TextBox ID="txtName" placeholder="Name" CssClass="searchinput" runat="server" /><br />
-            <asp:TextBox ID="txtPhone" placeholder="Phone #" CssClass="searchinput" runat="server" /><br />
+            <asp:TextBox ID="txtName" placeholder="Name" CssClass="inputBox" runat="server" Width="300px" /><br />
+            <asp:TextBox ID="txtPhone" placeholder="Phone #" CssClass="inputBox" runat="server" Width="300px" /><br />
             <asp:Button ID="Button1" runat="server" Text="Enter" CssClass="IndexButton" Height="57px" Width="113px" />
 
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="dsCustomers" ForeColor="#333333" GridLines="None" Width="100%">
