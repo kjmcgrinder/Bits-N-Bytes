@@ -9,7 +9,7 @@
         <b>Product Name:</b>
         <br />
         <asp:DropDownList ID="ddlProduct" AppendDataBoundItems="true" runat="server" Height="25px" AutoPostBack="True" DataSourceID="dbProducts" DataTextField="prodName" DataValueField="prodName" EnableViewState="False" CssClass="dropdown" style="left: 0px; top: 0px; width: 186px;">
-            <asp:ListItem Text="Please select a Product" Value="0"></asp:ListItem>
+            <asp:ListItem Text="Please select a Product" Value="%"></asp:ListItem>
         </asp:DropDownList><br />
         <br />
         <b>
@@ -45,9 +45,9 @@
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
         <asp:SqlDataSource ID="dbProducts" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT DISTINCT prodName FROM product ORDER BY prodName"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT product.id, product.prodName, product.prodBrand, inventory.productID, inventory.invQuantity, inventory.invPrice, product.prodDescription, CONVERT(varchar,inventory.invSize) + ' /  ' + CONVERT(varchar,inventory.invMeasure) as Size, inventory.id AS Expr1 FROM product INNER JOIN inventory ON product.id = inventory.productID WHERE (product.prodName = @Param1)">
+        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT product.id, product.prodName, product.prodBrand, inventory.productID, inventory.invQuantity, inventory.invPrice, product.prodDescription, CONVERT(varchar,inventory.invSize) + ' /  ' + CONVERT(varchar,inventory.invMeasure) as Size, inventory.id AS Expr1 FROM product INNER JOIN inventory ON product.id = inventory.productID WHERE (product.prodName LIKE @Param1)">
             <SelectParameters>
-                <asp:ControlParameter ControlID="ddlProduct" Name="Param1" PropertyName="SelectedValue" />
+                <asp:ControlParameter ControlID="ddlProduct" Name="Param1" PropertyName="SelectedValue" DefaultValue="" />
             </SelectParameters>
     </asp:SqlDataSource>
     </div>
