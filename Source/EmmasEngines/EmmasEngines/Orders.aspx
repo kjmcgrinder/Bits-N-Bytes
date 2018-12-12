@@ -5,13 +5,34 @@
     <br />
     <br />
     <br />
-    <div style="margin-right: 20px; margin-left: 20px;">
-        <asp:TextBox ID="txtBrand" placeholder="Product Brand" CssClass="inputBox" runat="server" Height="35px" Width="50%" /><br />
-        <asp:TextBox ID="txtName" placeholder="Product Name" CssClass="inputBox" runat="server" Height="35px" Width="50%" /><br />
-        <asp:TextBox ID="txtNumber" placeholder="Order Number" CssClass="inputBox" runat="server" Height="35px" Width="50%" /><br />
-        <asp:Button ID="btnEnter" runat="server" Text="Search" CssClass="IndexButton" Height="57px" Width="113px" />
 
-        <h4 class="IndexCentering"><b>Order Requests</b></h4>
+    <div style="margin-right: 20px; margin-left: 20px;">
+        <div class="row mt-3">
+            <div class="col-4">
+                <div class="form-group">
+                    <label>Order Number:</label>
+                    <asp:TextBox ID="txtNumber" placeholder="00000" runat="server" CssClass="form-control" /><br />
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                    <label>Brand:</label>
+                    <asp:TextBox ID="txtBrand" placeholder="Castrol" runat="server" CssClass="form-control" /><br />
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <asp:TextBox ID="txtName" placeholder="2 stroke oil" runat="server" CssClass="form-control" /><br />
+                </div>
+            </div>
+        </div>
+        <asp:Button ID="btnEnter" runat="server" Text="Search" CssClass="IndexButton" Height="48px" Width="113px" />
+
+
+        <h4 class="IndexCentering">Order Requests</h4>
 
         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="order_line_id,inventory_id,product_id" DataSourceID="SqlDataSource1" Width="100%" AllowPaging="True" PageSize="15" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
@@ -36,7 +57,7 @@
         <br />
 
 
-        <h4 class="IndexCentering"><b>Ordered</b></h4>
+        <h4 class="IndexCentering">Ordered</h4>
 
         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id,id1" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" Width="100%" AllowPaging="True" PageSize="15" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
@@ -61,7 +82,7 @@
         </asp:GridView>
         <br />
 
-        <h4 class="IndexCentering"><b>Previous Orders</b></h4>
+        <h4 class="IndexCentering">Previous Orders</h4>
         <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Expr1,id,Expr2" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" PageSize="15" Width="100%" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
@@ -89,6 +110,6 @@
         <br />
     </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT order_line.id AS order_line_id, order_line.orlPrice, order_line.orlQuantity, order_line.inventoryID, inventory.productID, inventory.invQuantity, inventory.id AS inventory_id, product.id AS product_id, product.prodName, product.prodBrand FROM order_line INNER JOIN inventory ON order_line.inventoryID = inventory.id INNER JOIN product ON inventory.productID = product.id"></asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT prod_order.id AS Expr1, prod_order.pordNumber, prod_order.pordDateOrdered, prod_order.pordPaid, inventory.id, inventory.invQuantity, inventory.invSize, inventory.invMeasure, inventory.invPrice, inventory.productID, product.prodName, product.prodBrand, product.id AS Expr2 FROM product INNER JOIN inventory ON product.id = inventory.productID CROSS JOIN prod_order"></asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT on_order.*, prod_order.* FROM on_order INNER JOIN prod_order ON on_order.prodorderID = prod_order.id"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT prod_order.id AS Expr1, prod_order.pordNumber, prod_order.pordDateOrdered, prod_order.pordPaid, inventory.id, inventory.invQuantity, inventory.invSize, inventory.invMeasure, inventory.invPrice, inventory.productID, product.prodName, product.prodBrand, product.id AS Expr2 FROM product INNER JOIN inventory ON product.id = inventory.productID CROSS JOIN prod_order"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT on_order.*, prod_order.* FROM on_order INNER JOIN prod_order ON on_order.prodorderID = prod_order.id"></asp:SqlDataSource>
 </asp:Content>
