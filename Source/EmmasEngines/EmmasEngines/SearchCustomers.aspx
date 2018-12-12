@@ -26,6 +26,9 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
+    
+    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Sales.aspx">Back</asp:HyperLink>
+            <br />
         </div>
         <asp:ObjectDataSource ID="dsCustomers" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataBy" TypeName="EmmasEnginesLibrary.CustomerDataSetTableAdapters.customerTableAdapter">
             <SelectParameters>
@@ -33,4 +36,5 @@
                 <asp:ControlParameter ControlID="txtPhone" DefaultValue="0" Name="Param2" PropertyName="Text" Type="String" />
             </SelectParameters>
         </asp:ObjectDataSource>
-</asp:Content>
+    
+    </asp:Content>

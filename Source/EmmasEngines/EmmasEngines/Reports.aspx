@@ -21,7 +21,7 @@
             <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
             <TodayDayStyle BackColor="#CCCCCC" />
         </asp:Calendar>
-        <table style="width: 89%;">
+        <table style="width: 89%;" >
             <tr>
                 <td class="auto-style1" style="width: 632px">
                     <h2 class="lead">Sales</h2>
@@ -43,11 +43,10 @@
                         <asp:GridView ID="GridView1" runat="server" Width="626px" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                                <asp:BoundField DataField="ordDate" HeaderText="ordDate" SortExpression="ordDate" />
-                                <asp:BoundField DataField="custName" HeaderText="custName" ReadOnly="True" SortExpression="custName" />
-                                <asp:BoundField DataField="payType" HeaderText="payType" SortExpression="payType" />
-                                <asp:BoundField DataField="ordTotal" HeaderText="ordTotal" ReadOnly="True" SortExpression="ordTotal" />
+                                <asp:BoundField DataField="custName" HeaderText="Name" ReadOnly="True" SortExpression="custName" />
+                                <asp:BoundField DataField="ordDate" HeaderText="Date" SortExpression="ordDate" />
+                                <asp:BoundField DataField="payType" HeaderText="Payment Type" SortExpression="payType" />
+                                <asp:BoundField DataField="ordTotal" HeaderText="Total" ReadOnly="True" SortExpression="ordTotal" />
                             </Columns>
                             <EditRowStyle BackColor="#2461BF" />
                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -62,6 +61,9 @@
                         </asp:GridView>
                     </h3>
                 </td>
+                <td>
+
+                </td>
                 <td class="auto-style1">
                     <h3 class="lead">
                         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.ReportsDataSetTableAdapters.RepairsTableAdapter">
@@ -72,11 +74,10 @@
                         <asp:GridView ID="GridView2" runat="server" Width="603px" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="ObjectDataSource2" ForeColor="#333333" GridLines="None">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                                <asp:BoundField DataField="ordDate" HeaderText="ordDate" SortExpression="ordDate" />
-                                <asp:BoundField DataField="ordTotal" HeaderText="ordTotal" ReadOnly="True" SortExpression="ordTotal" />
-                                <asp:BoundField DataField="payType" HeaderText="payType" SortExpression="payType" />
-                                <asp:BoundField DataField="custName" HeaderText="custName" ReadOnly="True" SortExpression="custName" />
+                                <asp:BoundField DataField="custName" HeaderText="Name" ReadOnly="True" SortExpression="custName" />
+                                <asp:BoundField DataField="ordDate" HeaderText="Date" SortExpression="ordDate" />
+                                <asp:BoundField DataField="payType" HeaderText="Payment Type" SortExpression="payType" />
+                                <asp:BoundField DataField="ordTotal" HeaderText="Total" ReadOnly="True" SortExpression="ordTotal" />
                             </Columns>
                             <EditRowStyle BackColor="#2461BF" />
                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

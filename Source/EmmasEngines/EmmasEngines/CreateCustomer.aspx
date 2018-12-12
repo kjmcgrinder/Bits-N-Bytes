@@ -18,10 +18,10 @@
                             <asp:ValidationSummary runat="server" ID="vsCustomer" ForeColor="Red" />
                             <br />
                             <label for="fname"><i class="fa fa-user"></i>First Name<asp:RequiredFieldValidator runat="server" ID="rfvFname" ControlToValidate="fname" ErrorMessage="First Name Required" ForeColor="Red">*</asp:RequiredFieldValidator></label><br />
-                            <asp:TextBox ID="fname" runat="server" placeholder="John" CssClass="inputBox" Width="350px"></asp:TextBox><br />
+                            <asp:TextBox ID="fname" runat="server"  CssClass="inputBox" Width="350px"></asp:TextBox><br />
 
                             <label for="lname"><i class="fa fa-user"></i>Last Name<asp:RequiredFieldValidator runat="server" ID="rfvLname" ControlToValidate="lname" ErrorMessage="Last Name Required" ForeColor="Red">*</asp:RequiredFieldValidator></label><br />
-                            <asp:TextBox ID="lname" runat="server" placeholder="Doe" CssClass="inputBox" Width="350px"></asp:TextBox><br />
+                            <asp:TextBox ID="lname" runat="server" CssClass="inputBox" Width="350px"></asp:TextBox><br />
 
                             <label for="email"><i class="fa fa-envelope"></i>Email<asp:RegularExpressionValidator runat="server" ID="rxvEmail" ControlToValidate="email" ValidationExpression="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" ErrorMessage="Incorrect Email Format" ForeColor="Red">*</asp:RegularExpressionValidator></label><br />
                             <asp:TextBox ID="email" runat="server" placeholder="john@example.com" CssClass="inputBox" Width="350px"></asp:TextBox><br />
@@ -43,8 +43,9 @@
                          <%--   </div>--%>
 
                             <%--<div class="IndexCentering">--%>
-                                <asp:Button ID="Button1" runat="server" CssClass="IndexButton" Text="Enter" Width="350px" OnClick="Button1_Click" />
+                                <asp:Button ID="Button1" runat="server" CssClass="IndexButtonSubmit" Text="Enter" Width="350px" OnClick="Button1_Click" /><br />
                            <%-- </div>--%>
+                        <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="IndexButtonCancel" OnClick="Button2_Click" PostBackUrl="~/Sales.aspx" CausesValidation="false" Width="175px" />
                         </div>
         </div> 
 

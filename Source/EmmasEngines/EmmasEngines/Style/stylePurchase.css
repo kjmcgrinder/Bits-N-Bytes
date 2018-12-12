@@ -69,7 +69,7 @@ label {
   font-size: 24px;
 }
 
-.btn {
+.Confirmbtn {
   background-color: #4CAF50;
   color: white;
   padding: 12px;
@@ -81,7 +81,7 @@ label {
   font-size: 17px;
 }
 
-.btn:hover {
+.Confirmbtn:hover {
   background-color: #45a049;
 }
 

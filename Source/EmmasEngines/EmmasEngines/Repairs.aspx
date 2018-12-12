@@ -77,6 +77,7 @@
         <p>
             <asp:Button ID="NewRepairbtn" runat="server" Text="New Repair" CssClass="IndexButton" PostBackUrl="~/Purchase.aspx?mode=repair" />
         </p>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SaleRepair.aspx">Back</asp:HyperLink>
     </div>
     <p>
         &nbsp;

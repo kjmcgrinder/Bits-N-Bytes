@@ -74,6 +74,11 @@ namespace EmmasEngines
             daCustomer.Fill(dsCustomers.customerCrud);
             Response.Redirect("~/Sales");
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Sales.aspx");
+        }
     }
 }
  

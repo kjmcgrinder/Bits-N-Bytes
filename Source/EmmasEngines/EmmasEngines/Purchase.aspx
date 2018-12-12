@@ -6,8 +6,8 @@
     <br />
     
     <div class="btn-group btn-group-toggle">
-        <asp:Button ID="btnSale" runat="server" Text="Sale" OnClick="rdoSale_CheckedChanged" CssClass="btn btn-secondary btn-sm" />
-        <asp:Button ID="btnRepair" runat="server" Text="Repair" OnClick="rdoRepair_CheckedChanged" CssClass="btn btn-secondary btn-sm" />
+        <asp:Button ID="btnSale" runat="server" Text="Sale" OnClick="rdoSale_CheckedChanged" CssClass="btn btn-secondary btn-sm Confirmbtn" CausesValidation="false" />
+        <asp:Button ID="btnRepair" runat="server" Text="Repair" OnClick="rdoRepair_CheckedChanged" CssClass="btn btn-secondary btn-sm Confirmbtn" CausesValidation="false" />
     </div>
     <br />
     <br />
@@ -152,7 +152,8 @@
     </div>
     <div class="row">
         <div class="col-25">
-            <asp:Button ID="submit" runat="server" Text="Submit" CssClass="IndexButton" OnClick="submit_Click"/>
+            <asp:Button ID="submit" runat="server" Text="Submit" CssClass="IndexButton Confirmbtn" OnClick="submit_Click" Width="250px"/>
+            <asp:Button ID="Cancel" runat="server" CssClass="IndexButton" Text="Cancel" Width="150px" CausesValidation="false" PostBackUrl="~/SaleRepair.aspx" />
         </div>
     </div>
         </div>

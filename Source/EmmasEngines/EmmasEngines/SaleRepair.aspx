@@ -4,7 +4,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <!--Jumbotron-->
     <div class="jumbotron">
-        <h1 class="display-4">Sales and Repairs</h1>
+        <h1 class="display-4">Sales<%-- and Repairs--%></h1>
         <p class="lead">Please select the service you are providing</p>
         <hr class="my-4" />
     </div>
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <%--<div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Repairs</h5>
@@ -26,7 +26,7 @@
                     <a href="Repairs.aspx" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
-        </div>
+        </div>--%>
     </div>
     <hr />
 </asp:Content>

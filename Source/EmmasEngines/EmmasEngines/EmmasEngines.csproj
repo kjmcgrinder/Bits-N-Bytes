@@ -231,7 +231,6 @@
     <Content Include="Login.aspx" />
     <Content Include="Orders.aspx" />
     <Content Include="Purchase.aspx" />
-    <Content Include="Register.aspx" />
     <Content Include="RepairsForm.aspx" />
     <Content Include="Reports.aspx" />
     <Content Include="Sales.aspx" />
@@ -399,13 +398,6 @@
     </Compile>
     <Compile Include="Purchase.aspx.designer.cs">
       <DependentUpon>Purchase.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="RepairDetails.aspx.cs">
       <DependentUpon>RepairDetails.aspx</DependentUpon>
