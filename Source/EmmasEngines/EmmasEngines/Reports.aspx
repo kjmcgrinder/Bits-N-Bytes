@@ -24,10 +24,10 @@
         <table style="width: 89%;">
             <tr>
                 <td class="auto-style1" style="width: 632px">
-                    <h2 class="lead">Sales</h2>
+                    <h2 class="lead">Repairs</h2>
                 </td>
                 <td class="auto-style6">
-                    <h2 class="lead">Repairs</h2>
+                    <h2 class="lead">Sales</h2>
                 </td>
 
             </tr>
