@@ -16,5 +16,11 @@ namespace EmmasEngines
                 Response.Redirect("~/Default.aspx");
         }
 
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            txtBrand.Text = "";
+            txtName.Text = "";
+            txtNumber.Text = "";
+        }
     }
 }

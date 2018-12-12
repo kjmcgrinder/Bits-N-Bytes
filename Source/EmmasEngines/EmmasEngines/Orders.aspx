@@ -7,11 +7,11 @@
     <br />
 
     <div style="margin-right: 20px; margin-left: 20px;">
-        <div class="row mt-3">
+        <div class="row mt-5">
             <div class="col-4">
                 <div class="form-group">
                     <label>Order Number:</label>
-                    <asp:TextBox ID="txtNumber" placeholder="00000" runat="server" CssClass="form-control" /><br />
+                    <asp:TextBox ID="txtNumber" placeholder="12345" runat="server" CssClass="form-control" /><br />
                 </div>
             </div>
 
@@ -29,8 +29,16 @@
                 </div>
             </div>
         </div>
-        <asp:Button ID="btnEnter" runat="server" Text="Search" CssClass="IndexButton" Height="48px" Width="113px" />
-
+        <div class="row mt-0 mb-4">
+            <div class="col-3">
+            </div>
+            <div class="col-3">
+                <asp:Button ID="btnEnter" runat="server" Text="Search" CssClass="btn btn-block btn-primary" />
+            </div>
+            <div class="col-3">
+                <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="btn btn-block btn-secondary" OnClick="btnClear_Click" />
+            </div>
+        </div>
 
         <h4 class="IndexCentering">Order Requests</h4>
 
@@ -110,6 +118,6 @@
         <br />
     </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT order_line.id AS order_line_id, order_line.orlPrice, order_line.orlQuantity, order_line.inventoryID, inventory.productID, inventory.invQuantity, inventory.id AS inventory_id, product.id AS product_id, product.prodName, product.prodBrand FROM order_line INNER JOIN inventory ON order_line.inventoryID = inventory.id INNER JOIN product ON inventory.productID = product.id"></asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT prod_order.id AS Expr1, prod_order.pordNumber, prod_order.pordDateOrdered, prod_order.pordPaid, inventory.id, inventory.invQuantity, inventory.invSize, inventory.invMeasure, inventory.invPrice, inventory.productID, product.prodName, product.prodBrand, product.id AS Expr2 FROM product INNER JOIN inventory ON product.id = inventory.productID CROSS JOIN prod_order"></asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT on_order.*, prod_order.* FROM on_order INNER JOIN prod_order ON on_order.prodorderID = prod_order.id"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT prod_order.id AS Expr1, prod_order.pordNumber, prod_order.pordDateOrdered, prod_order.pordPaid, inventory.id, inventory.invQuantity, inventory.invSize, inventory.invMeasure, inventory.invPrice, inventory.productID, product.prodName, product.prodBrand, product.id AS Expr2 FROM product INNER JOIN inventory ON product.id = inventory.productID CROSS JOIN prod_order"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT on_order.*, prod_order.* FROM on_order INNER JOIN prod_order ON on_order.prodorderID = prod_order.id"></asp:SqlDataSource>
 </asp:Content>

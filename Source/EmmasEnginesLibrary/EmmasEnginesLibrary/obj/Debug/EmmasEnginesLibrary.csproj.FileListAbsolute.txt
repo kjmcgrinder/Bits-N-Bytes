@@ -38,7 +38,6 @@ C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\Emma
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.pdb
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\Emmas_log.ldf
-G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csprojAssemblyReference.cache
 C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\Emmas.mdf
 C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\Emmas_log.ldf
 C:\Users\User\source\repos\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\bin\Debug\EmmasEnginesLibrary.dll.config
