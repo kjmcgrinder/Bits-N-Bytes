@@ -3,13 +3,13 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h3 class="IndexHeaderA">Inventory</h3>
     <div style="margin-right: 20px; margin-left: 20px;">
-        <asp:Button ID="Button1" runat="server" Text="Order Stock" CssClass="btn btn-primary btn-sm" PostBackUrl="~/OrderForm.aspx" />
-        <asp:Button ID="Button2" runat="server" Text="View Orders" CssClass="btn btn-secondary btn-sm" OnClick="Button2_Click" PostBackUrl="~/Orders.aspx" /><br />
+        <asp:Button ID="btnOrderStock" runat="server" Text="Order Stock" CssClass="btn btn-primary btn-sm" PostBackUrl="~/OrderForm.aspx" Height="45px" Width="100"/>
+        <asp:Button ID="btnOrderView" runat="server" Text="View Orders" CssClass="btn btn-primary btn-sm"  PostBackUrl="~/Orders.aspx" Height="45px" Width="100"/><br />
         <br />
         <b>Product Name:</b>
         <br />
         <asp:DropDownList ID="ddlProduct" AppendDataBoundItems="true" runat="server" Height="25px" AutoPostBack="True" DataSourceID="dbProducts" DataTextField="prodName" DataValueField="prodName" EnableViewState="False" CssClass="dropdown" style="left: 0px; top: 0px; width: 186px;">
-            <asp:ListItem Text="Please select a Product" Value="0"></asp:ListItem>
+            <asp:ListItem Text="Please select a Product" Value="%"></asp:ListItem>
         </asp:DropDownList><br />
         <br />
         <b>
@@ -45,9 +45,9 @@
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
         <asp:SqlDataSource ID="dbProducts" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT DISTINCT prodName FROM product ORDER BY prodName"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT product.id, product.prodName, product.prodBrand, inventory.productID, inventory.invQuantity, inventory.invPrice, product.prodDescription, CONVERT(varchar,inventory.invSize) + ' /  ' + CONVERT(varchar,inventory.invMeasure) as Size, inventory.id AS Expr1 FROM product INNER JOIN inventory ON product.id = inventory.productID WHERE (product.prodName = @Param1)">
+        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT product.id, product.prodName, product.prodBrand, inventory.productID, inventory.invQuantity, inventory.invPrice, product.prodDescription, CONVERT(varchar,inventory.invSize) + ' /  ' + CONVERT(varchar,inventory.invMeasure) as Size, inventory.id AS Expr1 FROM product INNER JOIN inventory ON product.id = inventory.productID WHERE (product.prodName LIKE @Param1)">
             <SelectParameters>
-                <asp:ControlParameter ControlID="ddlProduct" Name="Param1" PropertyName="SelectedValue" />
+                <asp:ControlParameter ControlID="ddlProduct" Name="Param1" PropertyName="SelectedValue" DefaultValue="" />
             </SelectParameters>
     </asp:SqlDataSource>
     </div>
