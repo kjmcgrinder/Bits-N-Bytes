@@ -7,8 +7,8 @@
     <br />
 
     <div style="margin-right: 20px; margin-left: 20px;">
-        <asp:Button ID="btnOrderStock" runat="server" Text="Order Stock" CssClass="btn btn-primary btn-sm" PostBackUrl="~/OrderForm.aspx" Height="45px" Width="100" />
-        <asp:Button ID="btnInventory" runat="server" Text="Inventory" CssClass="btn btn-primary btn-sm"  PostBackUrl="~/Inventory.aspx" Height="45px" Width="100" /><br/>
+        <asp:Button ID="btnOrderStock" runat="server" Text="Order Stock" CssClass="IndexButton" PostBackUrl="~/OrderForm.aspx" Height="56px" Width="160px" />
+        <asp:Button ID="btnInventory" runat="server" Text="Inventory" CssClass="IndexButton"  PostBackUrl="~/Inventory.aspx" Height="56px" Width="160px" /><br/>
         <div class="row mt-5">
             <div class="col-4">
                 <div class="form-group">
@@ -35,10 +35,10 @@
             <div class="col-3">
             </div>
             <div class="col-3">
-                <asp:Button ID="btnEnter" runat="server" Text="Search" CssClass="btn btn-block btn-primary" Height="40px" />
+                <asp:Button ID="btnEnter" runat="server" Text="Search" CssClass="IndexButton" Height="56px" Width="186px" />
             </div>
             <div class="col-3">
-                <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="btn btn-block btn-secondary" OnClick="btnClear_Click" Height="40px" />
+                <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="IndexButton" OnClick="btnClear_Click" Height="56px" Width="186px" />
             </div>
         </div>
 
