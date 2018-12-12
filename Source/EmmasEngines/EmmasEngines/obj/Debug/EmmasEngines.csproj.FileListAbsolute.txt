@@ -1597,7 +1597,6 @@ C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\Em
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.csproj.CopyComplete
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.dll
 C:\Users\User\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.pdb
-G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\System.Security.Cryptography.Primitives.dll
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\Github\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\ApplicationInsights.config
 C:\Users\Administrator\Desktop\Github\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEngines.dll.config
@@ -2072,4 +2071,5 @@ E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
 E:\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll.config
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\System.IO.FileSystem.dll
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\System.IO.FileSystem.Primitives.dll
+G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\System.Security.Cryptography.Primitives.dll
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\System.ValueTuple.dll

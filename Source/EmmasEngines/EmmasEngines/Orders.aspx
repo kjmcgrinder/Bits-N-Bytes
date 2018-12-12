@@ -7,7 +7,8 @@
     <br />
 
     <div style="margin-right: 20px; margin-left: 20px;">
-        <asp:Button ID="btnOrderStock" runat="server" Text="Order Stock" CssClass="btn btn-primary btn-sm" PostBackUrl="~/OrderForm.aspx" Height="45px" /><br/>
+        <asp:Button ID="btnOrderStock" runat="server" Text="Order Stock" CssClass="btn btn-primary btn-sm" PostBackUrl="~/OrderForm.aspx" Height="45px" Width="100" />
+        <asp:Button ID="btnInventory" runat="server" Text="Inventory" CssClass="btn btn-primary btn-sm"  PostBackUrl="~/Inventory.aspx" Height="45px" Width="100" /><br/>
         <div class="row mt-5">
             <div class="col-4">
                 <div class="form-group">
