@@ -14,12 +14,8 @@ namespace EmmasEngines
         {
             if (!User.IsInRole("Manager") && !User.IsInRole("Administration"))
                 Response.Redirect("~/Default");
-        }
-
-        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
-        {
-            DateTime Date =  Calendar1.SelectedDate;
-
-        }
+            if (!IsPostBack)
+                Calendar1.SelectedDate = DateTime.Today;
+        }        
     }
 }

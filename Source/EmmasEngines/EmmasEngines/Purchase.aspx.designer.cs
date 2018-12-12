@@ -31,6 +31,15 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.Button btnRepair;
         
         /// <summary>
+        /// rvCustomer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvCustomer;
+        
+        /// <summary>
         /// ListBox2 control.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.Panel pnlRepair;
         
         /// <summary>
+        /// rfvModel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvModel;
+        
+        /// <summary>
         /// txtModel control.
         /// </summary>
         /// <remarks>
@@ -103,6 +121,15 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.TextBox txtModel;
         
         /// <summary>
+        /// rvfSerialNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfSerialNumber;
+        
+        /// <summary>
         /// txtSerialNumber control.
         /// </summary>
         /// <remarks>
@@ -110,6 +137,15 @@ namespace EmmasEngines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSerialNumber;
+        
+        /// <summary>
+        /// rvType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvType;
         
         /// <summary>
         /// ddlType control.
@@ -148,6 +184,15 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.ObjectDataSource dsManu;
         
         /// <summary>
+        /// rfvIssue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIssue;
+        
+        /// <summary>
         /// RD control.
         /// </summary>
         /// <remarks>
@@ -166,6 +211,15 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
         
         /// <summary>
+        /// rvService control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvService;
+        
+        /// <summary>
         /// ddlService control.
         /// </summary>
         /// <remarks>
@@ -182,6 +236,15 @@ namespace EmmasEngines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource dsService;
+        
+        /// <summary>
+        /// rvPaymentMethod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvPaymentMethod;
         
         /// <summary>
         /// ddlPayment control.
@@ -209,6 +272,15 @@ namespace EmmasEngines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTotal;
+        
+        /// <summary>
+        /// vsPurchase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsPurchase;
         
         /// <summary>
         /// submit control.

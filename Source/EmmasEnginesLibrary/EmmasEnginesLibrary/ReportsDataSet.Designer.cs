@@ -2329,22 +2329,24 @@ namespace EmmasEnginesLibrary.ReportsDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        receipt.id, receipt.ordDate, customer.custFirst + ' ' + customer.custLast AS custName, payment.payType, SUM(order_line.orlPrice) AS ordTotal
+            this._commandCollection[0].CommandText = @"SELECT        receipt.id, receipt.ordDate, customer.custFirst + ' ' + customer.custLast AS custName, payment.payType, SUM(order_line.orlPrice * order_line.orlQuantity) AS ordTotal
 FROM            receipt INNER JOIN
                          customer ON receipt.custID = customer.id INNER JOIN
                          payment ON receipt.paymentID = payment.id INNER JOIN
                          order_line ON receipt.id = order_line.receiptID
-WHERE        (DATEDIFF(day, receipt.ordDate, GETDATE()) < 7)
+WHERE        (DATEDIFF(day, receipt.ordDate, @Param1) < 7)
 GROUP BY receipt.id, receipt.ordDate, customer.custFirst, customer.custLast, payment.payType, order_line.orlPrice";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ReportsDataSet.SalesDataTable GetData() {
+        public virtual ReportsDataSet.SalesDataTable GetData(System.DateTime Param1) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Param1));
             ReportsDataSet.SalesDataTable dataTable = new ReportsDataSet.SalesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2499,17 +2501,19 @@ FROM            receipt INNER JOIN
                          service ON service_order.serviceID = service.id INNER JOIN
                          payment ON receipt.paymentID = payment.id INNER JOIN
                          customer ON receipt.custID = customer.id
-WHERE        (DATEDIFF(day, receipt.ordDate, GETDATE()) < 7)
+WHERE        (DATEDIFF(day, receipt.ordDate, @Param1) < 7)
 GROUP BY receipt.id, customer.custFirst, customer.custLast, payment.payType, receipt.ordDate";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ReportsDataSet.RepairsDataTable GetData() {
+        public virtual ReportsDataSet.RepairsDataTable GetData(System.DateTime Param1) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Param1));
             ReportsDataSet.RepairsDataTable dataTable = new ReportsDataSet.RepairsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

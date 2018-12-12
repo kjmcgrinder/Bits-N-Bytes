@@ -28,15 +28,20 @@ function PurchaseInit() {
         }
 
         selectBox.onchange = null;
+        var cost = 0;
         if (document.getElementById("MainContent_gvSelectedProductsSales") != null) {
             inputs = document.getElementsByTagName("input");
+            
             for (inpt of inputs) {
                 if (inpt.type == "number" && inpt.id.includes("gvSelectedProductsSales")) {
                     inpt.onchange = CalculateTotal;
                     inpt.title = 0;
+                    var row = inpt.parentElement.parentElement.getElementsByTagName("td");
+                    cost += inpt.value * row[4].innerHTML;
                 }
-            }
+            }            
         }
+        document.getElementById("MainContent_txtTotal").value = cost.toFixed(2);
     }
 }
 

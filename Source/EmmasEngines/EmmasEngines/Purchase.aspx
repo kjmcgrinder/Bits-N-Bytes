@@ -13,7 +13,7 @@
     <br />
     <div class="row">
         <div class="col-25">
-            <b><label for="searchC">Customer:</label></b>
+            <b><label for="searchC">Customer:<asp:RangeValidator ID="rvCustomer" runat="server" ControlToValidate="ListBox2" ForeColor="Red" ErrorMessage="Please select a customer" MaximumValue="9999" MinimumValue="0">*</asp:RangeValidator></label></b>
         </div>
         <div class="col-75">
             <input type="text" id="searchC" placeholder="Search.." class="inputBox" /><br />
@@ -62,7 +62,7 @@
     <asp:Panel ID="pnlRepair" runat="server">
         <div class ="row">
             <div class="col-25">
-                <b><label for="txtModel">Equipment Model:</label></b>
+                <b><label for="txtModel">Equipment Model:<asp:RequiredFieldValidator ID="rfvModel" runat="server" ControlToValidate="txtModel" ErrorMessage="Please enter the model" ForeColor="Red">*</asp:RequiredFieldValidator></label></b>
             </div>
             <div class="col-75">
                 <asp:TextBox ID="txtModel" runat="server" Width="100%"></asp:TextBox>
@@ -70,7 +70,7 @@
         </div>
         <div class ="row">
             <div class="col-25">
-                <b><label for="txtSerialNumber">Equipment Serial Number:</label></b>
+                <b><label for="txtSerialNumber">Equipment Serial Number:<asp:RequiredFieldValidator ID="rvfSerialNumber" runat="server" ControlToValidate="txtSerialNumber" ErrorMessage="Please enter a serial number" ForeColor="Red">*</asp:RequiredFieldValidator></label></b>
             </div>
             <div class="col-75">
                 <asp:TextBox ID="txtSerialNumber" runat="server" Width="100%"></asp:TextBox>
@@ -78,10 +78,12 @@
         </div>
         <div class ="row">
             <div class="col-25">
-                <b><label for="ddlType">Type:</label></b>
+                <b><label for="ddlType">Type:<asp:RangeValidator ID="rvType" runat="server" ControlToValidate="ddlType" MaximumValue="9999" MinimumValue="1" ErrorMessage="Please select an equipment type" ForeColor="Red">*</asp:RangeValidator></label></b>
             </div>
             <div class="col-75">
-                <asp:DropDownList ID="ddlType" runat="server" DataSourceID="dsEqType" DataTextField="eqtType" DataValueField="id" Width="75%"></asp:DropDownList>
+                <asp:DropDownList ID="ddlType" runat="server" DataSourceID="dsEqType" DataTextField="eqtType" DataValueField="id" Width="75%">
+                    <asp:ListItem Value="-1" Text="Please select an equipment type"></asp:ListItem>
+                </asp:DropDownList>
                 <asp:ObjectDataSource ID="dsEqType" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.PurchaseDataSetTableAdapters.equip_typeTableAdapter"></asp:ObjectDataSource>
             </div>
         </div>
@@ -96,7 +98,7 @@
         </div>        
         <div class="row">
             <div class="col-25">
-                <b><label for="RD">Issue Description:</label></b>
+                <b><label for="RD">Issue Description:<asp:RequiredFieldValidator ID="rfvIssue" runat="server" ControlToValidate="RD" ForeColor="Red" ErrorMessage="Please describe the issue">*</asp:RequiredFieldValidator></label></b>
             </div>
             <div class="col-75">
                 <asp:TextBox ID="RD" runat="server" Height="107px" Width="100%"></asp:TextBox><br />
@@ -110,27 +112,31 @@
             <div class="col-75">
                 <asp:RadioButtonList ID="RadioButtonList1" runat="server" Width="394px">
                     <asp:ListItem Value="1">&nbsp;Yes</asp:ListItem>
-                    <asp:ListItem Value="0">&nbsp;No</asp:ListItem>
+                    <asp:ListItem Value="0" Selected="True">&nbsp;No</asp:ListItem>
                 </asp:RadioButtonList><br />
                 <br />
             </div>
         </div>
         <div class="row">
             <div class="col-25">
-                <b><label for="ddlService">Service Requested:</label></b>
+                <b><label for="ddlService">Service Requested:<asp:RangeValidator ID="rvService" ControlToValidate="ddlService" runat="server" MaximumValue="9999" MinimumValue="1" ErrorMessage="Please select a service" ForeColor="Red">*</asp:RangeValidator></label></b>
             </div>
             <div class="col-75">
-                <asp:DropDownList ID="ddlService" runat="server" DataSourceID="dsService" DataTextField="service" DataValueField="id" Width="75%"></asp:DropDownList>
+                <asp:DropDownList ID="ddlService" runat="server" DataSourceID="dsService" DataTextField="service" DataValueField="id" Width="75%" AppendDataBoundItems="true">
+                    <asp:ListItem Value="-1" Text="Please select a service"></asp:ListItem>
+                </asp:DropDownList>
                 <asp:ObjectDataSource ID="dsService" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.PurchaseDataSetTableAdapters.serviceTableAdapter"></asp:ObjectDataSource>
             </div>
         </div>
     </asp:Panel>
     <div class="row">
             <div class="col-25">
-            <b><label for="ddlPayment">Payment method:</label></b>
+            <b><label for="ddlPayment">Payment method:<asp:RangeValidator ID="rvPaymentMethod" ControlToValidate="ddlPayment" runat="server" MaximumValue="9999" MinimumValue="1" ForeColor="Red" ErrorMessage="Please select a method of payment">*</asp:RangeValidator></label></b>
                 </div>
             <div class="col-75">
-                <asp:DropDownList ID="ddlPayment" runat="server" DataSourceID="dsPayment" DataTextField="payType" DataValueField="id" Width="75%"></asp:DropDownList>
+                <asp:DropDownList ID="ddlPayment" runat="server" DataSourceID="dsPayment" DataTextField="payType" DataValueField="id" Width="75%" AppendDataBoundItems="true">
+                    <asp:ListItem Text="Please select a method of payment" Value="-1"></asp:ListItem>
+                </asp:DropDownList>
                 <asp:ObjectDataSource ID="dsPayment" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.PurchaseDataSetTableAdapters.paymentTableAdapter"></asp:ObjectDataSource>
             </div>
         </div>
@@ -139,8 +145,9 @@
             <b><label for="Total">Total:</label></b>
         </div>
         <div class="col-75">
-            <b><asp:TextBox ID="txtTotal" runat="server" placeholder="Total" EnableViewState="true" BackColor="Silver" Width="100%"></asp:TextBox></b>           
+            <b><asp:TextBox ID="txtTotal" runat="server" placeholder="Total" EnableViewState="False" BackColor="Silver" Width="100%"></asp:TextBox></b>           
             <br />
+            <asp:ValidationSummary ID="vsPurchase" runat="server" ForeColor="Red" />
         </div>
     </div>
     <div class="row">
