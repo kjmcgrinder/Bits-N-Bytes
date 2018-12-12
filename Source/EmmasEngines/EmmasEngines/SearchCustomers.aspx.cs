@@ -19,7 +19,11 @@ namespace EmmasEngines
                 /* get the text */
                 string phoneText = row.Cells[phoneColumn].Text;
                 /* format the text */
-                phoneText = String.Format("{0:(###) ###-####}", Convert.ToInt64(phoneText));
+                try
+                {
+                    phoneText = String.Format("{0:(###) ###-####}", Convert.ToInt64(phoneText));
+                }
+                catch { }
                 /* set the text */
                 row.Cells[phoneColumn].Text = phoneText;
             }
