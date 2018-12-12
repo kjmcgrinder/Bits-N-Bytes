@@ -81,3 +81,4 @@ E:\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEn
 E:\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csproj.CoreCompileInputs.cache
 E:\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.dll
 E:\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.pdb
+C:\Users\Kevin McGrinder\Documents\GitHub\Bits-N-Bytes\Source\EmmasEnginesLibrary\EmmasEnginesLibrary\obj\Debug\EmmasEnginesLibrary.csprojAssemblyReference.cache

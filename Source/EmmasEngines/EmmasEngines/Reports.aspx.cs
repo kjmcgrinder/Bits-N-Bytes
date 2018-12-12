@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using EmmasEnginesLibrary.ReportsDataSetTableAdapters;
 
 namespace EmmasEngines
 {
@@ -19,7 +20,6 @@ namespace EmmasEngines
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
             DateTime Date =  Calendar1.SelectedDate;
-
         }
     }
 }
