@@ -103,13 +103,22 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.TextBox txtSize;
         
         /// <summary>
-        /// btnOrder control.
+        /// btnEnter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOrder;
+        protected global::System.Web.UI.WebControls.Button btnEnter;
+        
+        /// <summary>
+        /// btnClear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClear;
         
         /// <summary>
         /// SqlDataSource1 control.

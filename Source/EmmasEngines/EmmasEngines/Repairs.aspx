@@ -32,52 +32,52 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
+        <asp:SqlDataSource ID="RepairDataSource" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" DeleteCommand="DELETE FROM [service_order] WHERE [id] = @original_id AND (([serordDateIn] = @original_serordDateIn) OR ([serordDateIn] IS NULL AND @original_serordDateIn IS NULL)) AND (([serordDateOut] = @original_serordDateOut) OR ([serordDateOut] IS NULL AND @original_serordDateOut IS NULL)) AND (([serordIssue] = @original_serordIssue) OR ([serordIssue] IS NULL AND @original_serordIssue IS NULL)) AND (([serordWarranty] = @original_serordWarranty) OR ([serordWarranty] IS NULL AND @original_serordWarranty IS NULL)) AND [receiptID] = @original_receiptID AND [serviceID] = @original_serviceID AND [equipID] = @original_equipID AND [empID] = @original_empID" InsertCommand="INSERT INTO [service_order] ([serordDateIn], [serordDateOut], [serordIssue], [serordWarranty], [receiptID], [serviceID], [equipID], [empID]) VALUES (@serordDateIn, @serordDateOut, @serordIssue, @serordWarranty, @receiptID, @serviceID, @equipID, @empID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT service_order.id, service_order.serordDateIn AS 'Received', service_order.serordDateOut AS 'Completed', service_order.serordIssue AS 'Issue', service_order.serordWarranty AS 'Has Warranty', equipment.equModel AS 'Equipment Model', customer.custFirst + ' ' + customer.custLast AS 'Customer', customer.custPhone AS 'Customer Phone', customer.custEmail AS 'Customer Email', employee.empFirst + ' ' + employee.empLast AS 'Employee', equipment.equSerial AS 'Equipment Serial Num' FROM service_order INNER JOIN employee ON service_order.empID = employee.id INNER JOIN equipment ON service_order.equipID = equipment.id INNER JOIN customer ON equipment.custID = customer.id" UpdateCommand="UPDATE [service_order] SET [serordDateIn] = @serordDateIn, [serordDateOut] = @serordDateOut, [serordIssue] = @serordIssue, [serordWarranty] = @serordWarranty, [receiptID] = @receiptID, [serviceID] = @serviceID, [equipID] = @equipID, [empID] = @empID WHERE [id] = @original_id AND (([serordDateIn] = @original_serordDateIn) OR ([serordDateIn] IS NULL AND @original_serordDateIn IS NULL)) AND (([serordDateOut] = @original_serordDateOut) OR ([serordDateOut] IS NULL AND @original_serordDateOut IS NULL)) AND (([serordIssue] = @original_serordIssue) OR ([serordIssue] IS NULL AND @original_serordIssue IS NULL)) AND (([serordWarranty] = @original_serordWarranty) OR ([serordWarranty] IS NULL AND @original_serordWarranty IS NULL)) AND [receiptID] = @original_receiptID AND [serviceID] = @original_serviceID AND [equipID] = @original_equipID AND [empID] = @original_empID">
+            <DeleteParameters>
+                <asp:Parameter Name="original_id" Type="Int32" />
+                <asp:Parameter DbType="Date" Name="original_serordDateIn" />
+                <asp:Parameter DbType="Date" Name="original_serordDateOut" />
+                <asp:Parameter Name="original_serordIssue" Type="String" />
+                <asp:Parameter Name="original_serordWarranty" Type="Boolean" />
+                <asp:Parameter Name="original_receiptID" Type="Int32" />
+                <asp:Parameter Name="original_serviceID" Type="Int32" />
+                <asp:Parameter Name="original_equipID" Type="Int32" />
+                <asp:Parameter Name="original_empID" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter DbType="Date" Name="serordDateIn" />
+                <asp:Parameter DbType="Date" Name="serordDateOut" />
+                <asp:Parameter Name="serordIssue" Type="String" />
+                <asp:Parameter Name="serordWarranty" Type="Boolean" />
+                <asp:Parameter Name="receiptID" Type="Int32" />
+                <asp:Parameter Name="serviceID" Type="Int32" />
+                <asp:Parameter Name="equipID" Type="Int32" />
+                <asp:Parameter Name="empID" Type="Int32" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter DbType="Date" Name="serordDateIn" />
+                <asp:Parameter DbType="Date" Name="serordDateOut" />
+                <asp:Parameter Name="serordIssue" Type="String" />
+                <asp:Parameter Name="serordWarranty" Type="Boolean" />
+                <asp:Parameter Name="receiptID" Type="Int32" />
+                <asp:Parameter Name="serviceID" Type="Int32" />
+                <asp:Parameter Name="equipID" Type="Int32" />
+                <asp:Parameter Name="empID" Type="Int32" />
+                <asp:Parameter Name="original_id" Type="Int32" />
+                <asp:Parameter DbType="Date" Name="original_serordDateIn" />
+                <asp:Parameter DbType="Date" Name="original_serordDateOut" />
+                <asp:Parameter Name="original_serordIssue" Type="String" />
+                <asp:Parameter Name="original_serordWarranty" Type="Boolean" />
+                <asp:Parameter Name="original_receiptID" Type="Int32" />
+                <asp:Parameter Name="original_serviceID" Type="Int32" />
+                <asp:Parameter Name="original_equipID" Type="Int32" />
+                <asp:Parameter Name="original_empID" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        <p>
+            <asp:Button ID="NewRepairbtn" runat="server" Text="New Repair" CssClass="IndexButton" PostBackUrl="~/Purchase.aspx?mode=repair" />
+        </p>
     </div>
-    <asp:SqlDataSource ID="RepairDataSource" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" DeleteCommand="DELETE FROM [service_order] WHERE [id] = @original_id AND (([serordDateIn] = @original_serordDateIn) OR ([serordDateIn] IS NULL AND @original_serordDateIn IS NULL)) AND (([serordDateOut] = @original_serordDateOut) OR ([serordDateOut] IS NULL AND @original_serordDateOut IS NULL)) AND (([serordIssue] = @original_serordIssue) OR ([serordIssue] IS NULL AND @original_serordIssue IS NULL)) AND (([serordWarranty] = @original_serordWarranty) OR ([serordWarranty] IS NULL AND @original_serordWarranty IS NULL)) AND [receiptID] = @original_receiptID AND [serviceID] = @original_serviceID AND [equipID] = @original_equipID AND [empID] = @original_empID" InsertCommand="INSERT INTO [service_order] ([serordDateIn], [serordDateOut], [serordIssue], [serordWarranty], [receiptID], [serviceID], [equipID], [empID]) VALUES (@serordDateIn, @serordDateOut, @serordIssue, @serordWarranty, @receiptID, @serviceID, @equipID, @empID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT service_order.id, service_order.serordDateIn AS 'Received', service_order.serordDateOut AS 'Completed', service_order.serordIssue AS 'Issue', service_order.serordWarranty AS 'Has Warranty', equipment.equModel AS 'Equipment Model', customer.custFirst + ' ' + customer.custLast AS 'Customer', customer.custPhone AS 'Customer Phone', customer.custEmail AS 'Customer Email', employee.empFirst + ' ' + employee.empLast AS 'Employee', equipment.equSerial AS 'Equipment Serial Num' FROM service_order INNER JOIN employee ON service_order.empID = employee.id INNER JOIN equipment ON service_order.equipID = equipment.id INNER JOIN customer ON equipment.custID = customer.id" UpdateCommand="UPDATE [service_order] SET [serordDateIn] = @serordDateIn, [serordDateOut] = @serordDateOut, [serordIssue] = @serordIssue, [serordWarranty] = @serordWarranty, [receiptID] = @receiptID, [serviceID] = @serviceID, [equipID] = @equipID, [empID] = @empID WHERE [id] = @original_id AND (([serordDateIn] = @original_serordDateIn) OR ([serordDateIn] IS NULL AND @original_serordDateIn IS NULL)) AND (([serordDateOut] = @original_serordDateOut) OR ([serordDateOut] IS NULL AND @original_serordDateOut IS NULL)) AND (([serordIssue] = @original_serordIssue) OR ([serordIssue] IS NULL AND @original_serordIssue IS NULL)) AND (([serordWarranty] = @original_serordWarranty) OR ([serordWarranty] IS NULL AND @original_serordWarranty IS NULL)) AND [receiptID] = @original_receiptID AND [serviceID] = @original_serviceID AND [equipID] = @original_equipID AND [empID] = @original_empID">
-        <DeleteParameters>
-            <asp:Parameter Name="original_id" Type="Int32" />
-            <asp:Parameter DbType="Date" Name="original_serordDateIn" />
-            <asp:Parameter DbType="Date" Name="original_serordDateOut" />
-            <asp:Parameter Name="original_serordIssue" Type="String" />
-            <asp:Parameter Name="original_serordWarranty" Type="Boolean" />
-            <asp:Parameter Name="original_receiptID" Type="Int32" />
-            <asp:Parameter Name="original_serviceID" Type="Int32" />
-            <asp:Parameter Name="original_equipID" Type="Int32" />
-            <asp:Parameter Name="original_empID" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter DbType="Date" Name="serordDateIn" />
-            <asp:Parameter DbType="Date" Name="serordDateOut" />
-            <asp:Parameter Name="serordIssue" Type="String" />
-            <asp:Parameter Name="serordWarranty" Type="Boolean" />
-            <asp:Parameter Name="receiptID" Type="Int32" />
-            <asp:Parameter Name="serviceID" Type="Int32" />
-            <asp:Parameter Name="equipID" Type="Int32" />
-            <asp:Parameter Name="empID" Type="Int32" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter DbType="Date" Name="serordDateIn" />
-            <asp:Parameter DbType="Date" Name="serordDateOut" />
-            <asp:Parameter Name="serordIssue" Type="String" />
-            <asp:Parameter Name="serordWarranty" Type="Boolean" />
-            <asp:Parameter Name="receiptID" Type="Int32" />
-            <asp:Parameter Name="serviceID" Type="Int32" />
-            <asp:Parameter Name="equipID" Type="Int32" />
-            <asp:Parameter Name="empID" Type="Int32" />
-            <asp:Parameter Name="original_id" Type="Int32" />
-            <asp:Parameter DbType="Date" Name="original_serordDateIn" />
-            <asp:Parameter DbType="Date" Name="original_serordDateOut" />
-            <asp:Parameter Name="original_serordIssue" Type="String" />
-            <asp:Parameter Name="original_serordWarranty" Type="Boolean" />
-            <asp:Parameter Name="original_receiptID" Type="Int32" />
-            <asp:Parameter Name="original_serviceID" Type="Int32" />
-            <asp:Parameter Name="original_equipID" Type="Int32" />
-            <asp:Parameter Name="original_empID" Type="Int32" />
-        </UpdateParameters>
-    </asp:SqlDataSource>
-    <p>
-        <asp:Button ID="NewRepairbtn" runat="server" Text="New Repair" CssClass="inputBox"  PostBackUrl="~/Purchase.aspx?mode=repair" />
-    </p>
     <p>
         &nbsp;
     </p>
