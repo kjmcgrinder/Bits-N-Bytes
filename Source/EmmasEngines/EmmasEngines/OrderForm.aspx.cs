@@ -11,8 +11,17 @@ namespace EmmasEngines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!User.IsInRole("Ordering") && !User.IsInRole("Manager"))
+            if (!User.IsInRole("Ordering") && !User.IsInRole("Manager"))
                 Response.Redirect("~/Default.aspx");
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+
+            txtQuantity.Text = "";
+            txtSize.Text = "";
+            ddlPart.SelectedIndex = -1;
+            ddlBrand.SelectedIndex = -1;
         }
     }
 }
