@@ -3,8 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h3 class="IndexHeaderA">Inventory</h3>
     <div style="margin-right: 20px; margin-left: 20px;">
-        <asp:Button ID="Button1" runat="server" Text="Order Stock" CssClass="btn btn-primary btn-sm" PostBackUrl="~/OrderForm.aspx" />
-        <asp:Button ID="Button2" runat="server" Text="View Orders" CssClass="btn btn-secondary btn-sm" OnClick="Button2_Click" PostBackUrl="~/Orders.aspx" /><br />
+        <asp:Button ID="btnOrderStock" runat="server" Text="Order Stock" CssClass="btn btn-primary btn-sm" PostBackUrl="~/OrderForm.aspx" Height="45px" />
+        <asp:Button ID="btnOrderView" runat="server" Text="View Orders" CssClass="btn btn-primary btn-sm" OnClick="Button2_Click" PostBackUrl="~/Orders.aspx" Height="45px" /><br />
         <br />
         <b>Product Name:</b>
         <br />
