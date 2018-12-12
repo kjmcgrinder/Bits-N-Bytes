@@ -8,12 +8,12 @@
 
 function SearchListBox(txtId, lbxId) {
     var name = document.getElementById(txtId).value;
-    var selectBox = document.getElementById(lbxId);    
-    for (var i = 0; i < selectBox.options.length; i++) {
-        if (selectBox.options[i].text.toLowerCase().includes(name.toLowerCase())) {
-            selectBox.selectedIndex = i;
-            break;
-        }
+    var selectBox = document.getElementById(lbxId);
+    for (var opt of selectBox.options) {
+        if (opt.text.toLowerCase().includes(name.toLowerCase()))
+            opt.style.display = null;
+        else
+            opt.style.display = "none";
     }
 }
 
@@ -45,13 +45,13 @@ function CalculateTotal() {
     var rows = this.parentElement.parentElement.getElementsByTagName("td");
     if (this.value < 0)
         this.value = 0;
-    var cost = (this.value - parseInt(this.title)) * rows[3].innerHTML;
+    var cost = (this.value - parseInt(this.title)) * rows[4].innerHTML;
     this.title = this.value;
-    if (this.value > rows[4].value)
+    if (this.value > rows[5].value)
         cost *= 1.01;
     if (txtTotal.value.length == 0)
         txtTotal.value = cost.toFixed(2);
     else
-        txtTotal.value = parseFloat(txtTotal.value).toFixed(2) + cost.toFixed(2);
+        txtTotal.value = (parseFloat(txtTotal.value) + cost).toFixed(2);
     theForm[this.id] = this.value;
 }

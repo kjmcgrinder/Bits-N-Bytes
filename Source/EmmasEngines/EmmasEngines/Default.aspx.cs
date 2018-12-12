@@ -13,14 +13,18 @@ namespace EmmasEngines
 {
     public partial class Default : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        static DataTable employees;
+
+        static Default()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                employeeTableAdapter daEmployees = new employeeTableAdapter();
-                DataTable employees = daEmployees.GetData();
-                Label1.Text = employees.Select("empLogin = '" + User.Identity.Name + "'")[0]["empFirst"].ToString();
-            }
+            employeeTableAdapter daEmployees = new employeeTableAdapter();
+            employees = daEmployees.GetData();
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {            
+            if (User.Identity.IsAuthenticated)                            
+                Label1.Text = employees.Select("empLogin = '" + User.Identity.Name + "'")[0]["empFirst"].ToString();            
         }
     }
 }

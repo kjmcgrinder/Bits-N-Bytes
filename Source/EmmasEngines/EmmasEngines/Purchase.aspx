@@ -31,7 +31,7 @@
             <div class="col-75">
                 <input type="text" id="searchP" placeholder="Search.." class="searchinput" /><br />
                 <asp:ListBox ID="lbxSelectProduct" runat="server" Width="100%" DataSourceID="dsParts" DataTextField="prodBrName" DataValueField="id" AutoPostBack="True" OnSelectedIndexChanged="lbxSelectProduct_SelectedIndexChanged"></asp:ListBox><br />
-                <asp:GridView ID="gvSelectedProductsSales" runat="server" Width="100%" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="gvSelectedProductsSales_RowDeleting">
+                <asp:GridView ID="gvSelectedProductsSales" runat="server" Width="100%" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCancelingEdit="gvSelectedProductsSales_RowCancelingEdit">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:ButtonField CommandName="Cancel" Text="Remove" />

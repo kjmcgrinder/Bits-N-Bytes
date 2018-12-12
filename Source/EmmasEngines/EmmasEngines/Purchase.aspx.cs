@@ -103,8 +103,19 @@ namespace EmmasEngines
             newProduct["Price"] = rows[0]["invPrice"];
             newProduct["Stock"] = rows[0]["invQuantity"];
             selectedProducts.Rows.Add(newProduct);
+            UpdateGridView();
+        }
+
+        protected void gvSelectedProductsSales_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            selectedProducts.Rows[e.RowIndex].Delete();
+            UpdateGridView();
+        }
+
+        private void UpdateGridView()
+        {
             gvSelectedProductsSales.DataSource = selectedProducts;
-            gvSelectedProductsSales.DataBind();            
+            gvSelectedProductsSales.DataBind();
             for (int i = 0; i < gvSelectedProductsSales.Rows.Count; i++)
                 ((TextBox)gvSelectedProductsSales.Rows[i].Cells[0].FindControl("TextBox1")).Text = Request.Form["ctl00$MainContent$gvSelectedProductsSales$ctl0" + (i + 2).ToString() + "$TextBox1"] ?? "0";
         }
@@ -156,12 +167,7 @@ namespace EmmasEngines
             }
             dsReceipt.AcceptChanges();
             Response.Redirect("~/Default");
-        }
-        
-        protected void gvSelectedProductsSales_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            
-        }
+        }                      
     }
 
     public enum PageMode
