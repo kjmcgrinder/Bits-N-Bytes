@@ -3,17 +3,17 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <h3 class="IndexHeaderA">Details</h3>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </div>
     <div class="IndexCentering">
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="employeeID,repairID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="employeeID,repairID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
+                <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
                 <asp:BoundField DataField="employeeID" HeaderText="employeeID" ReadOnly="True" SortExpression="employeeID" />
                 <asp:BoundField DataField="repairID" HeaderText="repairID" ReadOnly="True" SortExpression="repairID" />
                 <asp:BoundField DataField="startDate" HeaderText="startDate" SortExpression="startDate" />
                 <asp:BoundField DataField="finishDate" HeaderText="finishDate" SortExpression="finishDate" />
-                <asp:ButtonField CommandName="Update" Text="Finish" />
+                <asp:ButtonField ButtonType="Button" Text="Finish" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

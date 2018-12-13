@@ -13,15 +13,6 @@ namespace EmmasEngines {
     public partial class Repair_Details {
         
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>

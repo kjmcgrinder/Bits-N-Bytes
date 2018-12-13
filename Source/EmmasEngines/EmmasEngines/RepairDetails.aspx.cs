@@ -31,7 +31,7 @@ namespace EmmasEngines
             }
         }
 
-        /* Add the time when an employee finishes working on a repair */
+        /* Add the time when an employee starts working on a repair */
         protected void UpdateMethod()
         {
             /* connect to the dataset */
@@ -42,7 +42,7 @@ namespace EmmasEngines
             string currentDate = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             /* get employeeID */
             string employeeID = employees.Select("empLogin = '" + User.Identity.Name + "'")[0]["ID"].ToString();
-            /* make a sql command to update finish time where ID=ID */
+            /* make a sql command to update start time where ID=ID */
             string query = "INSERT INTO repair_progress(employeeID, repairID, startDate) VALUES(" + employeeID.ToString() + ", " + repairID.ToString() + ", '" + currentDate.ToString() + "');";
             /* send sql command to database */
             table.InsertCommand = query;
@@ -53,6 +53,26 @@ namespace EmmasEngines
         protected void Button1_Click(object sender, EventArgs e)
         {
             UpdateMethod();
+        }
+
+        /* Add the current time as the finish time for a selected repair_progress */
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            /* connect to the dataset */
+            SqlDataSource table = SqlDataSource1;
+            /* Get ID of repair_details table */
+            string repairID = Request.QueryString["repairID"];
+            /* get current date and time */
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            /* get repair_progress ID */
+            int rowIndex = Convert.ToInt32(e.CommandArgument.ToString());
+            int ID = Convert.ToInt32(GridView1.Rows[rowIndex].Cells[0].Text);
+            /* make a sql command to update finish time where ID=ID */
+            string query = "UPDATE repair_progress SET finishDate='" + currentDate.ToString() + "' WHERE ID=" + ID + ";";
+            /* send sql command to database */
+            table.UpdateCommand = query;
+            table.Update();
+            /* refresh page */
         }
     }
 }
