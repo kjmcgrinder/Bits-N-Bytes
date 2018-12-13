@@ -48,7 +48,8 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="Users.aspx" <%:!Page.User.IsInRole("Manager") ? "hidden":"" %>>User Management</a>
-                            <a class="dropdown-item" href="Reports.aspx">Reports</a>
+                            <a class="dropdown-item" href="Reports.aspx">Weekly Reports</a>
+                            <a class="dropdown-item" href="WarrantyReports.aspx">Warranty Reports</a>
                         </div>
                     </li>
                 </ul>
