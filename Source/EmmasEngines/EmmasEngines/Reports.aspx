@@ -30,7 +30,7 @@
             </div>
             <div class="col-6">
                 <h2 class="lead">Pick a start date to see the Weekly Report</h2>
-                <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px" SelectedDate="12/11/2018 22:28:04">
+                <asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px" SelectedDate="12/11/2018 22:28:04">
             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
             <OtherMonthDayStyle ForeColor="#999999" />
@@ -43,24 +43,25 @@
         </div>
     </div>
     <div class="container">
+        <hr class="my-4" />
         
-        <table style="width: 89%;">
-            <tr>
-                <td class="auto-style1" style="width: 632px; height: 30px;">
+        <table class="tableReports" >
+            <tr class="paddingCells">
+                <td class="paddingCells" style="width: 632px; height: 30px;">
                     <h2 class="lead">Sales</h2>
                 </td>
-                <td class="auto-style6" style="height: 30px">
+                <td class="paddingCells" style="height: 30px">
                     <h2 class="lead">Repairs</h2>
                 </td>
 
             </tr>
             <tr>
                 <%--Labels will be change by the sum of the weekly sales--%>
-                <td class="auto-style1" style="width: 632px">
+                <td class="paddingCells" style="width: 632px">
                     <h3 class="lead">
                         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.ReportsDataSetTableAdapters.SalesTableAdapter">
                             <SelectParameters>
-                                <asp:ControlParameter ControlID="Calendar1" Name="Param1" PropertyName="SelectedDate" Type="DateTime" />
+                                <asp:ControlParameter ControlID="Calendar2" Name="Param1" PropertyName="SelectedDate" Type="DateTime" />
                             </SelectParameters>
                         </asp:ObjectDataSource>
                         <asp:GridView ID="GridView1" runat="server" Width="626px" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None">
@@ -83,11 +84,11 @@
                         </asp:GridView>
                     </h3>
                 </td>
-                <td class="auto-style1">
+                <td class="paddingCells">
                     <h3 class="lead">
                         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.ReportsDataSetTableAdapters.RepairsTableAdapter">
                             <SelectParameters>
-                                <asp:ControlParameter ControlID="Calendar1" Name="Param1" PropertyName="SelectedDate" Type="DateTime" />
+                                <asp:ControlParameter ControlID="Calendar2" Name="Param1" PropertyName="SelectedDate" Type="DateTime" />
                             </SelectParameters>
                         </asp:ObjectDataSource>
                         <asp:GridView ID="GridView2" runat="server" Width="603px" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="ObjectDataSource2" ForeColor="#333333" GridLines="None">
@@ -114,46 +115,5 @@
             </tr>
         </table>
     </div>
-    
-    <div class="container">
-        <hr class="my-4" />
-        <table>
-            <tr>
-                <td><h2 class="lead">Warranty reports</h2></td>
-            </tr>
-            <tr>
-                <td><asp:DropDownList ID="ddlMan" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource3" DataTextField="manName" DataValueField="id"></asp:DropDownList></td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:GridView ID="gvWarranty" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource4" ForeColor="#333333" GridLines="None">
-                        <AlternatingRowStyle BackColor="White" />
-                        <Columns>
-                            <asp:BoundField DataField="serordIssue" HeaderText="Service" SortExpression="serordIssue" />
-                            <asp:BoundField DataField="serDescription" HeaderText="Description" SortExpression="serDescription" />
-                            <asp:BoundField DataField="serPrice" HeaderText="Price" SortExpression="serPrice" />
-                            <asp:BoundField DataField="equModel" HeaderText="Model" SortExpression="equModel" />
-                        </Columns>
-                        <EditRowStyle BackColor="#2461BF" />
-                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                        <RowStyle BackColor="#EFF3FB" />
-                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                    </asp:GridView> 
-                    <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.ReportsDataSetTableAdapters.manufacturerTableAdapter"></asp:ObjectDataSource>
-                    <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.ReportsDataSetTableAdapters.WarrantyTableAdapter">
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="ddlMan" DefaultValue="" Name="Param1" PropertyName="SelectedValue" Type="Int32" />
-                        </SelectParameters>
-                    </asp:ObjectDataSource>
-               </td>
-            </tr>
 
-        </table>
-    </div>
 </asp:Content>
