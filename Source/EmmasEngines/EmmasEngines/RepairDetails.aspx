@@ -3,6 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <h3 class="IndexHeaderA">Details</h3>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </div>
     <div class="IndexCentering">
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="employeeID,repairID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">

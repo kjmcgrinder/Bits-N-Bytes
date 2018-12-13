@@ -3,12 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Web.UI.WebControls;
+using System.Data;
+using EmmasEnginesLibrary.EmployeeDataSetTableAdapters;
 
 namespace EmmasEngines
 {
     public partial class Repair_Details : System.Web.UI.Page
     {
+        static DataTable employees;
+
+        static Repair_Details()
+        {
+            employeeTableAdapter daEmployees = new employeeTableAdapter();
+            employees = daEmployees.GetData();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!User.IsInRole("Technician") && !User.IsInRole("Manager"))
@@ -20,16 +32,16 @@ namespace EmmasEngines
         }
 
         /* Add the time when an employee finishes working on a repair */
-        protected void UpdateMethod()//TODO: get employeeID
+        protected void UpdateMethod()
         {
             /* connect to the dataset */
             SqlDataSource table = SqlDataSource1;
             /* Get ID of repair_details table */
             string repairID = Request.QueryString["repairID"];
             /* get current date and time */
-            string currentDate = DateTime.Now.ToString("dd-MM-yyyy hh:mm");
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             /* get employeeID */
-            string employeeID = "1";
+            string employeeID = employees.Select("empLogin = '" + User.Identity.Name + "'")[0]["ID"].ToString();
             /* make a sql command to update finish time where ID=ID */
             string query = "INSERT INTO repair_progress(employeeID, repairID, startDate) VALUES(" + employeeID.ToString() + ", " + repairID.ToString() + ", '" + currentDate.ToString() + "');";
             /* send sql command to database */
