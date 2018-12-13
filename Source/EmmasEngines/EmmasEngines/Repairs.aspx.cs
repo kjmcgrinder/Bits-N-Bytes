@@ -21,7 +21,10 @@ namespace EmmasEngines
                 /* get the text */
                 string phoneText = row.Cells[phoneColumn].Text;
                 /* format the text */
-                phoneText = String.Format("{0:(###) ###-####}", Convert.ToInt64(phoneText));
+                try
+                {
+                    phoneText = String.Format("{0:(###) ###-####}", Convert.ToInt64(phoneText));
+                } catch { }
                 /* set the text */
                 row.Cells[phoneColumn].Text = phoneText;
             }
@@ -35,17 +38,6 @@ namespace EmmasEngines
             {
                 PhoneFormat(GridView1, 7);
             }
-        }
-
-        /* Deletes a service from the database */
-        protected void DeleteMethod(int rowID)//TODO
-        {
-            /* connect to the dataset */
-            EmmasEnginesLibrary.RepairDataSetTableAdapters.service_orderTableAdapter service_Order = new EmmasEnginesLibrary.RepairDataSetTableAdapters.service_orderTableAdapter();
-            /* get the ID of the row to be removed */
-            /* generate a sql command to delete where ID=ID */
-            /* send sql command to the database */
-            /* refresh page */
         }
     }
 }

@@ -276,6 +276,7 @@
     <Content Include="Style\stylePurchase.css" />
     <Content Include="Users.aspx" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="WarrantyReports.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -476,6 +477,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WarrantyReports.aspx.cs">
+      <DependentUpon>WarrantyReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WarrantyReports.aspx.designer.cs">
+      <DependentUpon>WarrantyReports.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

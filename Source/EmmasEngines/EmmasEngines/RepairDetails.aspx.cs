@@ -63,7 +63,7 @@ namespace EmmasEngines
             /* Get ID of repair_details table */
             string repairID = Request.QueryString["repairID"];
             /* get current date and time */
-            string currentDate = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             /* get repair_progress ID */
             int rowIndex = Convert.ToInt32(e.CommandArgument.ToString());
             int ID = Convert.ToInt32(GridView1.Rows[rowIndex].Cells[0].Text);

@@ -8,7 +8,7 @@
         <asp:GridView ID="GridView1" runat="server" AllowSorting="True" CellPadding="4" DataSourceID="RepairDataSource" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:CommandField ShowDeleteButton="True" />
+                
                 <asp:BoundField DataField="Received" HeaderText="Received" SortExpression="Received" />
                 <asp:BoundField DataField="Completed" HeaderText="Completed" SortExpression="Completed" />
                 <asp:BoundField DataField="Issue" HeaderText="Issue" SortExpression="Issue" />
@@ -77,7 +77,7 @@
         <p>
             <asp:Button ID="NewRepairbtn" runat="server" Text="New Repair" CssClass="IndexButton" PostBackUrl="~/Purchase.aspx?mode=repair" />
         </p>
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SaleRepair.aspx">Back</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Back</asp:HyperLink>
     </div>
     <p>
         &nbsp;
