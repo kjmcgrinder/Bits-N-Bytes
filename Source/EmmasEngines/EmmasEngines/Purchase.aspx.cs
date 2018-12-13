@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -20,16 +21,16 @@ namespace EmmasEngines
         {
             get { return (PageMode)ViewState["Mode"]; }
             set { ViewState["Mode"] = value; }
-        }        
+        }
 
         DataTable selectedProducts
         {
             get { return (DataTable)ViewState["Products"]; }
             set { ViewState["Products"] = value; }
-        }        
+        }
 
         static Purchase()
-        {            
+        {
             receiptTableAdapter daReceipt = new receiptTableAdapter();
             daReceipt.Fill(dsReceipt.receipt);
             employeeTableAdapter daEmployee = new employeeTableAdapter();
@@ -42,11 +43,11 @@ namespace EmmasEngines
             daService.Fill(dsReceipt.service_order);
             equipmentTableAdapter daEqu = new equipmentTableAdapter();
             daEqu.Fill(dsReceipt.equipment);
-        }        
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!User.IsInRole("Sales") && !User.IsInRole("Manager"))
+            if (!User.IsInRole("Sales") && !User.IsInRole("Manager"))
                 Response.Redirect("~/Default.aspx");
             if (!IsPostBack)
             {
@@ -57,20 +58,21 @@ namespace EmmasEngines
                 else
                     Response.Redirect("~/Default.aspx");
                 UpdateMode();
-            }                
+            }
+            lblError.Text = "";
         }
 
         protected void UpdateMode()
         {
-            if(Mode == PageMode.Repair)
+            if (Mode == PageMode.Repair)
             {
                 pnlPurchase.Visible = false;
                 pnlRepair.Visible = true;
             }
-            else if(Mode == PageMode.Sale)
+            else if (Mode == PageMode.Sale)
             {
                 pnlRepair.Visible = false;
-                pnlPurchase.Visible = true;                
+                pnlPurchase.Visible = true;
             }
         }
 
@@ -81,14 +83,14 @@ namespace EmmasEngines
         }
 
         protected void rdoRepair_CheckedChanged(object sender, EventArgs e)
-        {            
+        {
             Mode = PageMode.Repair;
             UpdateMode();
         }
 
         protected void lbxSelectProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(selectedProducts == null)
+            if (selectedProducts == null)
             {
                 selectedProducts = new DataTable();
                 selectedProducts.Columns.Add(new DataColumn("id", typeof(int)));
@@ -97,7 +99,7 @@ namespace EmmasEngines
                 selectedProducts.Columns.Add(new DataColumn("Stock", typeof(int)));
             }
             DataRow[] rows = productTable.Select("id = " + lbxSelectProduct.SelectedValue);
-            DataRow newProduct = selectedProducts.NewRow();                        
+            DataRow newProduct = selectedProducts.NewRow();
             newProduct["Product Name"] = rows[0]["prodBrName"];
             newProduct["id"] = rows[0]["id"];
             newProduct["Price"] = rows[0]["invPrice"];
@@ -128,46 +130,67 @@ namespace EmmasEngines
             r["ordDate"] = DateTime.Now;
             r["paymentID"] = ddlPayment.SelectedValue;
             dsReceipt.receipt.Rows.Add(r);
-            receiptTableAdapter daReceipt = new receiptTableAdapter();
-            daReceipt.Update(dsReceipt.receipt);
+            object adapter = null;
+            List<DataRow> ChildRows = new List<DataRow>();
+            DataTable childTable = null;
             if (Mode == PageMode.Sale)
-            {                
-                for(int i = 0; i<selectedProducts.Rows.Count; i++)
+            {
+                childTable = dsReceipt.order_line;
+                for (int i = 0; i < selectedProducts?.Rows.Count; i++)
                 {
-                    DataRow l = dsReceipt.order_line.NewRow();
-                    l["inventoryID"] = selectedProducts.Rows[i]["id"];
-                    l["receiptID"] = r["id"];                    
-                    l["orlQuantity"] = Request.Form["ctl00$MainContent$gvSelectedProductsSales$ctl0" + (i + 2).ToString() + "$TextBox1"];
-                    l["orlOrderReq"] = Convert.ToInt16(l["orlQuantity"]) > Convert.ToInt32(selectedProducts.Rows[i]["Stock"]);
-                    l["orlPrice"] = Convert.ToBoolean(l["orlOrderReq"])  ? Convert.ToDouble(selectedProducts.Rows[i]["Price"]) * 1.01 : Convert.ToDouble(selectedProducts.Rows[i]["Price"]);
-                    dsReceipt.order_line.Rows.Add(l);
+                    if (Convert.ToInt32(Request.Form["ctl00$MainContent$gvSelectedProductsSales$ctl0" + (i + 2).ToString() + "$TextBox1"]) > 0)
+                    {
+                        DataRow l = dsReceipt.order_line.NewRow();
+                        l["inventoryID"] = selectedProducts.Rows[i]["id"];
+                        l["orlQuantity"] = Request.Form["ctl00$MainContent$gvSelectedProductsSales$ctl0" + (i + 2).ToString() + "$TextBox1"];
+                        l["orlOrderReq"] = Convert.ToInt16(l["orlQuantity"]) > Convert.ToInt32(selectedProducts.Rows[i]["Stock"]);
+                        l["orlPrice"] = Convert.ToBoolean(l["orlOrderReq"]) ? Convert.ToDouble(selectedProducts.Rows[i]["Price"]) * 1.01 : Convert.ToDouble(selectedProducts.Rows[i]["Price"]);
+                        ChildRows.Add(l);
+                    }
                 }
-                order_lineTableAdapter daLine = new order_lineTableAdapter();
-                daLine.Update(dsReceipt.order_line);                          
+                adapter = new order_lineTableAdapter();
+                if (ChildRows.Count == 0)
+                {
+                    dsReceipt.RejectChanges();
+                    lblError.Text = "Please select at least one item to purchase";
+                    return;
+                }
             }
-            else if(Mode == PageMode.Repair)
-            {                
+            else if (Mode == PageMode.Repair)
+            {
+                childTable = dsReceipt.service_order;
                 DataRow eq = dsReceipt.equipment.NewRow();
                 eq["equModel"] = txtModel.Text;
                 eq["equSerial"] = txtSerialNumber.Text;
                 eq["custID"] = r["custID"];
                 eq["equtypeID"] = ddlType.SelectedValue;
                 eq["equManuID"] = ddlManu.SelectedValue;
+                dsReceipt.equipment.Rows.Add(eq);
                 equipmentTableAdapter daEqu = new equipmentTableAdapter();
-                daEqu.Update(dsReceipt.equipment);                
+                daEqu.Update(dsReceipt.equipment);
                 DataRow so = dsReceipt.service_order.NewRow();
                 so["serordDateIn"] = DateTime.Now;
                 so["serordIssue"] = RD.Text;
                 so["serordWarranty"] = RadioButtonList1.SelectedValue == "1";
-                so["receiptID"] = r["id"];
                 so["serviceID"] = ddlService.SelectedValue;
                 so["equipID"] = eq["id"];
-                service_orderTableAdapter daService = new service_orderTableAdapter();
-                daService.Update(dsReceipt.service_order);
+                ChildRows.Add(so);
+                adapter = new service_orderTableAdapter();
             }
+            receiptTableAdapter daReceipt = new receiptTableAdapter();
+            daReceipt.Update(dsReceipt.receipt);
+            foreach (DataRow cr in ChildRows)
+            {
+                cr["receiptId"] = r["id"];
+                childTable.Rows.Add(cr);
+            }            
+            if (adapter is service_orderTableAdapter daService)
+                daService.Update(dsReceipt.service_order);
+            else if (adapter is order_lineTableAdapter daOrder)
+                daOrder.Update(dsReceipt.order_line);
             dsReceipt.AcceptChanges();
             Response.Redirect("~/Default");
-        }                      
+        }
     }
 
     public enum PageMode

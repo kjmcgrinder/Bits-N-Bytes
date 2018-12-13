@@ -148,6 +148,7 @@
             <b><asp:TextBox ID="txtTotal" runat="server" placeholder="Total" EnableViewState="False" BackColor="Silver" Width="100%"></asp:TextBox></b>           
             <br />
             <asp:ValidationSummary ID="vsPurchase" runat="server" ForeColor="Red" />
+            <asp:Label ID="lblError" runat="server" ForeColor="Red" Text=""></asp:Label>
         </div>
     </div>
     <div class="row">
