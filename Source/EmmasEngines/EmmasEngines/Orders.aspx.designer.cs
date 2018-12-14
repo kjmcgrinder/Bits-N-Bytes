@@ -76,13 +76,13 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.Button btnClear;
         
         /// <summary>
-        /// GridView1 control.
+        /// gvOrderRequest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView gvOrderRequest;
         
         /// <summary>
         /// GridView2 control.
@@ -101,6 +101,69 @@ namespace EmmasEngines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView3;
+        
+        /// <summary>
+        /// ddlProduct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProduct;
+        
+        /// <summary>
+        /// lblOrderRequestsCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOrderRequestsCount;
+        
+        /// <summary>
+        /// btnSearchOrderRequests control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearchOrderRequests;
+        
+        /// <summary>
+        /// pnlResults control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlResults;
+        
+        /// <summary>
+        /// lblOrderRequestSearchResults control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOrderRequestSearchResults;
+        
+        /// <summary>
+        /// tblCustomerInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table tblCustomerInfo;
+        
+        /// <summary>
+        /// tblTableHeadings control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow tblTableHeadings;
         
         /// <summary>
         /// odsOrderRequest control.
