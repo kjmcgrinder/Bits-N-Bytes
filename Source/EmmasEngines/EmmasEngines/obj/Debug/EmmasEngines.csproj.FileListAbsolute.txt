@@ -1715,8 +1715,6 @@ C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngine
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll.config
-G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Emmas.mdf
-G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Emmas_log.ldf
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll.config

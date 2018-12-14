@@ -103,30 +103,30 @@ namespace EmmasEngines {
         protected global::System.Web.UI.WebControls.GridView GridView3;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// odsOrderRequest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsOrderRequest;
         
         /// <summary>
-        /// SqlDataSource2 control.
+        /// odsOrdered control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsOrdered;
         
         /// <summary>
-        /// SqlDataSource3 control.
+        /// odsPreOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsPreOrder;
     }
 }
