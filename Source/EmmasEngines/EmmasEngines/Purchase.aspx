@@ -13,7 +13,7 @@
     <br />
     <div class="row">
         <div class="col-25">
-            <b><label for="searchC">Customer:<asp:RangeValidator ID="rvCustomer" runat="server" ControlToValidate="ListBox2" ForeColor="Red" ErrorMessage="Please select a customer" MaximumValue="9999" MinimumValue="0">*</asp:RangeValidator></label></b>
+            <b><label for="searchC">Customer:<asp:RangeValidator ID="rvCustomer" runat="server" ControlToValidate="ListBox2" ForeColor="Red" ErrorMessage="Please select a customer" MaximumValue="9999" MinimumValue="1">*</asp:RangeValidator></label></b>
         </div>
         <div class="col-75">
             <input type="text" id="searchC" placeholder="Search.." class="inputBox" /><br />
