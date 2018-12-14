@@ -14,8 +14,8 @@ namespace EmmasEngines
         {
             if (!User.IsInRole("Manager") && !User.IsInRole("Administration"))
                 Response.Redirect("~/Default");
-            //if (!IsPostBack)
-                //Calendar2.SelectedDate = DateTime.Today;
+            ////if (!IsPostBack)
+            //    //Calendar2.SelectedDate = DateTime.Today;
         }        
     }
 }

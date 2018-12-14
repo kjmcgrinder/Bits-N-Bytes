@@ -12,7 +12,7 @@
     <div class="container">
         <table class="tableReports">
             <tr>
-                <td class="paddingCells"><h2 class="lead">Warranty reports</h2></td>
+                <td class="paddingCells"><h2 class="lead">Choose a Manufacturer:</h2></td>
             </tr>
             <tr>
                 <td class="paddingCells"><asp:DropDownList ID="ddlMan" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource3" DataTextField="manName" DataValueField="id"></asp:DropDownList></td>
