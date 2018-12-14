@@ -5,14 +5,13 @@
         <h3 class="IndexHeaderA">Details</h3>
     </div>
     <div class="IndexCentering">
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="employeeID,repairID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="employeeID,repairID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand" Width="100%">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
                 <asp:BoundField DataField="employeeID" HeaderText="employeeID" ReadOnly="True" SortExpression="employeeID" />
                 <asp:BoundField DataField="repairID" HeaderText="repairID" ReadOnly="True" SortExpression="repairID" />
-                <asp:BoundField DataField="startDate" HeaderText="startDate" SortExpression="startDate" />
-                <asp:BoundField DataField="finishDate" HeaderText="finishDate" SortExpression="finishDate" />
+                <asp:BoundField DataField="startDate" HeaderText="Start Date" SortExpression="startDate" />
+                <asp:BoundField DataField="finishDate" HeaderText="End Date" SortExpression="finishDate" />
                 <asp:ButtonField ButtonType="Button" Text="Finish" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />

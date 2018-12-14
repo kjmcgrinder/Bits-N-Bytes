@@ -99,13 +99,13 @@
         <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="odsPreOrder" ForeColor="#333333" GridLines="None" PageSize="15" Width="100%" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-<asp:BoundField DataField="pordNumber" HeaderText="pordNumber" SortExpression="pordNumber"></asp:BoundField>
-                <asp:BoundField DataField="pordDateOrdered" HeaderText="pordDateOrdered" SortExpression="pordDateOrdered"></asp:BoundField>
-                <asp:CheckBoxField DataField="pordPaid" HeaderText="pordPaid" SortExpression="pordPaid" />
-                <asp:BoundField DataField="prodName" HeaderText="prodName" SortExpression="prodName" />
-                <asp:BoundField DataField="prodBrand" HeaderText="prodBrand" SortExpression="prodBrand" />
-                <asp:BoundField DataField="invQuantity" HeaderText="invQuantity" SortExpression="invQuantity" />
-                <asp:BoundField DataField="invSize" HeaderText="invSize" SortExpression="invSize" />
+<asp:BoundField DataField="pordNumber" HeaderText="Order Number" SortExpression="pordNumber"></asp:BoundField>
+                <asp:BoundField DataField="pordDateOrdered" HeaderText="Date Ordered" SortExpression="pordDateOrdered"></asp:BoundField>
+                <asp:CheckBoxField DataField="pordPaid" HeaderText="Paid" SortExpression="pordPaid" />
+                <asp:BoundField DataField="prodName" HeaderText="Product Name" SortExpression="prodName" />
+                <asp:BoundField DataField="prodBrand" HeaderText="Brand" SortExpression="prodBrand" />
+                <asp:BoundField DataField="invQuantity" HeaderText="Stock" SortExpression="invQuantity" />
+                <asp:BoundField DataField="invSize" HeaderText="Size" SortExpression="invSize" />
                 <asp:BoundField DataField="invMeasure" HeaderText="invMeasure" SortExpression="invMeasure" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />

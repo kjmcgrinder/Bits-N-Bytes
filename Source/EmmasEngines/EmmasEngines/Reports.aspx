@@ -26,7 +26,7 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
-                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT CONVERT(MONEY,(SUM(serPrice)*0.02), 1)  FROM [service]"></asp:SqlDataSource>
+                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmmasConnectionString %>" SelectCommand="SELECT CONVERT(MONEY,(SUM(serPrice)*0.02), 1)  FROM [service]"></asp:SqlDataSource> 
             </div>
             <div class="col-6">
                 <h2 class="lead">Pick a start date to see the Weekly Report</h2>

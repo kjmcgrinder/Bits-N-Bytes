@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Sales</h5>
                         <p class="card-text">Make Purchases and Manage Customers.</p>
-                        <a href="SaleRepair.aspx" class="btn btn-primary">Get Started</a>
+                        <a href="Purchase.aspx?mode=sale" class="btn btn-primary">Get Started</a>
                     </div>
                 </div>
             </div>

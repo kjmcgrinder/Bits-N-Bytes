@@ -40,7 +40,7 @@
                             <asp:HiddenField runat="server" ID="MaxID" />
                             <div class="row-50">
                                 <div class="IndexCentering" style="width: 47%"> 
-                                    <asp:Button ID="btnSubmit" runat="server" CssClass="IndexButton" Text="Enter" Width="350px" OnClick="btnSubmit_Click" />
+                                    <asp:Button ID="btnSubmit" runat="server" CssClass="IndexButtonSubmit" Text="Enter" Width="350px" OnClick="btnSubmit_Click" />
                                     <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="IndexButtonCancel" PostBackUrl="~/Users.aspx" CausesValidation="false" Width="175px" />
                                 </div>
                             </div>

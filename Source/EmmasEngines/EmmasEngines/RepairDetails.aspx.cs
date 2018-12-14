@@ -66,7 +66,7 @@ namespace EmmasEngines
             string currentDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             /* get repair_progress ID */
             int rowIndex = Convert.ToInt32(e.CommandArgument.ToString());
-            int ID = Convert.ToInt32(GridView1.Rows[rowIndex].Cells[0].Text);
+            int ID = Convert.ToInt32(GridView1.Rows[rowIndex].ID);
             /* make a sql command to update finish time where ID=ID */
             string query = "UPDATE repair_progress SET finishDate='" + currentDate.ToString() + "' WHERE ID=" + ID + ";";
             /* send sql command to database */
