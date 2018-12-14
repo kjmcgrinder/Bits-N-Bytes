@@ -1,17 +1,16 @@
 ﻿<%@ Page Title="Order Form" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrderForm.aspx.cs" Inherits="EmmasEngines.Order_Form" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <br />
     <h3 class="IndexHeaderA">
         <asp:Label ID="lblHeader" runat="server">Order Form</asp:Label>
     </h3>
     <br />
     <br />
     <br />
-<%--    <div style="margin-left: 20px;">
-        <asp:Button ID="btnOrderView" runat="server" Text="View Orders" CssClass="btn btn-primary btn-sm"  PostBackUrl="~/Orders.aspx" Height="45px" Width="100"/>
-        <asp:Button ID="btnInventory" runat="server" Text="Inventory" CssClass="btn btn-primary btn-sm" PostBackUrl="~/Inventory.aspx" Height="45px" Width="100" /><br />
-    </div>--%>
+    <div style="margin-left: 20px;">
+        <asp:Button ID="btnOrderView"  CausesValidation="false" runat="server" Text="View Orders" CssClass="IndexButton"  PostBackUrl="~/Orders.aspx" Height="56px" Width="160"/>
+        <asp:Button ID="btnInventory"  CausesValidation="false" runat="server" Text="Inventory" CssClass="IndexButton" PostBackUrl="~/Inventory.aspx" Height="56px" Width="160" /><br />
+    </div>
     <br />
 
     <div class="container">
@@ -72,7 +71,7 @@
                 <asp:Button ID="btnEnter" runat="server" Text="Place Order" CssClass="IndexButton" Height="56px" Width="186px"/>
             </div>
             <div class="col-3">
-                <asp:Button ID="btnClear" runat="server" Text="Cancel Order" CssClass="IndexButton" Height="56px" OnClick="btnClear_Click" Width="186px" />
+                <asp:Button ID="btnClear" runat="server" Text="Cancel Order"  CausesValidation="false" CssClass="IndexButton" Height="56px" OnClick="btnClear_Click" Width="186px" />
             </div>
         </div>
     </div>

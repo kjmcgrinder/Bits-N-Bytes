@@ -513,13 +513,13 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Microsoft\AspNet\Identity\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\EmmasEnginesLibrary\EmmasEnginesLibrary\EmmasEnginesLibrary.csproj">
       <Project>{4b9f0573-069e-41df-a3c4-fe42a8bfe03c}</Project>
       <Name>EmmasEnginesLibrary</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Microsoft\AspNet\Identity\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

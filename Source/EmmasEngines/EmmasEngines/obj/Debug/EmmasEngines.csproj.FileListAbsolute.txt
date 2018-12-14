@@ -1715,8 +1715,6 @@ C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngine
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
 C:\Users\Administrator\Source\Repos\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll.config
-G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Emmas.mdf
-G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\Emmas_log.ldf
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll.config
@@ -1947,8 +1945,6 @@ C:\Users\Administrator\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj
 C:\Users\Administrator\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.csproj.CopyComplete
 C:\Users\Administrator\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.dll
 C:\Users\Administrator\Desktop\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\obj\Debug\EmmasEngines.pdb
-C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\Emmas.mdf
-C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\Emmas_log.ldf
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.pdb
 C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\EmmasEnginesLibrary.dll.config
@@ -2073,3 +2069,5 @@ G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\S
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\System.IO.FileSystem.Primitives.dll
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\System.Security.Cryptography.Primitives.dll
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\System.ValueTuple.dll
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\Emmas.mdf
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\Emmas_log.ldf

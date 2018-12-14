@@ -173,7 +173,10 @@ namespace EmmasEngines
                 so["serordIssue"] = RD.Text;
                 so["serordWarranty"] = RadioButtonList1.SelectedValue == "1";
                 so["serviceID"] = ddlService.SelectedValue;
-                so["equipID"] = eq["id"];
+                //for reasons passing understanding, 
+                //the equipment table adapter does not update the id column in the dataset, 
+                //while the receipt adapter does
+                so["equipID"] = Convert.ToInt32(dsReceipt.equipment.Max(row => row["id"])) + 1;
                 ChildRows.Add(so);
                 adapter = new service_orderTableAdapter();
             }
@@ -183,11 +186,11 @@ namespace EmmasEngines
             {
                 cr["receiptId"] = r["id"];
                 childTable.Rows.Add(cr);
-            }            
-            if (adapter is service_orderTableAdapter daService)
-                daService.Update(dsReceipt.service_order);
+            }
+            if (adapter is service_orderTableAdapter daService)            
+                daService.Update(dsReceipt.service_order);                            
             else if (adapter is order_lineTableAdapter daOrder)
-                daOrder.Update(dsReceipt.order_line);
+                daOrder.Update(dsReceipt.order_line);            
             dsReceipt.AcceptChanges();
             Response.Redirect("~/Default");
         }

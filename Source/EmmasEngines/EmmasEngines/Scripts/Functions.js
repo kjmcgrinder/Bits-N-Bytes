@@ -26,8 +26,8 @@ function PurchaseInit() {
         for (opt of selectBox.options) {
             opt.ondblclick = selectBox.onchange;
         }
-
         selectBox.onchange = null;
+
         var cost = 0;
         if (document.getElementById("MainContent_gvSelectedProductsSales") != null) {
             inputs = document.getElementsByTagName("input");
