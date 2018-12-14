@@ -183,11 +183,11 @@ namespace EmmasEngines
             {
                 cr["receiptId"] = r["id"];
                 childTable.Rows.Add(cr);
-            }            
-            if (adapter is service_orderTableAdapter daService)
-                daService.Update(dsReceipt.service_order);
+            }
+            if (adapter is service_orderTableAdapter daService)            
+                daService.Update(dsReceipt.service_order);                            
             else if (adapter is order_lineTableAdapter daOrder)
-                daOrder.Update(dsReceipt.order_line);
+                daOrder.Update(dsReceipt.order_line);            
             dsReceipt.AcceptChanges();
             Response.Redirect("~/Default");
         }
