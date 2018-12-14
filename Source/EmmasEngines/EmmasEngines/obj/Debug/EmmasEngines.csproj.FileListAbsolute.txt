@@ -2069,3 +2069,5 @@ G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\S
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\System.IO.FileSystem.Primitives.dll
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\System.Security.Cryptography.Primitives.dll
 G:\Github\kjmcgrinder\Bits-N-Bytes\Source\EmmasEngines\EmmasEngines\bin\roslyn\System.ValueTuple.dll
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\Emmas.mdf
+C:\Users\sebas\Documents\PROG1210\Final Project(1)\Source\EmmasEngines\EmmasEngines\bin\Emmas_log.ldf

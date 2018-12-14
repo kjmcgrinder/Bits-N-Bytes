@@ -96,17 +96,17 @@
         <br />
 
         <h4 class="IndexCentering">Previous Orders</h4>
-        <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="odsPreOrder" ForeColor="#333333" GridLines="None" PageSize="15" Width="100%" AllowSorting="True">
+        <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="odsPreOrder" ForeColor="#333333" GridLines="None" PageSize="15" Width="100%" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="pordNumber" HeaderText="Order Number" SortExpression="pordNumber"></asp:BoundField>
-                <asp:BoundField DataField="pordDateOrdered" HeaderText="Date Ordered" SortExpression="pordDateOrdered" />
-                <asp:BoundField DataField="prodName" HeaderText="Product" SortExpression="prodName" />
-                <asp:BoundField DataField="prodBrand" HeaderText="Brand" SortExpression="prodBrand" />
-                <asp:BoundField DataField="invQuantity" HeaderText="Quantity" SortExpression="invQuantity" />
-                <asp:BoundField DataField="invSize" HeaderText="Size" SortExpression="invSize" />
-                <asp:BoundField DataField="invMeasure" HeaderText="Measure" SortExpression="invMeasure" />
-                <asp:CheckBoxField DataField="pordPaid" HeaderText="Paid" SortExpression="pordPaid" ReadOnly="True" />
+<asp:BoundField DataField="pordNumber" HeaderText="pordNumber" SortExpression="pordNumber"></asp:BoundField>
+                <asp:BoundField DataField="pordDateOrdered" HeaderText="pordDateOrdered" SortExpression="pordDateOrdered"></asp:BoundField>
+                <asp:CheckBoxField DataField="pordPaid" HeaderText="pordPaid" SortExpression="pordPaid" />
+                <asp:BoundField DataField="prodName" HeaderText="prodName" SortExpression="prodName" />
+                <asp:BoundField DataField="prodBrand" HeaderText="prodBrand" SortExpression="prodBrand" />
+                <asp:BoundField DataField="invQuantity" HeaderText="invQuantity" SortExpression="invQuantity" />
+                <asp:BoundField DataField="invSize" HeaderText="invSize" SortExpression="invSize" />
+                <asp:BoundField DataField="invMeasure" HeaderText="invMeasure" SortExpression="invMeasure" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -125,7 +125,7 @@
                     <hr />
                     <div class="form-group">
                         <label for="ddlProduct">Product:</label>
-                        <asp:DropDownList ID="ddlProduct" runat="server" CssClass="form-control" AppendDataBoundItems="True" DataValueField="id" AutoPostBack="True" DataSourceID="odsOrderRequest" DataTextField="prodName">
+                        <asp:DropDownList ID="ddlProduct" runat="server" CssClass="form-control" AppendDataBoundItems="True" DataValueField="id" DataSourceID="odsOrderRequest" DataTextField="prodName">
                             <asp:ListItem>All Products</asp:ListItem>
                         </asp:DropDownList>
                         <br />
@@ -155,7 +155,17 @@
                 </asp:Panel>
             </div>
     <asp:ObjectDataSource ID="odsOrderRequest" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.OrderDataSetTableAdapters.OrderRequestTableAdapter"></asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="odsOrdered" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.OrderDataSetTableAdapters.OrderedTableAdapter"></asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="odsPreOrder" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.OrderDataSetTableAdapters.PreOrderTableAdapter"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="odsOrdered" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.OrderDataSetTableAdapters.OrderedTableAdapter">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="txtNumber" DefaultValue="0" Name="Param1" PropertyName="Text" Type="String" />
+        </SelectParameters>
+        </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="odsPreOrder" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmasEnginesLibrary.OrderDataSetTableAdapters.PrevOrdersTableAdapter">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="txtNumber" DefaultValue="0" Name="Param1" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="txtName" DefaultValue="ALLPRODUCTS" Name="Param2" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="txtBrand" DefaultValue="ALLPRODUCTS" Name="Param3" PropertyName="Text" Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 </div>
 </asp:Content>

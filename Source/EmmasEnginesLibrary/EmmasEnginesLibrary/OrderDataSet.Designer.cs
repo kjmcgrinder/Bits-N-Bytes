@@ -28,7 +28,7 @@ namespace EmmasEnginesLibrary {
         
         private OrderedDataTable tableOrdered;
         
-        private PreOrderDataTable tablePreOrder;
+        private PrevOrdersDataTable tablePrevOrders;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -64,8 +64,8 @@ namespace EmmasEnginesLibrary {
                 if ((ds.Tables["Ordered"] != null)) {
                     base.Tables.Add(new OrderedDataTable(ds.Tables["Ordered"]));
                 }
-                if ((ds.Tables["PreOrder"] != null)) {
-                    base.Tables.Add(new PreOrderDataTable(ds.Tables["PreOrder"]));
+                if ((ds.Tables["PrevOrders"] != null)) {
+                    base.Tables.Add(new PrevOrdersDataTable(ds.Tables["PrevOrders"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -109,9 +109,9 @@ namespace EmmasEnginesLibrary {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PreOrderDataTable PreOrder {
+        public PrevOrdersDataTable PrevOrders {
             get {
-                return this.tablePreOrder;
+                return this.tablePrevOrders;
             }
         }
         
@@ -188,8 +188,8 @@ namespace EmmasEnginesLibrary {
                 if ((ds.Tables["Ordered"] != null)) {
                     base.Tables.Add(new OrderedDataTable(ds.Tables["Ordered"]));
                 }
-                if ((ds.Tables["PreOrder"] != null)) {
-                    base.Tables.Add(new PreOrderDataTable(ds.Tables["PreOrder"]));
+                if ((ds.Tables["PrevOrders"] != null)) {
+                    base.Tables.Add(new PrevOrdersDataTable(ds.Tables["PrevOrders"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -236,10 +236,10 @@ namespace EmmasEnginesLibrary {
                     this.tableOrdered.InitVars();
                 }
             }
-            this.tablePreOrder = ((PreOrderDataTable)(base.Tables["PreOrder"]));
+            this.tablePrevOrders = ((PrevOrdersDataTable)(base.Tables["PrevOrders"]));
             if ((initTable == true)) {
-                if ((this.tablePreOrder != null)) {
-                    this.tablePreOrder.InitVars();
+                if ((this.tablePrevOrders != null)) {
+                    this.tablePrevOrders.InitVars();
                 }
             }
         }
@@ -256,8 +256,8 @@ namespace EmmasEnginesLibrary {
             base.Tables.Add(this.tableOrderRequest);
             this.tableOrdered = new OrderedDataTable();
             base.Tables.Add(this.tableOrdered);
-            this.tablePreOrder = new PreOrderDataTable();
-            base.Tables.Add(this.tablePreOrder);
+            this.tablePrevOrders = new PrevOrdersDataTable();
+            base.Tables.Add(this.tablePrevOrders);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -274,7 +274,7 @@ namespace EmmasEnginesLibrary {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializePreOrder() {
+        private bool ShouldSerializePrevOrders() {
             return false;
         }
         
@@ -340,7 +340,7 @@ namespace EmmasEnginesLibrary {
         public delegate void OrderedRowChangeEventHandler(object sender, OrderedRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void PreOrderRowChangeEventHandler(object sender, PreOrderRowChangeEvent e);
+        public delegate void PrevOrdersRowChangeEventHandler(object sender, PrevOrdersRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1043,9 +1043,7 @@ namespace EmmasEnginesLibrary {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PreOrderDataTable : global::System.Data.TypedTableBase<PreOrderRow> {
-            
-            private global::System.Data.DataColumn columnid;
+        public partial class PrevOrdersDataTable : global::System.Data.TypedTableBase<PrevOrdersRow> {
             
             private global::System.Data.DataColumn columnpordNumber;
             
@@ -1057,16 +1055,16 @@ namespace EmmasEnginesLibrary {
             
             private global::System.Data.DataColumn columnprodBrand;
             
-            private global::System.Data.DataColumn columninvMeasure;
+            private global::System.Data.DataColumn columninvQuantity;
             
             private global::System.Data.DataColumn columninvSize;
             
-            private global::System.Data.DataColumn columninvQuantity;
+            private global::System.Data.DataColumn columninvMeasure;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PreOrderDataTable() {
-                this.TableName = "PreOrder";
+            public PrevOrdersDataTable() {
+                this.TableName = "PrevOrders";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1074,7 +1072,7 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PreOrderDataTable(global::System.Data.DataTable table) {
+            internal PrevOrdersDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1091,17 +1089,9 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected PreOrderDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected PrevOrdersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1146,9 +1136,9 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn invMeasureColumn {
+            public global::System.Data.DataColumn invQuantityColumn {
                 get {
-                    return this.columninvMeasure;
+                    return this.columninvQuantity;
                 }
             }
             
@@ -1162,9 +1152,9 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn invQuantityColumn {
+            public global::System.Data.DataColumn invMeasureColumn {
                 get {
-                    return this.columninvQuantity;
+                    return this.columninvMeasure;
                 }
             }
             
@@ -1179,60 +1169,52 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PreOrderRow this[int index] {
+            public PrevOrdersRow this[int index] {
                 get {
-                    return ((PreOrderRow)(this.Rows[index]));
+                    return ((PrevOrdersRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PreOrderRowChangeEventHandler PreOrderRowChanging;
+            public event PrevOrdersRowChangeEventHandler PrevOrdersRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PreOrderRowChangeEventHandler PreOrderRowChanged;
+            public event PrevOrdersRowChangeEventHandler PrevOrdersRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PreOrderRowChangeEventHandler PreOrderRowDeleting;
+            public event PrevOrdersRowChangeEventHandler PrevOrdersRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PreOrderRowChangeEventHandler PreOrderRowDeleted;
+            public event PrevOrdersRowChangeEventHandler PrevOrdersRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddPreOrderRow(PreOrderRow row) {
+            public void AddPrevOrdersRow(PrevOrdersRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PreOrderRow AddPreOrderRow(string pordNumber, System.DateTime pordDateOrdered, bool pordPaid, string prodName, string prodBrand, string invMeasure, decimal invSize, int invQuantity) {
-                PreOrderRow rowPreOrderRow = ((PreOrderRow)(this.NewRow()));
+            public PrevOrdersRow AddPrevOrdersRow(string pordNumber, System.DateTime pordDateOrdered, bool pordPaid, string prodName, string prodBrand, int invQuantity, decimal invSize, string invMeasure) {
+                PrevOrdersRow rowPrevOrdersRow = ((PrevOrdersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         pordNumber,
                         pordDateOrdered,
                         pordPaid,
                         prodName,
                         prodBrand,
-                        invMeasure,
+                        invQuantity,
                         invSize,
-                        invQuantity};
-                rowPreOrderRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPreOrderRow);
-                return rowPreOrderRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PreOrderRow FindByid(int id) {
-                return ((PreOrderRow)(this.Rows.Find(new object[] {
-                            id})));
+                        invMeasure};
+                rowPrevOrdersRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPrevOrdersRow);
+                return rowPrevOrdersRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PreOrderDataTable cln = ((PreOrderDataTable)(base.Clone()));
+                PrevOrdersDataTable cln = ((PrevOrdersDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1240,28 +1222,25 @@ namespace EmmasEnginesLibrary {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PreOrderDataTable();
+                return new PrevOrdersDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnid = base.Columns["id"];
                 this.columnpordNumber = base.Columns["pordNumber"];
                 this.columnpordDateOrdered = base.Columns["pordDateOrdered"];
                 this.columnpordPaid = base.Columns["pordPaid"];
                 this.columnprodName = base.Columns["prodName"];
                 this.columnprodBrand = base.Columns["prodBrand"];
-                this.columninvMeasure = base.Columns["invMeasure"];
-                this.columninvSize = base.Columns["invSize"];
                 this.columninvQuantity = base.Columns["invQuantity"];
+                this.columninvSize = base.Columns["invSize"];
+                this.columninvMeasure = base.Columns["invMeasure"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
                 this.columnpordNumber = new global::System.Data.DataColumn("pordNumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpordNumber);
                 this.columnpordDateOrdered = new global::System.Data.DataColumn("pordDateOrdered", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -1272,20 +1251,12 @@ namespace EmmasEnginesLibrary {
                 base.Columns.Add(this.columnprodName);
                 this.columnprodBrand = new global::System.Data.DataColumn("prodBrand", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprodBrand);
-                this.columninvMeasure = new global::System.Data.DataColumn("invMeasure", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columninvMeasure);
-                this.columninvSize = new global::System.Data.DataColumn("invSize", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columninvSize);
                 this.columninvQuantity = new global::System.Data.DataColumn("invQuantity", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columninvQuantity);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid}, true));
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
-                this.columnid.AllowDBNull = false;
-                this.columnid.ReadOnly = true;
-                this.columnid.Unique = true;
+                this.columninvSize = new global::System.Data.DataColumn("invSize", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninvSize);
+                this.columninvMeasure = new global::System.Data.DataColumn("invMeasure", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninvMeasure);
                 this.columnpordNumber.MaxLength = 50;
                 this.columnprodName.MaxLength = 50;
                 this.columnprodBrand.MaxLength = 50;
@@ -1294,28 +1265,28 @@ namespace EmmasEnginesLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PreOrderRow NewPreOrderRow() {
-                return ((PreOrderRow)(this.NewRow()));
+            public PrevOrdersRow NewPrevOrdersRow() {
+                return ((PrevOrdersRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PreOrderRow(builder);
+                return new PrevOrdersRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PreOrderRow);
+                return typeof(PrevOrdersRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PreOrderRowChanged != null)) {
-                    this.PreOrderRowChanged(this, new PreOrderRowChangeEvent(((PreOrderRow)(e.Row)), e.Action));
+                if ((this.PrevOrdersRowChanged != null)) {
+                    this.PrevOrdersRowChanged(this, new PrevOrdersRowChangeEvent(((PrevOrdersRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1323,8 +1294,8 @@ namespace EmmasEnginesLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PreOrderRowChanging != null)) {
-                    this.PreOrderRowChanging(this, new PreOrderRowChangeEvent(((PreOrderRow)(e.Row)), e.Action));
+                if ((this.PrevOrdersRowChanging != null)) {
+                    this.PrevOrdersRowChanging(this, new PrevOrdersRowChangeEvent(((PrevOrdersRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1332,8 +1303,8 @@ namespace EmmasEnginesLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PreOrderRowDeleted != null)) {
-                    this.PreOrderRowDeleted(this, new PreOrderRowChangeEvent(((PreOrderRow)(e.Row)), e.Action));
+                if ((this.PrevOrdersRowDeleted != null)) {
+                    this.PrevOrdersRowDeleted(this, new PrevOrdersRowChangeEvent(((PrevOrdersRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1341,14 +1312,14 @@ namespace EmmasEnginesLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PreOrderRowDeleting != null)) {
-                    this.PreOrderRowDeleting(this, new PreOrderRowChangeEvent(((PreOrderRow)(e.Row)), e.Action));
+                if ((this.PrevOrdersRowDeleting != null)) {
+                    this.PrevOrdersRowDeleting(this, new PrevOrdersRowChangeEvent(((PrevOrdersRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovePreOrderRow(PreOrderRow row) {
+            public void RemovePrevOrdersRow(PrevOrdersRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1375,7 +1346,7 @@ namespace EmmasEnginesLibrary {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PreOrderDataTable";
+                attribute2.FixedValue = "PrevOrdersDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1807,26 +1778,15 @@ namespace EmmasEnginesLibrary {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PreOrderRow : global::System.Data.DataRow {
+        public partial class PrevOrdersRow : global::System.Data.DataRow {
             
-            private PreOrderDataTable tablePreOrder;
+            private PrevOrdersDataTable tablePrevOrders;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PreOrderRow(global::System.Data.DataRowBuilder rb) : 
+            internal PrevOrdersRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePreOrder = ((PreOrderDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int id {
-                get {
-                    return ((int)(this[this.tablePreOrder.idColumn]));
-                }
-                set {
-                    this[this.tablePreOrder.idColumn] = value;
-                }
+                this.tablePrevOrders = ((PrevOrdersDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1834,14 +1794,14 @@ namespace EmmasEnginesLibrary {
             public string pordNumber {
                 get {
                     try {
-                        return ((string)(this[this.tablePreOrder.pordNumberColumn]));
+                        return ((string)(this[this.tablePrevOrders.pordNumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pordNumber\' in table \'PreOrder\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'pordNumber\' in table \'PrevOrders\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePreOrder.pordNumberColumn] = value;
+                    this[this.tablePrevOrders.pordNumberColumn] = value;
                 }
             }
             
@@ -1850,14 +1810,14 @@ namespace EmmasEnginesLibrary {
             public System.DateTime pordDateOrdered {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablePreOrder.pordDateOrderedColumn]));
+                        return ((global::System.DateTime)(this[this.tablePrevOrders.pordDateOrderedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pordDateOrdered\' in table \'PreOrder\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'pordDateOrdered\' in table \'PrevOrders\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePreOrder.pordDateOrderedColumn] = value;
+                    this[this.tablePrevOrders.pordDateOrderedColumn] = value;
                 }
             }
             
@@ -1866,14 +1826,14 @@ namespace EmmasEnginesLibrary {
             public bool pordPaid {
                 get {
                     try {
-                        return ((bool)(this[this.tablePreOrder.pordPaidColumn]));
+                        return ((bool)(this[this.tablePrevOrders.pordPaidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pordPaid\' in table \'PreOrder\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'pordPaid\' in table \'PrevOrders\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePreOrder.pordPaidColumn] = value;
+                    this[this.tablePrevOrders.pordPaidColumn] = value;
                 }
             }
             
@@ -1882,14 +1842,14 @@ namespace EmmasEnginesLibrary {
             public string prodName {
                 get {
                     try {
-                        return ((string)(this[this.tablePreOrder.prodNameColumn]));
+                        return ((string)(this[this.tablePrevOrders.prodNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'prodName\' in table \'PreOrder\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'prodName\' in table \'PrevOrders\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePreOrder.prodNameColumn] = value;
+                    this[this.tablePrevOrders.prodNameColumn] = value;
                 }
             }
             
@@ -1898,46 +1858,14 @@ namespace EmmasEnginesLibrary {
             public string prodBrand {
                 get {
                     try {
-                        return ((string)(this[this.tablePreOrder.prodBrandColumn]));
+                        return ((string)(this[this.tablePrevOrders.prodBrandColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'prodBrand\' in table \'PreOrder\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'prodBrand\' in table \'PrevOrders\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePreOrder.prodBrandColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string invMeasure {
-                get {
-                    try {
-                        return ((string)(this[this.tablePreOrder.invMeasureColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'invMeasure\' in table \'PreOrder\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePreOrder.invMeasureColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal invSize {
-                get {
-                    try {
-                        return ((decimal)(this[this.tablePreOrder.invSizeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'invSize\' in table \'PreOrder\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePreOrder.invSizeColumn] = value;
+                    this[this.tablePrevOrders.prodBrandColumn] = value;
                 }
             }
             
@@ -1946,111 +1874,143 @@ namespace EmmasEnginesLibrary {
             public int invQuantity {
                 get {
                     try {
-                        return ((int)(this[this.tablePreOrder.invQuantityColumn]));
+                        return ((int)(this[this.tablePrevOrders.invQuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'invQuantity\' in table \'PreOrder\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'invQuantity\' in table \'PrevOrders\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePreOrder.invQuantityColumn] = value;
+                    this[this.tablePrevOrders.invQuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal invSize {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablePrevOrders.invSizeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'invSize\' in table \'PrevOrders\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePrevOrders.invSizeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string invMeasure {
+                get {
+                    try {
+                        return ((string)(this[this.tablePrevOrders.invMeasureColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'invMeasure\' in table \'PrevOrders\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePrevOrders.invMeasureColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IspordNumberNull() {
-                return this.IsNull(this.tablePreOrder.pordNumberColumn);
+                return this.IsNull(this.tablePrevOrders.pordNumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetpordNumberNull() {
-                this[this.tablePreOrder.pordNumberColumn] = global::System.Convert.DBNull;
+                this[this.tablePrevOrders.pordNumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IspordDateOrderedNull() {
-                return this.IsNull(this.tablePreOrder.pordDateOrderedColumn);
+                return this.IsNull(this.tablePrevOrders.pordDateOrderedColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetpordDateOrderedNull() {
-                this[this.tablePreOrder.pordDateOrderedColumn] = global::System.Convert.DBNull;
+                this[this.tablePrevOrders.pordDateOrderedColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IspordPaidNull() {
-                return this.IsNull(this.tablePreOrder.pordPaidColumn);
+                return this.IsNull(this.tablePrevOrders.pordPaidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetpordPaidNull() {
-                this[this.tablePreOrder.pordPaidColumn] = global::System.Convert.DBNull;
+                this[this.tablePrevOrders.pordPaidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsprodNameNull() {
-                return this.IsNull(this.tablePreOrder.prodNameColumn);
+                return this.IsNull(this.tablePrevOrders.prodNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetprodNameNull() {
-                this[this.tablePreOrder.prodNameColumn] = global::System.Convert.DBNull;
+                this[this.tablePrevOrders.prodNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsprodBrandNull() {
-                return this.IsNull(this.tablePreOrder.prodBrandColumn);
+                return this.IsNull(this.tablePrevOrders.prodBrandColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetprodBrandNull() {
-                this[this.tablePreOrder.prodBrandColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsinvMeasureNull() {
-                return this.IsNull(this.tablePreOrder.invMeasureColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetinvMeasureNull() {
-                this[this.tablePreOrder.invMeasureColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsinvSizeNull() {
-                return this.IsNull(this.tablePreOrder.invSizeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetinvSizeNull() {
-                this[this.tablePreOrder.invSizeColumn] = global::System.Convert.DBNull;
+                this[this.tablePrevOrders.prodBrandColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsinvQuantityNull() {
-                return this.IsNull(this.tablePreOrder.invQuantityColumn);
+                return this.IsNull(this.tablePrevOrders.invQuantityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetinvQuantityNull() {
-                this[this.tablePreOrder.invQuantityColumn] = global::System.Convert.DBNull;
+                this[this.tablePrevOrders.invQuantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsinvSizeNull() {
+                return this.IsNull(this.tablePrevOrders.invSizeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetinvSizeNull() {
+                this[this.tablePrevOrders.invSizeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsinvMeasureNull() {
+                return this.IsNull(this.tablePrevOrders.invMeasureColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetinvMeasureNull() {
+                this[this.tablePrevOrders.invMeasureColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2126,22 +2086,22 @@ namespace EmmasEnginesLibrary {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class PreOrderRowChangeEvent : global::System.EventArgs {
+        public class PrevOrdersRowChangeEvent : global::System.EventArgs {
             
-            private PreOrderRow eventRow;
+            private PrevOrdersRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PreOrderRowChangeEvent(PreOrderRow row, global::System.Data.DataRowAction action) {
+            public PrevOrdersRowChangeEvent(PrevOrdersRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PreOrderRow Row {
+            public PrevOrdersRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2484,16 +2444,24 @@ ORDER BY product.prodName";
             this._commandCollection[0].CommandText = @"SELECT        on_order.onordInvoiceNum, on_order.id, on_order.onordArriveDate, on_order.onordNumInOrder, on_order.onordPrice, prod_order.pordNumber, prod_order.pordDateOrdered, prod_order.pordPaid
 FROM            on_order INNER JOIN
                          prod_order ON on_order.prodorderID = prod_order.id
+WHERE pordNumber = @Param1 OR @Param1 = 0
 ORDER BY prod_order.pordDateOrdered DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "pordNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(OrderDataSet.OrderedDataTable dataTable) {
+        public virtual int Fill(OrderDataSet.OrderedDataTable dataTable, string Param1) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Param1 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -2505,8 +2473,14 @@ ORDER BY prod_order.pordDateOrdered DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual OrderDataSet.OrderedDataTable GetData() {
+        public virtual OrderDataSet.OrderedDataTable GetData(string Param1) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Param1 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+            }
             OrderDataSet.OrderedDataTable dataTable = new OrderDataSet.OrderedDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2522,7 +2496,7 @@ ORDER BY prod_order.pordDateOrdered DESC";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PreOrderTableAdapter : global::System.ComponentModel.Component {
+    public partial class PrevOrdersTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -2536,7 +2510,7 @@ ORDER BY prod_order.pordDateOrdered DESC";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public PreOrderTableAdapter() {
+        public PrevOrdersTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2633,16 +2607,15 @@ ORDER BY prod_order.pordDateOrdered DESC";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PreOrder";
-            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.DataSetTable = "PrevOrders";
             tableMapping.ColumnMappings.Add("pordNumber", "pordNumber");
             tableMapping.ColumnMappings.Add("pordDateOrdered", "pordDateOrdered");
             tableMapping.ColumnMappings.Add("pordPaid", "pordPaid");
             tableMapping.ColumnMappings.Add("prodName", "prodName");
             tableMapping.ColumnMappings.Add("prodBrand", "prodBrand");
-            tableMapping.ColumnMappings.Add("invMeasure", "invMeasure");
-            tableMapping.ColumnMappings.Add("invSize", "invSize");
             tableMapping.ColumnMappings.Add("invQuantity", "invQuantity");
+            tableMapping.ColumnMappings.Add("invSize", "invSize");
+            tableMapping.ColumnMappings.Add("invMeasure", "invMeasure");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2659,34 +2632,45 @@ ORDER BY prod_order.pordDateOrdered DESC";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        prod_order.id, prod_order.pordNumber, prod_order.pordDateOrdered, prod_order.pordPaid, product.prodName, product.prodBrand, inventory.invMeasure, inventory.invSize, inventory.invQuantity
+            this._commandCollection[0].CommandText = @"SELECT        prod_order.pordNumber, prod_order.pordDateOrdered, prod_order.pordPaid, product.prodName, product.prodBrand, inventory.invQuantity, inventory.invSize, inventory.invMeasure
 FROM            prod_order INNER JOIN
-                         inventory ON prod_order.id = inventory.id INNER JOIN
-                         product ON inventory.productID = product.id
-ORDER BY prod_order.pordDateOrdered DESC";
+                         product ON prod_order.id = product.id INNER JOIN
+                         inventory ON product.id = inventory.productID
+WHERE        (pordNumber = @Param1 or @Param1 = 0)
+AND (prodName = @Param2 or @Param2 = 'ALLPRODUCTS')
+AND (prodBrand = @Param3 or @Param3 = 'ALLPRODUCTS')
+ORDER BY prod_order.pordNumber";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(OrderDataSet.PreOrderDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "pordNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param2", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "prodName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param3", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "prodBrand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual OrderDataSet.PreOrderDataTable GetData() {
+        public virtual OrderDataSet.PrevOrdersDataTable GetData(string Param1, string Param2, string Param3) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            OrderDataSet.PreOrderDataTable dataTable = new OrderDataSet.PreOrderDataTable();
+            if ((Param1 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+            }
+            if ((Param2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Param2));
+            }
+            if ((Param3 == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Param3));
+            }
+            OrderDataSet.PrevOrdersDataTable dataTable = new OrderDataSet.PrevOrdersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

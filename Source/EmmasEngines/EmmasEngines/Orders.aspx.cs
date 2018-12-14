@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity;
 using System.Data;
 using EmmasEnginesLibrary;
 using EmmasEnginesLibrary.OrderDataSetTableAdapters;
+
 // by Kanghyun Jo 
 // 2018-12-13
 
@@ -23,7 +24,7 @@ namespace EmmasEngines
         static Orders()
         {
             dsOrder = new OrderDataSet();
-
+            
             // Initialize the table adapters
             OrderRequestTableAdapter daOrderRequest = new OrderRequestTableAdapter();
 
@@ -64,10 +65,10 @@ namespace EmmasEngines
         private void DisplayOrderRequests()
         {
             // Check to see if records are in the rows object
-            if (orders.Count() > 0)
+            if (orders.Length > 0)
             {
                 // Show the headings and label
-                lblOrderRequestsCount.Text = orders.Count().ToString() + " record(s) found.";
+                lblOrderRequestsCount.Text = orders.Length.ToString() + " record(s) found.";
                 tblTableHeadings.Visible = lblOrderRequestSearchResults.Visible = true;
 
                 // Loop through to get all customer information
@@ -90,7 +91,6 @@ namespace EmmasEngines
                     prodName.Text = row.ItemArray[4].ToString();
                     prodBrand.Text = row.ItemArray[5].ToString();               
                                       
-
                     // Add each table cell to the table row
                     tblRow.Cells.Add(prodName);
                     tblRow.Cells.Add(prodBrand);
