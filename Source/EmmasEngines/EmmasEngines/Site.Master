@@ -32,7 +32,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <%:!Page.User.IsInRole("Technician") && !Page.User.IsInRole("Sales") && !Page.User.IsInRole("Manager")?"hidden":"" %>>Sales
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="SaleRepair.aspx">Purchasing</a>
+                            <a class="dropdown-item" href="Purchase.aspx?mode=sale">Purchasing</a>
                             <a class="dropdown-item" href="Sales.aspx" <%:Page.User.IsInRole("Technician")?"hidden":"" %>>Customer Management</a>
                         </div>
                     </li>
